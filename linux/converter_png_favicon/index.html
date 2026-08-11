@@ -1,0 +1,102 @@
+ <!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Converter PNG em FAVICON
+  </title>
+  <script>
+    window.MathJax = {
+      loader: {
+        paths: {tex: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/input/tex/extensions'},
+        load: [
+          '[tex]/ams','[tex]/amscd','[tex]/bbox','[tex]/boldsymbol','[tex]/braket',
+          '[tex]/cases','[tex]/centernot','[tex]/colortbl','[tex]/color',
+          '[tex]/enclose','[tex]/extpfeil','[tex]/gensymb','[tex]/html',
+          '[tex]/mhchem','[tex]/newcommand','[tex]/noerrors','[tex]/noundefined',
+          '[tex]/physics','[tex]/setoptions','[tex]/tagformat','[tex]/textmacros',
+          '[tex]/unicode','[tex]/verb'
+        ]
+      },
+      tex: {
+        packages: {'[+]': [
+          'ams','amscd','bbox','boldsymbol','braket','cases','centernot',
+          'colortbl','color','enclose','extpfeil','gensymb','html','mhchem',
+          'newcommand','noerrors','noundefined','physics','setoptions',
+          'tagformat','textmacros','unicode','verb'
+        ]},
+        inlineMath: [["\\(", "\\)"], ["$", "$"]],
+        displayMath: [["\\[", "\\]"], ["$$", "$$"]]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<header>
+  <h1 id="cabecalho-titulo">Converter PNG em FAVICON
+  </h1>
+
+
+</header>
+<hr>
+<!-- Aqui começa o código específico da página -->
+<main>
+<p>O primeiro passo é instalar, caso não tenha instalado, o imagemagick:</p>
+<p style="background-color: lightgray;">sudo apt update<br />
+sudo apt install imagemagick</p>
+<p>Os navegadores podem carregar o arquivo em vários tamanhos (16x16, 32x32 ou 48x48), você pode gerar um único favicon com múltiplas dimensões fazendo:</p>
+<p style="background-color: lightgray;">convert input.png -define icon:auto-resize=16,32,48 favicon.ico</p>
+<p>Desse modo, os navegadores carregará automaticamente o melhor tamanho.</p>
+<p>Para verificar que o favicon gerado possui múltiplos tamanhos, basta fazer:</p>
+<p style="background-color: lightgray;">identify favicon.ico</p>
+<p>e a resposta deve ser algo assim:</p>
+<p style="background-color: lightgray;">
+    favicon.ico[0] ICO 16x16 16x16+0+0 8-bit sRGB 0.000u 0:00.000 <br />
+favicon.ico[1] ICO 32x32 32x32+0+0 8-bit sRGB 0.000u 0:00.000 <br />
+favicon.ico[2] ICO 48x48 48x48+0+0 8-bit sRGB 15086B 0.000u 0:00.000
+</p>
+<p>Agora basta subir o arquivo para a raiz da sua hospedagem e chamar dentro do HEAD do arquivo INDEX da seguinte forma:</p>
+<p style="background-color: lightgray;"><code>&lt;link rel="icon" type="image/x-icon" href="favicon.ico"&gt;</code></p>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Aqui termina o código específico da página -->
+<p style="margin-top: 20px; font-size: 14px; color: #555; border-top: 1px solid #ddd; padding-top: 15px;">
+  <strong>Como citar essa página:</strong><br>
+  FUMACHI, E. F. <strong id="citacao-titulo"></strong>. Disponível em: <span id="citacao-url"></span>. Acesso em: <span id="citacao-data"></span>.
+</p>
+
+<hr>
+
+<footer>
+<p align="center">Prof. Dr. Fumachi. &copy; <span id="ano"></span></p>
+</footer>
+
+
+<script>
+  document.getElementById('cabecalho-titulo').innerText = document.title;
+  document.getElementById('citacao-titulo').innerText = document.title;
+  document.getElementById('citacao-url').innerText = window.location.href;
+  const hoje = new Date();
+  const dia = String(hoje.getDate()).padStart(2, '0');
+  const meses = ['jan.', 'fev.', 'mar.', 'abr.', 'mai.', 'jun.', 'jul.', 'ago.', 'set.', 'out.', 'nov.', 'dez.'];
+  const mes = meses[hoje.getMonth()];
+  const anoAtual = hoje.getFullYear();
+  document.getElementById('citacao-data').innerText = `${dia} ${mes} ${anoAtual}.`;
+  document.getElementById('ano').textContent = anoAtual;
+</script>
+
+</body>
+</html>
+

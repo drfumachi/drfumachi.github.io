@@ -1,0 +1,488 @@
+ <!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Inteligência Artificial
+  </title>
+  <script>
+    window.MathJax = {
+      loader: {
+        paths: {tex: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/input/tex/extensions'},
+        load: [
+          '[tex]/ams','[tex]/amscd','[tex]/bbox','[tex]/boldsymbol','[tex]/braket',
+          '[tex]/cases','[tex]/centernot','[tex]/colortbl','[tex]/color',
+          '[tex]/enclose','[tex]/extpfeil','[tex]/gensymb','[tex]/html',
+          '[tex]/mhchem','[tex]/newcommand','[tex]/noerrors','[tex]/noundefined',
+          '[tex]/physics','[tex]/setoptions','[tex]/tagformat','[tex]/textmacros',
+          '[tex]/unicode','[tex]/verb'
+        ]
+      },
+      tex: {
+        packages: {'[+]': [
+          'ams','amscd','bbox','boldsymbol','braket','cases','centernot',
+          'colortbl','color','enclose','extpfeil','gensymb','html','mhchem',
+          'newcommand','noerrors','noundefined','physics','setoptions',
+          'tagformat','textmacros','unicode','verb'
+        ]},
+        inlineMath: [["\\(", "\\)"], ["$", "$"]],
+        displayMath: [["\\[", "\\]"], ["$$", "$$"]]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<header>
+  <h1 id="cabecalho-titulo">Inteligência Artificial
+  </h1>
+
+
+</header>
+<hr>
+<!-- Aqui começa o código específico da página -->
+<h1>Lógica Proposicional: conectivos</h1>
+
+<p>A lógica proposicional estuda afirmações (proposições) que podem ser verdadeiras (V) ou falsas (F).  
+Os conectivos lógicos combinam proposições simples para formar proposições compostas.  
+Conhecemos quatro conectivos fundamentais: <strong>conjunção</strong> (e), <strong>disjunção</strong> (ou),  
+<strong>condicional</strong> (se... então) e <strong>negação</strong> (não).  
+Abaixo apresentamos a definição de cada um com suas tabelas-verdade.  
+Utilizamos \(\wedge\) para "e", \(\vee\) para "ou", \(\rightarrow\) para "se...então" e \(\sim\) ou \(\neg\) para negação.</p>
+
+<h2>1. Conjunção (E) – símbolo: \( \wedge \)</h2>
+<p>A conjunção \(p \wedge q\) é verdadeira apenas quando <strong>ambas</strong> as proposições \(p\) e \(q\) são verdadeiras; nos demais casos é falsa.</p>
+<h3>Tabela-verdade da conjunção</h3>
+<p>
+\[
+\begin{array}{c|c|c}
+p & q & p \wedge q \\ \hline
+V & V & V \\
+V & F & F \\
+F & V & F \\
+F & F & F \\
+\end{array}
+\]
+</p>
+
+<h2>2. Disjunção (OU) – símbolo: \( \vee \)</h2>
+<p>A disjunção \(p \vee q\) é falsa apenas quando <strong>ambas</strong> as proposições são falsas; em todos os outros casos é verdadeira (ou inclusivo: pelo menos uma verdadeira).</p>
+<h3>Tabela-verdade da disjunção</h3>
+<p>
+\[
+\begin{array}{c|c|c}
+p & q & p \vee q \\ \hline
+V & V & V \\
+V & F & V \\
+F & V & V \\
+F & F & F \\
+\end{array}
+\]
+</p>
+
+<h2>3. Condicional (SE... ENTÃO) – símbolo: \( \rightarrow \)</h2>
+<p>A condicional \(p \rightarrow q\) (lê-se: "se p então q") é falsa apenas no caso em que a antecedente \(p\) é verdadeira e a consequente \(q\) é falsa. Nos demais casos, é verdadeira.</p>
+<h3>Tabela-verdade da condicional</h3>
+<p>
+\[
+\begin{array}{c|c|c}
+p & q & p \rightarrow q \\ \hline
+V & V & V \\
+V & F & F \\
+F & V & V \\
+F & F & V \\
+\end{array}
+\]
+</p>
+
+<h2>4. Negação – símbolos: \( \sim \) ou \( \neg \)</h2>
+<p>A negação \(\sim p\) (ou \(\neg p\)) inverte o valor lógico da proposição: se \(p\) é verdadeira, \(\sim p\) é falsa; se \(p\) é falsa, \(\sim p\) é verdadeira.</p>
+<h3>Tabela-verdade da negação</h3>
+<p>
+\[
+\begin{array}{c|c}
+p & \sim p \\ \hline
+V & F \\
+F & V \\
+\end{array}
+\]
+</p>
+
+<h2>Resumo visual com duas proposições</h2>
+<p>A tabela abaixo reúne todos os conectivos para facilitar a comparação:</p>
+<p>
+\[
+\begin{array}{c|c|c|c|c|c}
+p & q & p \wedge q & p \vee q & p \rightarrow q & \sim p \\ \hline
+V & V & V & V & V & F \\
+V & F & F & V & F & F \\
+F & V & F & V & V & V \\
+F & F & F & F & V & V \\
+\end{array}
+\]
+</p>
+
+<p>Observe os valores e memorize os padrões. A lógica proposicional é a base do raciocínio matemático e computacional. Pratique criando exemplos com frases do dia a dia!</p>
+
+<h1>Linguagem natural (materna) e linguagem matemática (simbólica)</h1>
+
+<p>No dia a dia, usamos a nossa <strong>língua natural</strong> (português, inglês, etc.) para nos comunicar.  
+Essa linguagem é rica, mas pode ser ambígua. Já a <strong>linguagem matemática</strong> (ou simbólica)  
+utiliza símbolos precisos para representar ideias de forma clara e sem duplicidade de interpretação.</p>
+
+<p>Na lógica proposicional, representamos proposições simples por letras como \(p\) e \(q\) e usamos conectivos  
+(\(\wedge\), \(\vee\), \(\rightarrow\), \(\sim\)) para criar proposições compostas. A seguir, damos um exemplo concreto  
+e traduzimos expressões simbólicas para a linguagem natural.</p>
+
+<hr>
+
+<h2>Proposições definidas</h2>
+<p>Considere as seguintes proposições simples:</p>
+<ul>
+    <li><strong>p:</strong> Hoje está chovendo.</li>
+    <li><strong>q:</strong> Eu sou aluno de IA.</li>
+</ul>
+
+<p>Agora vamos escrever em linguagem natural (português claro) as proposições compostas formadas a partir de \(p\) e \(q\) com os conectivos lógicos.</p>
+
+<h3>a) \(p \wedge q\)  (conjunção: "e")</h3>
+<p><strong>Linguagem natural:</strong> "Hoje está chovendo e eu sou aluno de IA."</p>
+<p><em>(A frase combina as duas informações com o conectivo "e", indicando que ambas as condições são verdadeiras.)</em></p>
+
+<h3>b) \(\sim p \wedge q\)  (negação de p e conjunção com q)</h3>
+<p><strong>Linguagem natural:</strong> "Hoje não está chovendo e eu sou aluno de IA."</p>
+<p><em>(Primeiro negamos "Hoje está chovendo" – que vira "Hoje não está chovendo" – e depois unimos com "e eu sou aluno de IA".)</em></p>
+
+<h3>c) \(p \vee q\)  (disjunção inclusiva: "ou")</h3>
+<p><strong>Linguagem natural:</strong> "Hoje está chovendo ou eu sou aluno de IA."</p>
+<p><em>(Na linguagem cotidiana, esse "ou" pode ser interpretado como pelo menos um dos dois acontecendo – podendo inclusive ambos.)</em></p>
+
+<h3>d) \(p \rightarrow q\)  (condicional: "se... então")</h3>
+<p><strong>Linguagem natural:</strong> "Se hoje está chovendo, então eu sou aluno de IA."</p>
+<p><em>(A implicação afirma que, no caso de a primeira parte ser verdadeira, a segunda obrigatoriamente também é.)</em></p>
+
+<hr>
+
+<h2>Por que essa diferença é importante?</h2>
+<p>A linguagem matemática elimina ambiguidades. Por exemplo, na língua natural a palavra "ou" pode significar 
+"um ou outro, mas não ambos" (ou exclusivo) ou "pelo menos um". Na lógica, usamos símbolos diferentes 
+(\(\vee\) para o inclusivo; às vezes \(\veebar\) para o exclusivo). As tabelas-verdade fixam exatamente o significado.</p>
+
+<p>Outro ponto: a condicional "se... então" em português às vezes sugere uma relação de causa e efeito, 
+mas na lógica \(p \rightarrow q\) é apenas uma relação formal definida pela tabela-verdade 
+(falsa apenas quando \(p\) é verdadeira e \(q\) falsa).</p>
+
+<p>Praticar a tradução entre os dois mundos ajuda a estruturar o raciocínio lógico e a evitar armadilhas da linguagem comum.</p>
+
+<h1>O Perceptron: o neurônio artificial mais simples</h1>
+
+<h2>1. Contexto Histórico e Ideias Iniciais</h2>
+    <p>A Inteligência Artificial aplicada aos negócios não nasceu com os computadores modernos. Na Administração, a busca por automatizar tomadas de decisão e padronizar processos repetitivos sempre foi um objetivo central para aumentar a eficiência operacional e reduzir custos.</p>
+    
+    <h3>A Origem do Perceptron (1957)</h3>
+    <p>Em 1957, o psicólogo americano <strong>Frank Rosenblatt</strong> criou o <strong>Perceptron</strong>. Ele se inspirou diretamente na biologia, tentando replicar em um computador a forma como os neurônios humanos transmitem e processam impulsos elétricos. Naquela época, o Perceptron foi o primeiro modelo de rede neural artificial capaz de "aprender" a classificar dados linearmente a partir de exemplos.</p>
+
+    <h3>Importância para a Administração</h3>
+    <p>Para um administrador, o Perceptron representa a transição dos sistemas baseados em regras rígidas criadas por humanos (como planilhas tradicionais com fórmulas <code>SE/ENTÃO</code> manuais) para sistemas preditivos computacionais. Ele analisa dados históricos de operações passadas para tomar decisões automatizadas no presente.</p>
+
+
+<h2>2. Estrutura Teórica do Neurônio Artificial</h2>
+    <p>O Perceptron funciona como um mecanismo de pesagem de evidências para resolver problemas de classificação binária (decisões do tipo Sim/Não, Aprova/Recusa, Compra/Vende).</p>
+
+    <h3>Os Três Pilares de Processamento</h3>
+    <ul>
+        <li><strong>Inputs (Dados de Entrada - \(x_i\)):</strong> São os indicadores ou variáveis de mercado que o administrador coleta sobre uma situação (ex: dados de clientes, custos, volumes de vendas).</li>
+        <li><strong>Weights (Pesos - \(w_i\)):</strong> Valores numéricos que definem o grau de importância ou a influência de cada variável na decisão. Se um critério é muito importante, ele recebe um peso maior.</li>
+        <li><strong>Bias (Corte / Limiar - \(b\)):</strong> O patamar mínimo de exigência da empresa. Funciona como uma barreira que os dados de entrada precisam superar para que a decisão seja favorável.</li>
+    </ul>
+
+    <h3>A Equação Geral do Processamento</h3>
+    <p>O neurônio multiplica cada dado coletado pelo seu respectivo peso, soma todos esses valores e subtrai a barreira de corte da organização:</p>
+    <p>\[y = \sum_{i=1}^{n} x_i \cdot w_i - b\]</p>
+
+    <h3>Regra de Decisão Automatizada</h3>
+    <ul>
+        <li>Se o resultado final for positivo: <strong>\(y \ge 0 \rightarrow\) Resposta: 1 (Ação Executada / SIM)</strong></li>
+        <li>Se o resultado final for negativo: <strong>\(y < 0 \rightarrow\) Resposta: 0 (Ação Bloqueada / NÃO)</strong></li>
+    </ul>
+
+    <hr>
+
+
+
+<h2>Fórmula matemática do perceptron</h2>
+<p>A combinação linear das entradas com os pesos é dada por:</p>
+<p>
+\[
+z = \sum_{i=1}^{n} (w_i \cdot x_i) + b
+\]
+</p>
+<p>onde:</p>
+<ul>
+    <li>\(x_i\) são os valores de entrada (características da amostra);</li>
+    <li>\(w_i\) são os pesos sinápticos (importância de cada entrada);</li>
+    <li>\(b\) é o viés (bias), que permite deslocar a função de ativação.</li>
+</ul>
+<p>Em seguida, aplicamos uma função de ativação. No perceptron clássico, usamos a função degrau (Heaviside):</p>
+<p>
+\[
+y = \begin{cases} 
+      1 & \text{se } z \ge 0 \text{ (aprovado)} \\
+      0 & \text{se } z < 0 \text{ (reprovado)}
+   \end{cases}
+\]
+</p>
+
+<hr>
+
+<h2>Exemplo prático: aprovação de crédito em instituição financeira</h2>
+<p>Imagine um banco que deseja decidir se aprova ou não um empréstimo com base em três características do cliente:</p>
+<ul>
+    <li><strong>Salário mensal</strong> (em reais) – peso \(w_1 = 0,0001\)</li>
+    <li><strong>Tempo de relacionamento com o banco</strong> (em anos) – peso \(w_2 = 0,5\)</li>
+    <li><strong>Score de crédito</strong> (0 a 1000) – peso \(w_3 = 0,002\)</li>
+</ul>
+<p>O viés (bias) adotado será \(b = -5\) (um limiar padrão para dificultar a aprovação, exigindo boas pontuações).</p>
+
+<h3>Pessoa 1: Cliente A</h3>
+<ul>
+    <li>Salário: R$ 5.000,00</li>
+    <li>Tempo de relacionamento: 2 anos</li>
+    <li>Score: 650 pontos</li>
+</ul>
+<p>Cálculo de \(z\):</p>
+<p>
+\[
+\begin{aligned}
+z &= (0,0001 \times 5000) + (0,5 \times 2) + (0,002 \times 650) + (-5) \\
+  &= 0,5 + 1,0 + 1,3 - 5 \\
+  &= 2,8 - 5 \\
+  &= -2,2
+\end{aligned}
+\]
+</p>
+<p>Como \(z = -2,2 < 0\), a saída \(y = 0\).  
+<strong>Decisão: REPROVAR crédito.</strong></p>
+
+<h3>Pessoa 2: Cliente B</h3>
+<ul>
+    <li>Salário: R$ 12.000,00</li>
+    <li>Tempo de relacionamento: 5 anos</li>
+    <li>Score: 820 pontos</li>
+</ul>
+<p>Cálculo de \(z\):</p>
+<p>
+\[
+\begin{aligned}
+z &= (0,0001 \times 12000) + (0,5 \times 5) + (0,002 \times 820) + (-5) \\
+  &= 1,2 + 2,5 + 1,64 - 5 \\
+  &= 5,34 - 5 \\
+  &= 0,34
+\end{aligned}
+\]
+</p>
+<p>Como \(z = 0,34 \ge 0\), a saída \(y = 1\).  
+<strong>Decisão: APROVAR crédito.</strong></p>
+
+<hr>
+
+<h3>Interpretação dos resultados</h3>
+<p>O cliente A tem um salário razoável e score mediano, mas pouco tempo de relacionamento.  
+O somatório ponderado não atingiu o limiar (bias negativo), resultando em reprovação.</p>
+<p>O cliente B tem alta renda, longo relacionamento e bom score, o que fez \(z\) superar o limiar, sendo aprovado.</p>
+<p>Esse é o princípio básico de um perceptron: uma combinação linear seguida de uma decisão binária.  
+Na prática, os pesos e o bias são <em>aprendidos</em> a partir de dados históricos.</p>
+
+
+<h2>3. Estudo de Caso Final: Concessão de Crédito Bancário (Banco Ficção)</h2>
+    <p>Imagine uma instituição financeira que deseja automatizar sua mesa de crédito para acelerar a liberação de empréstimos, simulando exatamente o cenário prático discutido em aula.</p>
+
+    <h3>Definição das Variáveis de Entrada (\(x\))</h3>
+    <p>O banco escolhe três indicadores para avaliar o perfil de um cliente:</p>
+    <ul>
+        <li>\(x_1\): Tempo de relacionamento com o banco (em anos)</li>
+        <li>\(x_2\): Salário mensal atual do cliente (em milhares de reais)</li>
+        <li>\(x_3\): Score de crédito do mercado (pontuação de 0 a 10)</li>
+    </ul>
+
+    <h3>Configuração do Modelo da Empresa (Pesos e Corte)</h3>
+    <p>A diretoria de riscos do banco estabelece os seguintes pesos de importância e a barreira de corte:</p>
+    <ul>
+        <li>Peso do Tempo de Relacionamento (\(w_1\)) = <strong>1.5</strong></li>
+        <li>Peso do Salário (\(w_2\)) = <strong>2.0</strong></li>
+        <li>Peso do Score (\(w_3\)) = <strong>3.0</strong></li>
+        <li>Barreira de Corte da Empresa (\(b\)) = <strong>30.0</strong> (O cliente precisa superar 30 pontos na soma ponderada para obter o crédito)</li>
+    </ul>
+
+    <hr>
+
+    <h2>4. Exemplo Numérico Prático</h2>
+    <p>Vamos testar o sistema do banco calculando o resultado de processamento para dois clientes com perfis socioeconômicos distintos.</p>
+
+    <h3>Cenário A: Cliente Especial com Longo Histórico</h3>
+    <p>O cliente possui 8 anos de conta aberta (\(x_1 = 8\)), recebe um salário de R$ 6.000,00 (\(x_2 = 6\)) e tem score 7 (\(x_3 = 7\)).</p>
+    
+    <p><strong>Cálculo do Somatório Ponderado:</strong></p>
+    <p>\[\text{Soma} = (x_1 \cdot w_1) + (x_2 \cdot w_2) + (x_3 \cdot w_3)\]</p>
+    <p>\[\text{Soma} = (8 \cdot 1.5) + (6 \cdot 2.0) + (7 \cdot 3.0)\]</p>
+    <p>\[\text{Soma} = 12 + 12 + 21 = 45\]</p>
+
+    <p><strong>Aplicação da Equação Final (Subtraindo o Corte):</strong></p>
+    <p>\[y = 45 - b \rightarrow y = 45 - 30 = 15\]</p>
+    
+    <p><strong>Resultado da Decisão:</strong> Como o valor final de \(y\) é maior que zero (\(15 > 0\)), o sistema emite o output <strong>1 (SIM - CRÉDITO APROVADO)</strong>.</p>
+
+    <h3>Cenário B: Cliente Novo com Perfil de Risco</h3>
+    <p>O cliente abriu a conta há apenas 1 ano (\(x_1 = 1\)), tem salário de R$ 3.000,00 (\(x_2 = 3\)) e score baixo de valor 4 (\(x_3 = 4\)).</p>
+
+    <p><strong>Cálculo do Somatório Ponderado:</strong></p>
+    <p>\[\text{Soma} = (1 \cdot 1.5) + (3 \cdot 2.0) + (4 \cdot 3.0)\]</p>
+    <p>\[\text{Soma} = 1.5 + 6 + 12 = 19.5\]</p>
+
+    <p><strong>Aplicação da Equação Final (Subtraindo o Corte):</strong></p>
+    <p>\[y = 19.5 - b \rightarrow y = 19.5 - 30 = -10.5\]</p>
+
+    <p><strong>Resultado da Decisão:</strong> Como o valor final de \(y\) é menor que zero (\(-10.5 < 0\)), o sistema emite o output <strong>0 (NÃO - CRÉDITO RECUSADO)</strong>.</p>
+
+
+<hr>
+
+
+
+
+<h1>Regressão Linear: ajuste de reta y = ax + b</h1>
+
+<p>A regressão linear simples busca encontrar a reta que melhor se ajusta a um conjunto de pontos \((x, y)\),  
+minimizando o erro quadrático entre os valores reais e os previstos pela reta \(y = ax + b\).</p>
+
+<h2>Fórmulas para os coeficientes a e b</h2>
+
+<p>Dados \(n\) pontos \((x_i, y_i)\), definimos:</p>
+
+<p>
+\[
+a = \frac{n \sum xy - \sum x \sum y}{n \sum x^2 - (\sum x)^2}
+\]
+</p>
+
+<p>
+\[
+b = \frac{\sum y - a \sum x}{n}
+\]
+</p>
+
+<p>Alternativamente, \(b\) também pode ser escrito como:</p>
+
+<p>
+\[
+b = \frac{\sum x^2 \sum y - \sum x \sum xy}{n \sum x^2 - (\sum x)^2}
+\]
+</p>
+
+<h2>Coeficiente de correlação de Pearson (r)</h2>
+
+<p>O coeficiente \(r\) mede a força e a direção da relação linear entre \(x\) e \(y\):</p>
+
+<p>
+\[
+r = \frac{n \sum xy - \sum x \sum y}{\sqrt{[n \sum x^2 - (\sum x)^2][n \sum y^2 - (\sum y)^2]}}
+\]
+</p>
+
+<h2>Coeficiente de determinação (R²)</h2>
+
+<p>O \(R^2\) indica a proporção da variância de \(y\) que é explicada pela reta de regressão:</p>
+
+<p>
+\[
+R^2 = r^2
+\]
+</p>
+
+<p>O valor de \(R^2\) está sempre entre 0 e 1. Quanto mais próximo de 1, melhor o ajuste linear.</p>
+
+<hr>
+
+<h2>Exercício 1</h2>
+
+<p>Considere os pontos: (1, 2), (2, 3), (3, 5), (4, 4), (5, 6)</p>
+
+<p><strong>Tabela de dados (formato vertical):</strong></p>
+
+<p>
+\[
+\begin{array}{c|c}
+x & y \\ \hline
+1 & 2 \\
+2 & 3 \\
+3 & 5 \\
+4 & 4 \\
+5 & 6 \\
+\end{array}
+\]
+</p>
+
+<p><strong>Resposta esperada (após os cálculos):</strong> \(a \approx 0{,}9\), \(b \approx 1{,}3\), \(R^2 \approx 0{,}81\)</p>
+
+<h2>Exercício 2</h2>
+
+<p>Considere os pontos: (2, 4), (3, 5), (4, 6), (5, 8), (6, 9)</p>
+
+<p><strong>Tabela de dados (formato vertical):</strong></p>
+
+<p>
+\[
+\begin{array}{c|c}
+x & y \\ \hline
+2 & 4 \\
+3 & 5 \\
+4 & 6 \\
+5 & 8 \\
+6 & 9 \\
+\end{array}
+\]
+</p>
+
+<p><strong>Resposta esperada:</strong> \(a \approx 1{,}2\), \(b \approx 1{,}6\), \(R^2 \approx 0{,}96\)</p>
+
+ 
+
+
+
+
+
+
+
+
+
+
+<!-- Aqui termina o código específico da página -->
+<p style="margin-top: 20px; font-size: 14px; color: #555; border-top: 1px solid #ddd; padding-top: 15px;">
+  <strong>Como citar essa página:</strong><br>
+  FUMACHI, E. F. <strong id="citacao-titulo"></strong>. Disponível em: <span id="citacao-url"></span>. Acesso em: <span id="citacao-data"></span>.
+</p>
+
+<hr>
+
+<footer>
+<p align="center">Prof. Dr. Fumachi. &copy; <span id="ano"></span></p>
+</footer>
+
+
+<script>
+  document.getElementById('cabecalho-titulo').innerText = document.title;
+  document.getElementById('citacao-titulo').innerText = document.title;
+  document.getElementById('citacao-url').innerText = window.location.href;
+  const hoje = new Date();
+  const dia = String(hoje.getDate()).padStart(2, '0');
+  const meses = ['jan.', 'fev.', 'mar.', 'abr.', 'mai.', 'jun.', 'jul.', 'ago.', 'set.', 'out.', 'nov.', 'dez.'];
+  const mes = meses[hoje.getMonth()];
+  const anoAtual = hoje.getFullYear();
+  document.getElementById('citacao-data').innerText = `${dia} ${mes} ${anoAtual}.`;
+  document.getElementById('ano').textContent = anoAtual;
+</script>
+
+</body>
+</html>
+

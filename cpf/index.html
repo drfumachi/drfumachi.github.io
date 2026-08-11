@@ -1,0 +1,169 @@
+ <!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>CPF
+  </title>
+
+  <script>
+    window.MathJax = {
+      loader: {
+        paths: {tex: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/input/tex/extensions'},
+        load: [
+          '[tex]/ams','[tex]/amscd','[tex]/bbox','[tex]/boldsymbol','[tex]/braket',
+          '[tex]/cases','[tex]/centernot','[tex]/colortbl','[tex]/color',
+          '[tex]/enclose','[tex]/extpfeil','[tex]/gensymb','[tex]/html',
+          '[tex]/mhchem','[tex]/newcommand','[tex]/noerrors','[tex]/noundefined',
+          '[tex]/physics','[tex]/setoptions','[tex]/tagformat','[tex]/textmacros',
+          '[tex]/unicode','[tex]/verb'
+        ]
+      },
+      tex: {
+        packages: {'[+]': [
+          'ams','amscd','bbox','boldsymbol','braket','cases','centernot',
+          'colortbl','color','enclose','extpfeil','gensymb','html','mhchem',
+          'newcommand','noerrors','noundefined','physics','setoptions',
+          'tagformat','textmacros','unicode','verb'
+        ]},
+        inlineMath: [["\\(", "\\)"], ["$", "$"]],
+        displayMath: [["\\[", "\\]"], ["$$", "$$"]]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<header>
+
+
+  <h1 id="cabecalho-titulo">CPF
+  </h1>
+
+
+</header>
+<hr>
+<!-- Aqui começa o código específico da página -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Calculadora de Dígitos do CPF com LaTeX</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+  <h2>Calculadora de Dígitos do CPF (com LaTeX)</h2>
+  <label for="cpfBase">Digite os 9 primeiros dígitos do CPF (somente números):</label><br>
+  <input type="text" id="cpfBase" maxlength="9" />
+  <button onclick="calcularCPF()">Calcular</button>
+
+  <div class="resultado" id="resultado"></div>
+
+  <script>
+    function calcularCPF() {
+      const input = document.getElementById('cpfBase').value;
+      const resultado = document.getElementById('resultado');
+
+      if (!/^\d{9}$/.test(input)) {
+        resultado.innerHTML = 'Por favor, digite exatamente 9 números.';
+        return;
+      }
+
+      const numeros = input.split('').map(Number);
+      let soma1 = 0, detalhes1 = [];
+      for (let i = 0; i < 9; i++) {
+        let peso = 10 - i;
+        soma1 += numeros[i] * peso;
+        detalhes1.push(`${numeros[i]} \\times ${peso}`);
+      }
+      const resto1 = soma1 % 11;
+      const dig1 = resto1 < 2 ? 0 : 11 - resto1;
+
+      let soma2 = 0, detalhes2 = [];
+      for (let i = 0; i < 9; i++) {
+        let peso = 11 - i;
+        soma2 += numeros[i] * peso;
+        detalhes2.push(`${numeros[i]} \\times ${peso}`);
+      }
+      soma2 += dig1 * 2;
+      detalhes2.push(`${dig1} \\times 2`);
+      const resto2 = soma2 % 11;
+      const dig2 = resto2 < 2 ? 0 : 11 - resto2;
+
+      const cpfCompleto = input + dig1 + dig2;
+
+      resultado.innerHTML = `
+        <strong>CPF Base:</strong> ${input}<br><br>
+        <strong>1º Dígito Verificador:</strong><br>
+        \\[
+          \\text{Soma} = ${detalhes1.join(' + ')} = ${soma1}
+        \\]
+        \\[
+          \\text{Resto} = ${soma1} \\bmod 11 = ${resto1}
+        \\]
+        \\[
+          \\text{Dígito 1} = ${resto1 < 2 ? 0 : `11 - ${resto1} = ${dig1}`}
+        \\]<br>
+
+        <strong>2º Dígito Verificador:</strong><br>
+        \\[
+          \\text{Soma} = ${detalhes2.join(' + ')} = ${soma2}
+        \\]
+        \\[
+          \\text{Resto} = ${soma2} \\bmod 11 = ${resto2}
+        \\]
+        \\[
+          \\text{Dígito 2} = ${resto2 < 2 ? 0 : `11 - ${resto2} = ${dig2}`}
+        \\]<br>
+
+        <strong>CPF Completo:</strong> ${cpfCompleto.slice(0,3)}.${cpfCompleto.slice(3,6)}.${cpfCompleto.slice(6,9)}-${cpfCompleto.slice(9)}
+      `;
+
+      MathJax.typeset(); // Reprocessa o conteúdo para renderizar o LaTeX
+    }
+  </script>
+</body>
+</html> 
+
+
+
+
+
+
+
+
+
+
+<!-- Aqui termina o código específico da página -->
+<p style="margin-top: 20px; font-size: 14px; color: #555; border-top: 1px solid #ddd; padding-top: 15px;">
+  <strong>Como citar essa página:</strong><br>
+  FUMACHI, E. F. <strong id="citacao-titulo"></strong>. Disponível em: <span id="citacao-url"></span>. Acesso em: <span id="citacao-data"></span>.
+</p>
+
+<hr>
+
+<footer>
+<p align="center">Prof. Dr. Fumachi. &copy; <span id="ano"></span></p>
+</footer>
+
+
+<script>
+  document.getElementById('cabecalho-titulo').innerText = document.title;
+  document.getElementById('citacao-titulo').innerText = document.title;
+  document.getElementById('citacao-url').innerText = window.location.href;
+  const hoje = new Date();
+  const dia = String(hoje.getDate()).padStart(2, '0');
+  const meses = ['jan.', 'fev.', 'mar.', 'abr.', 'mai.', 'jun.', 'jul.', 'ago.', 'set.', 'out.', 'nov.', 'dez.'];
+  const mes = meses[hoje.getMonth()];
+  const anoAtual = hoje.getFullYear();
+  document.getElementById('citacao-data').innerText = `${dia} ${mes} ${anoAtual}.`;
+  document.getElementById('ano').textContent = anoAtual;
+</script>
+
+</body>
+</html>
+

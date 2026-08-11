@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Código Morse</title>
+  <script>
+    window.MathJax = {
+      loader: {
+        paths: {tex: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/input/tex/extensions'},
+        load: [
+          '[tex]/ams','[tex]/amscd','[tex]/bbox','[tex]/boldsymbol','[tex]/braket',
+          '[tex]/cases','[tex]/centernot','[tex]/colortbl','[tex]/color',
+          '[tex]/enclose','[tex]/extpfeil','[tex]/gensymb','[tex]/html',
+          '[tex]/mhchem','[tex]/newcommand','[tex]/noerrors','[tex]/noundefined',
+          '[tex]/physics','[tex]/setoptions','[tex]/tagformat','[tex]/textmacros',
+          '[tex]/unicode','[tex]/verb'
+        ]
+      },
+      tex: {
+        packages: {'[+]': [
+          'ams','amscd','bbox','boldsymbol','braket','cases','centernot',
+          'colortbl','color','enclose','extpfeil','gensymb','html','mhchem',
+          'newcommand','noerrors','noundefined','physics','setoptions',
+          'tagformat','textmacros','unicode','verb'
+        ]},
+        inlineMath: [["\\(", "\\)"], ["$", "$"]],
+        displayMath: [["\\[", "\\]"], ["$$", "$$"]]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<header>
+  <h1 id="cabecalho-titulo">Código Morse</h1>
+</header>
+<hr>
+<!-- Aqui começa o código específico da página -->
+
+<!-- Mensagem Original -->
+  <label for="originalText">Mensagem Original:</label><br />
+  <textarea id="originalText" rows="5" cols="100" placeholder="Digite sua mensagem original aqui..."></textarea><br />
+
+  <label for="originalMorse">Código Morse da Mensagem Original:</label><br />
+  <textarea id="originalMorse" rows="5" cols="100"></textarea><br />
+  <button onclick="playMorse('original')">Ouvir Código Morse Original</button>
+
+  <hr>
+
+  <!-- Chave -->
+  <label for="key">Chave (ex: A:1;E:2):</label><br />
+  <textarea id="key" rows="5" cols="100" ></textarea><br />
+
+  <!-- Mensagem Criptografada -->
+  <label for="cryptedText">Mensagem Após Aplicar a Chave:</label><br />
+  <textarea id="cryptedText" rows="5" cols="100"></textarea><br />
+
+  <label for="cryptedMorse">Código Morse da Mensagem Criptografada:</label><br />
+  <textarea id="cryptedMorse" rows="5" cols="100"></textarea><br />
+  <button onclick="playMorse('crypted')">Ouvir Código Morse Criptografado</button>
+
+  <hr>
+
+  <!-- Resultado Decodificado -->
+  <label for="decodedText">Mensagem Decodificada (a partir da codificada + chave):</label><br />
+  <textarea id="decodedText" rows="5" cols="100" readonly></textarea>
+
+  <hr>
+
+  <label for="speed">Velocidade:</label>
+  <input type="range" id="speed" min="50" max="500" value="150">
+  <span id="speedValue">150ms</span>
+
+  <script>
+    const morseCode = {
+      'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..',
+      'E': '.', 'F': '..-.', 'G': '--.', 'H': '....',
+      'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..',
+      'M': '--', 'N': '-.', 'O': '---', 'P': '.--.',
+      'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-',
+      'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-',
+      'Y': '-.--', 'Z': '--..',
+      '0': '-----', '1': '.----', '2': '..---', '3': '...--',
+      '4': '....-', '5': '.....', '6': '-....', '7': '--...',
+      '8': '---..', '9': '----.',
+      '.': '.-.-.-', ',': '--..--', '?': '..--..', ' ': '/'
+    };
+
+    const inverseMorse = Object.fromEntries(
+      Object.entries(morseCode).map(([k, v]) => [v, k])
+    );
+
+    const originalText = document.getElementById("originalText");
+    const originalMorse = document.getElementById("originalMorse");
+    const keyArea = document.getElementById("key");
+    const cryptedText = document.getElementById("cryptedText");
+    const cryptedMorse = document.getElementById("cryptedMorse");
+    const decodedText = document.getElementById("decodedText");
+    const speedInput = document.getElementById("speed");
+    const speedValue = document.getElementById("speedValue");
+
+    let isUpdating = false;
+
+    speedInput.addEventListener("input", () => {
+      speedValue.textContent = speedInput.value + 'ms';
+    });
+
+    function parseKey(keyString) {
+      const map = {};
+      keyString.split(";").forEach(pair => {
+        const [from, to] = pair.split(":");
+        if (from && to) {
+          map[from.trim().toUpperCase()] = to.trim();
+        }
+      });
+      return map;
+    }
+
+    function invertKeyMap(map) {
+      const inverted = {};
+      for (const [key, value] of Object.entries(map)) {
+        inverted[value] = key;
+      }
+      return inverted;
+    }
+
+    function applySubstitution(text, map) {
+      return text.split('').map(c => map[c] ?? c).join('');
+    }
+
+    function textToMorse(text) {
+      return text.toUpperCase().split('').map(char => morseCode[char] || '').join(' ');
+    }
+
+    function morseToText(morse) {
+      return morse.trim().split(' ').map(code => inverseMorse[code] || '').join('');
+    }
+
+    function updateFromSource(source) {
+      if (isUpdating) return;
+      isUpdating = true;
+
+      const keyMap = parseKey(keyArea.value);
+      const reverseMap = invertKeyMap(keyMap);
+
+      if (source === 'original') {
+        const text = originalText.value.toUpperCase();
+        const substituted = applySubstitution(text, keyMap);
+        const originalMorseCode = textToMorse(text);
+        const cryptedMorseCode = textToMorse(substituted);
+
+        cryptedText.value = substituted;
+        originalMorse.value = originalMorseCode;
+        cryptedMorse.value = cryptedMorseCode;
+        decodedText.value = text;
+
+      } else if (source === 'crypted') {
+        const text = cryptedText.value;
+        const original = applySubstitution(text, reverseMap);
+        const cryptedMorseCode = textToMorse(text);
+        const originalMorseCode = textToMorse(original);
+
+        originalText.value = original;
+        decodedText.value = original;
+        originalMorse.value = originalMorseCode;
+        cryptedMorse.value = cryptedMorseCode;
+
+      } else if (source === 'originalMorse') {
+        const morse = originalMorse.value.trim();
+        const text = morseToText(morse).toUpperCase();
+        const substituted = applySubstitution(text, keyMap);
+        const cryptedMorseCode = textToMorse(substituted);
+
+        originalText.value = text;
+        decodedText.value = text;
+        cryptedText.value = substituted;
+        cryptedMorse.value = cryptedMorseCode;
+
+      } else if (source === 'cryptedMorse') {
+        const morse = cryptedMorse.value.trim();
+        const text = morseToText(morse);
+        const original = applySubstitution(text, reverseMap);
+        const originalMorseCode = textToMorse(original);
+
+        cryptedText.value = text;
+        originalText.value = original;
+        originalMorse.value = originalMorseCode;
+        decodedText.value = original;
+      }
+
+      isUpdating = false;
+    }
+
+    originalText.addEventListener("input", () => updateFromSource("original"));
+    cryptedText.addEventListener("input", () => updateFromSource("crypted"));
+    originalMorse.addEventListener("input", () => updateFromSource("originalMorse"));
+    cryptedMorse.addEventListener("input", () => updateFromSource("cryptedMorse"));
+    keyArea.addEventListener("input", () => updateFromSource("original"));
+
+    function playMorse(type) {
+      const morse = (type === 'original') ? originalMorse.value.trim() : cryptedMorse.value.trim();
+      const unit = parseInt(speedInput.value);
+      const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      let time = audioCtx.currentTime;
+
+      morse.split('').forEach(symbol => {
+        if (symbol === '.') {
+          playTone(audioCtx, time, unit);
+          time += unit / 1000 + 0.05;
+        } else if (symbol === '-') {
+          playTone(audioCtx, time, unit * 3);
+          time += (unit * 3) / 1000 + 0.05;
+        } else if (symbol === ' ') {
+          time += (unit * 3) / 1000;
+        } else if (symbol === '/') {
+          time += (unit * 7) / 1000;
+        }
+      });
+    }
+
+    function playTone(audioCtx, startTime, duration) {
+      const oscillator = audioCtx.createOscillator();
+      oscillator.type = 'sine';
+      oscillator.frequency.value = 600;
+      oscillator.connect(audioCtx.destination);
+      oscillator.start(startTime);
+      oscillator.stop(startTime + duration / 1000);
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+<!-- Aqui termina o código específico da página -->
+<p style="margin-top: 20px; font-size: 14px; color: #555; border-top: 1px solid #ddd; padding-top: 15px;">
+  <strong>Como citar essa página:</strong><br>
+  FUMACHI, E. F. <strong id="citacao-titulo"></strong>. Disponível em: <span id="citacao-url"></span>. Acesso em: <span id="citacao-data"></span>.
+</p>
+
+<hr>
+
+<footer>
+<p align="center">Prof. Dr. Fumachi. &copy; <span id="ano"></span></p>
+</footer>
+
+
+<script>
+  document.getElementById('cabecalho-titulo').innerText = document.title;
+  document.getElementById('citacao-titulo').innerText = document.title;
+  document.getElementById('citacao-url').innerText = window.location.href;
+  const hoje = new Date();
+  const dia = String(hoje.getDate()).padStart(2, '0');
+  const meses = ['jan.', 'fev.', 'mar.', 'abr.', 'mai.', 'jun.', 'jul.', 'ago.', 'set.', 'out.', 'nov.', 'dez.'];
+  const mes = meses[hoje.getMonth()];
+  const anoAtual = hoje.getFullYear();
+  document.getElementById('citacao-data').innerText = `${dia} ${mes} ${anoAtual}.`;
+  document.getElementById('ano').textContent = anoAtual;
+</script>
+
+</body>
+</html>
+

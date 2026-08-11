@@ -1,0 +1,411 @@
+ <!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Financiamento de imóveis
+  </title>
+
+  <script>
+    window.MathJax = {
+      loader: {
+        paths: {tex: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/input/tex/extensions'},
+        load: [
+          '[tex]/ams','[tex]/amscd','[tex]/bbox','[tex]/boldsymbol','[tex]/braket',
+          '[tex]/cases','[tex]/centernot','[tex]/colortbl','[tex]/color',
+          '[tex]/enclose','[tex]/extpfeil','[tex]/gensymb','[tex]/html',
+          '[tex]/mhchem','[tex]/newcommand','[tex]/noerrors','[tex]/noundefined',
+          '[tex]/physics','[tex]/setoptions','[tex]/tagformat','[tex]/textmacros',
+          '[tex]/unicode','[tex]/verb'
+        ]
+      },
+      tex: {
+        packages: {'[+]': [
+          'ams','amscd','bbox','boldsymbol','braket','cases','centernot',
+          'colortbl','color','enclose','extpfeil','gensymb','html','mhchem',
+          'newcommand','noerrors','noundefined','physics','setoptions',
+          'tagformat','textmacros','unicode','verb'
+        ]},
+        inlineMath: [["\\(", "\\)"], ["$", "$"]],
+        displayMath: [["\\[", "\\]"], ["$$", "$$"]]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<header>
+
+
+  <h1 id="cabecalho-titulo">Financiamento de Imóveis
+  </h1>
+
+
+</header>
+<hr>
+<!-- Aqui começa o código específico da página -->
+<h2>Tabela PRICE</h2>
+<p>O cálculo do valor das parcelas na tabela PRICE pode ser feito através da fórmula abaixo:</p>
+<p>
+\[
+P=P_v \cdot \frac{i \cdot (1+i)^n}{(1+i)^n-1}
+\]
+</p>
+<p>Onde:</p>
+<ul>
+<li>\(P \) é o valor da parcela;</li>
+<li>\(P_v\) é o valor financiado;</li>
+<li>\(i\) é a taxa de juros do contrato;</li>
+<li>\(n \) é o número de meses do financiamento.</li>
+</ul> 
+
+<h2>Tabela SAC</h2>
+<p>A tabela SAC possui um sistema de Amortização Constante, ou seja, a primeira parcela é a maior de todas e as demais vão decaindo até a última parcela ser igual ao valor da Amortização.</p>
+<p>Desse modo, para calcular o valor da primeira parcela é necessário calcular a Amortização:</p>
+<p>
+\[
+A = \frac{P_v}{n}
+\]
+</p>
+<p>O valor da primeira parcela será:</p>
+<p>
+\[
+P_1 = A+P_v \cdot i
+\]
+</p> 
+
+<h2>Conversão de taxas</h2>
+<p>Normalmente os financiamentos possuem em contrato valores de taxas anuais e as fórmulas de cálculo de financiamento possuem parcelas mensais, ou seja, é necessário converter a taxa anual em taxa mensal.</p>
+<p>De modo geral, a fórmula para realizar essa conversão é a seguinte:</p>
+<p>
+\[
+i=(1+i)^n-1
+\]
+</p>
+<p>Um ponto especial nessa fórmula é o valor \(n\). Quando queremos passar de uma taxa de um tempo grande para um tempo pequeno, taxa anual para taxa mensal, por exemplo, o valor de \(n\) será \(1/n\), sendo assim, se quisermos passar de uma taxa anual para mensal basta fazer \(n=1/12\) pois em 1 ano temos 12 meses.</p>
+<p>Agora, se quisermos passar de uma taxa mensal para anual, basta fazer \(n=12\), pois 1 ano tem 12 meses</p>
+<p>EXEMPLO: Converta \(i=10\% \text{a.a.}\) (a.a. significa ao ano) para taxa a.m. (ao mês)</p>
+<p>
+\[
+\begin{align*}
+i&=(1+i)^n-1 \\
+i&=(1+10\%)^{1/12}-1 \\
+i&=(1+0,1)^{0,0833}-1 \\
+i&=(1,1)^{0,0833}-1 \\
+i&=1,007970 \cdots -1 \\
+i&=0,007970 \cdots \\
+i&\approx 0,00797 \text{ a.m.} \\
+i&=0,797 \% \text{ a.m.}\\
+\end{align*}
+\]
+</p>
+<p>EXEMPLO: Converta \(i=0,797\% \text{a.m.}\) para taxa a.a. (ao ano)</p>
+<p>
+\[
+\begin{align*}
+i&=(1+i)^n-1 \\
+i&=(1+0,797\%)^{12}-1 \\
+i&=(1+0,00797)^{12}-1 \\
+i&=(1,00797)^{12}-1 \\
+i&=1,0999 \cdots -1 \\
+i&=0,0999 \cdots \\
+i&\approx 0,0999 \text{ a.a.} \\
+i&=9,99 \% \text{ a.a.}\\
+\end{align*}
+\]
+</p> 
+
+<h2>Aporte na tabela PRICE</h2>
+<p>Muitas vezes as pessoas que realizam financiamento de imóveis podem querer reduzir o tempo, ou seja, o número de parcelas através de aportes extras. Esses aportes podem ser usados para redução do número de parcelas ou redução no valor das parcelas.</p>
+<p>Abaixo temos a relação matemática para calcular o novo número de parcelas após um aporte financeiro extra na tabela PRICE</p>
+<p>
+\[
+n=\frac{\ln{\left ( \frac{P}{P-i \cdot P_{v_{\text{novo}}}} \right )} }{\ln{(1+i)}}
+\]
+</p>
+<p>Aqui, \(P_{v_{\text{novo}}} \) é o valor do saldo devedor subtraído do aporte financeiro extra.</p>
+ 
+ 
+<h2>Aporte na tabela SAC</h2>
+<p>O aporte na tabela SAC é feito, inicialmente, determinando o valor da amortização no contrato original. Após saber o valor da amortização, basta fazer o saldo devedor menos o aporte e dividir pela amortização, matematicamente:</p>
+<p>
+\[
+n = \frac{P_{v_{\text{novo}}}}{A} = \frac{\text{saldo devedor} - \text{aporte}}{A}
+\]
+</p> 
+
+<h2>Exemplo de financiamento</h2>
+<p>Uma pessoa quer financiar um imóvel em 20 anos no valor de R$310.000,00. Sabe-se que a entrada será de 20% e a taxa anual do contrato é de 8%. Calcule o valor das parcelas na tabela PRICE e a primeira parcela na tabela SAC.</p>
+<h3>Valor financiado</h3>
+<p>O valor a ser financiado será de 80% do valor do imóvel, ou seja:</p>
+<p>
+\[
+80\% \cdot 310000 = 0,8 \cdot 310000 = 248000
+\]
+</p>
+<h3>Conversão da taxa anual em taxa mensal</h3>
+<p>É necessário converter a taxa anual em mensal usando a relação de conversão acima, logo:</p>
+<p>
+\[
+\begin{align*}
+i&=(1+i)^n-1 \\
+i&=(1+8\%)^{1/12}-1 \\
+i&=(1+0,08)^{0,0833}-1 \\
+i&=(1,08)^{0,0833}-1 \\
+i&=1,006434 \cdots -1 \\
+i&=0,006434 \cdots \\
+i&\approx 0,006434 \text{ a.m.} \\
+i&=0,6434 \% \text{ a.m.}\\
+\end{align*}
+\]
+</p>
+<h3>Cálculo da 1a. parcela na tabela SAC</h3>
+<p>O primeiro passo é determinar a amortização, que será o valor financiado dividido pelo tempo do contrato, 240 meses para 20 anos:</p>
+<p>
+\[
+A=\frac{248000}{240}=1033,33
+\]
+</p>
+<p>A primeira parcela será:</p>
+<p>
+\[
+P_1 = A+i \cdot P_v = 1033,33+0,006434 \cdot 248000 = 2628,96
+\]
+</p>
+<p>A última parcela será o valor da amortização, ou seja, R$1033,33.</p>
+
+<h3>Cálculo das parcelas na tabela PRICE</h3>
+<p>Usando a relação mostrada anteriormente, para a tabela PRICE, com os valores do problema, temos:</p>
+<p>
+\[
+\begin{align*}
+P&=P_v \cdot \frac{i \cdot (1+i)^n}{(1+i)^n-1} \\
+P&=248000 \cdot \frac{0,006434 \cdot (1+0,006434)^{240}}{(1+0,006434)^{240}-1} \\
+P&=248000 \cdot \frac{0,006434 \cdot (1,006434)^{240}}{(1,006434)^{240}-1} \\
+P&=248000 \cdot \frac{0,006434 \cdot 4,6609}{4,6609-1} \\
+P&=248000 \cdot \frac{0,02999}{3,6609} \\
+P&=\frac{7437,52}{3,6609} \\
+P&=2031,61 \\
+\end{align*}
+\]
+</p>
+<h3>Aporte extra - Tabela SAC</h3>
+<p>Imagine que na primeira parcela a pessoa tenha R$20000,00 de recursos próprios e deseja fazer um aporte para reduzir o tempo de pagamento, ou seja, reduzir o número de parcelas. Na tabela SAC, fica:</p>
+<p>
+\[
+\begin{align*}
+n &= \frac{248000 - 20000}{1033,33} \\
+n &= \frac{228000}{1033,33} \\
+n &= 220,6 \\
+n &= 221 \text{ parcelas} \\
+\end{align*}
+\]
+</p>
+<h3>Aporte extra - Tabela PRICE</h3>
+<p>O cálculo do número de parcelas após o aporte pode ser feito com a seguinte relação matemática:</p>
+<p>
+\[
+\begin{align*}
+n&=\frac{\ln{\left ( \frac{P}{P-i \cdot P_{v_{\text{novo}}}} \right )} }{\ln{(1+i)}} \\
+n&=\frac{\ln{\left ( \frac{2031,61}{2031,61 - 0,006434 \cdot (248000-20000)}\right )}}{\ln{(1+0,006434})} \\
+n&=\frac{\ln{\left ( \frac{2031,61}{2031,61 - 0,006434 \cdot 228000}\right )}}{\ln{(1,006434})} \\
+n&=\frac{\ln{\left ( \frac{2031,61}{2031,61 - 1466,95}\right )}}{\ln{(1,006434})} \\
+n&=\frac{\ln{\left ( 3,5979 \right )}}{\ln{(1,006434})} \\
+n&=\frac{1,2804}{0,006413} \\
+n&=199,65 \\
+n&=200 \text{ parcelas} \\
+\end{align*}
+\]
+</p>
+<h3>Conclusão</h3>
+<p>É possível verificar que a tabela PRICE permite um valor fixo de parcelas, no entanto a tabela SAC as parcelas vão diminuindo o valor.</p>
+<p>A tabela PRICE parece ser mais vantajosa para aqueles que desejam fazer aportes pois o mesmo valor de aporte permite reduzir mais parcelas em comparação com a tabela SAC</p>
+<p>Por fim, a decisão a ser tomada para realizar um financiamento e a escolha de uma tabela depende de cada pessoa e cada situação.</p> 
+
+<div class="container">
+	<h2>Simulador - Calculadora de Financiamento Imobiliário*</h2>
+	<form id="financiamentoForm">
+		<label for="valorImovel">Valor do Imóvel (R$):</label>
+		<input type="number" id="valorImovel" required min="0" step="0.01"><br />
+		<label for="entradaPercentual">Percentual de Entrada (%):</label>
+		<input type="number" id="entradaPercentual" required min="0" max="100" step="0.01"><br />
+		<label for="anos">Número de anos para financiamento:</label>
+		<input type="number" id="anos" required min="1"><br />
+		<label for="taxaAnual">Taxa de Juros Anual (%):</label>
+		<input type="number" id="taxaAnual" required min="0" step="0.01"><br />
+		<label for="numAportes">Quantidade de Aportes Extras:</label>
+		<input type="number" id="numAportes" min="0" step="1" onchange="gerarCamposAportes()"><br />
+		<div id="camposAportes"></div>
+		<label for="tipoFinanciamento">Tipo de Financiamento:</label>
+		<select id="tipoFinanciamento" required>
+			<option value="SAC">SAC (Sistema de Amortização Constante)</option>
+			<option value="PRICE">PRICE (Tabela Price)</option>
+		</select><br />
+		<button type="button" onclick="calcularFinanciamento()">Calcular</button>
+	</form>
+	<p id="parcelasEconomizadas" style="display:none;"></p>
+	<table id="tabelaResultado" style="display:none;">
+		<thead>
+			<tr>
+				<th>Mês</th>
+				<th>Juros (R$)</th>
+				<th>Amortização (R$)</th>
+				<th>Parcela (R$)</th>
+				<th>Aporte Extra (R$)</th>
+				<th>Saldo Devedor (R$)</th>
+			</tr>
+		</thead>
+		<tbody id="corpoTabela"></tbody>
+	</table>
+</div>
+
+<script>
+function gerarCamposAportes() {
+	const numAportes = parseInt(document.getElementById('numAportes').value);
+	const camposAportes = document.getElementById('camposAportes');
+	camposAportes.innerHTML = "";
+	for (let i = 1; i <= numAportes; i++) {
+		const campoAporte = document.createElement('div');
+		campoAporte.innerHTML = `
+			<label>Aporte ${i} - Valor (R$):</label>
+							  <input type="number" id="valorAporte${i}" min="0" step="0.01">
+								  <label>Parcela para Aporte ${i}:</label>
+								  <input type="number" id="parcelaAporte${i}" min="1" step="1">
+								  `;
+		camposAportes.appendChild(campoAporte);
+	}
+}
+
+function calcularFinanciamento() {
+	const valorImovel = parseFloat(document.getElementById('valorImovel').value);
+	const entradaPercentual = parseFloat(document.getElementById('entradaPercentual').value);
+	const anos = parseInt(document.getElementById('anos').value);
+	const taxaAnual = parseFloat(document.getElementById('taxaAnual').value);
+	const numAportes = parseInt(document.getElementById('numAportes').value) || 0;
+	const tipoFinanciamento = document.getElementById('tipoFinanciamento').value;
+	if (isNaN(valorImovel) || isNaN(entradaPercentual) || isNaN(anos) || isNaN(taxaAnual) ||
+			valorImovel <= 0 || anos <= 0 || taxaAnual < 0 || entradaPercentual < 0 || entradaPercentual > 100) {
+		alert("Por favor, insira valores válidos para todos os campos.");
+		return;
+	}
+
+	const aportes = [];
+	for (let i = 1; i <= numAportes; i++) {
+		const valorAporte = parseFloat(document.getElementById(`valorAporte${i}`).value);
+		const parcelaAporte = parseInt(document.getElementById(`parcelaAporte${i}`).value);
+		if (!isNaN(valorAporte) && valorAporte > 0 && !isNaN(parcelaAporte) && parcelaAporte > 0) {
+			aportes.push({ parcela: parcelaAporte, valor: valorAporte });
+		}
+	}
+	aportes.sort((a, b) => a.parcela - b.parcela);
+
+	const valorEntrada = valorImovel * (entradaPercentual / 100);
+	const saldoFinanciado = valorImovel - valorEntrada;
+	const meses = anos * 12;
+	const taxaJuros = (1 + taxaAnual / 100) ** (1 / 12) - 1;
+	let saldoDevedor = saldoFinanciado;
+	const corpoTabela = document.getElementById('corpoTabela');
+	corpoTabela.innerHTML = "";
+	let mes = 0;
+	let ultimaParcela = 0;
+	const epsilon = 0.01;
+
+	if (tipoFinanciamento === "SAC") {
+		const amortizacao = saldoFinanciado / meses;
+		while (saldoDevedor > epsilon) {
+			mes++;
+			const juros = saldoDevedor * taxaJuros;
+			const parcela = juros + amortizacao;
+			const aporte = aportes.find(a => a.parcela === mes);
+			const valorAporte = aporte ? aporte.valor : 0;
+			saldoDevedor -= valorAporte;
+			saldoDevedor -= amortizacao;
+			saldoDevedor = saldoDevedor < 0 ? 0 : saldoDevedor;
+			adicionarLinhaTabela(mes, juros, amortizacao, parcela, valorAporte, saldoDevedor);
+			if (saldoDevedor > epsilon) ultimaParcela = mes;
+			if (saldoDevedor <= epsilon) break;
+		}
+	} else if (tipoFinanciamento === "PRICE") {
+		const parcela = saldoFinanciado * (taxaJuros * (1 + taxaJuros) ** meses) / ((1 + taxaJuros) ** meses -1);
+		while (saldoDevedor > epsilon) {
+			mes++;
+			const juros = saldoDevedor * taxaJuros;
+			const amortizacao = parcela - juros;
+			const aporte = aportes.find(a => a.parcela === mes);
+			const valorAporte = aporte ? aporte.valor : 0;
+			saldoDevedor -= valorAporte;
+			saldoDevedor -= amortizacao;
+			saldoDevedor = saldoDevedor < 0 ? 0 : saldoDevedor;
+			adicionarLinhaTabela(mes, juros, amortizacao, parcela, valorAporte, saldoDevedor);
+			if (saldoDevedor > epsilon) ultimaParcela = mes;
+			if (saldoDevedor <= epsilon) break;
+		}
+	}
+
+	const parcelasEconomizadas = aportes.length > 0 ? meses - ultimaParcela : 0;
+	exibirParcelasEconomizadas(parcelasEconomizadas);
+	document.getElementById('tabelaResultado').style.display = 'table';
+}
+
+function adicionarLinhaTabela(mes, juros, amortizacao, parcela, valorAporte, saldoDevedor) {
+	const linha = document.createElement('tr');
+	linha.innerHTML = `
+		<td align="center">${mes}</td>
+		<td align="center">${juros.toFixed(2)}</td>
+		<td align="center">${amortizacao.toFixed(2)}</td>
+		<td align="center">${parcela.toFixed(2)}</td>
+		<td align="center">${valorAporte.toFixed(2)}</td>
+		<td align="center">${saldoDevedor > 0 ? saldoDevedor.toFixed(2) : "0.00"}</td>
+		`;
+	document.getElementById('corpoTabela').appendChild(linha);
+}
+
+function exibirParcelasEconomizadas(parcelasEconomizadas) {
+	const infoParcelas = document.getElementById('parcelasEconomizadas');
+	infoParcelas.style.display = 'block';
+	infoParcelas.textContent = `Quantidade de parcelas economizadas após os aportes: ${parcelasEconomizadas}`;
+}
+</script>
+<p>* Os resultados fornecidos pela calculadora é aproximado e pode não representar a realidade de um contrato real. Use com cuidado e parcimônia.</p> 
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Aqui termina o código específico da página -->
+<p style="margin-top: 20px; font-size: 14px; color: #555; border-top: 1px solid #ddd; padding-top: 15px;">
+  <strong>Como citar essa página:</strong><br>
+  FUMACHI, E. F. <strong id="citacao-titulo"></strong>. Disponível em: <span id="citacao-url"></span>. Acesso em: <span id="citacao-data"></span>.
+</p>
+
+<hr>
+
+<footer>
+<p align="center">Prof. Dr. Fumachi. &copy; <span id="ano"></span></p>
+</footer>
+
+
+<script>
+  document.getElementById('cabecalho-titulo').innerText = document.title;
+  document.getElementById('citacao-titulo').innerText = document.title;
+  document.getElementById('citacao-url').innerText = window.location.href;
+  const hoje = new Date();
+  const dia = String(hoje.getDate()).padStart(2, '0');
+  const meses = ['jan.', 'fev.', 'mar.', 'abr.', 'mai.', 'jun.', 'jul.', 'ago.', 'set.', 'out.', 'nov.', 'dez.'];
+  const mes = meses[hoje.getMonth()];
+  const anoAtual = hoje.getFullYear();
+  document.getElementById('citacao-data').innerText = `${dia} ${mes} ${anoAtual}.`;
+  document.getElementById('ano').textContent = anoAtual;
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,936 @@
+ <!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Funções
+  </title>
+
+  <script>
+    window.MathJax = {
+      loader: {
+        paths: {tex: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/input/tex/extensions'},
+        load: [
+          '[tex]/ams','[tex]/amscd','[tex]/bbox','[tex]/boldsymbol','[tex]/braket',
+          '[tex]/cases','[tex]/centernot','[tex]/colortbl','[tex]/color',
+          '[tex]/enclose','[tex]/extpfeil','[tex]/gensymb','[tex]/html',
+          '[tex]/mhchem','[tex]/newcommand','[tex]/noerrors','[tex]/noundefined',
+          '[tex]/physics','[tex]/setoptions','[tex]/tagformat','[tex]/textmacros',
+          '[tex]/unicode','[tex]/verb'
+        ]
+      },
+      tex: {
+        packages: {'[+]': [
+          'ams','amscd','bbox','boldsymbol','braket','cases','centernot',
+          'colortbl','color','enclose','extpfeil','gensymb','html','mhchem',
+          'newcommand','noerrors','noundefined','physics','setoptions',
+          'tagformat','textmacros','unicode','verb'
+        ]},
+        inlineMath: [["\\(", "\\)"], ["$", "$"]],
+        displayMath: [["\\[", "\\]"], ["$$", "$$"]]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<header>
+
+
+  <h1 id="cabecalho-titulo">Funções
+  </h1>
+
+
+</header>
+<hr>
+<!-- Aqui começa o código específico da página -->
+<main>
+<h2 id="introdução">Introdução</h2>
+<p>O estudo de funções é importante entretanto, no dia a dia da maior parte das pessoas, este estudo não faz sentido, num primeiro momento. Porém não é difícil imaginar que em toda a vida de uma pessoa ela esteja direta, ou indiretamente, ligada com as funções. Desde a elaboração de uma receita de um bolo, a quilometragem que um determinado veículo pode fazer com um tanque de combustível, a <em>Receita</em>, o <em>Custo</em> e o <em>Lucro</em> de uma empresa.<br />
+
+Considere os ingredientes necessários para se fazer um (uma receita) bolo (hipotético):<br />
+</p>
+<ul>
+<li><p><span>4 ovos;</span></p></li>
+<li><p><span>1 litro de leite;</span></p></li>
+<li><p><span>1 kg de farinha.</span></p></li>
+</ul>
+<p>Como mencionado, os ingredientes acima estão relacionadas para se
+fazer <em>uma receita</em> ou <em>um bolo</em>. Se o indivíduo deseja
+fazer <em>duas receitas</em>, ou <em>dois bolos</em>, a quantidade dos
+ingredientes deve dobrar! Assim:<br />
+</p>
+<ul>
+<li><p><span>4 ovos <span class="math inline">×</span> 2 <span
+class="math inline">⇒</span> 8 ovos;</span></p></li>
+<li><p><span>1 litro de leite <span class="math inline">×</span> 2 <span
+class="math inline">⇒</span> 2 litros de leite;</span></p></li>
+<li><p><span>1 kg de farinha <span class="math inline">×</span> 2 <span
+class="math inline">⇒</span> 2 kg de farinha.</span></p></li>
+</ul>
+<p>Se uma empresa fabrica um produto por um custo de <span
+class="math inline">R$10, 00</span> a unidade e o vende a <span
+class="math inline">R$15, 00</span> a unidade e tem custos de aluguel,
+água, energia elétrica, entre outros que totalizam <span
+class="math inline">R$1000, 00</span> por mês é possível escrever sua
+função <em>Custo, Receita e Lucro</em> da seguinte forma:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+    \mathrm{R}(x) &amp;= 15,00 \cdot x \\
+    \mathrm{C}(x) &amp;= 10,00 \cdot x +1000,00 \\
+    \mathrm{L}(x) &amp;= 5,00 \cdot x -1000,00
+    
+\end{aligned}$$</span></p>
+</div>
+<p>onde <span class="math inline"><em>x</em></span> representa a
+quantidade de itens produzidos e vendidos.</p>
+<h2 id="domínio-imagem-relação-e-função">Domínio, imagem, relação e
+função</h2>
+<p>Esta seção se inicia com a ideia de <em>Relação</em>. A relação deve
+acontecer entre dois conjuntos numéricos, <span
+class="math inline">𝔸</span> e <span class="math inline">𝔹</span>, por
+exemplo.</p>
+<p>A <em>Relação</em> poderá receber o nome de <em>Função</em> se, e
+somente se, todo elemento do conjunto de partida (<span
+class="math inline">𝔸</span>, por exemplo), tenha um, apenas um,
+correspondente no conjunto de destino (<span
+class="math inline">𝔹</span>), através de uma lei. Matematicamente, uma
+função pode ser escrita assim:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+    f: \mathbb{A} \rightarrow \mathbb{B}, \forall x \in \mathbb{A}, \,
+\exists y \in \mathbb{B} \,\, / \,\, y=f(x)
+    
+\end{aligned}$$</span></p>
+</div>
+<p><br />
+Vale notar que <span class="math inline"><em>x</em></span> é a
+<em>variável independente</em> e <span
+class="math inline"><em>y</em></span> é a <em>variável dependente</em>
+pois depende de <span class="math inline"><em>x</em></span>. De modo
+geral, o primeiro conjunto da definição de uma função está relacionado
+com a <em>variável independente</em>, pois é o conjunto de partida e a
+<em>variável dependente</em> está relacionada com o segundo conjunto,
+pois é o conjunto de chegada.</p>
+<p>Como o objetivo deste material é trabalhar com funções, apenas, não
+será abordado as relações de modo geral, sendo assim deve ser definido o
+Domínio (<span class="math inline">D</span>) e Imagem (<span
+class="math inline">Im</span>) de uma função (<span
+class="math inline"><em>f</em></span>), sendo:</p>
+<div class="definition">
+<p>O domínio de uma função é um conjunto numérico com os valores
+possíveis que podem ser atribuídos à <em>variável independente</em>.</p>
+</div>
+<div class="definition">
+<p>A imagem de uma função é um conjunto numérico contendo o resultado de
+cada elemento do domínio aplicado na função.</p>
+</div>
+<div class="example">
+<p>Considere os conjuntos <span class="math inline">𝔸 = {1, 2, 3}</span>
+e <span class="math inline">𝔹 = {2, 4, 6, 8}</span> e a função <span
+class="math inline"><em>f</em> : 𝔸 → 𝔹  /  <em>y</em> = <em>f</em>(<em>x</em>) = 2<em>x</em></span>.
+Determine o Domínio e a Imagem de <span
+class="math inline"><em>f</em></span>.</p>
+<p><em><strong>Solução:</strong></em></p>
+<p>O conjunto de partida é o conjunto <span class="math inline">𝔸</span>
+então, ele é o <em>Domínio</em> da função (<span
+class="math inline">D(<em>f</em>)</span>). Os elementos do domínio são
+atribuídos à <em>variável independente</em>, <span
+class="math inline"><em>x</em></span>.</p>
+<p>Os elementos da <em>Imagem</em> da função <span
+class="math inline"><em>f</em></span> são obtidos da seguinte
+maneira:</p>
+<ul>
+<li><p><span><span
+class="math inline"><em>x</em> = 1 ⇒ <em>f</em>(1) = 2 ⋅ 1 = 2</span></span></p></li>
+<li><p><span><span
+class="math inline"><em>x</em> = 2 ⇒ <em>f</em>(2) = 2 ⋅ 1 = 4</span></span></p></li>
+<li><p><span><span
+class="math inline"><em>x</em> = 3 ⇒ <em>f</em>(3) = 2 ⋅ 1 = 6</span></span></p></li>
+</ul>
+<p>Assim, o conjunto <em>Imagem</em> é: <span
+class="math inline">Im = {2, 4, 6}</span>. Verifica-se que o conjunto
+imagem não é o conjunto <span class="math inline">𝔹</span> pois são os
+elementos que possuem um elemento <span
+class="math inline"><em>x</em></span> do Domínio. Como o <span
+class="math inline">8</span> do conjunto <span
+class="math inline">𝔹</span> não possui um antecessor do conjunto <span
+class="math inline">𝔸</span>, ele não faz parte da Imagem.</p>
+</div>
+<p>As funções, de modo geral, tem o conjunto dos <em>Números Reais</em>
+como <em>Domínio</em> e <em>Imagem</em>, porém existem funções que o
+Domínio deve ser determinado, ou seja, será um subconjunto dos
+Reais.</p>
+<div class="example">
+<p>Determine o Domínio e a Imagem da função <span
+class="math inline">$f(x)=\frac{1}{x-3}$</span></p>
+<p><em><strong>Solução:</strong></em></p>
+<p><em>Determinação do Domínio</em>: É possível verificar que a função
+possui uma divisão e a variável independente está no denominador. Este
+tipo de situação requer que o <em>denominador seja diferente de
+zero</em>, pois, caso contrário, haveria uma indeterminação. Seguindo o
+analisado, é possível fazer:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+    x-3 &amp;\neq 0 \\
+    x-3 +3 &amp; \neq 0+3 \\
+    x &amp;\neq 3
+    
+\end{aligned}$$</span></p>
+</div>
+<p>Logo, <span
+class="math inline">D(<em>f</em>) = (−∞,3) ∧ (3,+∞)</span> ou <span
+class="math inline">D(<em>f</em>) = ℝ − {3}</span> ou <span
+class="math inline">D(<em>f</em>) = {<em>x</em> ∈ ℝ/<em>x</em> ≠ 3}</span></p>
+<p><em>Determinação da Imagem</em>: Para a determinação da imagem é
+necessário analisar os extremos do domínio. Assim:</p>
+<ul>
+<li><p><span><span
+class="math inline"><em>x</em> →  − ∞ ⇒ <em>f</em>(<em>x</em>) → 0</span>:
+Se <span class="math inline"><em>x</em></span> aproxima-se do infinito
+negativo, o denominador torna-se um número muito grande e,
+consequentemente, a divisão aproxima-se de zero;</span></p></li>
+<li><p><span><span
+class="math inline"><em>x</em> →  − 3<sup>−</sup> ⇒ <em>f</em>(<em>x</em>) →  − ∞</span>:
+Se <span class="math inline"><em>x</em></span> aproxima-se do três
+negativo pela esquerda, o denominador torna-se um número muito pequeno
+negativo e, consequentemente, a divisão aproxima-se de menos
+infinito;</span></p></li>
+<li><p><span><span
+class="math inline"><em>x</em> →  − 3<sup>+</sup> ⇒ <em>f</em>(<em>x</em>) → ∞</span>:
+Se <span class="math inline"><em>x</em></span> aproxima-se do três
+negativo pela direita, o denominador torna-se um número muito pequeno
+positivo e, consequentemente, a divisão aproxima-se de mais
+infinito;</span></p></li>
+<li><p><span><span
+class="math inline"><em>x</em> → ∞ ⇒ <em>f</em>(<em>x</em>) → 0</span>:
+Se <span class="math inline"><em>x</em></span> aproxima-se do infinito
+positivo, o denominador torna-se um número muito grande e,
+consequentemente, a divisão aproxima-se de zero.</span></p></li>
+</ul>
+<p>Do exposto anteriormente, a Imagem nunca assumirá o valor <span
+class="math inline">0</span> (zero), assim a imagem será <span
+class="math inline">Im(<em>f</em>) = ℝ<sup>*</sup></span> ou <span
+class="math inline">Im(<em>f</em>) = ℝ − {0}</span></p>
+</div>
+<p>Muitos símbolos foram usados no exemplo anterior porém, os mesmos,
+serão explicados posteriormente no Capítulo <a href="#limites"
+data-reference-type="ref" data-reference="limites">[limites]</a>.</p>
+<div class="example">
+<p>Determine o Domínio e a Imagem da função <span
+class="math inline">$f(x)=\sqrt{x+2}$</span>.</p>
+<p><em><strong>Solução:</strong></em></p>
+<p><em>Domínio</em>: Os valores que podem ser colocados na função são
+valores positivos (funções reais) e, nesse caso, o zero. Valores
+negativos dentro da raíz quadrada resultam em resultados pertencentes
+aos <em>Número Complexos</em>, logo:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+    x+2 &amp; \geq 0 \\
+    x+2-2 &amp;\geq 0-2 \\
+    x &amp;\geq -2
+    
+\end{aligned}$$</span></p>
+</div>
+<p>Assim, <span class="math inline">D(<em>f</em>) = [ − 2,  + ∞)</span>
+ou <span
+class="math inline">D(<em>f</em>) = {<em>x</em> ∈ ℝ/<em>x</em> ≥  − 2}</span></p>
+</div>
+<h2 id="raízes-de-uma-função">Raízes de uma função</h2>
+<p>As raízes de uma função <span
+class="math inline"><em>f</em>(<em>x</em>)</span> pode ser calculada ao
+fazer <span class="math inline"><em>f</em>(<em>x</em>) = 0</span>, ou
+seja, são os pontos em que a função "corta" o eixo da variável
+independente. Nos casos de polinômios, o número de raízes é igual ao
+maior grau da função. Cada tipo de função possui uma metodologia
+diferente para o cálculo das suas raízes assim, será visto nas seções
+subsequentes.</p>
+<h2 id="funções-de-uma-variável-real">Funções de uma variável real</h2>
+<p>Difíceis são os processos que dependem apenas de uma variável, ou
+seja, ao estudar o consumo de combustível de um veículo não pode ser
+pensado somente na qualidade do combustível, mas deve ser pensado na
+alinhamento e pressão dos pneus, da temperatura, das condições da
+rodovia, das manutenções, da qualidade do óleo do motor, do modo como o
+veículo é conduzido (esta variável bem estudada resulta em economia de
+30% no consumo de combustível), entre outros fatores.</p>
+<p>Como visto na seção anterior, "geralmente" se atribui <span
+class="math inline"><em>x</em></span> a <em>variável independente</em> e
+<span class="math inline"><em>y</em></span> ou <span
+class="math inline"><em>f</em>(<em>x</em>)</span> a <em>variável
+dependente</em>, assim, tem-se duas variáveis. Mas como é possível ter
+duas variáveis sendo que a seção trata de <em>funções de uma
+variável</em>?</p>
+<p>A resposta é simples: Funções de uma variável é o nome dado às
+funções que possuem uma, e apenas uma, <em>variável
+independente</em>.</p>
+<div class="example">
+<p>A área do quadrado pode ser representada por uma função de uma
+variável. Como a área do quadrado é a multiplicação dos dois lados, e os
+quatro lados são iguais, então:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        A_Q(l)=l \cdot l = l^2
+        
+\end{aligned}$$</span></p>
+</div>
+<p>onde <span class="math inline"><em>l</em></span> é a medida do lado
+do quadrado.</p>
+</div>
+<div class="example">
+<p>A área de um retângulo é uma função de duas variáveis, pois sua área
+é a multiplicação de dois lados consecutivos. Como os lados do retângulo
+são iguais aos seus lados opostos, e não necessariamente precisam ter os
+quatro lados iguais, então:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        A_R(a,b)=a \cdot b
+        
+\end{aligned}$$</span></p>
+</div>
+<p>onde <span class="math inline"><em>a</em></span> e <span
+class="math inline"><em>b</em></span> são as medidas dos lados de um
+retângulo.</p>
+</div>
+<h2 id="funções-lineares">Funções lineares</h2>
+<p>As <em>funções lineares</em> ou <em>funções do primeiro grau</em> ou
+<em>funções de grau um</em> são funções do tipo:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+    f(x) = ax +b
+    
+\end{aligned}$$</span></p>
+</div>
+<p>Onde:</p>
+<ul>
+<li><p><span><span class="math inline"><em>f</em></span>: nome da
+função;</span></p></li>
+<li><p><span><span class="math inline"><em>x</em></span>: variável
+independente;</span></p></li>
+<li><p><span><span class="math inline"><em>f</em>(<em>x</em>)</span>:
+variável dependente;</span></p></li>
+<li><p><span><span class="math inline"><em>a</em></span>: coeficiente
+angular;</span></p></li>
+<li><p><span><span class="math inline"><em>b</em></span>: coeficiente
+linear.</span></p></li>
+</ul>
+<p>Um ponto importante para observar é o coeficiente angular. Este valor
+permite identificar se a função é <em>crescente</em> (<span
+class="math inline"><em>a</em> &gt; 0</span>) ou <em>decrescente</em>
+(<span class="math inline"><em>a</em> &lt; 0</span>). Caso <span
+class="math inline"><em>a</em> = 0</span>, tem-se uma função constante
+igual a <span
+class="math inline"><em>f</em>(<em>x</em>) = <em>b</em></span>, ou seja,
+para funções do primeiro grau a condição é que (<span
+class="math inline"><em>a</em> ≠ 0</span>)</p>
+<p>De modo geral, uma função <span
+class="math inline"><em>f</em>(<em>x</em>)</span> é crescente quando
+para quaisquer dois valores <span
+class="math inline"><em>x</em><sub>1</sub></span> e <span
+class="math inline"><em>x</em><sub>2</sub></span> pertencentes ao <span
+class="math inline">Dom(<em>f</em>)</span>, se <span
+class="math inline"><em>x</em><sub>2</sub> &gt; <em>x</em><sub>1</sub></span>,
+então <span
+class="math inline"><em>f</em>(<em>x</em><sub>2</sub>) &gt; <em>f</em>(<em>x</em><sub>1</sub>)</span>.
+Se <span
+class="math inline"><em>x</em><sub>2</sub> &gt; <em>x</em><sub>1</sub> ⇒ <em>f</em>(<em>x</em><sub>2</sub>) &lt; <em>f</em>(<em>x</em><sub>1</sub>)</span>
+então a função será decrescente.</p>
+<div class="example">
+<p>Determine se a função <span
+class="math inline"><em>f</em>(<em>x</em>) = 2<em>x</em> + 4</span> é
+crescente ou decrescente.</p>
+<p><em><strong>Solução:</strong></em></p>
+<p>É possível verificar que o coeficiente angular é igual a <span
+class="math inline">2</span> e é maior do que zero, no entanto, tomando
+<span class="math inline"><em>x</em><sub>1</sub> = 0</span> e <span
+class="math inline"><em>x</em><sub>2</sub> = 2</span> tem-se <span
+class="math inline"><em>f</em>(<em>x</em><sub>1</sub>) = <em>f</em>(0) = 2 ⋅ 0 + 4 = 4</span>
+e <span
+class="math inline"><em>f</em>(<em>x</em><sub>2</sub>) = <em>f</em>(2) = 2 ⋅ 2 + 4 = 8</span>,
+assim, <span
+class="math inline"><em>x</em><sub>2</sub> &gt; <em>x</em><sub>1</sub> ⇒ <em>f</em>(<em>x</em><sub>2</sub>) &gt; <em>f</em>(<em>x</em><sub>1</sub>)</span>
+logo, <span class="math inline"><em>f</em>(<em>x</em>)</span> é
+crescente.</p>
+</div>
+<div class="example">
+<p>Determine se a função <span
+class="math inline"><em>f</em>(<em>x</em>) =  − <em>x</em> + 4</span> é
+crescente ou decrescente.</p>
+<p><em><strong>Solução:</strong></em></p>
+<p>É possível verificar que o coeficiente angular é igual a <span
+class="math inline"> − 1</span> e é menor do que zero, no entanto,
+tomando <span class="math inline"><em>x</em><sub>1</sub> = 0</span> e
+<span class="math inline"><em>x</em><sub>2</sub> = 2</span> tem-se <span
+class="math inline"><em>f</em>(<em>x</em><sub>1</sub>) = <em>f</em>(0) =  − 1 ⋅ 0 + 4 = 4</span>
+e <span
+class="math inline"><em>f</em>(<em>x</em><sub>2</sub>) = <em>f</em>(2) =  − 1 ⋅ 2 + 4 = 2</span>,
+assim, <span
+class="math inline"><em>x</em><sub>2</sub> &gt; <em>x</em><sub>1</sub> ⇒ <em>f</em>(<em>x</em><sub>2</sub>) &lt; <em>f</em>(<em>x</em><sub>1</sub>)</span>
+logo, <span class="math inline"><em>f</em>(<em>x</em>)</span> é
+decrescente.</p>
+</div>
+<h2 id="raíz-de-funções-lineares">Raíz de funções lineares</h2>
+<p>Como mencionado anteriormente, para determinar a raíz de um função é
+necessário fazer <span
+class="math inline"><em>f</em>(<em>x</em>) = 0</span>. Como o maior grau
+das funções lineares é igual a "um" então, ter-se-á, apenas, uma
+raíz.</p>
+<div class="example">
+<p>Calcule a raíz da função <span
+class="math inline"><em>f</em>(<em>x</em>) =  − <em>x</em> + 4</span></p>
+<p><em><strong>Solução:</strong></em></p>
+<p>Fazendo <span class="math inline"><em>f</em>(<em>x</em>) = 0</span>,
+tem-se:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        f(x)&amp;=0 \\
+        -x+4&amp;=0 \\
+        -x+4-4&amp;=0-4 \\
+        (-1) \cdot \,\,\,\, -x&amp;=-4\,\,\,\, \cdot (-1) \\
+        x&amp;=4
+        
+\end{aligned}$$</span></p>
+</div>
+<p>Assim, <span class="math inline"><em>x</em> = 4</span> é a raíz da
+função <span
+class="math inline"><em>f</em>(<em>x</em>) =  − <em>x</em> + 4</span>.</p>
+</div>
+<h2 id="gráficos-de-funções-lineares">Gráficos de funções lineares</h2>
+<p>Em construção</p>
+<h2 id="funções-quadráticas">Funções quadráticas</h2>
+<p>As <em>funções quadráticas</em> ou <em>funções do segundo grau</em>
+ou <em>funções de grau dois</em> são funções do tipo:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+    f(x) = ax^2 +bx+c
+    
+\end{aligned}$$</span></p>
+</div>
+<p>Onde:</p>
+<ul>
+<li><p><span><span class="math inline"><em>f</em></span>: nome da
+função;</span></p></li>
+<li><p><span><span class="math inline"><em>x</em></span>: variável
+independente;</span></p></li>
+<li><p><span><span class="math inline"><em>f</em>(<em>x</em>)</span>:
+variável dependente;</span></p></li>
+<li><p><span><span class="math inline"><em>a</em></span>, <span
+class="math inline"><em>b</em></span> e <span
+class="math inline"><em>c</em></span>: são coeficientes.</span></p></li>
+</ul>
+<p>Um ponto importante para observar é o coeficiente <span
+class="math inline"><em>a</em></span>. Este valor permite identificar se
+a função possui <em>concavidade para cima</em> (<span
+class="math inline"><em>a</em> &gt; 0</span>) ou <em>concavidade para
+baixo</em> (<span class="math inline"><em>a</em> &lt; 0</span>). Caso
+<span class="math inline"><em>a</em> = 0</span>, tem-se uma função
+linear igual a <span
+class="math inline"><em>f</em>(<em>x</em>) = <em>b</em><em>x</em> + <em>c</em></span>,
+ou seja, para funções do segundo grau a condição é que (<span
+class="math inline"><em>a</em> ≠ 0</span>).</p>
+<h2 id="raízes-de-funções-quadráticas">Raízes de funções
+quadráticas</h2>
+<p>Para o caso de funções do segundo grau, as raízes podem ser
+calculadas através da, tão conhecida, fórmula de Bháskara, que é:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+    x = \frac{-b \pm \sqrt{b^2-4\cdot a \cdot c}}{2\cdot a}
+    
+\end{aligned}$$</span></p>
+</div>
+<p>O termo dentro da raíz quadrada, <span
+class="math inline"><em>b</em><sup>2</sup> − 4<em>a</em><em>c</em></span>,
+é conhecido como delta <span class="math inline"><em>Δ</em></span>.</p>
+<div class="example">
+<p><span id="caso1" label="caso1"></span> Calcule a raíz da função <span
+class="math inline"><em>f</em>(<em>x</em>) = <em>x</em><sup>2</sup> − 5<em>x</em> + 6</span></p>
+<p><em><strong>Solução:</strong></em></p>
+<p>Fazendo <span class="math inline"><em>f</em>(<em>x</em>) = 0</span>,
+tem-se:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        f(x)&amp;=0 \\
+        x^2-5x+6&amp;=0 \\
+        
+\end{aligned}$$</span></p>
+</div>
+<p>O próximo passo é identificar os valores dos coeficientes <span
+class="math inline"><em>a</em></span>, <span
+class="math inline"><em>b</em></span> e <span
+class="math inline"><em>c</em></span>. Para a equação acima, tem-se:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        a=1 \,\,\,\, b=-5 \,\,\,\, c=6
+        
+\end{aligned}$$</span></p>
+</div>
+<p>Determinado os valores dos coeficientes, calcula-se o valor de <span
+class="math inline"><em>Δ</em></span>:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        \Delta &amp;= b^2-4ac \\
+        &amp;=(-5)^2-4 \cdot 1 \cdot 6 \\
+        &amp;= (-5)\cdot (-5)-24 \\
+        &amp;= 25 - 24 \\
+        \Delta &amp;=1 \,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, (\mathrm{Caso
+1:}\,\, \Delta&gt;0)
+        
+\end{aligned}$$</span></p>
+</div>
+<p>Nesta parte, deverá ser substituído os valores dos coeficientes e o
+<span class="math inline"><em>Δ</em></span> calculado:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        x &amp;= \frac{-b\pm \sqrt{\Delta}}{2a} \\
+        &amp;= \frac{-(-5)\pm\sqrt{1}}{2\cdot 1} \\
+        &amp;= \frac{5 \pm 1}{2} \Rightarrow \\
+        x_1 &amp;= \frac{5+1}{2}=\frac{6}{2} \Rightarrow x_1 = 3 \\
+        x_2 &amp;= \frac{5-1}{2}=\frac{4}{2} \Rightarrow x_2 = 2
+        
+\end{aligned}$$</span></p>
+</div>
+<p>Assim, as raízes podem ser representadas através do conjunto solução
+<span class="math inline">𝕊 = {2, 3}</span></p>
+</div>
+<div class="example">
+<p><span id="caso2" label="caso2"></span> Calcule a raíz da função <span
+class="math inline"><em>f</em>(<em>x</em>) = <em>x</em><sup>2</sup> − 4<em>x</em> + 4</span></p>
+<p><em><strong>Solução:</strong></em></p>
+<p>Fazendo <span class="math inline"><em>f</em>(<em>x</em>) = 0</span>,
+tem-se:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        f(x)&amp;=0 \\
+        x^2-4x+4&amp;=0 \\
+        
+\end{aligned}$$</span></p>
+</div>
+<p>O próximo passo é identificar os valores dos coeficientes <span
+class="math inline"><em>a</em></span>, <span
+class="math inline"><em>b</em></span> e <span
+class="math inline"><em>c</em></span>. Para a equação acima, tem-se:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        a=1 \,\,\,\, b=-4 \,\,\,\, c=4
+        
+\end{aligned}$$</span></p>
+</div>
+<p>Determinado os valores dos coeficientes, calcula-se o valor de <span
+class="math inline"><em>Δ</em></span>:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        \Delta &amp;= b^2-4ac \\
+        &amp;=(-4)^2-4 \cdot 1 \cdot 4 \\
+        &amp;= (-4)\cdot (-4)-16 \\
+        &amp;= 16-16 \\
+        \Delta &amp;=0 \,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, (\mathrm{Caso
+2:}\,\, \Delta=0)
+        
+\end{aligned}$$</span></p>
+</div>
+<p>Nesta parte, deverá ser substituído os valores dos coeficientes e o
+<span class="math inline"><em>Δ</em></span> calculado:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        x &amp;= \frac{-b\pm \sqrt{\Delta}}{2a} \\
+        &amp;= \frac{-(-4)\pm\sqrt{0}}{2\cdot 1} \\
+        &amp;= \frac{4 \pm 0}{2} \Rightarrow \\
+        x_1 &amp;= \frac{4+0}{2}=\frac{4}{2} \Rightarrow x_1 = 2 \\
+        x_2 &amp;= \frac{4-0}{2}=\frac{4}{2} \Rightarrow x_2 = 2
+        
+\end{aligned}$$</span></p>
+</div>
+<p>Assim, as raízes podem ser representadas através do conjunto solução
+<span class="math inline">𝕊 = {2}</span></p>
+</div>
+<div class="example">
+<p><span id="caso3" label="caso3"></span> Calcule a raíz da função <span
+class="math inline"><em>f</em>(<em>x</em>) = <em>x</em><sup>2</sup> − 6<em>x</em> + 13</span></p>
+<p><em><strong>Solução:</strong></em></p>
+<p>Fazendo <span class="math inline"><em>f</em>(<em>x</em>) = 0</span>,
+tem-se:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        f(x)&amp;=0 \\
+        x^2-6x+13&amp;=0 \\
+        
+\end{aligned}$$</span></p>
+</div>
+<p>O próximo passo é identificar os valores dos coeficientes <span
+class="math inline"><em>a</em></span>, <span
+class="math inline"><em>b</em></span> e <span
+class="math inline"><em>c</em></span>. Para a equação acima, tem-se:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        a=1 \,\,\,\, b=-6 \,\,\,\, c=13
+        
+\end{aligned}$$</span></p>
+</div>
+<p>Determinado os valores dos coeficientes, calcula-se o valor de <span
+class="math inline"><em>Δ</em></span>:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        \Delta &amp;= b^2-4ac \\
+        &amp;=(-6)^2-4 \cdot 1 \cdot 13 \\
+        &amp;= (-6)\cdot (-6)-52 \\
+        &amp;= 36 - 52 \\
+        \Delta &amp;=-16 \,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,
+(\mathrm{Caso 3:}\,\, \Delta&lt;0)
+        
+\end{aligned}$$</span></p>
+</div>
+<p>Nesta parte, deverá ser substituído os valores dos coeficientes e o
+<span class="math inline"><em>Δ</em></span> calculado:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+    x &amp;= \frac{-b\pm \sqrt{\Delta}}{2a} \\
+    &amp;= \frac{-(-6)\pm \sqrt{-16}}{2\cdot 1} \\
+    &amp;= \frac{6 \pm \sqrt{16 \cdot (-1)}}{2} \\
+    &amp;= \frac{6\pm \sqrt{16} \cdot \sqrt{-1}}{2} \\
+    &amp;= \frac{6\pm 4 \cdot i}{2} \Rightarrow \\
+    x_1 &amp;= \frac{6+4i}{2} = 3+2i \\
+    x_2 &amp;= \frac{6-4i}{2} = 3-2i \\
+    
+\end{aligned}$$</span></p>
+</div>
+<p>Assim, as raízes podem ser representadas através do conjunto solução
+<span class="math inline">𝕊 = {3 ± 2<em>i</em>}</span></p>
+</div>
+<h2 id="gráficos-de-funções-quadráticas">Gráficos de funções
+quadráticas</h2>
+<p>Os gráficos de funções de segunda grau podem apresentar 6 formas
+diferentes, que são:</p>
+<ul>
+<li><p><span>Caso 1: <span class="math inline"><em>a</em> &gt; 0</span>
+e <span class="math inline"><em>Δ</em> &gt; 0⇒</span> Parábola com
+concavidade para <strong>cima</strong> e duas <strong>raízes reais
+distintas</strong>;</span></p></li>
+<li><p><span>Caso 2: <span class="math inline"><em>a</em> &gt; 0</span>
+e <span class="math inline"><em>Δ</em> = 0⇒</span> Parábola com
+concavidade para <strong>cima</strong> e duas <strong>raízes reais
+iguais</strong>;</span></p></li>
+<li><p><span>Caso 3: <span class="math inline"><em>a</em> &gt; 0</span>
+e <span class="math inline"><em>Δ</em> &lt; 0⇒</span> Parábola com
+concavidade para <strong>cima</strong> e duas <strong>raízes
+complexas</strong>;</span></p></li>
+<li><p><span>Caso 4: <span class="math inline"><em>a</em> &lt; 0</span>
+e <span class="math inline"><em>Δ</em> &gt; 0⇒</span> Parábola com
+concavidade para <strong>baixo</strong> e duas <strong>raízes reais
+distintas</strong>;</span></p></li>
+<li><p><span>Caso 5: <span class="math inline"><em>a</em> &lt; 0</span>
+e <span class="math inline"><em>Δ</em> = 0⇒</span> Parábola com
+concavidade para <strong>baixo</strong> e duas <strong>raízes reais
+iguais</strong>;</span></p></li>
+<li><p><span>Caso 6: <span class="math inline"><em>a</em> &lt; 0</span>
+e <span class="math inline"><em>Δ</em> &lt; 0⇒</span> Parábola com
+concavidade para <strong>baixo</strong> e duas <strong>raízes
+complexas</strong>;</span><br />
+</p></li>
+</ul>
+<p>Para fazer o gráfico é ncessário conhecer alguns pontos fundamentais
+da função:<br />
+</p>
+<ul>
+<li><p><span><strong>Raízes</strong>: Todas as funções do segundo grau
+possuem raízes, no entanto, as raízes complexas não podem ser
+representadas no plano real;</span></p></li>
+<li><p><span><strong>Vértice</strong>: Todas as funções do segundo grau
+possuem vértices. Os vértices nessas funções representam um ponto de
+<strong>extremo</strong>, que pode ser <strong>máximo</strong> (<span
+class="math inline"><em>a</em> &lt; 0</span>) ou <strong>mínimo</strong>
+(<span class="math inline"><em>a</em> &gt; 0</span>);</span></p></li>
+<li><p><span><strong>Intercepto com o eixo vertical</strong>: Este valor
+implica onde a função <em>"corta o eixo y"</em>.</span><br />
+</p></li>
+</ul>
+<div class="example">
+<p>(Caso 1) Determine o gráfico da função <span
+class="math inline"><em>f</em>(<em>x</em>) = <em>x</em><sup>2</sup> − 5<em>x</em> + 6</span></p>
+<p>Essa função é a mesma do Exemplo <a href="#caso1"
+data-reference-type="ref" data-reference="caso1">[caso1]</a>, ou seja,
+as raízes já foram determinadas (<span
+class="math inline"><em>x</em><sub>1</sub> = 2</span> e <span
+class="math inline"><em>x</em><sub>2</sub> = 3</span>), bem como o valor
+do <span class="math inline"><em>Δ</em></span> (<span
+class="math inline"> = 1</span>).<br />
+Assim, é necessário determinar o Vértice. A determinação do mesmo pode
+ser feita usando:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        x_v &amp;= \frac{-b}{2a} \Rightarrow x_v = \frac{-(-5)}{2 \cdot
+1} = \frac{5}{2} \\
+        y_v &amp;= \frac{-\Delta}{4a} \Rightarrow y_v = \frac{-1}{4
+\cdot 1} = \frac{-1}{4} \\
+        
+\end{aligned}$$</span></p>
+</div>
+<p>Portanto, as coordenadas do Vértice são <span
+class="math inline">$\left (\frac{5}{2},\frac{-1}{4} \right )$</span>.<a
+href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a><br />
+O último passo é verificar o intercepto com o eixo vertical, ou seja,
+determinar o valor de <span
+class="math inline"><em>f</em>(<em>x</em>)</span> quando <span
+class="math inline"><em>x</em> = 0</span>, assim:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        f(x) &amp;= x^2-5x+6 \\
+        x=0 \Rightarrow f(0)&amp;=0^2-5 \cdot 0 +6 \\
+        f(0) &amp;= 6
+        
+\end{aligned}$$</span></p>
+</div>
+<p>Unindo as informações:<br />
+</p>
+<ul>
+<li><p><span><strong>Raízes</strong>: <span
+class="math inline"><em>x</em><sub>1</sub> = (2,0)</span> e <span
+class="math inline"><em>x</em><sub>2</sub> = (3,0)</span></span></p></li>
+<li><p><span><strong>Vértice</strong>:<span class="math inline">$\left(
+\frac{5}{2},\frac{-1}{4} \right)$</span></span></p></li>
+<li><p><span><strong>Intercepto</strong>: <span
+class="math inline">(0,6)</span></span><br />
+</p></li>
+</ul>
+<p>O gráfico fica:<br />
+</p>
+<div class="center">
+
+</div>
+</div>
+<div class="example">
+<p>(Caso 2) Determine o gráfico da função <span
+class="math inline"><em>f</em>(<em>x</em>) = <em>x</em><sup>2</sup> − 4<em>x</em> + 4</span></p>
+<p>Essa função é a mesma do Exemplo <a href="#caso2"
+data-reference-type="ref" data-reference="caso2">[caso2]</a>, ou seja,
+as raízes já foram determinadas (<span
+class="math inline"><em>x</em><sub>1</sub> = <em>x</em><sub>2</sub> = 2</span>),
+bem como o valor do <span class="math inline"><em>Δ</em></span> (<span
+class="math inline"> = 0</span>).<br />
+Assim, é necessário determinar o Vértice (V). A determinação do mesmo
+pode ser feita usando:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        x_v &amp;= \frac{-b}{2a} \Rightarrow x_v = \frac{-(-4)}{2 \cdot
+1} = \frac{4}{2}=2 \\
+        y_v &amp;= \frac{-\Delta}{4a} \Rightarrow y_v = \frac{-0}{4
+\cdot 1} = 0 \\
+        
+\end{aligned}$$</span></p>
+</div>
+<p>Portanto, as coordenadas de V são <span
+class="math inline">(2,0)</span>.<br />
+O último passo é verificar o intercepto com o eixo vertical, ou seja,
+determinar o valor de <span
+class="math inline"><em>f</em>(<em>x</em>)</span> quando <span
+class="math inline"><em>x</em> = 0</span>, assim:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        f(x) &amp;= x^2-4x+4 \\
+        x=0 \Rightarrow f(0)&amp;=0^2-4 \cdot 0 +4 \\
+        f(0) &amp;= 4\\
+        
+\end{aligned}$$</span></p>
+</div>
+<p>Unindo as informações:<br />
+</p>
+<ul>
+<li><p><span><strong>Raízes</strong>: <span
+class="math inline"><em>x</em><sub>1</sub> = <em>x</em><sub>2</sub> = (2,0)</span></span></p></li>
+<li><p><span><strong>Vértice</strong>: <span
+class="math inline">(2,0)</span></span></p></li>
+<li><p><span><strong>Intercepto</strong>: <span
+class="math inline">(0,4)</span></span><br />
+</p></li>
+</ul>
+<p>Das informações anteriores, é possível verificar que as raízes (<span
+class="math inline"><em>x</em><sub>1</sub></span> e <span
+class="math inline"><em>x</em><sub>2</sub></span>) têm a mesma
+coordenada que V, ou seja, <span class="math inline">(2,0)</span>. O
+processo, nesse caso, fica um pouco complicado pois, na realidade,
+existem dois pontos apenas: o intercepto e o ponto <span
+class="math inline">(2,0)</span>.<br />
+Para resolver esse problema, deve ser escolhido dois valores para <span
+class="math inline"><em>x</em></span>, calcular suas imagens (<span
+class="math inline"><em>f</em>(<em>x</em>)</span>) e usá-los como
+complemento<a href="#fn2" class="footnote-ref" id="fnref2"
+role="doc-noteref"><sup>2</sup></a>. Assim, escolhendo <span
+class="math inline"><em>x</em><sub>3</sub> = 1</span> e <span
+class="math inline"><em>x</em><sub>4</sub> = 3</span>, tem-se:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        x_3=1 \Rightarrow f(1) &amp;= 1^2-4 \cdot 1 +4 = 1 \\
+        x_4=3 \Rightarrow f(3) &amp;= 3^2-4 \cdot 3 +4 = 1 \\
+        
+\end{aligned}$$</span></p>
+</div>
+<p>É possível chamar essas coordenadas calculadas, de pontos, <span
+class="math inline"><em>A</em></span> e <span
+class="math inline"><em>B</em></span>, sendo assim, <span
+class="math inline"><em>A</em> = (1,1)</span> e <span
+class="math inline"><em>B</em> = (3,1)</span></p>
+<p>Logo, o gráfico fica:<br />
+</p>
+<div class="center">
+
+</div>
+</div>
+<div class="example">
+<p>(Caso 3) Determine o gráfico da função <span
+class="math inline"><em>f</em>(<em>x</em>) = <em>x</em><sup>2</sup> − 6<em>x</em> + 13</span></p>
+<p>Essa função é a mesma do Exemplo <a href="#caso3"
+data-reference-type="ref" data-reference="caso3">[caso3]</a>, ou seja,
+as raízes já foram determinadas (<span
+class="math inline"><em>x</em><sub>1</sub> = 3 − 2<em>i</em></span> e
+<span
+class="math inline"><em>x</em><sub>2</sub> = 3 + 2<em>i</em></span>),
+bem como o valor do <span class="math inline"><em>Δ</em></span> (<span
+class="math inline"> =  − 16</span>).<br />
+A determinação do vértice pode ser feita usando:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        x_v &amp;= \frac{-b}{2a} \Rightarrow x_v = \frac{-(-6)}{2 \cdot
+1} = \frac{6}{2} = 3 \\
+        y_v &amp;= \frac{-\Delta}{4a} \Rightarrow y_v = \frac{-(-16)}{4
+\cdot 1} = \frac{16}{4}=4 \\
+        
+\end{aligned}$$</span></p>
+</div>
+<p>Portanto, as coordenadas do Vértice são <span
+class="math inline">(3,4))</span>.<br />
+O último passo é verificar o intercepto com o eixo vertical, ou seja,
+determinar o valor de <span
+class="math inline"><em>f</em>(<em>x</em>)</span> quando <span
+class="math inline"><em>x</em> = 0</span>, assim:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        f(x) &amp;= x^2-6x+13 \\
+        x=0 \Rightarrow f(0)&amp;=0^2-6 \cdot 0 +13 \\
+        f(0) &amp;= 13
+        
+\end{aligned}$$</span></p>
+</div>
+<p>Unindo as informações:<br />
+</p>
+<ul>
+<li><p><span><strong>Raízes</strong>: <span
+class="math inline"><em>x</em><sub>1</sub> = 3 − 2<em>i</em></span> e
+<span
+class="math inline"><em>x</em><sub>2</sub> = 3 + 2<em>i</em></span></span></p></li>
+<li><p><span><strong>Vértice</strong>: <span
+class="math inline">(3,4)</span></span></p></li>
+<li><p><span><strong>Intercepto</strong>: <span
+class="math inline">(0,13)</span></span><br />
+</p></li>
+</ul>
+<p>Das informações anteriores, é possível verificar que as raízes (<span
+class="math inline"><em>x</em><sub>1</sub></span> e <span
+class="math inline"><em>x</em><sub>2</sub></span>) pertencem aos
+conjunto dos números complexos e não tem representação no plano real. O
+processo, nesse caso, fica um pouco complicado pois, na realidade,
+existem dois pontos apenas: o intercepto e o vértice <span
+class="math inline">(3,4)</span>.<br />
+Para resolver esse problema, deve ser escolhido dois valores para <span
+class="math inline"><em>x</em></span>, calcular suas imagens (<span
+class="math inline"><em>f</em>(<em>x</em>)</span>) e usá-los como
+complemento. Assim, escolhendo <span
+class="math inline"><em>x</em><sub>3</sub> = 2</span> e <span
+class="math inline"><em>x</em><sub>4</sub> = 4</span>, tem-se:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        x_3=2 \Rightarrow f(2) &amp;= 2^2-6 \cdot 2 +13 = 5 \\
+        x_4=4 \Rightarrow f(4) &amp;= 4^2-6 \cdot 4 +13 = 5 \\
+        
+\end{aligned}$$</span></p>
+</div>
+<p>É possível chamar essas coordenadas calculadas, de pontos, <span
+class="math inline"><em>A</em></span> e <span
+class="math inline"><em>B</em></span>, sendo assim, <span
+class="math inline"><em>A</em> = (2,5)</span> e <span
+class="math inline"><em>B</em> = (4,5)</span></p>
+<p>O gráfico fica:<br />
+</p>
+<div class="center">
+
+</div>
+</div>
+<p>Os casos em que o valor de <span
+class="math inline"><em>a</em></span> forem menores que zero, o processo
+é semelhante, no entanto, o resultado será uma parábola com a
+<strong>concavidade para baixo</strong>.</p>
+
+<p><strong>EXERCÍCIOS</strong></p>
+<p>1. Qual a diferença entre Equação e Função?</p>
+</div>
+<div class="exercise">
+<p>2. Resolva a equação \(x^2+4=0 \) considerando os conjuntos:</p>
+<ul>
+<li>\( \mathbb{N} \)</li>
+<li>\( \mathbb{Z} \)</li>
+<li>\( \mathbb{Q} \)</li>
+<li>\( \mathbb{R} \)</li>
+<li>\( \mathbb{C} \)</li>
+</ul>
+
+<p>3. Calcule as raízes das funções abaixo e represente graficamente.</p>
+<ul>
+<li>\( f(x) = 3x-6 \)</li>
+<li>\( g(x) = x^2-5x+6 \)</li>
+<li>\( f(y)=5x-2 \)</li>
+<li>\( f(x)=x^2-4x+4 \)</li>
+<li>\( g(w)=w^2+4 \)</li>
+</ul>
+
+<aside id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Um modo mais fácil de representar no plano é usar a representação decimal assim, as coordenadas do vértice ficará \( A=(2,5;-0,25)\).<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Sugestão: sabendo o \(x_v \), neste
+exemplo \(x_v=2 \), escolhe-se dois valores para \(x\) (\(x_3 \) e \( x_4 \), por exemplo), de modo
+que \( |x_v-x_3|=|x_v-x_4|\).
+Essa escolha baseia-se no fato de que, pelo vértice é possível imaginar
+um <i>eixo de simetria</i>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</aside>
+</main> 
+
+
+
+
+
+
+
+
+
+
+<!-- Aqui termina o código específico da página -->
+<p style="margin-top: 20px; font-size: 14px; color: #555; border-top: 1px solid #ddd; padding-top: 15px;">
+  <strong>Como citar essa página:</strong><br>
+  FUMACHI, E. F. <strong id="citacao-titulo"></strong>. Disponível em: <span id="citacao-url"></span>. Acesso em: <span id="citacao-data"></span>.
+</p>
+
+<hr>
+
+<footer>
+<p align="center">Prof. Dr. Fumachi. &copy; <span id="ano"></span></p>
+</footer>
+
+
+<script>
+  document.getElementById('cabecalho-titulo').innerText = document.title;
+  document.getElementById('citacao-titulo').innerText = document.title;
+  document.getElementById('citacao-url').innerText = window.location.href;
+  const hoje = new Date();
+  const dia = String(hoje.getDate()).padStart(2, '0');
+  const meses = ['jan.', 'fev.', 'mar.', 'abr.', 'mai.', 'jun.', 'jul.', 'ago.', 'set.', 'out.', 'nov.', 'dez.'];
+  const mes = meses[hoje.getMonth()];
+  const anoAtual = hoje.getFullYear();
+  document.getElementById('citacao-data').innerText = `${dia} ${mes} ${anoAtual}.`;
+  document.getElementById('ano').textContent = anoAtual;
+</script>
+
+</body>
+</html>
+

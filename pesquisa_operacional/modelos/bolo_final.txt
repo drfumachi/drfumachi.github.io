@@ -1,0 +1,16 @@
+max: 1.56*x+2*y-64;
+ovo: .375*x+.25*y<=60;
+trigo: 31.25*x+31.25*y<=5000;
+cenoura: 8.75*x<=1000;
+oleo: 15.625*x+15.625*y<=2000;
+acucar:18.75*x+18.75*y<=5000;
+fermento:1.875*x+1.875*y<=500;
+leiteC:24.6875*x+24.6875*y<=3000;
+cremeL:12.5*x+12.5*y<=1800;
+chocolateP:1.25*x+16.875*y<=1000;
+gas:18.75*x+18.75*y<=13000;
+guardanapo: x+y<=120;
+tempoP:0.041875*x+0.041875*y<=6;
+preferencia: x=2y;
+int x;
+int y;

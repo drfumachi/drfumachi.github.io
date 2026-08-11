@@ -42,6 +42,1405 @@
 <hr>
 
 <!-- Aqui começa o código específico da página -->
+ <h2 id="matrizes">Matrizes</h2>
+<p>Uma matriz pode ser definida como uma <em>coleção de elementos</em> e
+cada elemento possui uma posição definida através dos indicadores
+<em>i</em> e <em>j</em>, sendo <em>i</em> o indicador para a linha e
+<em>j</em> o indicador para a coluna. Os valores possíveis para <em>i,
+j</em> são valores naturais<a href="#fn1" class="footnote-ref"
+id="fnref1" role="doc-noteref"><sup>1</sup></a> (<span
+class="math inline"><em>i</em>, <em>j</em> ∈ ℕ = {1, 2, 3, ...}</span>),
+ou inteiros positivos diferente de zero (<span
+class="math inline"><em>i</em>, <em>j</em> ∈ ℤ<sub>+</sub><sup>*</sup> = {1, 2, 3, ...}</span>).
+A representação de um elemento é dada por:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+    a_{ij}
+    
+\end{aligned}$$</span></p>
+</div>
+<p>no caso acima, o elemento possui o nome <em>a</em> com uma posição
+qualquer <em>i , j</em>. Os nomes dos elementos costumam seguir o mesmo
+nome da matriz que os contém, mas em letra minúscula. Assim, se a matriz
+tiver o nome <span class="math inline">𝔸</span> seus elementos serão
+<span
+class="math inline"><em>a</em><sub><em>i</em><em>j</em></sub></span>, se
+a matriz se chamar <span class="math inline">𝔹</span> seus elementos
+serão <span
+class="math inline"><em>b</em><sub><em>i</em><em>j</em></sub></span> e
+assim sucessivamente. Os nomes das matrizes são em letras maiúsculas com
+uma barra dupla em sua construção. Existem, também, os indicadores para
+as matrizes; esses indicadores são chamados de <em>Ordem da matriz</em>,
+ou seja, representa o número de linhas e de colunas. Logo, uma matriz
+chamada A com 2 linhas e 3 colunas é escrita da seguinte forma:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+    \mathbb{A}_{2\mathrm{{x}}3}=\left[\begin{array}{ccc}
+    a_{11} &amp; a_{12} &amp; a_{13}\\
+    a_{21} &amp; a_{22} &amp; a_{23}
+    \end{array}\right]
+    
+\end{aligned}$$</span></p>
+</div>
+<p>Desse modo temos a representação de uma <em>matriz</em> e de todos os
+seus <em>elementos</em>. É possível verificar que o número de elementos
+da matriz é 6. De modo geral, o número de elementos (<span
+class="math inline">#<sub><em>e</em><em>l</em><em>e</em><em>m</em><em>e</em><em>n</em><em>t</em><em>o</em><em>s</em></sub></span>)
+de uma matriz será o resultado da <em>multiplicação</em> do número de
+<em>linhas</em> pelo número de <em>colunas</em>, assim:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+    \#_{elementos}=i\cdot j
+    
+\end{aligned}$$</span></p>
+</div>
+<div class="example">
+<p>Determine o número de elementos da matriz <span
+class="math inline">𝔸<sub>3x5</sub></span>.<br />
+Na matriz do enunciado tem-se <span
+class="math inline"><em>i</em> = 3</span> (linhas) e <span
+class="math inline"><em>j</em> = 5</span> (colunas). Logo, o número de
+elementos dessa matriz será <span
+class="math inline"><em>i</em> ⋅ <em>j</em> = 3 ⋅ 5 = 15 elementos</span></p>
+</div>
+<div class="example">
+<p>Considere a matriz</p>
+<p><span class="math display">$$\begin{aligned}
+    \mathbb{B}_{3\mathrm{x}2} &amp; =\begin{bmatrix}3 &amp; 7\\
+    1 &amp; 6\\
+    10 &amp; 4
+    \end{bmatrix}
+    
+\end{aligned}$$</span></p>
+<p>escreva todos os elementos colocando sua posição corretamente.</p>
+<p>Como o nome da matriz dada é <span class="math inline">𝔹</span>, os
+elementos serão escritos pela letra minúscula do nome da matriz, ou
+seja, os elementos serão <span
+class="math inline"><em>b</em><sub><em>i</em><em>j</em></sub></span>.</p>
+<ul>
+<li><p>O primeiro elemento está na <em>linha</em> 1 e <em>coluna</em> 1,
+então: <span
+class="math inline"><em>b</em><sub>11</sub> = 3</span></p></li>
+<li><p>O segundo elemento está na <em>linha</em> 1 e <em>coluna</em> 2,
+então: <span
+class="math inline"><em>b</em><sub>12</sub> = 7</span></p></li>
+<li><p>O terceiro elemento está na <em>linha</em> 2 e <em>coluna</em> 1,
+então: <span
+class="math inline"><em>b</em><sub>21</sub> = 1</span></p></li>
+<li><p>O quarto elemento está na <em>linha</em> 2 e <em>coluna</em> 2,
+então: <span
+class="math inline"><em>b</em><sub>22</sub> = 6</span></p></li>
+<li><p>O quinto elemento está na <em>linha</em> 3 e <em>coluna</em> 1,
+então: <span
+class="math inline"><em>b</em><sub>31</sub> = 10</span></p></li>
+<li><p>O sexto elemento está na <em>linha</em> 3 e <em>coluna</em> 2,
+então: <span
+class="math inline"><em>b</em><sub>32</sub> = 4</span></p></li>
+</ul>
+</div>
+<p>As representações das matrizes podem ser da seguinte forma,
+ainda:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+    \mathbb{M}_{2}\quad\mathrm{ou}\quad\mathbb{M}_{3}\quad\mathrm{ou\quad\mathbb{M}_{4}\,...}
+    
+\end{aligned}$$</span></p>
+</div>
+<p>Nesse caso, as matrizes são chamadas de <em>matrizes quadradas</em>
+pois elas possuem o número de linhas igual ao número de colunas, ou
+seja, <span class="math inline"><em>i</em> = <em>j</em></span>. O
+primeiro caso é uma matriz quadrada de ordem 2, a segunda é uma matriz
+quadrada de ordem 3, a terceira é uma matriz quadrada de ordem 4, e
+assim sucessivamente.</p>
+<div class="example">
+<p>Matriz de segunda ordem, ou matriz quadrada de ordem 2:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        \mathbb{B}_{2}=\begin{bmatrix}b_{11} &amp; b_{12}\\
+    b_{21} &amp; b_{22}
+    \end{bmatrix}
+    
+\end{aligned}$$</span></p>
+</div>
+</div>
+<div class="example">
+<p>Matriz quadrada de ordem 3:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        \mathbb{B}_{3}=\begin{bmatrix}b_{11} &amp; b_{12} &amp; b_{13}\\
+    b_{21} &amp; b_{22} &amp; b_{23}\\
+    b_{31} &amp; b_{32} &amp; b_{33}
+    \end{bmatrix}
+    
+\end{aligned}$$</span></p>
+</div>
+</div>
+<h2 id="igualdade-entre-matrizes">Igualdade entre matrizes</h2>
+<p>Duas, ou mais, matrizes são iguais quando, nas respectivas posições,
+todos os elementos são iguais.</p>
+<div class="example">
+<p>Considere as matrizes</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        \mathbb{A}_{2\mathrm{x}3}=\begin{bmatrix}1 &amp; 2 &amp; 3\\
+    6 &amp; 5 &amp; 4
+    \end{bmatrix}\,\,\,\,\,\,\,\mathrm{e\,\,\,\,\,\,\,\mathbb{B}_{2\mathrm{x}3}=\begin{bmatrix}1
+&amp; 2 &amp; 3\\
+        6 &amp; 5 &amp; 4
+        \end{bmatrix}}
+    
+\end{aligned}$$</span></p>
+</div>
+<p>As matrizes <span class="math inline">𝔸</span> e <span
+class="math inline">𝔹</span> são iguais, pois <span
+class="math inline"><em>a</em><sub>11</sub> = <em>b</em><sub>11</sub> = 1</span>
+e <span
+class="math inline"><em>a</em><sub>12</sub> = <em>b</em><sub>12</sub> = 2</span>
+e <span
+class="math inline"><em>a</em><sub>13</sub> = <em>b</em><sub>13</sub> = 3</span>
+e <span
+class="math inline"><em>a</em><sub>21</sub> = <em>b</em><sub>21</sub> = 6</span>
+e <span
+class="math inline"><em>a</em><sub>22</sub> = <em>b</em><sub>22</sub> = 5</span>
+e <span
+class="math inline"><em>a</em><sub>23</sub> = <em>b</em><sub>23</sub> = 4</span></p>
+</div>
+<div class="example">
+<p>Considere as matrizes</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        \mathbb{A}_{2\mathrm{x}3}=\begin{bmatrix}1 &amp; 2 &amp; 3\\
+    6 &amp; 5 &amp; 4
+    \end{bmatrix}\,\,\,\,\,\,\,\mathrm{e\,\,\,\,\,\,\mathbb{B}_{2\mathrm{x}3}=\begin{bmatrix}1
+&amp; 2 &amp; 3\\
+        6 &amp; 5 &amp; 2
+        \end{bmatrix}}
+    
+\end{aligned}$$</span></p>
+</div>
+<p>As matrizes <span class="math inline">𝔸</span> e <span
+class="math inline">𝔹</span> NÃO são iguais. Embora <span
+class="math inline"><em>a</em><sub>11</sub> = <em>b</em><sub>11</sub> = 1</span>
+e <span
+class="math inline"><em>a</em><sub>12</sub> = <em>b</em><sub>12</sub> = 2</span>
+e <span
+class="math inline"><em>a</em><sub>13</sub> = <em>b</em><sub>13</sub> = 3</span>
+e <span
+class="math inline"><em>a</em><sub>21</sub> = <em>b</em><sub>21</sub> = 6</span>
+e <span
+class="math inline"><em>a</em><sub>22</sub> = <em>b</em><sub>22</sub> = 5</span>,
+tem-se que <span
+class="math inline"><em>a</em><sub>23</sub> ≠ <em>b</em><sub>23</sub></span></p>
+</div>
+<div class="example">
+<p>Determine os valores de <span class="math inline"><em>x</em></span> e
+<span class="math inline"><em>y</em></span> de modo que as matrizes
+abaixo sejam iguais:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+    \mathbb{A}_{2}=\begin{bmatrix}1 &amp; x+10\\
+    3 &amp; 5
+    \end{bmatrix}\quad\mathrm{e}\quad\mathbb{B}_{2}=\begin{bmatrix}1
+&amp; 25\\
+    y-7 &amp; 5
+    \end{bmatrix}
+    
+\end{aligned}$$</span></p>
+</div>
+<p><br />
+Analisando as matrizes, verifica-se que <span
+class="math inline"><em>a</em><sub>11</sub> = <em>b</em><sub>11</sub> = 1</span>
+e <span
+class="math inline"><em>a</em><sub>22</sub> = <em>b</em><sub>22</sub> = 5</span>.
+O elemento <span
+class="math inline"><em>a</em><sub>12</sub> = <em>x</em> + 10</span> e
+<span class="math inline"><em>b</em><sub>12</sub> = 25</span> devem ser
+iguais, ou seja:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+    a_{12} &amp;= b_{12} \\
+    x+10 &amp;= 25 \\
+    x+10-10 &amp;= 25-10 \\
+    x &amp;= 15 \\
+    
+\end{aligned}$$</span></p>
+</div>
+<p>De modo análogo, o elemento <span
+class="math inline"><em>a</em><sub>21</sub> = 3</span> e <span
+class="math inline"><em>b</em><sub>21</sub> = <em>y</em> − 7</span>
+devem ser iguais, assim:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        a_{21} &amp;=b_{21} \\
+        3 &amp;=y-7 \\
+        3+7 &amp;=y-7+7 \\
+        10 &amp;=y \\
+    
+\end{aligned}$$</span></p>
+</div>
+<p>Substituindo os valores calculados, <span
+class="math inline"><em>x</em></span> e <span
+class="math inline"><em>y</em></span>, tem-se:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        \mathbb{A}_{2} &amp;= \mathbb{B}_{2}\\
+        \begin{bmatrix}1 &amp; 15+10\\
+        3 &amp; 5
+        \end{bmatrix} &amp;= \begin{bmatrix}1 &amp; 25\\
+        10-7 &amp; 5
+        \end{bmatrix}\\
+        \begin{bmatrix}1 &amp; 25\\
+        3 &amp; 5
+        \end{bmatrix} &amp;= \begin{bmatrix}1 &amp; 25\\
+        3 &amp; 5
+        \end{bmatrix}
+    
+\end{aligned}$$</span></p>
+</div>
+</div>
+<h2 id="adição-e-subtração-de-matrizes">Adição e subtração de
+matrizes</h2>
+<p>A adição, ou subtração, de matrizes só podem ser feitas se a(s)
+matriz(es) possuir/possuírem a mesma ordem. Assim, <span
+class="math inline">𝔸<sub><em>i</em>x<em>j</em></sub></span> e <span
+class="math inline">𝔹<sub><em>i</em>x<em>j</em></sub></span> podem ser
+somadas e/ou subtraídas da seguinte maneira:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        \mathbb{A}_{i\mathrm{x}j}\pm\mathbb{B}_{i\mathrm{x}j} &amp; =
+\begin{bmatrix}a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1j}\\
+    a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2j}\\
+    \vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
+    a_{i1} &amp; a_{i2} &amp; \cdots &amp; a_{ij}
+    \end{bmatrix}\pm\begin{bmatrix}b_{11} &amp; b_{12} &amp; \cdots
+&amp; b_{1j}\\
+    b_{21} &amp; b_{22} &amp; \cdots &amp; b_{2j}\\
+    \vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
+    b_{i1} &amp; b_{i2} &amp; \cdots &amp; b_{ij}
+    \end{bmatrix}\\
+    &amp; = \begin{bmatrix}a_{11}\pm b_{11} &amp; a_{12}\pm b_{12} &amp;
+\cdots &amp; a_{1j}\pm b_{1j}\\
+    a_{21}\pm b_{21} &amp; a_{22}\pm b_{22} &amp; \cdots &amp; a_{2j}\pm
+b_{2j}\\
+    \vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
+    a_{i1}\pm b_{i1} &amp; a_{i2}\pm b_{i2} &amp; \cdots &amp; a_{ij}\pm
+b_{ij}
+    \end{bmatrix}
+    
+\end{aligned}$$</span></p>
+</div>
+<div class="example">
+<p>  Considere as matrizes abaixo e efetue a adição entre elas, ou seja,
+<span class="math inline">𝔸 + 𝔹</span></p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+            \mathbb{A}_{2\mathrm{x}3}=\begin{bmatrix}1 &amp; 3 &amp;
+-5\\
+        2 &amp; 6 &amp; 4
+        \end{bmatrix}\qquad\mathrm{e}\qquad\mathbb{B}_{2\mathrm{x}3}=\begin{bmatrix}3
+&amp; 5 &amp; 6\\
+        -2 &amp; 4 &amp; 10
+        \end{bmatrix}
+        
+\end{aligned}$$</span></p>
+</div>
+<p><br />
+Partindo das matrizes dadas, podemos escrever:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        \mathbb{A}_{2\mathrm{x}3}+\mathbb{B}_{2\mathrm{x}3} &amp; =\\
+    \begin{bmatrix}1 &amp; 3 &amp; -5\\
+    2 &amp; 6 &amp; 4
+    \end{bmatrix}+\begin{bmatrix}3 &amp; 5 &amp; 6\\
+    -2 &amp; 4 &amp; 10
+    \end{bmatrix} &amp; =  \begin{bmatrix}1+3 &amp; 3+5 &amp; -5+6\\
+    2+(-2) &amp; 6+4 &amp; 4+10
+    \end{bmatrix}\\
+    &amp; =  \begin{bmatrix}4 &amp; 8 &amp; 1\\
+    0 &amp; 10 &amp; 14
+    \end{bmatrix}
+    
+\end{aligned}$$</span></p>
+</div>
+Multiplicação de um
+escalar por uma matriz</h2>
+<p>Esse tipo de multiplicação pode ser entendido como <em>um número
+multiplicando uma matriz</em>, sendo assim, matematicamente, basta
+multiplicar todos os elementos da matriz pelo número que está
+multiplicando a matriz.</p>
+<p>Nesse momento a notação se faz necessária, pois numa expressão do
+tipo <span class="math inline"><em>x</em> ⋅ <em>y</em></span> não fica
+evidente quem é a matriz e quem é o escalar, ou se são duas matrizes, ou
+se são dois escalares! Então dado um escalar <span
+class="math inline"><em>a</em></span> e uma matriz <span
+class="math inline">𝔸<sub><em>i</em><em>j</em></sub></span> a
+multiplicação pode ser escrita como:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        a\cdot\mathbb{A}_{i\mathrm{x}j} &amp;
+=  a\cdot\begin{bmatrix}a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1j}\\
+    a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2j}\\
+    \vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
+    a_{i1} &amp; a_{i2} &amp; \cdots &amp; a_{ij}
+    \end{bmatrix}\\
+    &amp; =  \begin{bmatrix}a\cdot a_{11} &amp; a\cdot a_{12} &amp;
+\cdots &amp; a\cdot a_{1j}\\
+    a\cdot a_{21} &amp; a\cdot a_{22} &amp; \cdots &amp; a\cdot a_{2j}\\
+    \vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
+    a\cdot a_{i1} &amp; a\cdot a_{i2} &amp; \cdots &amp; a\cdot a_{ij}
+    \end{bmatrix}
+    
+\end{aligned}$$</span></p>
+</div>
+<p>Embora seja um pouco confuso, devido a quantidade de letras “a”, isso
+foi escolhido propositalmente para o entendimento de um conceito: o
+escalar <span class="math inline"><em>a</em></span> é diferente de todos
+os elementos da matriz pois não possui indicadores, ou seja,
+subíndice.</p>
+<div class="example">
+<p>Calcule o valor de <span class="math inline">2 ⋅ 𝔸 + 4 ⋅ 𝔹</span>
+sendo</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+            \mathbb{A}_{2\mathrm{x}3}=\begin{bmatrix}1 &amp; 3 &amp;
+-5\\
+        2 &amp; 6 &amp; 4
+        \end{bmatrix}\qquad\mathrm{e}\qquad\mathbb{B}_{2\mathrm{x}3}=\begin{bmatrix}3
+&amp; 5 &amp; 6\\
+        -2 &amp; 4 &amp; 10
+        \end{bmatrix}
+        
+\end{aligned}$$</span></p>
+</div>
+<p>Para calcular, basta substituir os valores das matrizes, multiplicar
+pelo escalar e somar as matrizes. Mesmo sabendo o procedimento para
+calcular a expressão dada, é importante verificar a ordem das matrizes
+envolvidas na expressão, pois após a multiplicação pelo escalar, haverá
+uma soma e, como visto anteriormente, só é possível somar matrizes se
+elas forem da mesma ordem!</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        2\cdot\mathbb{A}+4\cdot\mathbb{B} &amp; =\\
+        2\cdot\begin{bmatrix}1 &amp; 3 &amp; -5\\
+        2 &amp; 6 &amp; 4
+        \end{bmatrix}+4\cdot\begin{bmatrix}3 &amp; 5 &amp; 6\\
+        -2 &amp; 4 &amp; 10
+        \end{bmatrix} &amp; =  \begin{bmatrix}2\cdot1 &amp; 2\cdot3
+&amp; 2\cdot(-5)\\
+        2\cdot2 &amp; 2\cdot6 &amp; 2\cdot4
+        \end{bmatrix}+\begin{bmatrix}4\cdot3 &amp; 4\cdot5 &amp;
+4\cdot6\\
+        4\cdot(-2) &amp; 4\cdot4 &amp; 4\cdot10
+        \end{bmatrix}\\
+        &amp; =  \begin{bmatrix}2 &amp; 6 &amp; -10\\
+        4 &amp; 12 &amp; 8
+        \end{bmatrix}+\begin{bmatrix}12 &amp; 20 &amp; 24\\
+        -8 &amp; 16 &amp; 40
+        \end{bmatrix}\\
+        &amp; =  \begin{bmatrix}2+12 &amp; 6+20 &amp; -10+24\\
+        4+(-8) &amp; 12+16 &amp; 8+40
+        \end{bmatrix}\\
+        &amp; =  \begin{bmatrix}14 &amp; 26 &amp; 14\\
+        -4 &amp; 28 &amp; 48
+        \end{bmatrix}
+        
+\end{aligned}$$</span></p>
+</div>
+</div>
+<h2 id="multiplicação-entre-matrizes">Multiplicação entre matrizes</h2>
+<p>Nesse momento é necessário fazer uma análise mais criteriosa sobre as
+matrizes. A multiplicação de matrizes NÃO é comutativa, ou seja, <span
+class="math inline">𝔸 ⋅ 𝔹 ≠ 𝔹 ⋅ 𝔸</span>. Outro ponto importante na
+multiplicação entre matrizes é que dada duas matrizes, o número de
+colunas da primeira deve ser igual ao número de linhas da segunda
+matriz. Assim, sejam as matrizes <span
+class="math inline">𝔸<sub><em>i</em>x<em>j</em></sub></span> e <span
+class="math inline">𝔹<sub><em>n</em>x<em>m</em></sub></span>, a
+multiplicação <span class="math inline">𝔸 ⋅ 𝔹</span> existirá se, se
+somente se, <span class="math inline"><em>j</em> = <em>n</em></span> e a
+multiplicação <span class="math inline">𝔹 ⋅ 𝔸</span> existirá se, e
+somente se, <span
+class="math inline"><em>m</em> = <em>i</em></span>.</p>
+<div class="example">
+<p>  Calcule <span class="math inline">𝔸 ⋅ 𝔹</span> para as matrizes
+abaixo:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+            \mathbb{A}_{1\mathrm{x}3}=\begin{bmatrix}1 &amp; 2 &amp;
+3\end{bmatrix}\quad\mathrm{e}\quad\mathbb{B}_{3\mathrm{x}2}=\begin{bmatrix}3
+&amp; 4\\
+        2 &amp; 6\\
+        5 &amp; 8
+        \end{bmatrix}
+        
+\end{aligned}$$</span></p>
+</div>
+<p>A primeira matriz é a matriz <span class="math inline">𝔸</span> e a
+segunda matriz é a <span class="math inline">𝔹</span>. Analisando o
+número de linhas da primeira matriz e o número de colunas da segunda
+matriz, verifica-se que são iguais a 3, logo, existe a multiplicação
+proposta no enunciado. Calculando-a:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        \mathbb{A}_{1\mathrm{x}3}\cdot\mathbb{B}_{3\mathrm{x}2} &amp;
+=\\
+        \begin{bmatrix}1 &amp; 2 &amp;
+3\end{bmatrix}\cdot\begin{bmatrix}3 &amp; 4\\
+        2 &amp; 6\\
+        5 &amp; 8
+        \end{bmatrix} &amp; =  \begin{bmatrix}1\cdot3+2\cdot2+3\cdot5
+&amp; 1\cdot4+2\cdot6+3\cdot8\end{bmatrix}\\
+        &amp; =  \begin{bmatrix}3+4+15 &amp; 4+12+24\end{bmatrix}\\
+        &amp; =  \begin{bmatrix}22 &amp; 40\end{bmatrix}_{1\mathrm{x}2}
+        
+\end{aligned}$$</span></p>
+</div>
+<p>é possível verificar que a matriz resultante possui a ordem <span
+class="math inline">1x2</span> que é, exatamente, o número de linhas da
+primeira matriz e o número de colunas da segunda matriz.</p>
+ <span class="math inline">𝕄 ⋅ ℕ</span>
+sendo</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+            \mathbb{M}_{2}=\begin{bmatrix}-3 &amp; 6\\
+        2 &amp; 7
+        \end{bmatrix}\quad\mathrm{e}\quad\mathbb{N}_{2}=\begin{bmatrix}2
+&amp; -1\\
+        4 &amp; 3
+        \end{bmatrix}
+        
+\end{aligned}$$</span></p>
+</div>
+<p>Como as matrizes são quadradas de ordem 2, é possível a multiplicação
+proposta no enunciado, logo</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        \mathbb{M}\cdot\mathbb{N} &amp; =  \begin{bmatrix}-3 &amp; 6\\
+        2 &amp; 7
+        \end{bmatrix}\cdot\begin{bmatrix}2 &amp; -1\\
+        4 &amp; 3
+        \end{bmatrix}\\
+        &amp; = \begin{bmatrix}(-3)\cdot2+6\cdot4 &amp;
+(-3)\cdot(-1)+6\cdot3\\
+        2\cdot2+7\cdot4 &amp; 2\cdot(-1)+7\cdot3
+        \end{bmatrix}\\
+        &amp; =  \begin{bmatrix}-6+24 &amp; 3+18\\
+        4+28 &amp; -2+21
+        \end{bmatrix}\\
+        &amp; =  \begin{bmatrix}18 &amp; 21\\
+        32 &amp; 19
+        \end{bmatrix}
+        
+\end{aligned}$$</span></p>
+</div>
+<p>é possível verificar que a ordem resultante da multiplicação entre
+matrizes quadradas é, também, uma matriz quadrada com a mesma ordem.
+Outro ponto a se notar é que foi omitido o índice de ordem das matrizes
+na resolução pois, como são matrizes quadradas, não se faz
+necessário.</p>
+Tipos de matrizes</h2>
+<ul>
+<li><p><em><strong>Matriz Linha</strong></em>: é a matriz que possui
+somente uma linha. É conhecida, também, como <em>vetor linha</em> ou
+apenas <em><strong>vetor</strong></em>;</p></li>
+<li><p><em><strong>Matriz Coluna</strong></em>: é a matriz que possui
+apenas uma coluna e também é conhecida como <em>vetor
+coluna</em>;</p></li>
+<li><p><em><strong>Matriz Quadrada</strong></em>: como visto
+anteriormente, a matriz quadrada é aquela em que o número de linhas é
+igual ao número de colunas;</p>
+<ul>
+<li><p><em>Diagonal Principal</em>: a diagonal principal de uma matriz
+quadrada é aquela em que os elementos possuem os indicadores iguais, ou
+seja, <span
+class="math inline"><em>i</em> = <em>j</em> ⇒ <em>a</em><sub><em>i</em><em>i</em></sub></span>;</p></li>
+<li><p><em>Diagonal Secundária</em>: é a diagonal formada pelos
+elementos <span
+class="math inline"><em>a</em><sub><em>i</em><em>j</em></sub></span> de
+modo que <span
+class="math inline"><em>i</em> + <em>j</em> = ordem + 1</span>.</p></li>
+<li><p><em>Triangular Superior</em>: matriz onde os elementos
+<strong>acima</strong> da diagonal principal e os da diagonal principal
+são diferentes de zero, isto é, <span
+class="math inline"><em>a</em><sub><em>i</em><em>j</em></sub> = 0 , <em>i</em> &gt; <em>j</em></span>;</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+                    \begin{bmatrix}1 &amp; 2 &amp; 3\\
+            0 &amp; 5 &amp; 1\\
+            0 &amp; 0 &amp; 2
+            \end{bmatrix}
+            
+\end{aligned}$$</span></p>
+</div></li>
+<li><p><em>Triangular Inferior</em>: matriz onde os elementos
+<strong>abaixo</strong> da diagonal principal e os da diagonal principal
+são diferentes de zero, isto é, <span
+class="math inline"><em>a</em><sub><em>i</em><em>j</em></sub> = 0 , <em>i</em> &lt; <em>j</em></span></p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+            \begin{bmatrix}1 &amp; 0 &amp; 0\\
+            2 &amp; 5 &amp; 0\\
+            4 &amp; 6 &amp; 2
+            \end{bmatrix}
+            
+\end{aligned}$$</span></p>
+</div></li>
+<li><p><em>Diagonal</em>: matriz onde os elementos da diagonal principal
+são diferentes de zero, isto é, <span
+class="math inline"><em>a</em><sub><em>i</em><em>j</em></sub> ≠ 0 , <em>i</em> = <em>j</em></span>.</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+            \begin{bmatrix}1 &amp; 0 &amp; 0\\
+            0 &amp; 5 &amp; 0\\
+            0 &amp; 0 &amp; 2
+            \end{bmatrix}
+            
+\end{aligned}$$</span></p>
+</div></li>
+<li><p><em>Identidade</em>: matriz onde todos os elementos da diagonal
+principal são iguais a 1, ou seja, <span
+class="math inline"><em>a</em><sub><em>i</em><em>j</em></sub> = 1 , <em>i</em> = <em>j</em></span>.
+Essa matriz recebe uma representação peculiar, <span
+class="math inline">𝕀<sub><em>n</em></sub></span> ou apenas <span
+class="math inline">𝕀</span></p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+            \begin{bmatrix}1 &amp; 0 &amp; 0\\
+            0 &amp; 1 &amp; 0\\
+            0 &amp; 0 &amp; 1
+            \end{bmatrix}
+            
+\end{aligned}$$</span></p>
+</div></li>
+</ul></li>
+<li><p><em><strong>Matriz Oposta</strong></em>: dada uma matriz <span
+class="math inline">𝔸</span> e uma matriz <span
+class="math inline">𝔹</span>, é possível dizer que a matriz <span
+class="math inline">𝔹</span> é oposta a matriz <span
+class="math inline">𝔸</span> se todos os elementos de <span
+class="math inline">𝔹</span> forem os elementos simétricos de <span
+class="math inline">𝔸</span></p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        \mathbb{A}=\begin{bmatrix}1 &amp; 10 &amp; -7\\
+        2 &amp; -1 &amp; -8\\
+        3 &amp; 5 &amp; 9
+        \end{bmatrix}\quad\Rightarrow\quad\mathbb{B}=\begin{bmatrix}-1
+&amp; -10 &amp; 7\\
+        -2 &amp; 1 &amp; 8\\
+        -3 &amp; -5 &amp; -9
+        \end{bmatrix}
+        
+\end{aligned}$$</span></p>
+</div></li>
+<li><p><em><strong>Matriz Transposta</strong></em>: dada uma matriz
+<span class="math inline">𝔸</span>, a sua transposta, ou seja, <span
+class="math inline">𝔸<sup><em>t</em></sup></span> terá as suas colunas
+formadas pelas linhas de <span class="math inline">𝔸</span>. Vale
+ressaltar que <span
+class="math inline">(𝔸<sup><em>t</em></sup>)<sup><em>t</em></sup> = 𝔸</span></p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        \mathbb{A}=\begin{bmatrix}1 &amp; 2 &amp; 3\\
+        9 &amp; 8 &amp; 7
+        \end{bmatrix}\Rightarrow\mathbb{A}^{t}=\begin{bmatrix}1 &amp;
+9\\
+        2 &amp; 8\\
+        3 &amp; 7
+        \end{bmatrix}
+        
+\end{aligned}$$</span></p>
+</div></li>
+<li><p><em><strong>Matriz Simétrica</strong></em>: dada uma matriz <span
+class="math inline">𝔸</span>, é possível dizer que <span
+class="math inline">𝔸</span> é simétrica se <span
+class="math inline">𝔸 = 𝔸<sup><em>t</em></sup></span>.</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        \mathbb{A}=\begin{bmatrix}1 &amp; 2 &amp; 3\\
+        2 &amp; -1 &amp; 5\\
+        3 &amp; 5 &amp; 9
+        \end{bmatrix}\quad\Rightarrow\quad\mathbb{A}^{t}=\begin{bmatrix}1
+&amp; 2 &amp; 3\\
+        2 &amp; -1 &amp; 5\\
+        3 &amp; 5 &amp; 9
+        \end{bmatrix}=\mathbb{A}
+        
+\end{aligned}$$</span></p>
+</div></li>
+<li><p><em><strong>Matriz Antissimétrica</strong></em>: dada uma matriz
+<span class="math inline">𝔸</span>, é possível dizer que <span
+class="math inline">𝔸</span> é antissimétrica se <span
+class="math inline"> − 𝔸 = 𝔸<sup><em>t</em></sup></span>. Aqui, se faz
+necessário mais uma observação: necessariamente <span
+class="math inline"><em>a</em><sub><em>i</em><em>j</em></sub> = 0, <em>i</em> = <em>j</em></span>.</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        \mathbb{A}=\begin{bmatrix}0 &amp; 2 &amp; -3\\
+        -2 &amp; 0 &amp; -5\\
+        3 &amp; 5 &amp; 0
+        \end{bmatrix}\quad\Rightarrow\quad\mathbb{A}^{t}=\begin{bmatrix}0
+&amp; -2 &amp; 3\\
+        2 &amp; 0 &amp; 5\\
+        -3 &amp; -5 &amp; 0
+        \end{bmatrix}=-\mathbb{A}
+        
+\end{aligned}$$</span></p>
+</div></li>
+<li><p><em><strong>Matriz Nula</strong></em>: é uma matriz onde todos os
+elementos são iguais a <span class="math inline">0</span> (zero).</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        \mathbf{0}_{2\mathrm{x}4}=\begin{bmatrix}0 &amp; 0 &amp; 0 &amp;
+0\\
+        0 &amp; 0 &amp; 0 &amp; 0
+        \end{bmatrix},\quad\mathbf{0}_{2}=\begin{bmatrix}0 &amp; 0\\
+        0 &amp; 0
+        \end{bmatrix},\quad\mathbf{0}_{3}=\begin{bmatrix}0 &amp; 0 &amp;
+0\\
+        0 &amp; 0 &amp; 0\\
+        0 &amp; 0 &amp; 0
+        \end{bmatrix}
+        
+\end{aligned}$$</span></p>
+</div></li>
+<li><p><em><strong>Matriz Ortogonal</strong></em>: dada uma matriz <span
+class="math inline">𝔸</span>, <em>inversível</em>, ela será ortogonal se
+obedecer <span
+class="math inline">𝔸<sup><em>t</em></sup> = 𝔸<sup>−1</sup></span>.<a
+href="#fn2" class="footnote-ref" id="fnref2"
+role="doc-noteref"><sup>2</sup></a></p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        \mathbb{A}=\begin{bmatrix}\frac{1}{2} &amp;
+-\frac{\sqrt{3}}{2}\\
+        \frac{\sqrt{3}}{2} &amp; \frac{1}{2}
+        \end{bmatrix}\quad\mathbb{A}^{t}=\begin{bmatrix}\frac{1}{2}
+&amp; \frac{\sqrt{3}}{2}\\
+        -\frac{\sqrt{3}}{2} &amp; \frac{1}{2}
+        \end{bmatrix}\Rightarrow\mathbb{A}\cdot\mathbb{A}^{t}=\begin{bmatrix}1
+&amp; 0\\
+        0 &amp; 1
+        \end{bmatrix}
+        
+\end{aligned}$$</span></p>
+</div></li>
+</ul>
+<aside id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>O autor considera números naturais os positivos
+diferentes de zero pois, <em>naturalmente</em>, não dizemos <em>"Tenho
+ZERO Ferrari"</em> para expressar a ideia de que <em>"NÃO TENHO uma
+Ferrari"</em>.<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Será visto mais adiante como calcular a inversa de uma
+matriz, no entanto, a ideia é partir de uma equação matricial. Dadas as
+matrizes <span class="math inline">𝔸, 𝕏</span> e a matriz identidade
+<span class="math inline">𝕀</span>. A equação base é <span
+class="math inline">𝔸 ⋅ 𝕏 = 𝕀</span> e o objetivo é determinar a matriz
+<span class="math inline">𝕏</span>. O leitor habituado com os métodos
+tradicionais poderia imaginar que para resolver essa equação bastaria
+<em>passar a matriz <span class="math inline">𝔸</span> dividindo</em>,
+no entanto, não existe divisão de matrizes, muito menos <em>passa para
+lá</em>. O correto é determinar uma matriz de modo que a multiplicação
+dela por sua inversa, resulte no elemento neutro da multiplicação entre
+matrizes; o elemento neutro da multiplicação entre matrizes é a matriz
+identidade!<a href="#fnref2" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+</ol>
+</aside>     
+
+ <h2 id="determinantes-1">Determinantes</h2>
+<h3 id="ordem-2">Ordem 2</h3>
+<p>Os determinantes de matrizes de ordem 2 podem ser calculadas como
+segue. Considere a matriz <span class="math inline">𝔸</span></p>
+<p><span class="math display">$$\mathbb{A}=\begin{bmatrix}a_{11} &amp;
+a_{12}\\
+a_{21} &amp; a_{22}
+\end{bmatrix}\Rightarrow\mathrm{det(\mathbb{A})}=\overbrace{a_{11}\cdot
+a_{22}}^{\mathrm{diagonal\:principal}}-\underbrace{a_{12}\cdot
+a_{21}}_{\mathrm{diagonal\:secund\acute{a}ria}}$$</span></p>
+<div class="example">
+<p>  Calcule o determinante de <span
+class="math inline">$\mathbb{A}=\begin{bmatrix}1 &amp; 2\\
+    3 &amp; 4
+    \end{bmatrix}$</span></p>
+<p>O determinante pode ser calculado usando o exposto acima, assim:</p>
+<p><span class="math display">$$\mathbb{A}=\begin{bmatrix}1 &amp; 2\\
+    3 &amp; 4
+    \end{bmatrix}\Rightarrow\mathrm{det(\mathbb{A})}=1\cdot4-2\cdot3=4-6=-2$$</span></p>
+
+</div>
+<div class="example">
+<p>  Calcule o determinante de <span
+class="math inline">$\mathbb{B}=\begin{bmatrix}-1 &amp; -2\\
+    -7 &amp; 4
+    \end{bmatrix}$</span></p>
+<p>De modo análogo ao exemplo anterior, tem-se:</p>
+<p><span class="math display">$$\mathbb{B}=\begin{bmatrix}-1 &amp; -2\\
+    -7 &amp; 4
+    \end{bmatrix}\Rightarrow\mathrm{det(\mathbb{B})}=(-1)\cdot4-(-2)\cdot(-7)=-4-(+14)=-4-14=-18$$</span></p>
+
+</div>
+<h3 id="ordem-3">Ordem 3</h3>
+<p>Considere uma matriz de ordem 3. O cálculo do determinante será:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+    \mathbb{A}=\begin{bmatrix}a_{11} &amp; a_{12} &amp; a_{13}\\
+    a_{21} &amp; a_{22} &amp; a_{23}\\
+    a_{31} &amp; a_{32} &amp; a_{33}
+    \end{bmatrix}\Rightarrow
+    \begin{split}
+    \mathrm{det(\mathbb{A})}&amp;=\overbrace{a_{11}\cdot a_{22}\cdot
+a_{33}+a_{12}\cdot a_{23}\cdot a_{31}+a_{13}\cdot a_{21}\cdot
+a_{32}}^{\mathrm{diagonais\,\,\,principais}}\\
+    &amp; \quad \underbrace{-a_{13}\cdot a_{22}\cdot a_{31}-a_{11}\cdot
+a_{23}\cdot a_{32}-a_{12}\cdot a_{21}\cdot
+a_{33}}_{\mathrm{diagonais\,\,\,secund\acute{a}rias}}
+    \end{split}
+    
+\end{aligned}$$</span></p>
+</div>
+<p>Torna-se um pouco complicado calcular o determinante através da
+memorização da relação acima, um modo, repetitivo, mais fácil será visto
+no exemplo a seguir.</p>
+<div class="example">
+<p>  Calcule o determinante da matriz <span
+class="math inline">$\mathbb{A}=\begin{bmatrix}1 &amp; 2 &amp; 3\\
+    4 &amp; 5 &amp; 6\\
+    2 &amp; 1 &amp; 3
+    \end{bmatrix}$</span></p>
+<p>Para resolver, basta copiar as duas primeiras colunas, após a matriz,
+e seguir um processo análogo ao cálculo do determinante das matrizes de
+ordem 2, multiplicando as <em>"diagonais principais"</em> e
+<strong>subtraindo</strong> a multiplicação das <em>"diagonais
+secundárias"</em>. Essa técnica é conhecida como <em>Regra de
+Sarrus</em>!</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        \mathbb{A}=\begin{bmatrix}{\color{red}1} &amp; {\color{violet}2}
+&amp; 3\\
+        {\color{red}4} &amp; {\color{violet}5} &amp; 6\\
+        {\color{red}2} &amp; {\color{violet}1} &amp; 3
+        \end{bmatrix}\begin{array}{cc}
+        {\color{red}1} &amp; {\color{violet}2}\\
+        {\color{red}4} &amp; {\color{violet}5}\\
+        {\color{red}2} &amp; {\color{violet}1}
+        \end{array}\Rightarrow\mathrm{det(\mathbb{A})} &amp;
+=  \overbrace{1\cdot5\cdot3+2\cdot6\cdot2+3\cdot4\cdot1}^{\mathrm{diagonais\:principais}}-\underbrace{(3\cdot5\cdot2+1\cdot6\cdot1+2\cdot4\cdot3)}_{\mathrm{diagonais\:secund\acute{a}rias}}\\
+        &amp; =  15+24+12-(30+6+24)\\
+        &amp; =  51-60\\
+        &amp; =  -9
+        
+\end{aligned}$$</span></p>
+</div>
+
+</div>
+<h3 id="ordem-superior-a-3">Ordem superior a 3</h3>
+<div class="theorem">
+<p>O determinante de uma matriz é igual a soma dos produtos dos
+elementos de qualquer linha ou coluna pelos respectivos complementos
+algébricos. <span
+class="math display">$$\mathrm{det(\mathbb{A})}=\sum_{j=1}^{^{n}}(-1)^{i+j}\cdot
+a_{ij}\cdot\mathrm{det(\mathbb{A}_{-i-j})}$$</span> sendo:</p>
+<ul>
+<li><p><span class="math inline"><em>n</em></span> a ordem da
+matriz;</p></li>
+<li><p><span class="math inline"><em>i</em> e <em>j</em></span> são os
+índices que representam a linha e coluna, respectivamente;</p></li>
+<li><p><span
+class="math inline"><em>a</em><sub><em>i</em><em>j</em></sub></span> é o
+elemento da <em>i-ésima</em> linha e <em>j-ésima</em> coluna;</p></li>
+<li><p><span
+class="math inline">det(𝔸<sub>−<em>i</em> − <em>j</em></sub>)</span> é o
+determinante da matriz formada pela <strong>remoção</strong> da
+<em>linha i</em> e <em>coluna j</em>.</p></li>
+</ul>
+</div>
+<p>O teorema anterior é o Teorema de Laplace que estabelece um modo de
+calcular os determinantes de matrizes de ordem <span
+class="math inline"><em>n</em></span>. Note que a aplicação desse
+teorema serve, também, para matrizes de ordem 2 ou 3.</p>
+<div class="example">
+<p>  Calcule o determinante da matriz <span
+class="math inline">$\mathbb{A}=\begin{bmatrix}1 &amp; 2 &amp; 3\\
+    4 &amp; 5 &amp; 6\\
+    2 &amp; 1 &amp; 3
+    \end{bmatrix}$</span></p>
+<p>A matriz é de ordem 3 (<span
+class="math inline"><em>n</em> = 3</span>). Inicialmente é necessário
+escolher uma linha qualquer da matriz. Suponha a escolha da linha 1
+(<span class="math inline"><em>i</em> = 1</span>). A linha 1 possui os
+elementos <span
+class="math inline"><em>a</em><sub>11</sub>, <em>a</em><sub>12</sub> e <em>a</em><sub>13</sub></span>.
+Assim o determinante ficará:</p>
+<p><span class="math display">$$\begin{aligned}
+        \begin{split}
+        \mathrm{det(\mathbb{A})} &amp; = \sum_{j=1}^{n}(-1)^{i+j}\cdot
+a_{ij}\cdot\mathrm{det(\mathbb{A}_{-i-j})}\\
+        &amp; =  \sum_{j=1}^{3}(-1)^{1+j}\cdot
+a_{1j}\cdot\mathrm{det(\mathbb{A}_{-1-j})}\\
+        &amp; =  (-1)^{1+1}\cdot
+a_{11}\cdot\mathrm{det}(\begin{bmatrix}a_{22} &amp; a_{23}\\
+            a_{32} &amp; a_{33}
+        \end{bmatrix})+(-1)^{1+2}\cdot
+a_{12}\cdot\mathrm{det}(\begin{bmatrix}a_{21} &amp; a_{23}\\
+            a_{31} &amp; a_{33}
+        \end{bmatrix})\\
+    &amp; \quad+(-1)^{1+3}\cdot
+a_{13}\cdot\mathrm{det}(\begin{bmatrix}a_{21} &amp; a_{22}\\
+            a_{31} &amp; a_{32}
+        \end{bmatrix})\\
+        &amp; =  (-1)^{2}\cdot1\cdot\mathrm{det}(\begin{bmatrix}5 &amp;
+6\\
+            1 &amp; 3
+        \end{bmatrix})+(-1)^{3}\cdot2\cdot\mathrm{det}(\begin{bmatrix}4
+&amp; 6\\
+            2 &amp; 3
+        \end{bmatrix})\\
+    &amp; \quad+(-1)^{4}\cdot3\cdot\mathrm{det}(\begin{bmatrix}4 &amp;
+5\\
+            2 &amp; 1
+        \end{bmatrix})\\
+        &amp;
+=  1\cdot1\cdot(5\cdot3-6\cdot1)-1\cdot2\cdot(4\cdot3-6\cdot2)+1\cdot3\cdot(4\cdot1-5\cdot2)\\
+        &amp; =  1\cdot(15-6)-2\cdot(12-12)+3\cdot(4-10)\\
+        &amp; =  1\cdot9-2\cdot0+3\cdot(-6)\\
+        &amp; =  9-0-18\\
+        &amp; =  9-18\\
+        &amp; =  -9
+        \end{split}
+    
+\end{aligned}$$</span></p>
+
+</div>
+<p>O resultado obtido é o mesmo calculado utilizando a <em>regra de
+Sarrus</em> para matrizes de ordem 3. Comparando os dois exemplos, o
+leitor concluirá (facilmente!) que é muito simples, e rápido, calcular o
+determinante pela regra mencionada. No entanto, a regra de Sarrus pode
+ser utilizada para matrizes de ordem 3, ou seja, para matrizes de ordem
+maior (4, 5, 6, ...) o método é o utilizado nesta seção<a href="#fn1"
+class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a>.</p>
+<h3 id="regra-do-cadarço-fórmula-de-gauss">Regra do Cadarço (Fórmula de
+Gauss)</h3>
+<p>Embora esta seção esteja dentro do capítulo sobre
+<em>Determinantes</em> a <em>Regra do Cadarço</em> é um método para
+calcular áreas (<em>Fórmula de Gauss para cálculo de área</em>). NÃO se
+trata de determinantes de matrizes NÃO QUADRADAS. Os Determinantes são
+exclusivos das matrizes quadradas.</p>
+<p>A fórmula pode ser representada por:</p>
+<p><span class="math display">$$\mathrm{A}=\frac{1}{2}\cdot|(x_{n}\cdot
+y_{1}-x_{1}\cdot y_{n})+\sum_{i=1}^{n-1}(x_{i}\cdot y_{i+1}-x_{i+1}\cdot
+y_{i})|$$</span></p>
+<p>sendo:</p>
+<ul>
+<li><p><span class="math inline"><em>n</em></span> o número de vértices
+do polígono;</p></li>
+<li><p><span class="math inline"><em>A</em></span> a área do
+polígono;</p></li>
+<li><p><span
+class="math inline">(<em>x</em><sub><em>i</em></sub>,<em>y</em><sub><em>i</em></sub>),    <em>i</em> ∈ 1, 2, …, <em>n</em></span>
+as coordenadas dos vértices.</p></li>
+</ul>
+<div class="example">
+<p>  Calcule a área da figura formada pelos pontos <span
+class="math inline">(0,0), (2,0), (2,2) e (0,2)</span></p>
+<p>Os pontos do enunciado formam um quadrado de lado 2, desse modo, a
+área resultante deverá ser igual a 4, pois <span
+class="math inline">2 ⋅ 2 = 4</span>. Para aplicar a Regra do Cadarço é
+necessário definir:</p>
+<ul>
+<li><p><span class="math inline"><em>n</em> = 4</span> pois existem 4
+pontos!;</p></li>
+<li><p><span
+class="math inline"><em>P</em><sub>1</sub> : (0,0) ⇒ <em>x</em><sub>1</sub> = 0 e y<sub>1</sub> = 0</span>;</p></li>
+<li><p><span
+class="math inline"><em>P</em><sub>2</sub> : (2,0) ⇒ <em>x</em><sub>2</sub> = 2 e y<sub>2</sub> = 0</span>;</p></li>
+<li><p><span
+class="math inline"><em>P</em><sub>3</sub> : (2,2) ⇒ <em>x</em><sub>3</sub> = 2 e y<sub>3</sub> = 2</span>;</p></li>
+<li><p><span
+class="math inline"><em>P</em><sub>4</sub> : (0,2) ⇒ <em>x</em><sub>4</sub> = 0 e y<sub>4</sub> = 2</span>.</p></li>
+</ul>
+<p>Substituindo na Fórmula:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+    \mathrm{A} &amp; = \frac{1}{2}\cdot|(x_{n}\cdot y_{1}-x_{1}\cdot
+y_{n})+\sum_{i=1}^{n-1}(x_{i}\cdot y_{i+1}-x_{i+1}\cdot y_{i})|\\
+    &amp; = \frac{1}{2}\cdot|(x_{4}\cdot y_{1}-x_{1}\cdot
+y_{4})+\sum_{i=1}^{4-1}(x_{i}\cdot y_{i+1}-x_{i+1}\cdot y_{i})|\\
+    &amp; = \frac{1}{2}\cdot|(x_{4}\cdot y_{1}-x_{1}\cdot
+y_{4})+\sum_{i=1}^{3}(x_{i}\cdot y_{i+1}-x_{i+1}\cdot y_{i})|\\
+    &amp; = \frac{1}{2}\cdot|(x_{4}\cdot y_{1}-x_{1}\cdot
+y_{4})+(x_{1}\cdot y_{2}-x_{2}\cdot y_{1})+(x_{2}\cdot y_{3}-x_{3}\cdot
+y_{2})+(x_{3}\cdot y_{4}-x_{4}\cdot y_{3})|\\
+    &amp;
+=  \frac{1}{2}\cdot|(0\cdot0-0\cdot2)+(0\cdot0-2\cdot0)+(2\cdot2-2\cdot0)+(2\cdot2-0\cdot2)|\\
+    &amp; = \frac{1}{2}\cdot|(0-0)+(0-0)+(4-0)+(4-0)|\\
+    &amp; = \frac{1}{2}\cdot|8|\\
+    &amp; = \frac{8}{2}\\
+    &amp; = 4
+    
+\end{aligned}$$</span></p>
+</div>
+
+</div>
+<p>Embora seja muito mais fácil calcular a área do quadrado utilizando a
+relação de multiplicação entre os lados, a Regra do Cadarço serve para
+calcular a área de qualquer polígono bastando conhecer seus vértices,
+apenas.</p>
+<aside id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Existem outros métodos e não serão abordados neste
+material. O leitor pode facilmente encontrar fazendo buscas na internet
+e em livros.<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+</ol>
+</aside>  
+
+ <h2>Sistemas de Equações Lineares</h2>
+<p>Para iniciar o capítulo é importante definir alguns pontos. O leitor nesse momento pode lembrar, da disciplina Matemática, que <em>funções lineares</em> são aquelas que resultam em um gráfico no formato de reta, costumeiramente chamadas de <em>linha</em>. Vendo o exemplo abaixo é possível retomar, rapidamente, o gráfico de uma função linear.</p>
+<div>
+<p>Construa o gráfico da função \(f(x)=2x+1 \).</p>
+<p>Analisando a função dada, é possível definir algumas coisas através da comparação com a definição geral de funções lineares:</p>
+<p>\[\begin{aligned}
+        f(x) &=  a\cdot x+b\quad\mathrm{Definição\,\,geral}\\
+        f(x) &=  2\cdot x+1\quad\mathrm{Função\,\,do\,\,enunciado}
+    \end{aligned} \]
+</p>
+<p>Onde,</p>
+<ul>
+    <li>\( x \): variável independente;</li>
+    <li>\( f(x) \): variável dependente;</li>
+    <li>\( f \): nome da função;</li>
+    <li>\( a \): coeficiente angular. Define o ângulo entre a reta (função) e o <em>eixo das abscissas</em>, também chamado de <em>eixo horizontal</em> ou, “popularmente”, <em>eixo x</em> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Se \( a \gt 0 \) a função é crescente; se \( a \lt 0 \) a função é decrescente; \( a=0 \) a função é constante;
+    </li>
+    <li>\( b \): coeficiente linear.</li>
+</ul>
+
+
+<p>- <span class="math inline"><em>b</em></span>: coeficiente linear. É
+o valor que , ou<em>"corta"</em> o <em>eixo das ordenadas</em>,
+conhecido também como <em>eixo vertical</em>, ou ainda como <em>eixo
+y</em> <a href="#fn2" class="footnote-ref" id="fnref2"
+role="doc-noteref"><sup>2</sup></a>.</p>
+<p>Desse modo para fazer o gráfico é necessário apenas dois pontos, ou
+seja, dois <em>pares ordenados</em> <span
+class="math inline">(<em>x</em>,<em>f</em>(<em>x</em>))</span>. Um
+desses pares pode ser obtido através do coeficiente linear, ou seja, se
+a função intercepta o eixo das ordenadas no valor 1 (<span
+class="math inline"><em>b</em> = 1</span>), necessariamente, <span
+class="math inline"><em>x</em> = 0</span>, assim <span
+class="math inline">(0,1)</span> é um ponto (ponto vermelho). A
+determinação de outro ponto pode ser atribuindo um valor, diferente de
+zero, para a variável independente e calcular seu correspondente.
+Atribuindo <span class="math inline"><em>x</em> = 1</span> tem-se <span
+class="math inline"><em>f</em>(1) = 2 ⋅ 1 + 1 ⇒ <em>f</em>(1) = 3</span>
+logo, o segundo ponto (ponto preto) será <span
+class="math inline">(1,3)</span>. Unindo esses dois pontos e traçando
+uma reta é possível obter o gráfico abaixo:</p>
+<figure id="fig:funcao_linear">
+<div class="center">
+
+</div>
+<figcaption>Gráfico de uma função linear</figcaption>
+</figure>
+
+</div>
+<p>Como pode ser visto na Figura <a href="#fig:funcao_linear"
+data-reference-type="ref" data-reference="fig:funcao_linear">1.1</a>, o
+gráfico da função do exemplo anterior é uma reta pois os expoentes das
+variáveis, independente e dependente são iguais a 1. A função do exemplo
+anterior pode ser reescrita para a forma:</p>
+<p><span class="math display"><em>y</em> − 2<em>x</em> = 1</span></p>
+<p>A forma como a função foi reescrita pode ser entendida como uma
+<em>equação linear</em>. De modo geral sobre <em>Equações Lineares</em>
+são equações do tipo:</p>
+<p><span
+class="math display"><em>a</em><sub>1</sub><em>x</em><sub>1</sub> + <em>a</em><sub>2</sub><em>x</em><sub>2</sub> + <em>a</em><sub>3</sub><em>x</em><sub>3</sub> + ⋯ + <em>a</em><sub><em>n</em></sub><em>x</em><sub><em>n</em></sub> = <em>b</em></span></p>
+<p>onde <span
+class="math inline"><em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>, <em>a</em><sub>3</sub>, …, <em>a</em><sub><em>n</em></sub></span>
+são os coeficientes, <span
+class="math inline"><em>x</em><sub>1</sub>, <em>x</em><sub>2</sub>, <em>x</em><sub>3</sub>, …, <em>x</em><sub><em>n</em></sub></span>
+são as variáveis e <span class="math inline"><em>b</em></span> é o termo
+independente.</p>
+<div class="example">
+<p>A equação <span
+class="math inline">2<em>x</em> + 3<em>y</em> − 4<em>z</em> = 2</span> é
+uma equação linear. Seus coeficientes são <span
+class="math inline">2, 3 e  − 4</span>. Já as variáveis são <span
+class="math inline"><em>x</em>, <em>y</em> e <em>z</em></span> e 2 é o
+termo independente. A solução para esta equação ocorre quando <span
+class="math inline"><em>x</em> = 3, <em>y</em> = 0 e <em>z</em> = 1</span>
+pois <span class="math inline">2 ⋅ 3 + 3 ⋅ 0 − 4 ⋅ 1 = 2</span>.</p>
+</div>
+<div class="example">
+<p>Verifique se <span class="math inline">(1,2,0)</span> e <span
+class="math inline">(1,0,0)</span> satisfazem a equação linear <span
+class="math inline">2<em>x</em> + 3<em>y</em> − 4<em>z</em> = 2</span>.</p>
+<p>Para verificar se as triplas<a href="#fn3" class="footnote-ref"
+id="fnref3" role="doc-noteref"><sup>3</sup></a> ordenadas satisfazem a
+equação linear basta substituir os valores dados em suas respectivas
+variáveis, assim:</p>
+<ul>
+<li><p><span
+class="math inline">(1,2,0) ⇒ 2 ⋅ 1 + 3 ⋅ 2 − 4 ⋅ 0 = 2 ⇒ 2 + 6 − 0 = 2 ⇒ 8 = 2   FALSO</span>.
+Logo, a <span class="math inline">(1,2,0)</span> não satisfaz a equação
+linear do enunciado.</p></li>
+<li><p><span
+class="math inline">(1,0,0) ⇒ 2 ⋅ 1 + 3 ⋅ 0 − 4 ⋅ 0 = 2 ⇒ 2 + 0 − 0 = 2 ⇒ 2 = 2   VERDADEIRO</span>.
+Logo, a <span class="math inline">(1,0,0)</span> satisfaz a equação
+linear do enunciado.</p></li>
+</ul>
+</div>
+<p>O leitor pode imaginar que as equações lineares acima existam
+infinitas combinações entre valores numéricos que satisfaçam a relação.
+Isso acontece porque o <em>número de variáveis</em> é MAIOR que o
+<em>número de equações</em>. No entanto, existem situações em que o
+número de equações lineares é igual ao número de variáveis.</p>
+<div class="example">
+<p>  Dado as funções Receita (<span
+class="math inline"><em>R</em>(<em>x</em>) = 30<em>x</em></span>) e
+Custo (<span
+class="math inline"><em>C</em>(<em>x</em>) = 20<em>x</em> + 1000</span>),
+determine o ponto de equilíbrio<a href="#fn4" class="footnote-ref"
+id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
+<p>Para determinar o ponto de equilíbrio basta fazer <span
+class="math inline"><em>y</em> = <em>R</em>(<em>x</em>) = <em>C</em>(<em>x</em>)</span>
+e substituir nas equações do enunciado, assim:</p>
+<ul>
+<li><p>Função Receita: <span
+class="math inline"><em>y</em> = 30<em>x</em></span>;</p></li>
+<li><p>Função Custo: <span
+class="math inline"><em>y</em> = 20<em>x</em> + 1000</span>.</p></li>
+</ul>
+<p>Fica claro a existência de duas equações (Receita e Custo) e duas
+variáveis (<span class="math inline"><em>x</em> e <em>y</em></span>). A
+solução dessas equações lineares devem satisfazer as duas funções
+simultaneamente, desse modo, é possível escrever um <em>sistema de
+equações lineares</em>, como segue:</p>
+<div class="ceqn">
+<p>\[ \begin{aligned}
+    \left\{ \begin{alignedat}{1}\begin{array}{ccc}
+    y &amp; = &amp; 30x\\
+    y &amp; = &amp; 20x+1000
+    \end{array}\end{alignedat}
+    \right. &amp; \Leftrightarrow\\
+    \left\{ \begin{alignedat}{1}\begin{array}{ccc}
+    y-30x &amp; = &amp; 0\\
+    y-20x &amp; = &amp; 1000
+    \end{array}\end{alignedat}
+    \right. &amp; \Leftrightarrow\\
+    \left\{ \begin{alignedat}{1}\begin{array}{ccc}
+    y-30x &amp; = &amp; 0\\
+    -10x &amp; = &amp; -1000
+    \end{array}\end{alignedat}
+    \right. &amp; \Rightarrow  x=100\\
+    y-30\cdot100=0 &amp; \Rightarrow\\
+    y-3000=0 &amp; \Rightarrow  y=3000
+    
+\end{aligned} \]</p>
+</div>
+<p>Assim, o ponto de equilíbrio é <span
+class="math inline">(100,3000)</span> e representa a quantidade de
+produtos que devem ser vendidos (<span
+class="math inline"><em>x</em> = 100  unidades</span>) e o valor da
+Receita e do Custo quando forem vendidos <span
+class="math inline"><em>x</em> = 100</span> produtos será de R$3000,00
+(<span
+class="math inline"><em>y</em> = 3000 ⇒ <em>R</em>(100) = <em>C</em>(100) = R$ 3000, 00</span>).
+A Figura <a href="#fig:sistema_linear" data-reference-type="ref"
+data-reference="fig:sistema_linear">1.2</a> mostra o gráfico das funções
+e o ponto de equilíbrio.</p>
+<figure id="fig:sistema_linear">
+
+<figcaption>Gráfico das funções Receita e Custo</figcaption>
+</figure>
+
+</div>
+<p>Como visto anteriormente, os sistemas de equações lineares podem ser
+aplicados na área da Administração, Ciências Contábeis e, é claro, na
+área de exatas!</p>
+<p>Desse modo é de fundamental importância saber resolver os sistemas de
+equações lineares e, para isso, existem alguns métodos. Será visto aqui
+o método da resolução usando matrizes, chamada de regra de Cramer e o
+método da eliminação de Gauss.</p>
+<p>Antes de conhecer as técnicas é importante frisar que os sistemas de
+equações lineares podem ser classificados dependendo do número de
+soluções que o mesmo apresenta:</p>
+<ul>
+<li><p><strong>Sistema Impossível</strong>: Quando o sistema não admite
+solução;</p></li>
+<li><p><strong>Sistema Possível e Indeterminado</strong>: Quando o
+sistema admite mais de uma solução;</p></li>
+<li><p><strong>Sistema Possível e Determinado</strong>: É o sistema que
+possui uma única solução possível.</p></li>
+</ul>
+<h3 id="regra-de-cramer">Regra de Cramer</h3>
+<p>Considere o sistema abaixo:</p>
+<p><span class="math display">$$\begin{cases}
+\begin{array}{ccc}
+x+y+z &amp; = &amp; 6\\
+x-y+z &amp; = &amp; 2\\
+x+y-z &amp; = &amp; 0
+\end{array}\end{cases}$$</span></p>
+<p>É possível escrever a Matriz Principal deste sistema. A Matriz
+Principal é composta pelos coeficientes de cada variável do sistema, ou
+seja</p>
+<p><span class="math display">$$\mathbb{{M}}=\begin{bmatrix}1 &amp; 1
+&amp; 1\\
+1 &amp; -1 &amp; 1\\
+1 &amp; 1 &amp; -1
+\end{bmatrix}$$</span></p>
+<p>Ainda é possível definir as matrizes <span
+class="math inline">𝕄<sub><em>x</em></sub>,  𝕄<sub><em>y</em></sub>,  e  𝕄<sub><em>z</em></sub></span>
+substituindo os valores da coluna do resultado nas respectivas colunas
+da matriz principal, assim:</p>
+<p><span class="math display">$$\mathbb{{M}}_{x}=\begin{bmatrix}6 &amp;
+1 &amp; 1\\
+2 &amp; -1 &amp; 1\\
+0 &amp; 1 &amp; -1
+\end{bmatrix},\quad\mathbb{{M}}_{y}=\begin{bmatrix}1 &amp; 6 &amp; 1\\
+1 &amp; 2 &amp; 1\\
+1 &amp; 0 &amp; -1
+\end{bmatrix},\quad\mathbb{{M}}_{z}=\begin{bmatrix}1 &amp; 1 &amp; 6\\
+1 &amp; -1 &amp; 2\\
+1 &amp; 1 &amp; 0
+\end{bmatrix}$$</span></p>
+<p>Então, o valor das variáveis do sistema dado pode ser calculado
+através de:</p>
+<p><span
+class="math display">$$x=\frac{{\mathrm{det}(\mathbb{{M}}_{x})}}{\mathrm{det}(\mathbb{M})},\quad
+y=\frac{\mathrm{det}(\mathbb{M}_{y})}{\mathrm{det}(\mathbb{M})},\quad\mathrm{e\quad
+z=\frac{\mathrm{det}(\mathbb{M}_{z})}{\mathrm{det}(\mathbb{M})}}$$</span></p>
+<h3 id="eliminação-de-gauss---método-do-escalonamento">Eliminação de
+Gauss - Método do escalonamento</h3>
+<p>Um sistema de equações lineares pode ser escrito da seguinte
+forma:</p>
+<p>\[ \mathbb{A} \cdot \mathbb{X} = \mathbb{B} \]</p>
+
+<p>Onde a matriz \( \mathbb{A} \) é a matriz dos coeficientes, \(\mathbb{X} \) é a matriz das variáveis e \( \mathbb{B} \) é a matriz dos resultados.</p>
+<p>O objetivo da eliminação de Gauss é formar uma matriz triangular
+superior. Em um sistema de equações lineares é possível fazer:</p>
+<ul>
+<li><p>Multiplicar uma linha inteira por um número diferente de
+zero;</p></li>
+<li><p>Mudar a posição das linhas e/ou colunas;</p></li>
+<li><p>Efetuar operações entre as linhas.</p></li>
+</ul>
+<div class="example">
+<p>  Resolva o sistema abaixo</p>
+<p><span class="math display">$$\begin{cases}
+    x+y+z &amp; =3\\
+    2x+y+2z &amp; =5\\
+    x-y+3z &amp; =1
+    \end{cases}$$</span></p>
+<p>O sistema do enunciado pode ser escrito através da multiplicação
+abaixo</p>
+<p><span class="math display">$$\underbrace{\begin{bmatrix}1 &amp; 1
+&amp; 1\\
+        2 &amp; 1 &amp; 2\\
+        1 &amp; -1 &amp; 3
+        \end{bmatrix}}_{\mathbb{A}}\cdot\underbrace{\begin{bmatrix}x\\
+        y\\
+        z
+        \end{bmatrix}}_{\mathbb{X}}=\underbrace{\begin{bmatrix}3\\
+        5\\
+        1
+        \end{bmatrix}}_{\mathbb{B}}$$</span></p>
+<p>O próximo passo é montar a chamada <em>Matriz Ampliada</em> do passo
+inicial ou passo zero (0).</p>
+<p><span class="math display">$$\left[ \mathbb{A}|\mathbb{B}\right
+]^{(0)}=\left[
+\begin{matrix}1&amp;1&amp;1\\2&amp;1&amp;2\\1&amp;-1&amp;3 \end{matrix}
+\left| \begin{matrix} 3\\5\\1\end{matrix}\right. \right ]$$</span></p>
+<p>Após a definição da Matriz Ampliada, o próximo passo é zerar os
+elementos que estão abaixo da diagonal principal, assim: <span
+class="math display">$$\begin{aligned}
+    L_2^{(1)} &amp;\leftarrow 2\cdot L_1^{(0)}-L_2^{(0)} \\
+    L_3^{(1)} &amp;\leftarrow L_1^{(0)}-L_3^{(0)}
+    \end{aligned}$$</span></p>
+<p>resultando em: <span class="math display">$$\left[
+\mathbb{A}|\mathbb{B}\right ]^{(1)}=\left[
+\begin{matrix}1&amp;1&amp;1\\0&amp;1&amp;0\\0&amp;2&amp;-3 \end{matrix}
+\left| \begin{matrix} 3\\1\\2\end{matrix}\right. \right ]$$</span></p>
+<p>O próximo passo é usar a linha 2 como referência para zerar os
+elementos que estão abaixo da diagonal principal. Assim:</p>
+<p><span class="math display">$$\begin{aligned}
+    L_3^{(2)} &amp;\leftarrow 2 \cdot L_2^{(1)}-L_3^{(1)}
+    \end{aligned}$$</span></p>
+<p>obtendo o seguinte sistema:</p>
+<p><span class="math display">\[ \left[ \mathbb{A}|\mathbb{B}\right
+]^{(2)}=\left[ \begin{matrix}1&amp;1&amp;1\\0&amp;1&amp;0\\0&amp;0&amp;3
+\end{matrix} \left| \begin{matrix} 3\\1\\0\end{matrix}\right. \right
+] \]</span></p>
+<p>Da última linha, tem-se: <span
+class="math display">3<em>z</em> = 0 ⇒ <em>z</em> = 0</span></p>
+<p>Da linha 2 é possível obter:</p>
+<p><span class="math display"><em>y</em> = 1</span></p>
+<p>Substituindo o resultado de <span
+class="math inline"><em>y</em></span> e <span
+class="math inline"><em>z</em></span> na linha 1, obtém-se:</p>
+<p><span
+class="math display"><em>x</em> + <em>y</em> + <em>z</em> = 3 ⇒ <em>x</em> + 1 + 0 = 3 ⇒ <em>x</em> = 2</span></p>
+<p>Enfim, este sistema pode ser classificado como Sistema Possível e
+Determinado e a solução é a tripla <span
+class="math inline">(2,1,0)</span>, podendo representar o conjunto
+solução da seguinte maneira:</p>
+<p><span class="math display"><em>S</em> = {(2,1,0)}</span></p>
+
+</div>
+<aside id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Existem alguns pontos a serem considerados aqui: 1)
+quando é falado <em>eixo horizontal</em> podem haver interpretações
+erradas pois é uma questão de referência, ou seja, se o leitor girar o
+papel em 90, o eixo se tornará vertical! Chamar de <em>eixo x</em>
+também podem haver interpretações diferenciadas, pois se o problema
+trata de uma situação onde envolva o cálculo do espaço de um móvel
+(<span class="math inline"><em>S</em></span>) em função do tempo (<span
+class="math inline"><em>t</em></span>), essa nomenclatura não fará
+sentido algum. O modo correto de interpretar e nomear o eixo é utilizar
+<em>eixo das abscissas</em> ou, se o leitor preferir, pode utilizar o
+nome da variável independente para o nome do eixo, ou seja, no mesmo
+exemplo anterior, cálculo do espaço em função do tempo, pode ser
+utilizado para o <em>eixo das abscissas</em> simplesmente <em>eixo de
+t</em> ou <em>eixo do tempo</em>.<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Mesma consideração da nota anterior.<a href="#fnref2"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Um nome mais apropriado para chamar um conjunto de
+valores, ordenados, é utilizando a quantidade de elementos dessa
+organização, ou seja: 2 valores implicam numa dupla ou par ordenado; 3
+valores, tripla ordenada; 4 valores, quadrupla ordenada; 5 valores,
+quíntupla ordenada; “n” valores n-upla (ênupla).<a href="#fnref3"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>O ponto de equilíbrio acontece quando a Receita é igual
+ao Custo, ou seja, <span
+class="math inline"><em>R</em>(<em>x</em>) = <em>C</em>(<em>x</em>)</span><a
+href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</aside> 
+
+<h1>EXERCÍCIOS</h1>
+<br />
+<ol>
+  <li>Uma empresa tem a função custo definida por \( C(x)=45x+15000 \) e a função receita definida por \( R(x)=60x \). Determine o ponto de equilíbrio usando o método da eliminação de Gauss (escalonamento)</li>
+  <li>Uma loja possui uma função de custo representada por \( C(x) = 80x + 25000 \) e uma função de receita dada por \( R(x) = 100x \). Utilize o método da eliminação de Gauss para encontrar o ponto de equilíbrio dessa operação.</li>
+  <li>Uma fábrica de móveis apresenta a função custo \( C(x) = 50x + 18000 \) e a função receita \( R(x) = 75x \). Determine o ponto de equilíbrio dessa fábrica aplicando o método de escalonamento de Gauss.</li>
+  <li>Uma empresa de eletrônicos tem como função custo \( C(x) = 65x + 22000 \) e como função receita \( R(x) = 85x \). Calcule o ponto de equilíbrio utilizando o método da eliminação de Gauss.</li>
+  <li>
+        Resolva o sistema de equações abaixo e encontre o valor de \( x \):
+        \[
+        \begin{cases}
+        2x + 3y = 5 \\
+        4x - y = 3
+        \end{cases}
+        \]
+    </li>
+
+    <li>
+        Em uma sala, há 30 pessoas, entre homens e mulheres. Sabendo que o número de mulheres é o dobro do número de homens, determine quantos homens e quantas mulheres há na sala.
+    </li>
+
+    <li>
+        Uma empresa vende dois tipos de produtos, A e B. Em um certo mês, foram vendidas 50 unidades ao total, gerando uma receita de R$ 1.200,00. Sabendo que o produto A custa R$ 20,00 e o produto B custa R$ 40,00, determine quantas unidades de cada produto foram vendidas.
+    </li>
+
+    <li>
+        Resolva o seguinte sistema de equações e encontre o valor de \( y \):
+        \[
+        \begin{cases}
+        3x + 2y = 12 \\
+        x - y = 1
+        \end{cases}
+        \]
+    </li>
+
+    <li>
+        Em uma escola, a soma do número de professores e de alunos é 200. Sabendo que o número de alunos é 10 vezes o número de professores, determine quantos alunos e professores há na escola.
+    </li>
+
+    <li>
+        Considere o sistema linear:
+        \[
+        \begin{cases}
+        5x + 4y = 12 \\
+        2x - 3y = -3
+        \end{cases}
+        \]
+        Classifique o sistema quanto ao número de soluções.
+    </li>
+
+    <li>
+        Em um supermercado, o preço de 3 kg de maçãs e 2 kg de laranjas é R$ 24,00. O preço de 1 kg de maçã e 1 kg de laranja é R$ 7,00. Encontre o preço por kg das maçãs e das laranjas.
+    </li>
+
+    <li>
+        A soma de dois números é 20 e a diferença entre eles é 4. Quais são esses números?
+    </li>
+
+    <li>
+        Para comprar 10 maçãs e 15 bananas, uma pessoa gastou R$ 30,00. Sabendo que uma maçã custa o dobro do valor de uma banana, determine o preço de cada fruta.
+    </li>
+
+    <li>
+        Em um sistema de duas equações lineares com duas incógnitas, sabe-se que:
+        \[
+        \begin{cases}
+        ax + by = 6 \\
+        2x + 3y = 12
+        \end{cases}
+        \]
+        Para que o sistema seja possível e determinado, o valor de \( a \) deve ser igual a quanto?
+    </li>
+    <li> Verifique se as matrizes \( A \) e \( B \) são iguais:
+\[
+A = \begin{bmatrix} x^2 + 3x & 3 \\ 4 & y^2 - 5y \end{bmatrix}, \quad B = \begin{bmatrix} 4 & 3 \\ 4 & 6 \end{bmatrix}
+\]
+Encontre os valores de \( x \) e \( y \) para que \( A = B \).
+</li>
+<li> Dadas as matrizes \( A = \begin{bmatrix} x^2 & 4 \\ 7 & y^2 - 4y + 3 \end{bmatrix} \) e \( B = \begin{bmatrix} 9 & 4 \\ 7 & 2 \end{bmatrix} \), encontre os valores de \( x \) e \( y \) para que \( A = B \).
+</li>
+<li> Considere as matrizes \( A = \begin{bmatrix} 1 & a^2 + 2a - 3 \\ b^2 - b & 2 \end{bmatrix} \) e \( B = \begin{bmatrix} 1 & 3 \\ 4 & 2 \end{bmatrix} \). Encontre os valores de \( a \) e \( b \) para que \( A = B \).
+</li>
+<li> Se \( A = \begin{bmatrix} 2 & y^2 - 4 \\ x^2 + x & 6 \end{bmatrix} \) e \( B = \begin{bmatrix} 2 & 5 \\ 6 & 6 \end{bmatrix} \), determine os valores de \( x \) e \( y \) para que \( A = B \).
+</li>
+<li> Verifique se as matrizes abaixo são iguais:
+\[
+A = \begin{bmatrix} 1 & 2 & x^2 - x - 2 \\ 4 & y^2 - 3y + 2 & 6 \end{bmatrix}, \quad B = \begin{bmatrix} 1 & 2 & 0 \\ 4 & 2 & 6 \end{bmatrix}
+\]
+Encontre os valores de \( x \) e \( y \) para que \( A = B \).
+</li>
+<li> Se \( A = \begin{bmatrix} x^2 - 2x & 8 \\ 7 & y^2 + y \end{bmatrix} \) e \( B = \begin{bmatrix} 3 & 8 \\ 7 & 10 \end{bmatrix} \), determine \( x \) e \( y \) para que \( A = B \).
+</li>
+<li> Dadas as matrizes \( A = \begin{bmatrix} 3 & 2 & z^2 + z \\ 6 & w^2 - 3w & 5 \end{bmatrix} \) e \( B = \begin{bmatrix} 3 & 2 & 9 \\ 6 & 4 & 5 \end{bmatrix} \), determine \( z \) e \( w \) para que \( A = B \).
+</li>
+<li> Considere as matrizes \( A = \begin{bmatrix} a^2 - 4a + 4 & 5 \\ 3 & b^2 - b \end{bmatrix} \) e \( B = \begin{bmatrix} 0 & 5 \\ 3 & 6 \end{bmatrix} \). Encontre os valores de \( a \) e \( b \) para que \( A = B \).
+</li>
+<li> Se \( A = \begin{bmatrix} p^2 + 2p - 3 & 4 \\ 6 & q^2 - 5q + 6 \end{bmatrix} \) e \( B = \begin{bmatrix} 0 & 4 \\ 6 & 5 \end{bmatrix} \), encontre \( p \) e \( q \) para que \( A = B \).
+</li>
+<li> Verifique se as matrizes \( A = \begin{bmatrix} x^2 - x & y + y^2 & 2 \\ 3 & 5 & z^2 - 2z \end{bmatrix} \) e \( B = \begin{bmatrix} 1 & 4 & 2 \\ 3 & 5 & 6 \end{bmatrix} \) são iguais. Se sim, determine \( x \), \( y \) e \( z \).</li>
+<li> Verifique se as matrizes \( A = \begin{bmatrix} x^2 - 6x & y^2 \\ 3 & 5 & \end{bmatrix} \) e \( B = \begin{bmatrix} -13 & -4  \\ 3 & 5 \end{bmatrix} \) são iguais. Se sim, determine \( x \) e \( y \).
+</li>
+<li>Em uma sala, há 30 pessoas, entre homens (H) e mulheres (M). Sabendo que o número de mulheres é o dobro do número de homens, determine quantos homens e quantas mulheres há na sala.</li>
+<li>Uma empresa vende dois tipos de produtos, A e B. Em um certo mês, foram vendidas 50 unidades ao total, gerando uma receita de R$ 1.200,00. Sabendo que o produto A custa R$ 20,00 e o produto B custa R$ 40,00, determine quantas unidades de cada produto foram vendidas.</li>
+<li>A soma de dois números é 20 e a diferença entre eles é 4. Quais são esses números?</li>
+<li>O número de motos (M) e carros (C) é igual a 20. O total de rodas é de 60. Quantas motos e quantos carros existem nesse problema?</li>
+<li>Uma empresa possui o lucro sobre um produto igual a \( L(x) = 20 \cdot x -3000 \). O ponto de equilíbrio pode ser obtido fazendo \( L(x) = 0 \). Calcule a quantidade \( x \) de modo que o lucro seja zero.</li>
+<li>Considere o sistema:
+\( \begin{cases} x + y = 2 \\ x - y = 0 \end{cases} \)
+Qual o valor de \( x \) e \( y \)?
+</li>
+<li>Calcule o determinante da matriz identidade de ordem 2.</li>
+<li>Considere a matriz \( \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} \). Qual o valor do determinante?</li>
+<li>Qual deve ser o valor de \( x \) para que as matrizes \( \begin{bmatrix} x & 2 \\ 3 & 4 \end{bmatrix} \) e \( \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} \)</li>
 
 
 
@@ -49,6 +1448,10 @@
 
 
 
+
+
+
+</ol> 
 <!-- Aqui termina o código específico da página -->
 
 <!-- PASSO 3: Estrutura da citação limpa de PHP, usando IDs para o JavaScript preencher -->

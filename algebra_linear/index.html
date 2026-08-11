@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- PASSO 1: O título principal do site/página fica aqui -->
+  <title>Álgebra Linear</title>
+
+  <script>
+    window.MathJax = {
+      loader: {
+        paths: {tex: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/input/tex/extensions'},
+        load: [
+          '[tex]/ams','[tex]/amscd','[tex]/bbox','[tex]/boldsymbol','[tex]/braket',
+          '[tex]/cases','[tex]/centernot','[tex]/colortbl','[tex]/color',
+          '[tex]/enclose','[tex]/extpfeil','[tex]/gensymb','[tex]/html',
+          '[tex]/mhchem','[tex]/newcommand','[tex]/noerrors','[tex]/noundefined',
+          '[tex]/physics','[tex]/setoptions','[tex]/tagformat','[tex]/textmacros',
+          '[tex]/unicode','[tex]/verb'
+        ]
+      },
+      tex: {
+        packages: {'[+]': [
+          'ams','amscd','bbox','boldsymbol','braket','cases','centernot',
+          'colortbl','color','enclose','extpfeil','gensymb','html','mhchem',
+          'newcommand','noerrors','noundefined','physics','setoptions',
+          'tagformat','textmacros','unicode','verb'
+        ]},
+        inlineMath: [["\\(", "\\)"], ["$", "$"]],
+        displayMath: [["\\[", "\\]"], ["$$", "$$"]]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<header>
+  <!-- PASSO 2: O cabeçalho agora puxa o título automaticamente -->
+  <h1 id="cabecalho-titulo">Álgebra Linear</h1>
+</header>
+<hr>
+
+<!-- Aqui começa o código específico da página -->
+
+
+
+
+
+
+
+<!-- Aqui termina o código específico da página -->
+
+<!-- PASSO 3: Estrutura da citação limpa de PHP, usando IDs para o JavaScript preencher -->
+<p style="margin-top: 20px; font-size: 14px; color: #555; border-top: 1px solid #ddd; padding-top: 15px;">
+  <strong>Como citar essa página:</strong><br>
+  FUMACHI, E. F. <strong id="citacao-titulo"></strong>. Disponível em: <span id="citacao-url"></span>. Acesso em: <span id="citacao-data"></span>.
+</p>
+
+<hr>
+
+<footer>
+<p align="center">Prof. Dr. Fumachi. &copy; <span id="ano"></span></p>
+</footer>
+
+<!-- PASSO 4: Scripts que controlam toda a automação da página -->
+<script>
+  // 1. Atualiza o título do cabeçalho baseado na tag <title>
+  document.getElementById('cabecalho-titulo').innerText = document.title;
+
+  // 2. Atualiza o título dentro do texto da citação
+  document.getElementById('citacao-titulo').innerText = document.title;
+
+  // 3. Captura a URL atual exata do navegador
+  document.getElementById('citacao-url').innerText = window.location.href;
+
+  // 4. Formata a data de acesso atual (Horário local do usuário)
+  const hoje = new Date();
+  const dia = String(hoje.getDate()).padStart(2, '0');
+  const meses = ['jan.', 'fev.', 'mar.', 'abr.', 'mai.', 'jun.', 'jul.', 'ago.', 'set.', 'out.', 'nov.', 'dez.'];
+  const mes = meses[hoje.getMonth()];
+  const anoAtual = hoje.getFullYear();
+
+  document.getElementById('citacao-data').innerText = `${dia} ${mes} ${anoAtual}.`;
+
+  // 5. Atualiza o ano de direitos autorais no rodapé
+  document.getElementById('ano').textContent = anoAtual;
+</script>
+
+</body>
+</html>
+

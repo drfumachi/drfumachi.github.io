@@ -1,0 +1,264 @@
+ <!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>EDO
+  </title>
+
+  <script>
+    window.MathJax = {
+      loader: {
+        paths: {tex: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/input/tex/extensions'},
+        load: [
+          '[tex]/ams','[tex]/amscd','[tex]/bbox','[tex]/boldsymbol','[tex]/braket',
+          '[tex]/cases','[tex]/centernot','[tex]/colortbl','[tex]/color',
+          '[tex]/enclose','[tex]/extpfeil','[tex]/gensymb','[tex]/html',
+          '[tex]/mhchem','[tex]/newcommand','[tex]/noerrors','[tex]/noundefined',
+          '[tex]/physics','[tex]/setoptions','[tex]/tagformat','[tex]/textmacros',
+          '[tex]/unicode','[tex]/verb'
+        ]
+      },
+      tex: {
+        packages: {'[+]': [
+          'ams','amscd','bbox','boldsymbol','braket','cases','centernot',
+          'colortbl','color','enclose','extpfeil','gensymb','html','mhchem',
+          'newcommand','noerrors','noundefined','physics','setoptions',
+          'tagformat','textmacros','unicode','verb'
+        ]},
+        inlineMath: [["\\(", "\\)"], ["$", "$"]],
+        displayMath: [["\\[", "\\]"], ["$$", "$$"]]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<header>
+
+
+  <h1 id="cabecalho-titulo">Equações Diferenciais Ordinárias
+  </h1>
+
+
+</header>
+<hr>
+<!-- Aqui começa o código específico da página -->
+<main>
+<h2 id="definição">Definição</h2>
+<p>Uma Equação Diferencial Ordinária é uma equação que envolve as
+derivadas de uma função de uma variável real e pode ser definida
+como:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        F \left (x, y(x), \frac{dy}{dx}, \frac{d^2 x}{dx^2}, \ldots ,
+\frac{d^{n}y}{dx^{n}} \right )
+    
+\end{aligned}$$</span></p>
+</div>
+<p>Embora a definição seja geral, será abordado neste livro, apenas um
+tipo de EDO e tipo de solução, até a data de</p>
+<div class="example">
+<p>Considere a EDO <span class="math display">$$\frac{dy}{dx} =
+5x$$</span> Determine a família de soluções (solução geral).</p>
+<p>Para resolver esse tipo de EDO, basta separar as variáveis e os
+infinitesimais em lados opostos da equação. Após a separação, aplica-se
+a integral em ambos os lados, como segue:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+            \frac{dy}{dx} &amp;= 5x \\
+            dy &amp;= 5x dx \\
+            \int dy &amp;= \int 5x dx \\
+            \int y^0 dy &amp;= 5 \cdot \int x^1 dx \\
+            \frac{y^{0+1}}{0+1} &amp;= 5 \cdot \frac{x^{1+1}}{1+1} + c
+\\
+            \frac{y}{1} &amp;= 5 \cdot \frac{x^2}{2} + c \\
+            y &amp;= \frac{5}{2} \cdot x^2 + c \\
+        
+\end{aligned}$$</span></p>
+</div>
+</div>
+<p>Uma aplicação bem interessante é determinar as funções
+<em>Posição</em> e <em>Velocidade</em> de um objeto a partir de sua
+aceleração. A seguir, será determinada as funções dos movimentos
+Uniforme, Uniformemente Variado e outros tipos de movimento.</p>
+<h3 id="movimento-uniforme">Movimento Uniforme</h3>
+<p>A característica do Movimento Uniforme (M.U.) é que a aceleração é
+<em>constante e igual a zero</em>, ou seja, <span
+class="math inline"><em>a</em> = 0</span>. A partir desse fato, a
+velocidade é constante, ou seja, como não variação na velocidade, pois
+<span class="math inline"><em>a</em> = 0</span>, então:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        v_m &amp;= \frac{\Delta S}{\Delta t}
+    
+\end{aligned}$$</span></p>
+</div>
+<p>A equação acima nos mostra a relação para a determinação da
+velocidade média, no entanto, o que interessa é estudar a velocidade
+instantânea, assim, quando <span
+class="math inline"><em>Δ</em><em>t</em> → 0</span>, tem-se:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        v = \frac{dS}{dt}
+    
+\end{aligned}$$</span></p>
+</div>
+<p>Sabendo que a velocidade no M.U. é constante, então a EDO acima pode
+ser resolvida como segue:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        \frac{dS}{dt} =&amp; v \\
+        dS =&amp; v dt \\
+        \int dS =&amp; \int v dt \\
+        S =&amp; v \cdot \int dt \\
+        S =&amp; v \cdot t + c \\
+    
+\end{aligned}$$</span></p>
+</div>
+<p>A constante <span class="math inline"><em>c</em></span>, proveniente
+da integração indefinida, pode ser renomeada de modo conveniente a
+ficar:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        S = S_0 + vt
+    
+\end{aligned}$$</span></p>
+</div>
+<p>Que é a tão conhecida <em>Função Horária da Posição</em> ou, mais
+informalmente, "fórmula do sorvete" (para o idioma português =D).</p>
+<h3 id="movimento-uniformemente-variado">Movimento Uniformemente
+Variado</h3>
+<p>O Movimento Uniformemente Variado (M.U.V.) tem a característica de
+ter uma aceleração <em>constante e diferente de zero</em>, desse
+modo:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        a_m =&amp; \frac{\Delta v}{\Delta t}
+    
+\end{aligned}$$</span></p>
+</div>
+<p>De modo análogo, quando <span
+class="math inline"><em>Δ</em><em>t</em> → 0</span>, é possível
+reescrever a equação acima de modo a obter a aceleração instantânea</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        a = \frac{dv}{dt}
+    
+\end{aligned}$$</span></p>
+</div>
+<p>Resolvendo a EDO acima separando os infinitesimais, tem-se:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        dv =&amp; a \cdot dt \\
+        \int dv =&amp; a \cdot \int dt \\
+        v =&amp; a \cdot t + c\\
+    
+\end{aligned}$$</span></p>
+</div>
+<p>É possível renomear a constante <span
+class="math inline"><em>c</em></span> por uma letra conveniente,
+tem-se:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        v = v_0 + at
+    
+\end{aligned}$$</span></p>
+</div>
+<p>A função acima é a <em>Função Horária da Velocidade</em> e, a partir
+dela, será possível determinar a <em>Função Horária da Posição</em>,
+fazendo:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        v =&amp; \frac{dS}{dt} \\
+        dS =&amp; v \ dt \\
+        dS =&amp; (v_0 + at) dt \\
+        \int dS =&amp; \int (v_0 + at) dt \\
+        S =&amp; v_0 \int dt + a \cdot \int t dt \\
+        S =&amp; v_0 t + a \cdot \frac{t^{1+1}}{1+1} + c \\
+        S =&amp; S_0 + v_0 t + \frac{1}{2} a t^2 \\
+    
+\end{aligned}$$</span></p>
+</div>
+<p>As funções acima são conhecidas pelos estudantes do Ensino Médio de
+todo o Brasil (pelo menos deveria!), no entanto, a vida real possui
+movimentos muito complexos com acelerações que variam com o tempo.</p>
+<p>Para esses tipos de movimento as funções não são abordadas no Ensino
+Médio, porém, elas poderão abordadas aqui.</p>
+<h3 id="outros-tipos-de-movimento">Outros tipos de movimento</h3>
+<p>Digamos que temos um movimento onde a aceleração obedece a relação
+<span
+class="math inline"><em>a</em> = <em>α</em><em>t</em> + <em>β</em></span>,
+ou seja, uma função linear.</p>
+<p>Para determinar as funções horárias para a Velocidade e Posição,
+seguir-se-á o procedimento abordado anteriormente para M.U e M.U.V.,
+assim:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        a =&amp; \frac{dv}{dt} \\
+        dv =&amp; a \cdot dt \\
+        \int dv =&amp; (\alpha t + \beta) dt \\
+        v =&amp; \int (\alpha t + \beta) dt \\
+        v =&amp; \frac{1}{2} \alpha t^2 + \beta t + v_0 \\
+    
+\end{aligned}$$</span></p>
+</div>
+<p>E, por fim, para determinar a função da Posição:</p>
+<div class="ceqn">
+<p><span class="math display">$$\begin{aligned}
+        v =&amp; \frac{dS}{dt} \\
+        dS =&amp; v \cdot dt \\
+        dS =&amp; (\frac{1}{2} \alpha t^2 + \beta t + v_0) dt \\
+        \int dS =&amp; \int (\frac{1}{2} \alpha t^2 + \beta t + v_0) dt
+\\
+        S =&amp; \frac{1}{2} \cdot \alpha \frac{t^{2+1}}{2+1} + \beta
+\frac{t^2}{2} + v_0 t + S_0 \\
+        S =&amp; \frac{1}{2} \cdot \alpha \frac{1}{3} \cdot t^3 +
+\frac{1}{2} \cdot \beta t^2 + v_0 t + S_0 \\
+        S =&amp; \frac{1}{6} \cdot \alpha t^3 + \frac{1}{2} \cdot \beta
+t^2 + v_0 t + S_0 \\
+    
+\end{aligned}$$</span></p>
+</div>
+<p>Exemplo do carro no semáforo!</p>
+</main> 
+
+
+
+
+
+
+
+
+
+
+<!-- Aqui termina o código específico da página -->
+<p style="margin-top: 20px; font-size: 14px; color: #555; border-top: 1px solid #ddd; padding-top: 15px;">
+  <strong>Como citar essa página:</strong><br>
+  FUMACHI, E. F. <strong id="citacao-titulo"></strong>. Disponível em: <span id="citacao-url"></span>. Acesso em: <span id="citacao-data"></span>.
+</p>
+
+<hr>
+
+<footer>
+<p align="center">Prof. Dr. Fumachi. &copy; <span id="ano"></span></p>
+</footer>
+
+
+<script>
+  document.getElementById('cabecalho-titulo').innerText = document.title;
+  document.getElementById('citacao-titulo').innerText = document.title;
+  document.getElementById('citacao-url').innerText = window.location.href;
+  const hoje = new Date();
+  const dia = String(hoje.getDate()).padStart(2, '0');
+  const meses = ['jan.', 'fev.', 'mar.', 'abr.', 'mai.', 'jun.', 'jul.', 'ago.', 'set.', 'out.', 'nov.', 'dez.'];
+  const mes = meses[hoje.getMonth()];
+  const anoAtual = hoje.getFullYear();
+  document.getElementById('citacao-data').innerText = `${dia} ${mes} ${anoAtual}.`;
+  document.getElementById('ano').textContent = anoAtual;
+</script>
+
+</body>
+</html>
+

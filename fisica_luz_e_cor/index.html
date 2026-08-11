@@ -1,0 +1,558 @@
+ <!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Física - Cor e luz
+  </title>
+
+  <script>
+    window.MathJax = {
+      loader: {
+        paths: {tex: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/input/tex/extensions'},
+        load: [
+          '[tex]/ams','[tex]/amscd','[tex]/bbox','[tex]/boldsymbol','[tex]/braket',
+          '[tex]/cases','[tex]/centernot','[tex]/colortbl','[tex]/color',
+          '[tex]/enclose','[tex]/extpfeil','[tex]/gensymb','[tex]/html',
+          '[tex]/mhchem','[tex]/newcommand','[tex]/noerrors','[tex]/noundefined',
+          '[tex]/physics','[tex]/setoptions','[tex]/tagformat','[tex]/textmacros',
+          '[tex]/unicode','[tex]/verb'
+        ]
+      },
+      tex: {
+        packages: {'[+]': [
+          'ams','amscd','bbox','boldsymbol','braket','cases','centernot',
+          'colortbl','color','enclose','extpfeil','gensymb','html','mhchem',
+          'newcommand','noerrors','noundefined','physics','setoptions',
+          'tagformat','textmacros','unicode','verb'
+        ]},
+        inlineMath: [["\\(", "\\)"], ["$", "$"]],
+        displayMath: [["\\[", "\\]"], ["$$", "$$"]]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<header>
+
+
+  <h1 id="cabecalho-titulo">Cor e Luz
+  </h1>
+
+
+</header>
+<hr>
+<!-- Aqui começa o código específico da página -->
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    .container {
+        max-width: 900px;
+        width: 100%;
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        margin-top: 20px;
+    }
+    h1 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 20px;
+        font-size: 28px;
+    }
+    .description {
+        text-align: center;
+        color: #7f8c8d;
+        margin-bottom: 30px;
+        line-height: 1.6;
+    }
+    .input-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 25px;
+    }
+    label {
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #34495e;
+    }
+    .range-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    input[type="range"] {
+        flex: 1;
+        height: 12px;
+        -webkit-appearance: none;
+        appearance: none;
+        outline: none;
+        border-radius: 6px;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: #2c3e50;
+        cursor: pointer;
+        border: 3px solid white;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+    input[type="number"] {
+        width: 100px;
+        padding: 10px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        font-size: 16px;
+        text-align: center;
+    }
+    .range-config {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+    .config-box {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    }
+    button {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        transition: background-color 0.3s;
+        width: 100%;
+        margin-top: 10px;
+    }
+    button:hover {
+        background-color: #2980b9;
+    }
+    .result-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-top: 30px;
+    }
+    .color-display {
+        height: 150px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        transition: background-color 0.5s;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    .color-details {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .detail-box {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    }
+    .detail-title {
+        font-weight: 600;
+        color: #7f8c8d;
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+    .detail-value {
+        font-size: 18px;
+        color: #2c3e50;
+        font-family: 'Courier New', monospace;
+    }
+    .wavelength-scale {
+        height: 30px;
+        border-radius: 5px;
+        margin-top: 20px;
+        position: relative;
+    }
+    .wavelength-labels {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5px;
+        color: #7f8c8d;
+        font-size: 12px;
+    }
+    @media (max-width: 768px) {
+        .result-container {
+            grid-template-columns: 1fr;
+        }
+        .range-config {
+            grid-template-columns: 1fr;
+        }
+        .container {
+            padding: 20px;
+        }
+    }
+</style>
+<div class="container">
+    <h1>Calculadora de Cor com Faixa Personalizável</h1>
+    <p class="description">
+        Defina os limites mínimo e máximo do comprimento de onda e depois digite um valor dentro dessa faixa para ver a cor correspondente e seus valores.
+    </p>
+    <div class="range-config">
+        <div class="config-box">
+            <div class="input-group">
+                <label for="min-wavelength">Comprimento de Onda Mínimo (nm):</label>
+                <input type="number" id="min-wavelength" min="380" max="750" value="400">
+            </div>
+        </div>
+        <div class="config-box">
+            <div class="input-group">
+                <label for="max-wavelength">Comprimento de Onda Máximo (nm):</label>
+                <input type="number" id="max-wavelength" min="380" max="750" value="645">
+            </div>
+        </div>
+    </div>
+    <div class="input-group">
+        <label for="wavelength">Comprimento de Onda (nm):</label>
+        <div class="range-container">
+            <input type="range" id="wavelength-slider" min="400" max="645" value="520" step="1">
+            <input type="number" id="wavelength-input" min="400" max="645" value="520">
+        </div>
+    </div>
+    <button id="calculate-btn">Calcular Cor</button>
+    <div class="wavelength-scale" id="wavelength-scale">
+        <div class="wavelength-labels">
+            <span id="min-label">400nm (Violeta)</span>
+            <span id="max-label">645nm (Vermelho)</span>
+        </div>
+    </div>
+    <div class="result-container">
+        <div class="color-display" id="color-display">
+            Cor correspondente
+        </div>
+        <div class="color-details">
+            <div class="detail-box">
+                <div class="detail-title">VALORES TRISTÍMULOS (XYZ)</div>
+                <div class="detail-value" id="xyz-value">X: 0.00, Y: 0.00, Z: 0.00</div>
+            </div>
+            <div class="detail-box">
+                <div class="detail-title">RGB</div>
+                <div class="detail-value" id="rgb-value">rgb(0, 0, 0)</div>
+            </div>
+            <div class="detail-box">
+                <div class="detail-title">CMYK</div>
+                <div class="detail-value" id="cmyk-value">cmyk(0%, 0%, 0%, 0%)</div>
+            </div>
+            <div class="detail-box">
+                <div class="detail-title">CÓDIGO HEXADECIMAL</div>
+                <div class="detail-value" id="hex-value">#000000</div>
+            </div>
+        </div>
+    </div>
+</div>
+<h2>Referências</h2>
+<ol>
+    <li><p>AGOSTON, G. A. Color Theory and Its Application in Art and Design. [S. l.]: Springer Berlin Heidelberg, 1979. Disponível em: http://dx.doi.org/10.1007/978-3-662-15801-2.</p></li>
+    <li><p>MARCUS, R. T. The Measurement of Color. AZimuthElsevier, , 1998. Disponível em: http://dx.doi.org/10.1016/s1387-6783(98)80005-6.</p></li>
+    <li><p>Nassau, Kurt. "tristimulus system". Encyclopedia Britannica, 29 Jun. 2023, https://www.britannica.com/science/tristimulus-system. Accessed 17 September 2025.</p></li>
+    <li><p>National Aeronautics and Space Administration, Science Mission Directorate. (2010). Visible Light. Retrieved from NASA Science website: http://science.nasa.gov/ems/09_visiblelight</p></li>
+    <li><p>D. Malacara, Color Vision and Colorimetry: Theory and Applications, Second Edition, SPIE Press, Bellingham, WA (2011).</p></li>
+</ol>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const minWavelengthInput = document.getElementById('min-wavelength');
+    const maxWavelengthInput = document.getElementById('max-wavelength');
+    const wavelengthSlider = document.getElementById('wavelength-slider');
+    const wavelengthInput = document.getElementById('wavelength-input');
+    const calculateBtn = document.getElementById('calculate-btn');
+    const colorDisplay = document.getElementById('color-display');
+    const xyzValue = document.getElementById('xyz-value');
+    const rgbValue = document.getElementById('rgb-value');
+    const cmykValue = document.getElementById('cmyk-value');
+    const hexValue = document.getElementById('hex-value');
+    const minLabel = document.getElementById('min-label');
+    const maxLabel = document.getElementById('max-label');
+    const wavelengthScale = document.getElementById('wavelength-scale');
+
+    function updateSliderRange() {
+        let min = parseInt(minWavelengthInput.value) || 400;
+        let max = parseInt(maxWavelengthInput.value) || 645;
+        min = Math.max(380, Math.min(750, min));
+        max = Math.max(380, Math.min(750, max));
+        if (min >= max) {
+            if (min === 380) {
+                max = min + 10;
+            } else {
+                min = max - 10;
+            }
+            minWavelengthInput.value = min;
+            maxWavelengthInput.value = max;
+        }
+        wavelengthSlider.min = min;
+        wavelengthSlider.max = max;
+        wavelengthInput.min = min;
+        wavelengthInput.max = max;
+        minLabel.textContent = `${min}nm (${getColorName(min)})`;
+        maxLabel.textContent = `${max}nm (${getColorName(max)})`;
+        let currentValue = parseInt(wavelengthInput.value);
+        if (currentValue < min) {
+            wavelengthInput.value = min;
+            wavelengthSlider.value = min;
+        } else if (currentValue > max) {
+            wavelengthInput.value = max;
+            wavelengthSlider.value = max;
+        }
+        updateSliderGradient(min, max);
+        updateScaleGradient(min, max);
+    }
+
+    function updateSliderGradient(min, max) {
+        const range = max - min;
+        const violetEnd = Math.max(min, Math.min(max, 450));
+        const blueEnd = Math.max(min, Math.min(max, 485));
+        const cyanEnd = Math.max(min, Math.min(max, 500));
+        const greenEnd = Math.max(min, Math.min(max, 565));
+        const yellowEnd = Math.max(min, Math.min(max, 590));
+        const orangeEnd = Math.max(min, Math.min(max, 625));
+        const violetPos = ((violetEnd - min) / range) * 100;
+        const bluePos = ((blueEnd - min) / range) * 100;
+        const cyanPos = ((cyanEnd - min) / range) * 100;
+        const greenPos = ((greenEnd - min) / range) * 100;
+        const yellowPos = ((yellowEnd - min) / range) * 100;
+        const orangePos = ((orangeEnd - min) / range) * 100;
+        wavelengthSlider.style.background = `linear-gradient(to right, 
+            #8e44ad 0%, #8e44ad ${violetPos}%,
+            #3498db ${violetPos}%, #3498db ${bluePos}%,
+            #2ecc71 ${bluePos}%, #2ecc71 ${cyanPos}%,
+            #2ecc71 ${cyanPos}%, #2ecc71 ${greenPos}%,
+            #f1c40f ${greenPos}%, #f1c40f ${yellowPos}%,
+            #e67e22 ${yellowPos}%, #e67e22 ${orangePos}%,
+            #e74c3c ${orangePos}%, #e74c3c 100%)`;
+    }
+
+    function updateScaleGradient(min, max) {
+        const range = max - min;
+        const violetEnd = Math.max(min, Math.min(max, 450));
+        const blueEnd = Math.max(min, Math.min(max, 485));
+        const cyanEnd = Math.max(min, Math.min(max, 500));
+        const greenEnd = Math.max(min, Math.min(max, 565));
+        const yellowEnd = Math.max(min, Math.min(max, 590));
+        const orangeEnd = Math.max(min, Math.min(max, 625));
+        const violetPos = ((violetEnd - min) / range) * 100;
+        const bluePos = ((blueEnd - min) / range) * 100;
+        const cyanPos = ((cyanEnd - min) / range) * 100;
+        const greenPos = ((greenEnd - min) / range) * 100;
+        const yellowPos = ((yellowEnd - min) / range) * 100;
+        const orangePos = ((orangeEnd - min) / range) * 100;
+        wavelengthScale.style.background = `linear-gradient(to right, 
+            #8e44ad 0%, #8e44ad ${violetPos}%,
+            #3498db ${violetPos}%, #3498db ${bluePos}%,
+            #2ecc71 ${bluePos}%, #2ecc71 ${cyanPos}%,
+            #2ecc71 ${cyanPos}%, #2ecc71 ${greenPos}%,
+            #f1c40f ${greenPos}%, #f1c40f ${yellowPos}%,
+            #e67e22 ${yellowPos}%, #e67e22 ${orangePos}%,
+            #e74c3c ${orangePos}%, #e74c3c 100%)`;
+    }
+
+    function getColorName(wavelength) {
+        if (wavelength >= 380 && wavelength < 450) return "Violeta";
+        if (wavelength >= 450 && wavelength < 485) return "Azul";
+        if (wavelength >= 485 && wavelength < 500) return "Ciano";
+        if (wavelength >= 500 && wavelength < 565) return "Verde";
+        if (wavelength >= 565 && wavelength < 590) return "Amarelo";
+        if (wavelength >= 590 && wavelength < 625) return "Laranja";
+        if (wavelength >= 625 && wavelength <= 750) return "Vermelho";
+        return "Fora do espectro";
+    }
+
+    wavelengthSlider.addEventListener('input', function() {
+        wavelengthInput.value = this.value;
+        updateResults();
+    });
+
+    wavelengthInput.addEventListener('input', function() {
+        const min = parseInt(wavelengthSlider.min);
+        const max = parseInt(wavelengthSlider.max);
+        let value = Math.min(Math.max(parseInt(this.value) || min, min), max);
+        this.value = value;
+        wavelengthSlider.value = value;
+        updateResults();
+    });
+
+    minWavelengthInput.addEventListener('input', function() {
+        updateSliderRange();
+        updateResults();
+    });
+
+    maxWavelengthInput.addEventListener('input', function() {
+        updateSliderRange();
+        updateResults();
+    });
+
+    function wavelengthToColor(wavelength) {
+        let r, g, b;
+        let factor;
+        wavelength = Math.max(380, Math.min(750, wavelength));
+        if (wavelength >= 380 && wavelength < 440) {
+            r = -(wavelength - 440) / (440 - 380);
+            g = 0.0;
+            b = 1.0;
+        } else if (wavelength >= 440 && wavelength < 490) {
+            r = 0.0;
+            g = (wavelength - 440) / (490 - 440);
+            b = 1.0;
+        } else if (wavelength >= 490 && wavelength < 510) {
+            r = 0.0;
+            g = 1.0;
+            b = -(wavelength - 510) / (510 - 490);
+        } else if (wavelength >= 510 && wavelength < 580) {
+            r = (wavelength - 510) / (580 - 510);
+            g = 1.0;
+            b = 0.0;
+        } else if (wavelength >= 580 && wavelength < 645) {
+            r = 1.0;
+            g = -(wavelength - 645) / (645 - 580);
+            b = 0.0;
+        } else if (wavelength >= 645 && wavelength <= 750) {
+            r = 1.0;
+            g = 0.0;
+            b = 0.0;
+        } else {
+            r = 0.0;
+            g = 0.0;
+            b = 0.0;
+        }
+        if (wavelength >= 380 && wavelength < 420) {
+            factor = 0.3 + 0.7 * (wavelength - 380) / (420 - 380);
+        } else if (wavelength >= 420 && wavelength < 700) {
+            factor = 1.0;
+        } else if (wavelength >= 700 && wavelength <= 750) {
+            factor = 0.3 + 0.7 * (750 - wavelength) / (750 - 700);
+        } else {
+            factor = 0.0;
+        }
+        r = Math.round(r * factor * 255);
+        g = Math.round(g * factor * 255);
+        b = Math.round(b * factor * 255);
+        return { r, g, b };
+    }
+
+    function rgbToCmyk(r, g, b) {
+        r = r / 255;
+        g = g / 255;
+        b = b / 255;
+        let k = 1 - Math.max(r, g, b);
+        let c = (1 - r - k) / (1 - k);
+        let m = (1 - g - k) / (1 - k);
+        let y = (1 - b - k) / (1 - k);
+        if (k === 1) {
+            c = 0;
+            m = 0;
+            y = 0;
+        }
+        return {
+            c: Math.round(c * 100),
+            m: Math.round(m * 100),
+            y: Math.round(y * 100),
+            k: Math.round(k * 100)
+        };
+    }
+
+    function rgbToHex(r, g, b) {
+        return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase();
+    }
+
+    function calculateTristimulus(wavelength, r, g, b) {
+        const x = (0.4124564 * r + 0.3575761 * g + 0.1804375 * b) / 255;
+        const y = (0.2126729 * r + 0.7151522 * g + 0.0721750 * b) / 255;
+        const z = (0.0193339 * r + 0.1191920 * g + 0.9503041 * b) / 255;
+        return {
+            x: x.toFixed(4),
+            y: y.toFixed(4),
+            z: z.toFixed(4)
+        };
+    }
+
+    function updateResults() {
+        const wavelength = parseInt(wavelengthInput.value);
+        const color = wavelengthToColor(wavelength);
+        const cmyk = rgbToCmyk(color.r, color.g, color.b);
+        const hex = rgbToHex(color.r, color.g, color.b);
+        const xyz = calculateTristimulus(wavelength, color.r, color.g, color.b);
+        colorDisplay.style.backgroundColor = `rgb(${color.r}, ${color.g}, ${color.b})`;
+        const brightness = (color.r * 299 + color.g * 587 + color.b * 114) / 1000;
+        colorDisplay.style.color = brightness > 128 ? 'black' : 'white';
+        colorDisplay.textContent = `${wavelength}nm (${getColorName(wavelength)})`;
+        xyzValue.textContent = `X: ${xyz.x}, Y: ${xyz.y}, Z: ${xyz.z}`;
+        rgbValue.textContent = `rgb(${color.r}, ${color.g}, ${color.b})`;
+        cmykValue.textContent = `cmyk(${cmyk.c}%, ${cmyk.m}%, ${cmyk.y}%, ${cmyk.k}%)`;
+        hexValue.textContent = hex;
+    }
+
+    calculateBtn.addEventListener('click', updateResults);
+    updateSliderRange();
+    updateResults();
+});
+</script> 
+
+
+
+
+
+
+
+
+
+
+<!-- Aqui termina o código específico da página -->
+<p style="margin-top: 20px; font-size: 14px; color: #555; border-top: 1px solid #ddd; padding-top: 15px;">
+  <strong>Como citar essa página:</strong><br>
+  FUMACHI, E. F. <strong id="citacao-titulo"></strong>. Disponível em: <span id="citacao-url"></span>. Acesso em: <span id="citacao-data"></span>.
+</p>
+
+<hr>
+
+<footer>
+<p align="center">Prof. Dr. Fumachi. &copy; <span id="ano"></span></p>
+</footer>
+
+
+<script>
+  document.getElementById('cabecalho-titulo').innerText = document.title;
+  document.getElementById('citacao-titulo').innerText = document.title;
+  document.getElementById('citacao-url').innerText = window.location.href;
+  const hoje = new Date();
+  const dia = String(hoje.getDate()).padStart(2, '0');
+  const meses = ['jan.', 'fev.', 'mar.', 'abr.', 'mai.', 'jun.', 'jul.', 'ago.', 'set.', 'out.', 'nov.', 'dez.'];
+  const mes = meses[hoje.getMonth()];
+  const anoAtual = hoje.getFullYear();
+  document.getElementById('citacao-data').innerText = `${dia} ${mes} ${anoAtual}.`;
+  document.getElementById('ano').textContent = anoAtual;
+</script>
+
+</body>
+</html>
+

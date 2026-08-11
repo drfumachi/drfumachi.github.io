@@ -1,0 +1,120 @@
+ <!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Política de Privacidade
+  </title>
+  <script>
+    window.MathJax = {
+      loader: {
+        paths: {tex: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/input/tex/extensions'},
+        load: [
+          '[tex]/ams','[tex]/amscd','[tex]/bbox','[tex]/boldsymbol','[tex]/braket',
+          '[tex]/cases','[tex]/centernot','[tex]/colortbl','[tex]/color',
+          '[tex]/enclose','[tex]/extpfeil','[tex]/gensymb','[tex]/html',
+          '[tex]/mhchem','[tex]/newcommand','[tex]/noerrors','[tex]/noundefined',
+          '[tex]/physics','[tex]/setoptions','[tex]/tagformat','[tex]/textmacros',
+          '[tex]/unicode','[tex]/verb'
+        ]
+      },
+      tex: {
+        packages: {'[+]': [
+          'ams','amscd','bbox','boldsymbol','braket','cases','centernot',
+          'colortbl','color','enclose','extpfeil','gensymb','html','mhchem',
+          'newcommand','noerrors','noundefined','physics','setoptions',
+          'tagformat','textmacros','unicode','verb'
+        ]},
+        inlineMath: [["\\(", "\\)"], ["$", "$"]],
+        displayMath: [["\\[", "\\]"], ["$$", "$$"]]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<header>
+  <h1 id="cabecalho-titulo">Política de Privacidade
+  </h1>
+
+
+</header>
+<hr>
+<!-- Aqui começa o código específico da página -->
+<main>
+
+
+    <p>Última atualização: 13/06/2026.</p>
+    <p>Histórico de atualizações: 03/12/2025</p>
+
+<h2>1. Introdução</h2>
+<p>O site do Prof. Dr. Fumachi respeita a privacidade dos visitantes do nosso site. Esta página descreve nossa política de privacidade para o site https://fumachi.mat.br</p>
+
+<h2>2. Coleta de Dados</h2>
+<p>Nosso site não coleta dados pessoais dos visitantes através de formulários ou cadastros.</p>
+
+<h2>3. Links Externos</h2>
+<p>Nosso site contém link para o CV Lattes (CNPq), que é um site externo. Ao clicar neste link, você será direcionado para o site da Plataforma Lattes, que possui sua própria política de privacidade. Não somos responsáveis pelas práticas de privacidade desse site externo.</p>
+
+<h2>4. Dados Técnicos</h2>
+<p>O servidor de hospedagem pode coletar logs técnicos padrão (endereço IP, data/hora de acesso, páginas visitadas), mas estes dados:</p>
+<p>- São gerenciados exclusivamente pela empresa de hospedagem</p>
+<p>- Não são utilizados por nós para identificação de usuários</p>
+<p>- São padrão do sistema de hospedagem</p>
+
+<h2>5. Cookies</h2>
+<p>Nosso site não utiliza cookies.</p>
+
+<h2>6. Isenção de Responsabilidade</h2>
+<p>Não somos responsáveis pelas políticas de privacidade de sites externos (como o CV Lattes/CNPq) que possam ser acessados através de links em nosso site.</p>
+
+<h2>7. Alterações nesta Política</h2>
+<p>Esta Política de Privacidade pode ser atualizada. A data da última atualização será indicada no topo desta página.</p>
+
+<h2>8. Contato</h2>
+<p>Esta política aplica-se apenas ao site https://fumachi.mat.br e/ou https://drfumachi.com.br</p>
+<p>Prof. Dr. Fumachi</p>
+
+
+
+</main> 
+
+
+
+
+
+
+
+
+
+
+<!-- Aqui termina o código específico da página -->
+<p style="margin-top: 20px; font-size: 14px; color: #555; border-top: 1px solid #ddd; padding-top: 15px;">
+  <strong>Como citar essa página:</strong><br>
+  FUMACHI, E. F. <strong id="citacao-titulo"></strong>. Disponível em: <span id="citacao-url"></span>. Acesso em: <span id="citacao-data"></span>.
+</p>
+
+<hr>
+
+<footer>
+<p align="center">Prof. Dr. Fumachi. &copy; <span id="ano"></span></p>
+</footer>
+
+
+<script>
+  document.getElementById('cabecalho-titulo').innerText = document.title;
+  document.getElementById('citacao-titulo').innerText = document.title;
+  document.getElementById('citacao-url').innerText = window.location.href;
+  const hoje = new Date();
+  const dia = String(hoje.getDate()).padStart(2, '0');
+  const meses = ['jan.', 'fev.', 'mar.', 'abr.', 'mai.', 'jun.', 'jul.', 'ago.', 'set.', 'out.', 'nov.', 'dez.'];
+  const mes = meses[hoje.getMonth()];
+  const anoAtual = hoje.getFullYear();
+  document.getElementById('citacao-data').innerText = `${dia} ${mes} ${anoAtual}.`;
+  document.getElementById('ano').textContent = anoAtual;
+</script>
+
+</body>
+</html>
+

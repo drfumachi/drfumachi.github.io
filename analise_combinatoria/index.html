@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Análise Combinatória</title>
+  <script>
+    window.MathJax = {
+      loader: {
+        paths: {tex: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/input/tex/extensions'},
+        load: [
+          '[tex]/ams','[tex]/amscd','[tex]/bbox','[tex]/boldsymbol','[tex]/braket',
+          '[tex]/cases','[tex]/centernot','[tex]/colortbl','[tex]/color',
+          '[tex]/enclose','[tex]/extpfeil','[tex]/gensymb','[tex]/html',
+          '[tex]/mhchem','[tex]/newcommand','[tex]/noerrors','[tex]/noundefined',
+          '[tex]/physics','[tex]/setoptions','[tex]/tagformat','[tex]/textmacros',
+          '[tex]/unicode','[tex]/verb'
+        ]
+      },
+      tex: {
+        packages: {'[+]': [
+          'ams','amscd','bbox','boldsymbol','braket','cases','centernot',
+          'colortbl','color','enclose','extpfeil','gensymb','html','mhchem',
+          'newcommand','noerrors','noundefined','physics','setoptions',
+          'tagformat','textmacros','unicode','verb'
+        ]},
+        inlineMath: [["\\(", "\\)"], ["$", "$"]],
+        displayMath: [["\\[", "\\]"], ["$$", "$$"]]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<header>
+  <h1 id="cabecalho-titulo">Análise Combinatória</h1>
+</header>
+<hr>
+<!-- Aqui começa o código específico da página -->
+<!-- 1. FATORIAL -->
+<h2>1. FATORIAL</h2>
+<h3>Fórmula:</h3>
+<p>\[ n! = n \times (n-1) \times (n-2) \times \cdots \times 1 \]</p>
+<h3>Explicação:</h3>
+<p>Multiplica um número por todos seus antecessores até 1. É a base para todas as outras fórmulas. Por definição, \(0! = 1\).</p>
+<h3>Exemplo:</h3>
+<p>\[ 5! = 5 \times 4 \times 3 \times 2 \times 1 = 120 \]</p>
+
+<h3>Exercício:</h3>
+<p>Calcule o valor de \(7!\) e \(4!\).</p>
+
+<hr>
+
+<!-- 2. PRINCÍPIO FUNDAMENTAL DA CONTAGEM -->
+<h2>2. PRINCÍPIO FUNDAMENTAL DA CONTAGEM</h2>
+<h3>Fórmula:</h3>
+<p>\[ \text{Total} = m_1 \times m_2 \times m_3 \times \cdots \]</p>
+<h3>Explicação:</h3>
+<p>Se uma decisão tem etapas independentes, multiplica-se as possibilidades de cada etapa. Usado em situações com "e" (faço isso e depois aquilo).</p>
+<h3>Exemplo:</h3>
+<p>Uma loja vende 4 modelos de camisa e 3 modelos de calça. Quantos looks diferentes podem ser formados?<br>
+\[ 4 \times 3 = 12 \text{ looks diferentes} \]</p>
+
+<h3>Exercício:</h3>
+<p>Um restaurante oferece 5 tipos de entrada, 8 pratos principais e 4 sobremesas. Quantos menus completos (entrada + principal + sobremesa) são possíveis?</p>
+
+<hr>
+
+<!-- 3. PERMUTAÇÃO SIMPLES -->
+<h2>3. PERMUTAÇÃO SIMPLES</h2>
+<h3>Fórmula:</h3>
+<p>\[ P_n = n! \]</p>
+<h3>Explicação:</h3>
+<p>Número de maneiras de ordenar todos os elementos distintos. Usa todos os elementos disponíveis.</p>
+<h3>Exemplo:</h3>
+<p>De quantas maneiras 5 pessoas podem se sentar em 5 cadeiras em fila?<br>
+\[ P_5 = 5! = 5 \times 4 \times 3 \times 2 \times 1 = 120 \text{ maneiras} \]</p>
+
+<h3>Exercício:</h3>
+<p>Quantos anagramas (permutações das letras) podemos formar com a palavra "LIVRO"?</p>
+
+<hr>
+
+<!-- 4. PERMUTAÇÃO COM REPETIÇÃO -->
+<h2>4. PERMUTAÇÃO COM REPETIÇÃO</h2>
+<h3>Fórmula:</h3>
+<p>\[ P_n^{a,b,c} = \frac{n!}{a! \cdot b! \cdot c!} \]</p>
+<h3>Explicação:</h3>
+<p>Ordenação de elementos quando existem itens repetidos. Divide pelo fatorial das repetições.</p>
+<h3>Exemplo:</h3>
+<p>Quantos anagramas tem a palavra "BANANA" (6 letras: 3 A's, 2 N's)?<br>
+\[ P_6^{3,2} = \frac{6!}{3! \times 2!} = \frac{720}{6 \times 2} = \frac{720}{12} = 60 \text{ anagramas} \]</p>
+
+<h3>Exercício:</h3>
+<p>Quantos anagramas tem a palavra "MATEMÁTICA"? Considere: M=2, A=3, T=2, E=1, I=1, C=1 (total 10 letras).</p>
+
+<hr>
+
+<!-- 5. ARRANJO SIMPLES -->
+<h2>5. ARRANJO SIMPLES</h2>
+<h3>Fórmula:</h3>
+<p>\[ A_{n,p} = \frac{n!}{(n-p)!} \]</p>
+<h3>Explicação:</h3>
+<p>Escolher e ordenar p elementos entre n disponíveis. A ordem importa e você usa apenas parte dos elementos.</p>
+<h3>Exemplo:</h3>
+<p>Quantas senhas de 3 dígitos distintos podemos formar com os números de 0 a 9?<br>
+\[ A_{10,3} = \frac{10!}{(10-3)!} = \frac{10!}{7!} = 10 \times 9 \times 8 = 720 \text{ senhas} \]</p>
+
+<h3>Exercício:</h3>
+<p>Em uma corrida com 8 corredores, de quantas maneiras diferentes podemos formar o pódio (1º, 2º e 3º lugares)?</p>
+
+<hr>
+
+<!-- 6. ARRANJO COM REPETIÇÃO -->
+<h2>6. ARRANJO COM REPETIÇÃO</h2>
+<h3>Fórmula:</h3>
+<p>\[ AR_{n,p} = n^p \]</p>
+<h3>Explicação:</h3>
+<p>Escolher e ordenar p elementos entre n, podendo repetir elementos. A ordem importa e repetições são permitidas.</p>
+<h3>Exemplo:</h3>
+<p>Quantas senhas de 3 dígitos podemos formar com os números de 0 a 9, podendo repetir dígitos?<br>
+\[ AR_{10,3} = 10^3 = 1000 \text{ senhas} \]</p>
+
+<h3>Exercício:</h3>
+<p>Uma placa de carro antiga tinha 2 letras (26 possíveis) e 4 números (0 a 9), podendo repetir. Quantas placas eram possíveis?</p>
+
+<hr>
+
+<!-- 7. COMBINAÇÃO SIMPLES -->
+<h2>7. COMBINAÇÃO SIMPLES</h2>
+<h3>Fórmula:</h3>
+<p>\[ C_{n,p} = \frac{n!}{p!(n-p)!} = {n \choose p} \]</p>
+<h3>Explicação:</h3>
+<p>Escolher p elementos entre n, sem considerar ordem. A ordem não importa e os elementos são distintos.</p>
+<h3>Exemplo:</h3>
+<p>Escolher 2 sólidos entre 4 opções (pão, margarina, queijo, bolo):<br>
+\[ C_{4,2} = \frac{4!}{2! \times 2!} = \frac{24}{4} = 6 \text{ combinações} \]</p>
+
+<h3>Exercício:</h3>
+<p>Quantas comissões de 3 pessoas podem ser formadas a partir de um grupo de 10 pessoas?</p>
+
+<hr>
+
+<!-- 8. COMBINAÇÃO COM REPETIÇÃO -->
+<h2>8. COMBINAÇÃO COM REPETIÇÃO</h2>
+<h3>Fórmula:</h3>
+<p>\[ CR_{n,p} = C_{n+p-1,p} = \frac{(n+p-1)!}{p!(n-1)!} \]</p>
+<h3>Explicação:</h3>
+<p>Escolher p elementos entre n, podendo repetir, onde a ordem não importa. Usado quando repetições são permitidas.</p>
+<h3>Exemplo:</h3>
+<p>Escolher 3 bolas de sorvete entre 4 sabores (chocolate, morango, creme, baunilha), podendo repetir sabores:<br>
+\[ CR_{4,3} = C_{4+3-1,3} = C_{6,3} = \frac{6!}{3! \times 3!} = \frac{720}{36} = 20 \text{ combinações} \]</p>
+
+<h3>Exercício:</h3>
+<p>Uma lanchonete vende 5 tipos de frutas. De quantas maneiras você pode escolher 4 frutas para fazer um suco, podendo repetir frutas?</p>
+
+<hr>
+<h2>Resumo para ajudar na identificação:</h2>
+<p><img src="diagrama_escolha_combinatoria.png" width="400px" /></p>
+<h2>GABARITO DOS EXERCÍCIOS</h2>
+
+<h3>1. Fatorial:</h3>
+<p>\(7! = 5040\) e \(4! = 24\)</p>
+
+<h3>2. Princípio Fundamental da Contagem:</h3>
+<p>\(5 \times 8 \times 4 = 160\) menus</p>
+
+<h3>3. Permutação Simples:</h3>
+<p>\(P_5 = 5! = 120\) anagramas</p>
+
+<h3>4. Permutação com Repetição:</h3>
+<p>\(P_{10}^{3,2,2} = \frac{10!}{3! \times 2! \times 2!} = \frac{3628800}{24} = 151200\) anagramas</p>
+
+<h3>5. Arranjo Simples:</h3>
+<p>\(A_{8,3} = 8 \times 7 \times 6 = 336\) pódios</p>
+
+<h3>6. Arranjo com Repetição:</h3>
+<p>\(26^2 \times 10^4 = 676 \times 10000 = 6.760.000\) placas</p>
+
+<h3>7. Combinação Simples:</h3>
+<p>\(C_{10,3} = \frac{10!}{3! \times 7!} = \frac{3628800}{30240} = 120\) comissões</p>
+
+<h3>8. Combinação com Repetição:</h3>
+<p>\(CR_{5,4} = C_{5+4-1,4} = C_{8,4} = \frac{8!}{4! \times 4!} = 70\) maneiras</p>
+
+
+
+
+
+
+
+
+
+
+<!-- Aqui termina o código específico da página -->
+<p style="margin-top: 20px; font-size: 14px; color: #555; border-top: 1px solid #ddd; padding-top: 15px;">
+  <strong>Como citar essa página:</strong><br>
+  FUMACHI, E. F. <strong id="citacao-titulo"></strong>. Disponível em: <span id="citacao-url"></span>. Acesso em: <span id="citacao-data"></span>.
+</p>
+
+<hr>
+
+<footer>
+<p align="center">Prof. Dr. Fumachi. &copy; <span id="ano"></span></p>
+</footer>
+
+
+<script>
+  document.getElementById('cabecalho-titulo').innerText = document.title;
+  document.getElementById('citacao-titulo').innerText = document.title;
+  document.getElementById('citacao-url').innerText = window.location.href;
+  const hoje = new Date();
+  const dia = String(hoje.getDate()).padStart(2, '0');
+  const meses = ['jan.', 'fev.', 'mar.', 'abr.', 'mai.', 'jun.', 'jul.', 'ago.', 'set.', 'out.', 'nov.', 'dez.'];
+  const mes = meses[hoje.getMonth()];
+  const anoAtual = hoje.getFullYear();
+  document.getElementById('citacao-data').innerText = `${dia} ${mes} ${anoAtual}.`;
+  document.getElementById('ano').textContent = anoAtual;
+</script>
+
+</body>
+</html>
+

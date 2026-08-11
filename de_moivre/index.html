@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>De Moivre
+  </title>
+
+  <script>
+    window.MathJax = {
+      loader: {
+        paths: {tex: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/input/tex/extensions'},
+        load: [
+          '[tex]/ams','[tex]/amscd','[tex]/bbox','[tex]/boldsymbol','[tex]/braket',
+          '[tex]/cases','[tex]/centernot','[tex]/colortbl','[tex]/color',
+          '[tex]/enclose','[tex]/extpfeil','[tex]/gensymb','[tex]/html',
+          '[tex]/mhchem','[tex]/newcommand','[tex]/noerrors','[tex]/noundefined',
+          '[tex]/physics','[tex]/setoptions','[tex]/tagformat','[tex]/textmacros',
+          '[tex]/unicode','[tex]/verb'
+        ]
+      },
+      tex: {
+        packages: {'[+]': [
+          'ams','amscd','bbox','boldsymbol','braket','cases','centernot',
+          'colortbl','color','enclose','extpfeil','gensymb','html','mhchem',
+          'newcommand','noerrors','noundefined','physics','setoptions',
+          'tagformat','textmacros','unicode','verb'
+        ]},
+        inlineMath: [["\\(", "\\)"], ["$", "$"]],
+        displayMath: [["\\[", "\\]"], ["$$", "$$"]]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<header>
+
+
+  <h1 id="cabecalho-titulo">De Moivre
+  </h1>
+
+
+</header>
+<hr>
+<!-- Aqui começa o código específico da página -->
+
+    <h2>Derivação da Fórmula de De Moivre</h2>
+
+    <h2>1. Representação trigonométrica de um número complexo</h2>
+    <p>
+        Todo número complexo \( z = a + bi \) pode ser escrito como:
+    </p>
+    <p>\( z = r (\cos \theta + i \sin \theta) \)</p>
+    <p>Onde:</p>
+    <ul>
+        <li>\( r = |z| = \sqrt{a^2 + b^2} \) é o módulo</li>
+        <li>\( \theta = \arg(z) = \tan^{-1}\frac{b}{a} \) é o argumento</li>
+    </ul>
+
+    <h2>2. Multiplicação de números complexos</h2>
+    <p>Se temos:</p>
+    <p>\( z_1 = r_1 (\cos \theta_1 + i \sin \theta_1), \quad z_2 = r_2 (\cos \theta_2 + i \sin \theta_2) \)</p>
+    <p>Multiplicando:</p>
+    <p>\( z_1 z_2 = r_1 r_2 (\cos(\theta_1 + \theta_2) + i \sin(\theta_1 + \theta_2)) \)</p>
+    <p>Conclusão: ao multiplicar complexos, os módulos se multiplicam e os argumentos se somam.</p>
+
+    <h2>3. Potência de um número complexo — ideia inicial</h2>
+    <p>Para \( z = r (\cos \theta + i \sin \theta) \) e um inteiro \( n \), observamos o padrão:</p>
+    <p>\( z^2 = z \cdot z = r^2 (\cos(\theta + \theta) + i \sin(\theta + \theta)) = r^2 (\cos 2\theta + i \sin 2\theta) \)</p>
+    <p>\( z^3 = z^2 \cdot z = r^3 (\cos(2\theta + \theta) + i \sin(2\theta + \theta)) = r^3 (\cos 3\theta + i \sin 3\theta) \)</p>
+    <p>\( z^4 = z^3 \cdot z = r^4 (\cos(3\theta + \theta) + i \sin(3\theta + \theta)) = r^4 (\cos 4\theta + i \sin 4\theta) \)</p>
+    <p>Observamos que ao elevar à potência \( n \), o módulo é \( r^n \) e o argumento é \( n \theta \).</p>
+
+    <h3>Indução matemática</h3>
+    <p><strong>Base da indução:</strong> \( n = 1 \)</p>
+    <p>\( z^1 = z = r (\cos \theta + i \sin \theta) \)</p>
+    <p><strong>Hipótese de indução:</strong> suponha que \( z^k = r^k (\cos(k\theta) + i \sin(k\theta)) \)</p>
+    <p><strong>Passo de indução:</strong></p>
+    <p>\( z^{k+1} = z^k \cdot z = r^k (\cos(k\theta) + i \sin(k\theta)) \cdot r (\cos \theta + i \sin \theta) \)</p>
+    <p>Multiplicando módulos: \( r^k \cdot r = r^{k+1} \)</p>
+    <p>Multiplicando ângulos (identidade trigonométrica):</p>
+    <p>\( (\cos(k\theta) + i \sin(k\theta))(\cos \theta + i \sin \theta) = \cos((k+1)\theta) + i \sin((k+1)\theta) \)</p>
+    <p>Logo: \( z^{k+1} = r^{k+1} (\cos((k+1)\theta) + i \sin((k+1)\theta)) \)</p>
+    <p>Portanto, por indução, a fórmula é válida para todo inteiro positivo \( n \):</p>
+    <p>\( \boxed{z^n = r^n (\cos(n\theta) + i \sin(n\theta))} \)</p>
+
+    <h2>4. Raízes n-ésimas</h2>
+    <p>Para resolver \( x^n = z \), escrevemos \( z = r (\cos \theta + i \sin \theta) \) e assumimos \( x = \rho (\cos \phi + i \sin \phi) \).</p>
+    <p>Pela fórmula de De Moivre:</p>
+    <p>\( x^n = \rho^n (\cos(n\phi) + i \sin(n\phi)) = r (\cos \theta + i \sin \theta) \)</p>
+    <p>Comparando módulo e argumento:</p>
+    <ul>
+        <li>Módulo: \( \rho^n = r \Rightarrow \rho = \sqrt[n]{r} \)</li>
+        <li>Argumento: \( n\phi = \theta + 2 k \pi \Rightarrow \phi = \frac{\theta + 2 k \pi}{n}, \quad k = 0,1,\dots,n-1 \)</li>
+    </ul>
+    <p>Portanto, as raízes n-ésimas são:</p>
+    <p>\( \boxed{x_k = \sqrt[n]{r} \left[ \cos\frac{\theta + 2 \pi k}{n} + i \sin\frac{\theta + 2 \pi k}{n} \right]}, \quad k = 0,1,\dots,n-1 \)</p>
+
+    <h2>5. Exemplos</h2>
+
+
+    <h3>Raízes cúbicas de -8</h3>
+    <p>\( x^3 = -8 \)</p>
+    <p>Módulo: \( r = 8 \), Argumento: \( \theta = \pi \)</p>
+    <p>Fórmula: \( x_k = 2 \left[ \cos\frac{\pi + 2\pi k}{3} + i \sin\frac{\pi + 2\pi k}{3} \right], \quad k=0,1,2 \)</p>
+    <p>Raízes:</p>
+    <ul>
+        <li>\( x_0 = 1 + i\sqrt{3} \)</li>
+        <li>\( x_1 = -2 \)</li>
+        <li>\( x_2 = 1 - i\sqrt{3} \)</li>
+    </ul>
+
+    <h3>Raízes quarticas da unidade</h3>
+    <p>\( x^4 = 1 \)</p>
+    <p>\( x_k = \cos\frac{2\pi k}{4} + i \sin\frac{2\pi k}{4}, \quad k=0,1,2,3 \)</p>
+    <p>Raízes:</p>
+    <ul>
+        <li>\( x_0 = 1 \)</li>
+        <li>\( x_1 = i \)</li>
+        <li>\( x_2 = -1 \)</li>
+        <li>\( x_3 = -i \)</li>
+    </ul>
+
+    <h3>Raízes quinticas da unidade</h3>
+    <p>\( x^5 = 1 \)</p>
+    <p>\( x_k = \cos\frac{2\pi k}{5} + i \sin\frac{2\pi k}{5}, \quad k=0,1,2,3,4 \)</p>
+    <p>Raízes aproximadas:</p>
+    <ul>
+        <li>\( x_0 = 1 \)</li>
+        <li>\( x_1 \approx 0,309 + 0,951i \)</li>
+        <li>\( x_2 \approx -0,809 + 0,588i \)</li>
+        <li>\( x_3 \approx -0,809 - 0,588i \)</li>
+        <li>\( x_4 \approx 0,309 - 0,951i \)</li>
+    </ul>
+
+    <h2>Resumo</h2>
+    <ul>
+        <li>Para números reais positivos, as raízes n-ésimas podem ser reais.</li>
+        <li>Para números negativos ou complexos, as raízes geralmente são complexas.</li>
+        <li>As raízes n-ésimas de 1 estão distribuídas uniformemente no círculo unitário.</li>
+        <li>De Moivre permite calcular potências e raízes complexas usando trigonometria.</li>
+    </ul> 
+
+
+
+
+
+
+
+
+
+
+<!-- Aqui termina o código específico da página -->
+<p style="margin-top: 20px; font-size: 14px; color: #555; border-top: 1px solid #ddd; padding-top: 15px;">
+  <strong>Como citar essa página:</strong><br>
+  FUMACHI, E. F. <strong id="citacao-titulo"></strong>. Disponível em: <span id="citacao-url"></span>. Acesso em: <span id="citacao-data"></span>.
+</p>
+
+<hr>
+
+<footer>
+<p align="center">Prof. Dr. Fumachi. &copy; <span id="ano"></span></p>
+</footer>
+
+
+<script>
+  document.getElementById('cabecalho-titulo').innerText = document.title;
+  document.getElementById('citacao-titulo').innerText = document.title;
+  document.getElementById('citacao-url').innerText = window.location.href;
+  const hoje = new Date();
+  const dia = String(hoje.getDate()).padStart(2, '0');
+  const meses = ['jan.', 'fev.', 'mar.', 'abr.', 'mai.', 'jun.', 'jul.', 'ago.', 'set.', 'out.', 'nov.', 'dez.'];
+  const mes = meses[hoje.getMonth()];
+  const anoAtual = hoje.getFullYear();
+  document.getElementById('citacao-data').innerText = `${dia} ${mes} ${anoAtual}.`;
+  document.getElementById('ano').textContent = anoAtual;
+</script>
+
+</body>
+</html>
+

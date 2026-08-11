@@ -1,0 +1,297 @@
+ <!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Pesquisa Operacional
+  </title>
+  <script>
+    window.MathJax = {
+      loader: {
+        paths: {tex: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/input/tex/extensions'},
+        load: [
+          '[tex]/ams','[tex]/amscd','[tex]/bbox','[tex]/boldsymbol','[tex]/braket',
+          '[tex]/cases','[tex]/centernot','[tex]/colortbl','[tex]/color',
+          '[tex]/enclose','[tex]/extpfeil','[tex]/gensymb','[tex]/html',
+          '[tex]/mhchem','[tex]/newcommand','[tex]/noerrors','[tex]/noundefined',
+          '[tex]/physics','[tex]/setoptions','[tex]/tagformat','[tex]/textmacros',
+          '[tex]/unicode','[tex]/verb'
+        ]
+      },
+      tex: {
+        packages: {'[+]': [
+          'ams','amscd','bbox','boldsymbol','braket','cases','centernot',
+          'colortbl','color','enclose','extpfeil','gensymb','html','mhchem',
+          'newcommand','noerrors','noundefined','physics','setoptions',
+          'tagformat','textmacros','unicode','verb'
+        ]},
+        inlineMath: [["\\(", "\\)"], ["$", "$"]],
+        displayMath: [["\\[", "\\]"], ["$$", "$$"]]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<header>
+  <h1 id="cabecalho-titulo">Pesquisa Operacional
+  </h1>
+
+
+</header>
+<hr>
+<!-- Aqui começa o código específico da página -->
+<h1>Solução gráfica</h1>
+<p>Exemplo: Imagine que você ganhou 10 milhões de reais na loteria e deseja parar de trabalhar e viver somente de rendimentos. Você recebe orientações e decide que vai investir em poupança e em casas de aluguel. Além disso você ainda quer deixar uma quantia de dinheiro recebida do prêmio para gastar como quiser. Suponha que o rendimento da poupança seja igual a 0,35% ao mês e que as casas de aluguel que você vai comprar possuem preço médio de 200.000 reais e serão alugadas por 600 reais por mês. Modele matematicamente o rendimento mensal em função da quantia deixada na poupança e em função da quantidade de casas alugadas. Varie os valores máximos de investimento para cada item e calcule os rendimentos em cada caso. Mostre através de uma tabela qual seria a configuração de investimento que mais traria maior rendimento. Considere o valor máximo de dinheiro para gastar como quiser igual a até 3 milhões de reais.
+</p> 
+
+<h2>Maximização pelo Método Gráfico</h2>
+
+    <h2>Exercício 1: Mistura de Rações</h2>
+    <p>Uma fábrica produz dois tipos de ração para animais: tipo A e tipo B. Cada quilo da ração A dá um lucro de R\$ 30,00 e cada quilo da ração B dá um lucro de R$ 20,00. A produção diária está limitada a 100 kg de milho e 80 kg de soja. Cada quilo da ração A consome 0,5 kg de milho e 0,6 kg de soja. Cada quilo da ração B consome 0,8 kg de milho e 0,4 kg de soja. Encontre a quantidade de cada ração que maximiza o lucro diário.</p>
+    
+    <p><strong>Formulação:</strong></p>
+    <p>Maximizar: \(Z = 30x_1 + 20x_2\)</p>
+    <p>Sujeito a:</p>
+    <p>
+        \(
+        \left\{
+        \begin{aligned}
+        0,6 x_1 + 0,4 x_2 &\le 80 \,\,\,\, \text{(soja)} \\
+        0,5 x_1 + 0,8 x_2 &\le 100 \,\,\,\, \text{(milho)} \\
+        x_1, x_2 \ge 0
+        \end{aligned}
+        \right.
+        \)
+    </p>
+
+    <p>onde \(x_1\) = kg de ração A e \(x_2\) = kg de ração B</p>
+
+<p><strong>Resolução do exercício 1</strong></p>
+<p>Para resolver usando o método gráfico basta colocarmos as equações no plano cartesiano a fim de descobrir a região de interesse.</p>
+<p>A figura com a região de interesse, ou seja, a região onde todas as restrições sejam satisfeitas (área verde).</p>
+<p><img src="img/PO_exercicio_2.png" width="400px" /></p>
+
+<p>No entanto, pela figura acima, é possível verificar que temos quatro pontos que formam a região verde, que são os pontos A, B, C e D.</p>
+<p>O ponto C é a origem, ou seja (0,0) e, obviamente, não maximizará a nossa função objetivo.</p>
+<p>Os pontos B e D podem ser determinados mais facilmente pois são pontos que interseccionam os eixos \(x_1\) (horizontal) e \(x_2 \) (vertical), assim, o ponto B é (133,0) e o ponto D é (0,125).</p>
+<p>O ponto A será calculado através da interseção entre a reta azul (\( 0,6x_1+0,4x_2=80\)) com a reta vermelha (\( 0,5x_1+0,8x_2=100\)).</p>
+<p>Esta situação trata-se de um sistema de equações lineares, e pode ser representado abaixo:</p>
+<p>
+    \[
+    \left\{
+    \begin{aligned}
+    0,6x_1+0,4x_2 &=80 \\
+    0,5x_1+0,8x_2 &=100
+    \end{aligned}
+    \right.
+    \]
+</p>
+<p>O próximo passo é resolver esse sistema. Como trata-se de um sistema de ordem 2 (2 equações e 2 variáveis) vamos resolver o método de Cramer (o leitor pode consultar o material de Álgebra Linear na página principal desse site para saber mais! ;))</p>
+
+<p>Para usar o método de Cramer precisamos definir as matrizes \( \mathbb{M} \), \( \mathbb{M}_{x_1} \) e \( \mathbb{M}_{x_2} \) como segue:</p>
+
+<p>
+    \[
+    \mathbb{M} = \begin{bmatrix} 0,6 & 0,4 \\ 0,5 & 0,8 \end{bmatrix}, 
+    \mathbb{M}_{x_1} = \begin{bmatrix} 80 & 0,4 \\ 100 & 0,8 \end{bmatrix}, 
+    \mathbb{M}_{x_2} = \begin{bmatrix} 0,6 & 80 \\ 0,5 & 100 \end{bmatrix}
+    \]
+</p>
+<p>Uma vez que as matrizes foram definidas, é necessário calcular o determinante delas, como segue:</p>
+<p>
+    \[
+    \begin{aligned}
+    \det \mathbb{M} &= 0,6 \cdot 0,8 - 0,4 \cdot 0,5 = 0,48 - 0,2 = 0,28 \\
+    \det \mathbb{M}_{x_1} &= 80 \cdot 0,8 - 0,4 \cdot 100 = 64 - 40 = 24 \\ 
+    \det \mathbb{M}_{x_2} &= 0,6 \cdot 100 - 80 \cdot 0,5 = 60 - 40 = 20
+    \end{aligned}
+    \]
+</p>
+<p>Para calcular os valores de \( x_1 \) e \( x_2 \) basta fazer:</p>
+<p>
+    \[
+    \begin{aligned}
+    x_1 &= \frac{\det \mathbb{M}_{x_1}}{\det \mathbb{M}} = \frac{24}{0,28}=85,71 \approx 86 \\
+    x_2 &= \frac{\det \mathbb{M}_{x_2}}{\det \mathbb{M}} = \frac{20}{0,28}=71,42 \approx 71
+    \end{aligned}
+    \]
+</p>
+<p>Assim, as coordenadas do ponto A são (86, 71).</p>
+<p>Por fim, precisamos calcular qual dos pontos otimizará a função objetivo, ou seja, qual ponto da região de interesse produzirá o maior resultado (maximização). Para realizar esse cálculo basta substituirmos os valores das coordenadas de cada ponto na função objetivo:</p>
+<p>Ponto B(133 , 0)</p>
+<p>
+    \[
+    Z=30 \cdot x_1 + 20 \cdot x_2 = 30 \cdot 133 + 20 \cdot 0 = 3990
+    \]
+</p>
+<p>Ponto D(0 , 125)</p>
+<p>
+    \[
+    Z=30 \cdot x_1 + 20 \cdot x_2 = 30 \cdot 0 + 20 \cdot 125 = 2500
+    \]
+</p>
+<p>Ponto B(86 , 71)</p>
+<p>
+    \[
+    Z=30 \cdot x_1 + 20 \cdot x_2 = 30 \cdot 86 + 20 \cdot 71 = 4000
+    \]
+</p>
+<p>Enfim, o ponto que otimiza (maximiza) é o ponto A(86 , 71), ou seja, o maior lucro R\$4000,00 vem da produção de 86 kg da ração A e 71kg da ração B.</p>
+<hr>
+    <h2>Exercício 2: Transporte de Cargas</h2>
+    <p>Uma transportadora utiliza dois tipos de caminhões para entregas: modelo X e modelo Y. Cada viagem do modelo X gera um lucro de R\$ 120,00 e cada viagem do modelo Y gera um lucro de R$ 150,00. Os caminhões têm limitações de peso e volume: cada modelo X pode transportar até 3 toneladas e 10 m³, enquanto cada modelo Y pode transportar até 4 toneladas e 8 m³. A empresa tem disponibilidade para transportar no máximo 24 toneladas e 60 m³ por dia. Quantas viagens de cada modelo devem ser feitas para maximizar o lucro diário?</p>
+    
+    <p><strong>Formulação:</strong></p>
+    <p>Maximizar: \(Z = 120x_1 + 150x_2\)</p>
+    <p>Sujeito a:</p>
+        <p>
+        \(
+        \left\{
+        \begin{aligned}
+        3 x_1 + 4 x_2 &\le 24 \,\,\,\, \text{(toneladas)} \\
+        10 x_1 + 8 x_2 &\le 60 \,\,\,\, \text{(metros cúbicos)} \\
+        x_1, x_2 \ge 0
+        \end{aligned}
+        \right.
+        \)
+    </p>
+    
+    <p>onde \(x_1\) = viagens do modelo X e \(x_2\) = viagens do modelo Y</p>
+
+    <h2>Exercício 3: Plantação Agrícola</h2>
+    <p>Um agricultor planta milho e soja em suas terras. Cada hectare de milho dá um lucro de R\$ 1.200,00 e cada hectare de soja dá um lucro de R$ 1.500,00. Ele tem disponível 50 hectares de terra, 120 horas de trabalho por mês e 80 litros de fertilizante. Cada hectare de milho requer 3 horas de trabalho e 2 litros de fertilizante. Cada hectare de soja requer 4 horas de trabalho e 3 litros de fertilizante. Determine quantos hectares de cada cultura devem ser plantados para maximizar o lucro.</p>
+    
+    <p><strong>Formulação:</strong></p>
+    <p>Maximizar: \(Z = 1200x_1 + 1500x_2\)</p>
+    <p>Sujeito a:</p>
+        <p>
+        \(
+        \left\{
+        \begin{aligned}
+        x_1 + x_2 &\le 50 \,\,\,\, \text{(hectares de terra)} \\
+        3 x_1 + 4 x_2 &\le 120 \,\,\,\, \text{(horas de trabalho)} \\
+        2 x_1 + 3 x_2 &\le 80 \,\,\,\, \text{(litros de fertilizante)} \\
+        x_1, x_2 \ge 0
+        \end{aligned}
+        \right.
+        \)
+    </p>
+
+    <p>onde \(x_1\) = hectares de milho e \(x_2\) = hectares de soja</p>
+
+    <h2>Exercício 4: Fabricação de Brinquedos</h2>
+    <p>Uma fábrica de brinquedos produz carrinhos e bonecas. Cada carrinho dá um lucro de R\$ 15,00 e cada boneca dá um lucro de R$ 20,00. A fábrica tem disponível 40 kg de plástico e 60 horas de mão de obra por semana. Cada carrinho consome 0,5 kg de plástico e 1 hora de mão de obra. Cada boneca consome 0,8 kg de plástico e 1,5 horas de mão de obra. Além disso, a demanda máxima semanal é de 50 carrinhos e 40 bonecas. Encontre a quantidade de cada brinquedo que maximiza o lucro semanal.</p>
+    
+    <p><strong>Formulação:</strong></p>
+    <p>Maximizar: \(Z = 15x_1 + 20x_2\)</p>
+    <p>Sujeito a:</p>
+        <p>
+        \(
+        \left\{
+        \begin{aligned}
+        0,5 x_1 + 0,8 x_2 &\le 40 \,\,\,\, \text{(kg de plástico)} \\
+        x_1 + 1,5 x_2 &\le 60 \,\,\,\, \text{(horas de mão-de-obra)} \\
+        x_1 &\le 50 \,\,\,\, \text{(demanda máxima de carrinhos)} \\
+        x_2 &\le 40 \,\,\,\, \text{(demanda máxima de bonecas)} \\
+        x_1, x_2 \ge 0
+        \end{aligned}
+        \right.
+        \)
+    </p>
+    <p>onde \(x_1\) = número de carrinhos e \(x_2\) = número de bonecas</p>
+
+    <h2>Instruções para resolução:</h2>
+    <p>Para cada exercício, trace as retas correspondentes às restrições em um plano cartesiano, identifique a região viável e encontre o ponto ótimo testando os vértices da região na função objetivo.</p>
+    
+<hr> 
+
+<p><a href="modelos/planilha.xlsx">Planilha - Aula - 21/10/2024</a></p>
+    <p><a href="modelos/modelo_receita.txt">Modelo LP Solve</a></p>
+<p><a href="modelos/bolo.txt">Modelo por fatia - Aula - 28/10/2024</a></p>
+<p><a href="https://altushost-swe.dl.sourceforge.net/project/lpsolve/lpsolve/5.5.2.11/lp_solve_5.5.2.11_exe_win64.zip?viasf=1">LP 
+Solve para Windows</a></p>
+<p><a href="modelos/bolo_final.txt">Modelo LP Solve 
+Final (Lucro=Receita-Custo) por fatia</a></p> 
+
+
+<h2>Bolo de cenoura e bolo de chocolate - MILP</h2>
+<p>O modelo acima será resolvido usando o APP (Android) chamado MILP, na versão gratuita.</p>
+<p>Esse aplicativo suporte até 12 restrições (<i>Constraints</i>) e no modelo temos 13 restrições.</p>
+<p>Para contornar esse "problema" devemos analisar o modelo e excluir uma restrição para podermos digitar no aplicativo e resolver a situação de maximização do lucro.</p>
+<p>A restrição que poderá ser removida está relacionada com os guardanapos pois, embora esteja relacionada com o lucro, ela não é "fundamental" para a produção dos bolos, ou seja, não se usa guardanapo como ingrediente dos bolos.</p>
+<p>Desse modo, as imagens abaixo poderão ser usadas para replicar no celular e poder resolver alguns dos exercícios abaixo.</p>
+<div align="center"><img src="img/bolo_cenoura_chocolate/milp_01.jpeg" style="width:50%;height:auto;" /></div>
+<div align="center"><img src="img/bolo_cenoura_chocolate/milp_02.jpeg" style="width:50%;height:auto;" /></div>
+<div align="center"><img src="img/bolo_cenoura_chocolate/milp_03.jpeg" style="width:50%;height:auto;" /></div>
+<p>Note que na função objetivo o valor -64 não foi inserido. Desse modo, do valor calculado deve ser retirado -64, que corresponde ao "salário diário".</p> 
+
+<h2>Exercícios</h2>
+<ol> <li>Identifique a função objetivo do problema e explique o que ela representa no contexto de maximização de recursos. A função é dada por: \( \text{max} = 1.56x + 2y - 64 \).</li> <li>Descreva o papel das restrições no modelo de programação linear. Identifique e interprete cada restrição de recurso (ovo, trigo, cenoura, óleo, açúcar, fermento, leite condensado, creme de leite, chocolate em pó, gás, guardanapo, e tempo de produção) e explique como cada uma delas limita as variáveis \( x \) e \( y \).</li> <li>Com base na restrição de preferência \( x = 2y \), substitua \( x \) na função objetivo e nas restrições. Reescreva o modelo resultante utilizando apenas a variável \( y \).</li> <li>Utilizando o método gráfico, represente as restrições no plano cartesiano e identifique a região viável. Considerando a restrição \( x = 2y \), encontre o ponto que maximiza a função objetivo.</li> <li>Determine os valores máximos de \( x \) e \( y \) que satisfazem todas as restrições ao mesmo tempo, assumindo que ambas as variáveis são números inteiros. Quais são esses valores?</li> <li>Explique o impacto da restrição de tempo de produção (\( 0.041875x + 0.041875y \leq 6 \)) na quantidade máxima de produtos que podem ser produzidos. Como essa restrição afeta a função objetivo?</li> <li>Suponha que a disponibilidade de chocolate em pó aumente de 1000 para 1500. Reescreva a restrição correspondente e verifique se essa mudança permite um aumento na função objetivo.</li> <li>Analise o efeito de uma mudança na função objetivo. Se o coeficiente de \( x \) na função objetivo mudar de 1.56 para 2, qual será o novo valor máximo da função objetivo para os mesmos valores de \( x \) e \( y \)?</li> <li>Explique a importância de garantir que \( x \) e \( y \) sejam inteiros neste modelo. O que poderia acontecer se os valores fossem arredondados para o número inteiro mais próximo?</li> <li>Calcule o ponto de interseção entre as restrições de açúcar e óleo e determine se esse ponto pertence à região viável. Se ele pertencer, qual seria o valor da função objetivo neste ponto?</li>
+	<li>Se quisermos ter um salário mensal de \( R\$ 3125,00 \) qual deve ser o valor diário? Onde esse valor deve ser colocado? A produção comporta esse salário?</li>
+	<li>Analise a restrição de guardanapos. Suponha que o limite de guardanapos aumente para 150 unidades. Reescreva a restrição e verifique se essa mudança permite aumentar a produção de bolos sem violar as outras restrições.</li>
+	<li>Identifique o insumo crítico. Qual das restrições você considera ser a mais limitante para a produção de bolos? Justifique sua resposta com base nas quantidades de insumos disponíveis e no impacto dessa restrição na maximização da função objetivo.</li>
+	<li>Estimativa de produção sem restrições de insumos. Suponha que as restrições de leite condensado e de creme de leite sejam removidas. Qual seria o novo valor máximo da função objetivo?</li>
+	<li>Analise a restrição de tempo. Se a restrição de tempo de produção fosse aumentada para 8 horas, qual seria o impacto dessa mudança na quantidade máxima de bolos que podem ser produzidos?</li>
+	<li>Substitua a relação de preferência. Em vez de \(x=2y\), suponha que a relação seja \(x=y\). Reescreva o modelo e discuta o impacto dessa mudança na região viável e na solução ótima.</li>
+	<li>Simule uma mudança de preço. Considere um cenário em que o preço das fatias de bolo de chocolate diminua para 1,80 (em vez de 2). Como essa mudança afetaria o valor da função objetivo?</li>
+	<li>Analise a viabilidade com demanda extra. Se houver uma demanda adicional de 20 unidades de bolo de cenoura (ou seja, \(x\geq20\)), como essa nova restrição afetaria o modelo e a solução ótima?</li>
+	<li>Defina uma prioridade de insumo. Se você pudesse aumentar a disponibilidade de apenas um insumo em 10%, qual escolheria para aumentar a produção e o lucro? Justifique com base no impacto esperado na função objetivo.</li>
+	<li>Analise a limitação de gás. Sabendo que o gás é uma limitação significativa com a restrição \(18.75x+18.75y\leq13000\), qual seria o impacto na produção se o limite de gás fosse reduzido para 12000?</li>
+	<p>Para as questões de 21 a 32, considere a imagem:</p>
+	<img src="img/lp_solve_problema.png" width="50%" />
+	<li>Qual o software utilizado para calcular o problema acima?</li>
+	<li>O valor ótimo da função objetivo é?</li>
+	<li>Qual a linha que aparece o valor ótimo da função objetivo?</li>
+	<li>A quantidade que deve ser produzida do produto A para otimizar a função objetivo é?</li>
+	<li>A quantidade que deve ser produzida do produto B para otimizar a função objetivo é?</li>
+	<li>Explique a linha 4</li>
+	<li>Explique a linha 5</li>
+	<li>Explique a linha 6</li>
+	<li>Explique a linha 7</li>
+	<li>O tipo de arquivo usado para editar o modelo e ser resolvido pelo lp_solve é?</li>
+	<li>Calcule usando o ponto que otimiza a função usando a função objetivo</li>
+	<li>Caso queira um salário de R$3000,00 por mês, o que você deve mudar no modelo? Mostre como ficaria o modelo e determine o valor da função objetivo</li>
+
+
+</ol> 
+
+
+
+
+
+
+
+
+
+
+<!-- Aqui termina o código específico da página -->
+<p style="margin-top: 20px; font-size: 14px; color: #555; border-top: 1px solid #ddd; padding-top: 15px;">
+  <strong>Como citar essa página:</strong><br>
+  FUMACHI, E. F. <strong id="citacao-titulo"></strong>. Disponível em: <span id="citacao-url"></span>. Acesso em: <span id="citacao-data"></span>.
+</p>
+
+<hr>
+
+<footer>
+<p align="center">Prof. Dr. Fumachi. &copy; <span id="ano"></span></p>
+</footer>
+
+
+<script>
+  document.getElementById('cabecalho-titulo').innerText = document.title;
+  document.getElementById('citacao-titulo').innerText = document.title;
+  document.getElementById('citacao-url').innerText = window.location.href;
+  const hoje = new Date();
+  const dia = String(hoje.getDate()).padStart(2, '0');
+  const meses = ['jan.', 'fev.', 'mar.', 'abr.', 'mai.', 'jun.', 'jul.', 'ago.', 'set.', 'out.', 'nov.', 'dez.'];
+  const mes = meses[hoje.getMonth()];
+  const anoAtual = hoje.getFullYear();
+  document.getElementById('citacao-data').innerText = `${dia} ${mes} ${anoAtual}.`;
+  document.getElementById('ano').textContent = anoAtual;
+</script>
+
+</body>
+</html>
+

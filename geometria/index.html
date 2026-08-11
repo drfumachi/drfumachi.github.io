@@ -1,0 +1,464 @@
+ <!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Geometria
+  </title>
+
+  <script>
+    window.MathJax = {
+      loader: {
+        paths: {tex: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/input/tex/extensions'},
+        load: [
+          '[tex]/ams','[tex]/amscd','[tex]/bbox','[tex]/boldsymbol','[tex]/braket',
+          '[tex]/cases','[tex]/centernot','[tex]/colortbl','[tex]/color',
+          '[tex]/enclose','[tex]/extpfeil','[tex]/gensymb','[tex]/html',
+          '[tex]/mhchem','[tex]/newcommand','[tex]/noerrors','[tex]/noundefined',
+          '[tex]/physics','[tex]/setoptions','[tex]/tagformat','[tex]/textmacros',
+          '[tex]/unicode','[tex]/verb'
+        ]
+      },
+      tex: {
+        packages: {'[+]': [
+          'ams','amscd','bbox','boldsymbol','braket','cases','centernot',
+          'colortbl','color','enclose','extpfeil','gensymb','html','mhchem',
+          'newcommand','noerrors','noundefined','physics','setoptions',
+          'tagformat','textmacros','unicode','verb'
+        ]},
+        inlineMath: [["\\(", "\\)"], ["$", "$"]],
+        displayMath: [["\\[", "\\]"], ["$$", "$$"]]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<header>
+
+
+  <h1 id="cabecalho-titulo">Geometria
+  </h1>
+
+
+</header>
+<hr>
+<!-- Aqui começa o código específico da página -->
+<h2>1. Espaços métricos: a generalização da distância</h2>
+
+<p>
+Um espaço métrico é um par \((M, d)\) onde \(M\) é um conjunto não vazio e \(d: M \times M \to \mathbb{R}\) é uma função (distância) que satisfaz, para quaisquer \(x, y, z \in M\):
+</p>
+
+<p>
+\[
+\begin{aligned}
+&\text{(i) } d(x, y) \ge 0 \text{ e } d(x, y) = 0 \text{ se e somente se } x = y \quad \text{(identidade dos indiscerníveis)}\\
+&\text{(ii) } d(x, y) = d(y, x) \quad \text{(simetria)}\\
+&\text{(iii) } d(x, z) \le d(x, y) + d(y, z) \quad \text{(desigualdade triangular)}
+\end{aligned}
+\]
+</p>
+
+<p>
+Esta estrutura abstrai a noção de proximidade e permite tratar de limites, continuidade e bolas abertas sem depender de coordenadas.
+</p>
+
+<h3>1.1 Exemplos clássicos de espaços métricos</h3>
+
+<p>
+A reta real \(\mathbb{R}\) com \(d(x,y) = |x - y|\) é o exemplo mais imediato. No plano \(\mathbb{R}^2\) podemos definir diferentes métricas.
+</p>
+
+<p>
+A métrica euclidiana (a usual do plano) é dada por:
+</p>
+<p>
+\[
+d_E((x_1,y_1),(x_2,y_2)) = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2}.
+\]
+</p>
+
+<p>
+A métrica do taxista (ou de Manhattan) é definida por:
+</p>
+<p>
+\[
+d_T((x_1,y_1),(x_2,y_2)) = |x_1-x_2| + |y_1-y_2|.
+\]
+</p>
+
+<p>
+Estendendo para o espaço tridimensional, a métrica do taxista torna-se:
+</p>
+<p>
+\[
+d_T((x_1,y_1,z_1),(x_2,y_2,z_2)) = |x_1-x_2| + |y_1-y_2| + |z_1-z_2|.
+\]
+</p>
+
+<h2>2. A geometria do taxista e suas bolas</h2>
+
+<p>
+Num espaço métrico, a bola aberta de centro \(c\) e raio \(r\) é o conjunto dos pontos cuja distância ao centro é menor que \(r\): \(B(c,r) = \{ p \in M : d(c,p) < r \}\).
+</p>
+
+<p>
+Na métrica do taxista em \(\mathbb{R}^2\) a bola unitária centrada na origem é:
+</p>
+<p>
+\[
+B_T((0,0),1) = \{ (x,y) : |x| + |y| < 1 \}.
+\]
+</p>
+<p>
+Este conjunto é um quadrado rodado de 45° (um losango) com vértices em \((1,0)\), \((0,1)\), \((-1,0)\) e \((0,-1)\).
+</p>
+
+<p>
+Em \(\mathbb{R}^3\) com a métrica do taxista, a bola unitária é:
+</p>
+<p>
+\[
+B_T((0,0,0),1) = \{ (x,y,z) : |x| + |y| + |z| < 1 \}.
+\]
+</p>
+<p>
+Este conjunto é um octaedro regular: tem 8 faces triangulares, 6 vértices (nos eixos coordenados) e 12 arestas. É o poliedro dual do cubo.
+</p>
+
+<h2>3. A geometria euclidiana do espaço</h2>
+
+<p>
+A geometria que descreve o espaço físico é a geometria euclidiana, baseada na métrica:
+</p>
+<p>
+\[
+d_E((x_1,y_1,z_1),(x_2,y_2,z_2)) = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2 + (z_1-z_2)^2}.
+\]
+</p>
+
+<p>
+Neste contexto, as bolas são esferas perfeitamente redondas. Os objetos tridimensionais estudados são os sólidos geométricos, cujos volumes são dados por fórmulas clássicas.
+</p>
+
+<h3>3.1 Sólidos fundamentais e fórmulas de volume</h3>
+
+<h4>Cubo</h4>
+<p>
+Cubo de aresta \(a\): todas as faces são quadrados.
+</p>
+<p>
+\[
+V_{\text{cubo}} = a^3
+\]
+</p>
+
+<h4>Paralelepípedo retângulo</h4>
+<p>
+Arestas \(a, b, c\) (comprimento, largura, altura).
+</p>
+<p>
+\[
+V_{\text{paralelepípedo}} = a \cdot b \cdot c
+\]
+</p>
+
+<h4>Esfera</h4>
+<p>
+Raio \(R\).
+</p>
+<p>
+\[
+V_{\text{esfera}} = \frac{4}{3}\pi R^3
+\]
+</p>
+
+<h4>Cilindro circular reto</h4>
+<p>
+Raio da base \(R\), altura \(h\).
+</p>
+<p>
+\[
+V_{\text{cilindro}} = \pi R^2 h
+\]
+</p>
+
+<h4>Cone circular reto</h4>
+<p>
+Raio da base \(R\), altura \(h\).
+</p>
+<p>
+\[
+V_{\text{cone}} = \frac{1}{3}\pi R^2 h
+\]
+</p>
+
+<h4>Octaedro regular</h4>
+<p>
+Aresta \(a\). (O mesmo poliedro que surge na métrica do taxista, agora considerado na geometria euclidiana.)
+</p>
+<p>
+\[
+V_{\text{octaedro}} = \frac{\sqrt{2}}{3} a^3
+\]
+</p>
+
+<h4>Pirâmide de base poligonal</h4>
+<p>
+Área da base \(A_b\), altura \(h\).
+</p>
+<p>
+\[
+V_{\text{ pirâmide}} = \frac{1}{3} A_b h
+\]
+</p>
+
+<h4>Prisma</h4>
+<p>
+Área da base \(A_b\), altura \(h\).
+</p>
+<p>
+\[
+V_{\text{prisma}} = A_b h
+\]
+</p>
+
+<h3>3.2 Observação final</h3>
+
+<p>
+A métrica do taxista mostrou como a noção de "bola" pode variar conforme a definição de distância, produzindo um octaedro onde esperaríamos uma esfera. Na geometria euclidiana, recuperamos as formas familiares e as fórmulas de volume que há séculos são usadas para descrever o espaço à nossa volta.
+</p>
+ 
+ 
+ <h2>Exercícios simples sobre espaços métricos e geometria</h2>
+
+<p><em>(As soluções estão ao final de cada seção.)</em></p>
+
+<h2>1. Espaços métricos — verificação dos axiomas</h2>
+
+<p>
+<strong>Exercício 1.1</strong> — Considere o conjunto \(\mathbb{R}\) com a função distância \(d(x,y) = (x-y)^2\). 
+Verifique se \(d\) satisfaz a desigualdade triangular. Caso não satisfaça, apresente um contraexemplo.
+</p>
+
+<p>
+<strong>Exercício 1.2</strong> — Seja \(M = \{A, B, C\}\) (três letras). Defina \(d(A,A)=0\), \(d(B,B)=0\), \(d(C,C)=0\), 
+\(d(A,B)=d(B,A)=2\), \(d(A,C)=d(C,A)=3\), \(d(B,C)=d(C,B)=5\). 
+Mostre que \((M,d)\) é um espaço métrico.
+</p>
+
+<h3>Soluções 1</h3>
+
+<p>
+<strong>Solução 1.1</strong> — Não vale a desigualdade triangular. 
+Contraexemplo: tome \(x=0\), \(y=1\), \(z=2\). 
+Temos \(d(0,2) = (0-2)^2 = 4\). 
+\(d(0,1) = 1\) e \(d(1,2) = 1\); soma = 2. 
+Exige-se \(4 \le 2\)? Falso. Portanto não é métrica.
+</p>
+
+<p>
+<strong>Solução 1.2</strong> — 
+(1) \(d(p,q) \ge 0\) e zero só quando \(p=q\): ok por definição.<br>
+(2) Simetria: ok pois foi definida simétrica.<br>
+(3) Desigualdade triangular: testamos todas combinações:
+\(d(A,B)=2 \le d(A,C)+d(C,B)=3+5=8\); 
+\(d(A,C)=3 \le d(A,B)+d(B,C)=2+5=7\); 
+\(d(B,C)=5 \le d(B,A)+d(A,C)=2+3=5\) (vale igual). 
+As demais são análogas. Satisfaz.
+</p>
+
+<h2>2. Métrica euclidiana e métrica do taxista no plano</h2>
+
+<p>
+<strong>Exercício 2.1</strong> — Dados \(P=(1,2)\) e \(Q=(4,6)\), calcule:
+</p>
+
+<p>
+a) a distância euclidiana \(d_E(P,Q)\); <br>
+b) a distância do taxista \(d_T(P,Q)\).
+</p>
+
+<p>
+<strong>Exercício 2.2</strong> — Desenhe mentalmente a “bola” (disco) de centro na origem e raio 2 na métrica do taxista. 
+Quais as coordenadas dos vértices desse losango?
+</p>
+
+<h3>Soluções 2</h3>
+
+<p>
+<strong>Solução 2.1</strong> — <br>
+a) \(d_E = \sqrt{(4-1)^2 + (6-2)^2} = \sqrt{3^2 + 4^2} = \sqrt{9+16} = \sqrt{25}=5\).<br>
+b) \(d_T = |4-1| + |6-2| = 3 + 4 = 7\).
+</p>
+
+<p>
+<strong>Solução 2.2</strong> — 
+A equação é \(|x|+|y| < 2\). Os vértices estão nos eixos: \((2,0), (0,2), (-2,0), (0,-2)\). 
+É um losango com diagonais sobre os eixos.
+</p>
+
+<h2>3. Bola do taxista em 3D: o octaedro</h2>
+
+<p>
+<strong>Exercício 3.1</strong> — Na métrica do taxista em \(\mathbb{R}^3\), considere a “esfera” de raio 1 (superfície da bola). 
+Quais são os seis vértices desse octaedro?
+</p>
+
+<p>
+<strong>Exercício 3.2</strong> — O ponto \(P = (1, 1, 1)\) pertence à bola de centro na origem e raio 2 na métrica do taxista? 
+E na métrica euclidiana?
+</p>
+
+<h3>Soluções 3</h3>
+
+<p>
+<strong>Solução 3.1</strong> — 
+Os vértices do octaedro são os pontos onde duas coordenadas são zero e a terceira vale \(+1\) ou \(-1\): 
+\((1,0,0)\), \((-1,0,0)\), \((0,1,0)\), \((0,-1,0)\), \((0,0,1)\), \((0,0,-1)\).
+</p>
+
+<p>
+<strong>Solução 3.2</strong> — 
+Na métrica do taxista: \(d_T((0,0,0), (1,1,1)) = |1|+|1|+|1| = 3\). 
+Como \(3 > 2\), o ponto não pertence à bola do taxista.<br>
+Na métrica euclidiana: \(d_E = \sqrt{1^2+1^2+1^2} = \sqrt{3} \approx 1,73\). 
+Como \(\sqrt{3} < 2\), o ponto pertence à bola euclidiana de raio 2.
+</p>
+
+<h2>4. Geometria euclidiana espacial — volumes</h2>
+
+<p>
+<strong>Exercício 4.1</strong> — Calcule o volume de um cubo de aresta \(a = 5\) cm.
+</p>
+
+<p>
+<strong>Exercício 4.2</strong> — Uma esfera tem raio \(R = 3\) m. Qual o seu volume? (Use \(\pi \approx 3,14\))
+</p>
+
+<p>
+<strong>Exercício 4.3</strong> — Um cilindro circular reto tem raio da base \(R = 2\) cm e altura \(h = 7\) cm. 
+Determine seu volume.
+</p>
+
+<p>
+<strong>Exercício 4.4</strong> — Um cone reto tem raio da base \(R = 3\) cm e altura \(h = 6\) cm. 
+Calcule o volume.
+</p>
+
+<p>
+<strong>Exercício 4.5</strong> — Um octaedro regular tem aresta \(a = 2\) cm. 
+Lembrando que a fórmula do volume é \(V = \frac{\sqrt{2}}{3} a^3\), calcule o volume (use \(\sqrt{2} \approx 1,41\)).
+</p>
+
+<p>
+<strong>Exercício 4.6</strong> — Uma pirâmide de base quadrada tem lado da base \(l = 4\) m e altura \(h = 9\) m. 
+Calcule seu volume.
+</p>
+
+<p>
+<strong>Exercício 4.7</strong> — Um prisma reto de base triangular tem área da base \(A_b = 6\) cm² e altura \(h = 10\) cm. 
+Qual o seu volume?
+</p>
+
+<h3>Soluções 4</h3>
+
+<p>
+<strong>Solução 4.1</strong> — 
+\(V = a^3 = 5^3 = 125\) cm³.
+</p>
+
+<p>
+<strong>Solução 4.2</strong> — 
+\(V = \frac{4}{3}\pi R^3 = \frac{4}{3} \times 3,14 \times 27 = \frac{4}{3} \times 84,78 = 113,04\) m³.
+</p>
+
+<p>
+<strong>Solução 4.3</strong> — 
+\(V = \pi R^2 h = 3,14 \times 4 \times 7 = 3,14 \times 28 = 87,92\) cm³.
+</p>
+
+<p>
+<strong>Solução 4.4</strong> — 
+\(V = \frac{1}{3}\pi R^2 h = \frac{1}{3} \times 3,14 \times 9 \times 6 = \frac{1}{3} \times 3,14 \times 54 = 3,14 \times 18 = 56,52\) cm³.
+</p>
+
+<p>
+<strong>Solução 4.5</strong> — 
+\(V = \frac{\sqrt{2}}{3} a^3 \approx \frac{1,41}{3} \times 8 = 0,47 \times 8 = 3,76\) cm³.
+</p>
+
+<p>
+<strong>Solução 4.6</strong> — 
+Área da base \(A_b = l^2 = 4^2 = 16\) m². 
+\(V = \frac{1}{3} A_b h = \frac{1}{3} \times 16 \times 9 = 16 \times 3 = 48\) m³.
+</p>
+
+<p>
+<strong>Solução 4.7</strong> — 
+\(V = A_b \cdot h = 6 \times 10 = 60\) cm³.
+</p>
+
+<h3>5. Desafio final (integração dos conceitos)</h3>
+
+<p>
+<strong>Exercício 5.1</strong> — Considere a métrica do taxista em \(\mathbb{R}^3\). 
+Qual deve ser o raio \(r\) (segundo essa métrica) para que a bola de centro na origem contenha exatamente o ponto \((2,1,1)\) em sua superfície? 
+Qual seria o volume do octaedro correspondente (use a fórmula do octaedro euclidiano com essa aresta)?
+</p>
+
+<h3>Solução 5.1</h3>
+
+<p>
+Na métrica do taxista, a distância de \((0,0,0)\) a \((2,1,1)\) é \(|2|+|1|+|1| = 4\). 
+Portanto o raio deve ser \(r = 4\). 
+A “bola” é o conjunto \(\{ (x,y,z) : |x|+|y|+|z| \le 4 \}\). 
+A superfície é um octaedro cujos vértices estão em \((\pm4,0,0)\), \((0,\pm4,0)\), \((0,0,\pm4)\). 
+A aresta \(a\) desse octaedro (distância entre dois vértices vizinhos, como \((4,0,0)\) e \((0,4,0)\)) é 
+\(\sqrt{(4-0)^2+(0-4)^2+(0-0)^2} = \sqrt{16+16} = \sqrt{32} = 4\sqrt{2}\). 
+O volume do octaedro regular euclidiano com aresta \(a\) é \(V = \frac{\sqrt{2}}{3} a^3\). 
+Substituindo \(a = 4\sqrt{2}\): 
+\(a^3 = (4\sqrt{2})^3 = 64 \cdot (\sqrt{2})^3 = 64 \cdot 2\sqrt{2} = 128\sqrt{2}\). 
+Portanto \(V = \frac{\sqrt{2}}{3} \cdot 128\sqrt{2} = \frac{128 \cdot 2}{3} = \frac{256}{3} \approx 85,33\) unidades de volume.
+</p> 
+
+
+
+
+
+
+
+
+
+
+<!-- Aqui termina o código específico da página -->
+<p style="margin-top: 20px; font-size: 14px; color: #555; border-top: 1px solid #ddd; padding-top: 15px;">
+  <strong>Como citar essa página:</strong><br>
+  FUMACHI, E. F. <strong id="citacao-titulo"></strong>. Disponível em: <span id="citacao-url"></span>. Acesso em: <span id="citacao-data"></span>.
+</p>
+
+<hr>
+
+<footer>
+<p align="center">Prof. Dr. Fumachi. &copy; <span id="ano"></span></p>
+</footer>
+
+
+<script>
+  document.getElementById('cabecalho-titulo').innerText = document.title;
+  document.getElementById('citacao-titulo').innerText = document.title;
+  document.getElementById('citacao-url').innerText = window.location.href;
+  const hoje = new Date();
+  const dia = String(hoje.getDate()).padStart(2, '0');
+  const meses = ['jan.', 'fev.', 'mar.', 'abr.', 'mai.', 'jun.', 'jul.', 'ago.', 'set.', 'out.', 'nov.', 'dez.'];
+  const mes = meses[hoje.getMonth()];
+  const anoAtual = hoje.getFullYear();
+  document.getElementById('citacao-data').innerText = `${dia} ${mes} ${anoAtual}.`;
+  document.getElementById('ano').textContent = anoAtual;
+</script>
+
+</body>
+</html>
+

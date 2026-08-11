@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Conjuntos Numéricos
+  </title>
+
+  <script>
+    window.MathJax = {
+      loader: {
+        paths: {tex: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/input/tex/extensions'},
+        load: [
+          '[tex]/ams','[tex]/amscd','[tex]/bbox','[tex]/boldsymbol','[tex]/braket',
+          '[tex]/cases','[tex]/centernot','[tex]/colortbl','[tex]/color',
+          '[tex]/enclose','[tex]/extpfeil','[tex]/gensymb','[tex]/html',
+          '[tex]/mhchem','[tex]/newcommand','[tex]/noerrors','[tex]/noundefined',
+          '[tex]/physics','[tex]/setoptions','[tex]/tagformat','[tex]/textmacros',
+          '[tex]/unicode','[tex]/verb'
+        ]
+      },
+      tex: {
+        packages: {'[+]': [
+          'ams','amscd','bbox','boldsymbol','braket','cases','centernot',
+          'colortbl','color','enclose','extpfeil','gensymb','html','mhchem',
+          'newcommand','noerrors','noundefined','physics','setoptions',
+          'tagformat','textmacros','unicode','verb'
+        ]},
+        inlineMath: [["\\(", "\\)"], ["$", "$"]],
+        displayMath: [["\\[", "\\]"], ["$$", "$$"]]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<header>
+
+
+  <h1 id="cabecalho-titulo">Conjuntos Numéricos
+  </h1>
+
+
+</header>
+<hr>
+<!-- Aqui começa o código específico da página -->
+<p>O entendimento sobre conjuntos numéricos é fundamental pois através
+deste conhecimento é possível aplicar corretamente algoritmos e entender
+suas limitações. Uma situação, muito comum, quando se aplica a
+matemática em outras ciências é entender o significado daquele resultado
+obtido no problema real proposto.</p>
+<h2 id="conjuntos-numéricos">Conjuntos numéricos</h2>
+<p>Os conjuntos numéricos têm aplicações desde tempos remotos e foram
+desenvolvidos ao longo do tempo para contemplar as possibilidades e
+soluções de problemas práticos.</p>
+<p>Imagine uma situação hipotética na qual um indivíduo possua dezenas
+de animais por exemplo, dezenas de vacas leiteiras. Um vizinho deste
+indivíduo também possui dezenas de vacas leiteiras. Ambos compartilham o
+mesmo local para levarem suas vacas para se alimentarem. Ambos vivem
+numa época em que não existe um tipo formal de escrita, sequer números!
+Ao final do dia eles retornam para suas "residências" juntamente com
+seus animais.</p>
+<p>O leitor pode imaginar que em algum momento isso possa gerar alguma
+confusão, não é? A confusão é que algum dos dois possa ter, ao final do
+dia, menos ou mais animais que realmente possuíam ao sair pela manhã.
+Este tipo de problema poderia ter acontecido e precisaria de uma
+solução.</p>
+<p>Talvez, a solução encontrada seja uma espécie de contagem através de
+comparação. Para cada animal existente em sua casa, haveria uma "pedra".
+Assim, ao sair pela manhã, cada vaca que deixasse o estaleiro uma pedra
+seria adicionada a um tipo de bolsa rudimentar que o indivíduo
+carregaria consigo durante a viagem.</p>
+<p>Ao voltar para sua casa, a comparação aconteceria novamente mas de
+modo inverso, ou seja, para cada vaca que entrasse no estaleiro, uma
+pedra seria retirada da bolsa. Deste modo, poderiam acontecer 3
+situações possíveis, com a quantidade de pedras da bolsa:</p>
+<ol>
+<li><p><span>Sobrar pedras: isso indicaria que algumas vacas não
+chegaram à sua casa;</span></p></li>
+<li><p><span>Faltar pedras: isso indicaria que ele estava com mais
+vacas, possivelmente sendo alguma de seu vizinho;</span></p></li>
+<li><p><span>Não sobrar pedras: todas as vacas que saíram, retornaram e
+se juntaram no estaleiro.</span></p></li>
+</ol>
+<p>Esse processo funcionaria bem, até que o número de animais se
+tornasse grande o suficiente para ser inviável carregar todas as pedras
+em sua bolsa. Um sistema de contagem/registro seria interessante!</p>
+<p>Desse modo, é possível pensar na aplicabilidade do conjunto dos
+<em>Número Naturais</em>, ou seja, da natureza!</p>
+<p>O conjunto dos <em>Número Naturais</em>, será definido como
+segue:</p>
+<p><span class="math display">ℕ = {1, 2, 3, ⋯}</span></p>
+<p>É possível verificar um ponto de divergência em relação a outros
+autores de livros de matemática: o número 0 (zero) não será definido
+como número natural pois dificilmente o leitor ouvirá alguém dizendo
+<em>"Eu possuo ZERO Ferrari!"</em> ou algo do tipo <em>"Eu tenho ZERO
+reais na carteira!"</em>.</p>
+<p>A evolução continuou a acontecer e a necessidade de novos conjuntos
+numéricos foram aparecendo. A ideia de números negativos, comum para a
+atualidade nas relações financeiras, podem ser representados pelo
+conjunto dos <em>Números Inteiros</em> e pode ser definido como:</p>
+<p><span class="math display">ℤ = {⋯,  − 2,  − 1, 0, 1, 2, ⋯}</span></p>
+<p>Ressalta-se que o número 0 (zero), foi incorporado neste momento no
+conjunto entretanto, provavelmente ele foi o último algarismo a ser
+criado. O leitor pode fazer pesquisas adicionais para saber sobre a
+história do número 0.</p>
+<p>Pagamento de impostos sobre terras, construções de prédios, entre
+outros, levaram a humanidade a desenvolver um novo conjunto de números,
+os <em>Números Racionais</em>:</p>
+<div class="ceqn">
+<p><span class="math display">\[\begin{aligned}
+\mathbb{Q}=\left \{\frac{a}{b} , a \wedge b \in \mathbb{Z}, b \neq
+0\right \}
+\end{aligned}\]</span></p>
+</div>
+<p><br />
+No entanto, esses números não podiam descrever todas as situações
+possíveis. Um exemplo disso é o famoso problema proposto por Pitágoras
+juntamente com seu teorema.<br />
+</p>
+<div class="theorem">
+<p>Em um triângulo retângulo, a soma dos quadrados dos catetos é igual
+ao quadrado da hipotenusa.</p>
+</div>
+<p>Porém, dado um triângulo retângulo com catetos iguais a 1,
+tem-se:</p>
+<div class="ceqn">
+<p><span class="math display">\[\begin{aligned}
+c^2 &amp;= a^2 + b^2 \\
+c^2 &amp;= 1^2 + 1^2 \\
+c^2 &amp;= 1+1 \\
+c^2 &amp;= 2 \\
+c &amp;= \sqrt{2}
+\end{aligned}\]</span></p>
+</div>
+<p><br />
+Neste ponto, começaram os problemas para Pitágoras. Até o momento, não
+existia solução para descrever o número <span
+class="math inline">$\sqrt{2}$</span>. Muito tempo passou e esse tipo de
+número, os números que não podem ser escritos de modo <em>Racional</em>,
+foram definidos como <em>Números Irracionais</em>. Alguns exemplos
+desses números pode ser visto abaixo:</p>
+<div class="ceqn">
+<p><span class="math display">\[\begin{aligned}
+    \mathbb{I}=\{\sqrt{2}, \sqrt{3}, \pi, \mathrm{e}, \cdots \}
+    
+\end{aligned}\]</span></p>
+</div>
+<p><br />
+O conjunto dos <em>Números Irracionais</em> é infinito!</p>
+<p>Assim, tudo parecia estar bem resolvido pois a <strong>união</strong>
+entre os <em>Números Racionais</em> e <em>Números Irracionais</em> foi
+definido como <em>Números Reais</em>.</p>
+<p>Mas haveria um tipo de problema que poderia deixar, novamente, os
+matemáticos com os cabelos em pé. Seja a equação do segundo grau <span
+class="math inline"><em>x</em><sup>2</sup> + 4 = 0</span> e calcule as
+suas raízes:</p>
+<div class="ceqn">
+<p><span class="math display">\[\begin{aligned}
+\label{complexo}
+    x^2+4&amp;=0 \\ \nonumber
+    x^2+4-4&amp;=0-4 \\ \nonumber
+    x^2 + 0 &amp;= -4 \\ \nonumber
+    x^2 &amp;= -4 \\ \nonumber
+    x &amp;= \pm \sqrt{-4}
+    
+\end{aligned}\]</span></p>
+</div>
+<p><br />
+O leitor pode concluir, dependendo de sua formação matemática anterior,
+que este resultado, simplesmente, não existe. O que está profundamente
+equivocado!<br />
+A solução para este tipo de problema veio através da criação de um
+conjunto de números chamado <em>Números Complexos</em> com a seguinte
+definição:</p>
+<div class="ceqn">
+<p><span class="math display">\[\begin{aligned}
+    i = \sqrt{-1}       
+    
+\end{aligned}\]</span></p>
+</div>
+<p>Enfim, o Problema <a href="#complexo" data-reference-type="ref"
+data-reference="complexo">[complexo]</a> fica:</p>
+<div class="ceqn">
+<p><span class="math display">\[\begin{aligned}
+    x &amp;= \pm \sqrt{-4} \\
+    x &amp;= \pm \sqrt{4 \cdot (-1)} \\
+    x &amp;= \pm \sqrt{4} \cdot \sqrt{-1} \\
+    x &amp;= \pm 2 \cdot i
+    
+\end{aligned}\]</span></p>
+</div>
+<p>De modo geral, a definição dos <em>Números Complexos</em> é:</p>
+<div class="ceqn">
+<p><span class="math display">\[\begin{aligned}
+    \mathbb{C} = \left\{ a+bi, a \wedge b \in \mathbb{R}, b\neq 0
+\right\}
+    
+\end{aligned}\]</span></p>
+</div>
+<h2 id="resolução-de-equações">Resolução de equações</h2>
+<p>O leitor deve ter verificado a resolução do Problema <a
+href="#complexo" data-reference-type="ref"
+data-reference="complexo">[complexo]</a> que apareceu um <span
+class="math inline"> − 4</span> na resolução. Será explicado os
+conceitos básicos na resolução deste problema:</p>
+<div class="example">
+<p> Calcule a raíz da equação do primeiro grau, <span
+class="math inline">2<em>x</em> + 4 = 10</span>.<br />
+<strong><em>Solução:</em></strong><br />
+Calcular a raíz dessa equação, significa determinar o valor de <span
+class="math inline"><em>x</em></span> de modo que a <em>igualdade</em>
+aconteça. Assim, inicia-se o processo copiando a equação dada no
+enunciado:</p>
+<div class="ceqn">
+<p><span class="math display">\[\begin{aligned}
+    2x+4=10
+    
+\end{aligned}\]</span></p>
+</div>
+<p>Para determinar o valor da variável <span
+class="math inline"><em>x</em></span> faz-se necessário isolar a
+variável em um dos lados da equação. Neste caso, será isolado do lado
+esquerdo da equação. O leitor pode ter imaginado que seria apenas
+<em>passar o 4 para o outro lado com o sinal invertido</em>, mas se o
+sinal é de uma <em>igualdade</em>, então passar algo de um lado para
+outro <em>desequilibraria</em> a equação e o sinal de <span
+class="math inline">=</span> não seria conveniente.<br />
+O <em><strong>correto</strong></em> é adicionar elementos em <em>ambos
+os lados da igualdade</em>. Neste caso, percebe-se que o número <span
+class="math inline"> + 4</span> está do mesmo lado que a variável, logo
+ele está <em>"atrapalhando"</em>, no entanto, se for adicionado <span
+class="math inline"> − 4</span> em ambos os lados da equação,
+resultará:</p>
+<div class="ceqn">
+<p><span class="math display">\[\begin{aligned}
+    2x+4 \textcolor{red}{-4} = 10 \textcolor{red}{-4}
+    
+\end{aligned}\]</span></p>
+</div>
+<p>A escolha do <span class="math inline"> − 4</span> não foi aleatória.
+No conjunto dos Número Reais, <em>todo elemento (no caso <span
+class="math inline"> + 4</span>) operado (operação <span
+class="math inline">+</span> usual) com seu simétrico (<span
+class="math inline"> − 4</span>) resulta no elemento neutro (<span
+class="math inline">0</span> - zero) da operação (<span
+class="math inline">+</span>)</em>, logo:</p>
+<div class="ceqn">
+<p><span class="math display">\[\begin{aligned}
+    2x + 0 = 6
+    
+\end{aligned}\]</span></p>
+</div>
+<p>Como visto acima, <span class="math inline">0</span> é o <em>elemento
+neutro da operação de soma</em>, logo, qualquer elemento operado com o
+<span class="math inline">0</span>, resultado nele mesmo, assim:</p>
+<div class="ceqn">
+<p><span class="math display">\[\begin{aligned}
+    2x = 6
+    
+\end{aligned}\]</span></p>
+</div>
+<p>É popularmente conhecido, neste passo, <em>"se está multiplicando,
+então passa dividindo"</em>, mas acredito que o leitor queira saber o
+conceito correto, não é mesmo? A raiz de uma equação está relacionada
+com o valor de <span class="math inline"><em>x</em></span> e não de
+<span class="math inline">2<em>x</em></span>, logo, se multiplicar ambos
+os lados da equação por <span class="math inline">$\frac{1}{2}$</span>
+ter-se-á:</p>
+<div class="ceqn">
+<p><span class="math display">\[\begin{aligned}
+    \left(\frac{1}{2} \right) \cdot \qquad 2x=6 \qquad \cdot
+\left(\frac{1}{2} \right)
+    
+\end{aligned}\]</span></p>
+</div>
+<p>Novamente, o <span class="math inline">$\frac{1}{2}$</span> não foi
+escolhido aleatoriamente, ele foi escolhido por ser o <em>elemento
+inverso do <span class="math inline">2</span></em>. No conjunto dos
+números Reais, <em>todo elemento (no caso, <span
+class="math inline">2</span>) operado (<span
+class="math inline">⋅</span>) com seu inverso (<span
+class="math inline">$\frac{1}{2}$</span>) resulta no elemento neutro
+(<span class="math inline">1</span>) da operação (multiplicação, <span
+class="math inline">⋅</span>)</em>, assim:</p>
+<div class="ceqn">
+<p><span class="math display">\[\begin{aligned}
+    1 \cdot x = 6 \cdot \frac{1}{2}
+    
+\end{aligned}\]</span></p>
+</div>
+<p>Como o <span class="math inline">1</span> é o <em>elemento neutro da
+multiplicação</em>, então <span
+class="math inline">1 ⋅ <em>x</em> = <em>x</em></span>, logo:</p>
+<div class="ceqn">
+<p><span class="math display">\[\begin{aligned}
+    x=6 \cdot \frac{1}{2}
+    
+\end{aligned}\]</span></p>
+</div>
+<p>A multiplicação de frações é feita através da multiplicação entre os
+<em>numeradores</em> e os <em>denominadores</em> de cada fração,
+logo:</p>
+<div class="ceqn">
+<p><span class="math display">\[\begin{aligned}
+    x = \frac{6}{1} \cdot \frac{1}{2} = \frac{6 \cdot 1}{1 \cdot 2} =
+\frac{6}{2}
+    
+\end{aligned}\]</span></p>
+</div>
+<p>Assim, o número que multiplicado por <span
+class="math inline">2</span> (denominador) resulta em <span
+class="math inline">6</span> (numerador) é o <span
+class="math inline">3</span>, então:</p>
+<div class="ceqn">
+<p><span class="math display">\[\begin{aligned}
+    x = 3
+    
+\end{aligned}\]</span></p>
+</div>
+<p>Para verificar se o resultado obtido está correto basta substituir o
+valor de <span class="math inline"><em>x</em></span> calculado na
+equação do enunciado, então:</p>
+<div class="ceqn">
+<p><span class="math display">\[\begin{aligned}
+    2x+4 &amp;= 10 \\
+    2 \cdot 3 +4 &amp;= 10 \\
+    6+4 &amp;= 10 \\
+    10 &amp;= 10 \qquad \mathrm{Verdade!}
+    
+\end{aligned}\]</span></p>
+</div>
+
+</div>
+
+<p>Todo este material possuirá, como mencionado no Prefácio, uma breve
+teoria seguido por exemplos resolvidos; com o mesmo nível de
+detalhamento do exemplo anterior.</p> 
+
+<h2>Exercícios</h2>
+<ol>
+<li>Faça uma representação gráfica dos conjuntos numéricli>
+<li>Resolva a equação \(2x-5 \) considerando os conjuntos:</li>
+<ol type="a">
+<li>\( \mathbb{N} \) </li>
+<li>\( \mathbb{Z} \) </li>
+<li>\( \mathbb{Q} \) </li>
+<li>\( \mathbb{R} \) </li>
+<li>\( \mathbb{C} \) </li>
+</ol>
+<li>Determine os conjuntos Domínio e Imagem para cada uma das funções abaixo:</li>
+<ol type="a">
+    <li>\( 3x+4=0 \)</li>
+    <li>\( f(x)=x^2+6 \)</li>
+    <li>\( f(x) = \frac{1}{x} \)</li>
+    <li>\(f(x) = \sqrt{2x} \)</li>
+    <li>\( f(x) = \sqrt{-4x} \)</li>
+    <li>\( f(x) = \frac{4}{\sqrt{x^2-4}} \)</li>
+</ol>
+<li>Determine matematicamente se \(f(x) = 3x+6 \) é crescente ou decrescente.</li>
+</ol> 
+
+
+
+
+
+
+
+
+
+
+<!-- Aqui termina o código específico da página -->
+<p style="margin-top: 20px; font-size: 14px; color: #555; border-top: 1px solid #ddd; padding-top: 15px;">
+  <strong>Como citar essa página:</strong><br>
+  FUMACHI, E. F. <strong id="citacao-titulo"></strong>. Disponível em: <span id="citacao-url"></span>. Acesso em: <span id="citacao-data"></span>.
+</p>
+
+<hr>
+
+<footer>
+<p align="center">Prof. Dr. Fumachi. &copy; <span id="ano"></span></p>
+</footer>
+
+
+<script>
+  document.getElementById('cabecalho-titulo').innerText = document.title;
+  document.getElementById('citacao-titulo').innerText = document.title;
+  document.getElementById('citacao-url').innerText = window.location.href;
+  const hoje = new Date();
+  const dia = String(hoje.getDate()).padStart(2, '0');
+  const meses = ['jan.', 'fev.', 'mar.', 'abr.', 'mai.', 'jun.', 'jul.', 'ago.', 'set.', 'out.', 'nov.', 'dez.'];
+  const mes = meses[hoje.getMonth()];
+  const anoAtual = hoje.getFullYear();
+  document.getElementById('citacao-data').innerText = `${dia} ${mes} ${anoAtual}.`;
+  document.getElementById('ano').textContent = anoAtual;
+</script>
+
+</body>
+</html>
+

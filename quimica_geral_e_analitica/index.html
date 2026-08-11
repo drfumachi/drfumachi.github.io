@@ -1,0 +1,984 @@
+ <!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Química Geral / Bioquímica
+  </title>
+  <script>
+    window.MathJax = {
+      loader: {
+        paths: {tex: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/input/tex/extensions'},
+        load: [
+          '[tex]/ams','[tex]/amscd','[tex]/bbox','[tex]/boldsymbol','[tex]/braket',
+          '[tex]/cases','[tex]/centernot','[tex]/colortbl','[tex]/color',
+          '[tex]/enclose','[tex]/extpfeil','[tex]/gensymb','[tex]/html',
+          '[tex]/mhchem','[tex]/newcommand','[tex]/noerrors','[tex]/noundefined',
+          '[tex]/physics','[tex]/setoptions','[tex]/tagformat','[tex]/textmacros',
+          '[tex]/unicode','[tex]/verb'
+        ]
+      },
+      tex: {
+        packages: {'[+]': [
+          'ams','amscd','bbox','boldsymbol','braket','cases','centernot',
+          'colortbl','color','enclose','extpfeil','gensymb','html','mhchem',
+          'newcommand','noerrors','noundefined','physics','setoptions',
+          'tagformat','textmacros','unicode','verb'
+        ]},
+        inlineMath: [["\\(", "\\)"], ["$", "$"]],
+        displayMath: [["\\[", "\\]"], ["$$", "$$"]]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<header>
+  <h1 id="cabecalho-titulo">Química Geral e Bioquímica
+  </h1>
+
+
+</header>
+<hr>
+<!-- Aqui começa o código específico da página -->
+<h2>Norma Brasileira de Arredondamento ABNT NBR 5891</h2>
+
+<p>A norma técnica brasileira estabelece regras específicas para arredondamento de valores numéricos. Estas regras aplicam-se aos dígitos que vêm após a quantidade de casas decimais que se deseja manter.</p>
+
+<ol>
+    <li>Se os dígitos após a última casa decimal forem menores que 50, 500, 5000 (conforme a precisão), o último dígito mantido não se altera</li>
+    <li>Se os dígitos após a última casa decimal forem maiores que 50, 500, 5000, o último dígito mantido aumenta em 1</li>
+    <li>Se os dígitos forem exatamente 50, 500, 5000, o último dígito mantido só aumenta se for ímpar</li>
+</ol>
+
+<p>Esta metodologia visa evitar tendências que surgiriam se números terminados em 5 fossem sempre arredondados para cima.</p>
+
+<h2>Exemplos de Arredondamento</h2>
+
+<p>Aplicando as regras para 2 casas decimais:</p>
+
+<ol>
+    <li>9,347 → 9,35 (47 é menor que 50, mantém)</li>
+    <li>14,218 → 14,22 (18 é menor que 50, mantém)</li>
+    <li>25,673 → 25,67 (73 é maior que 50, aumenta)</li>
+    <li>7,8250 → 7,82 (50 com anterior par, mantém)</li>
+    <li>3,1550 → 3,16 (50 com anterior ímpar, aumenta)</li>
+    <li>18,499 → 18,50 (99 é maior que 50, aumenta)</li>
+</ol>
+
+<h2>Regras do IBGE para Arredondamento</h2>
+
+<p>O Instituto Brasileiro de Geografia e Estatística possui regras complementares para apresentação de dados estatísticos:</p>
+
+<p>Quando o primeiro dígito a ser eliminado está entre 0 e 4, o último dígito mantido permanece igual. Quando está entre 6 e 9, o último dígito mantido aumenta em 1.</p>
+
+<p>Para o dígito 5: se vier seguido apenas de zeros, aumenta apenas se o último dígito mantido for ímpar. Se vier seguido de outros dígitos além de zero, aumenta sempre.</p>
+
+<h2>Aplicação Prática</h2>
+
+<p>Arredondando para unidades inteiras:</p>
+
+<ol>
+    <li>28,3 → 28 (3 está entre 0-4, mantém)</li>
+    <li>45,7 → 46 (7 está entre 6-9, aumenta)</li>
+    <li>33,500 → 34 (5 com zeros, anterior ímpar, aumenta)</li>
+    <li>62,500 → 62 (5 com zeros, anterior par, mantém)</li>
+    <li>79,501 → 80 (5 com dígitos diferentes de zero, aumenta)</li>
+    <li>91,299 → 91 (29 é menor que 50, mantém)</li>
+</ol> 
+
+<h2>Número de <i>moles</i></h2>
+Um mole é uma quantidade de substância que contém exatamente \( 6,022 \cdot 10^{23} \) entidades elementares (átomos, moléculas, íons, etc.). Essa quantidade é conhecida como a <i><b>constante de Avogadro</b></i>.
+<br />
+O conceito de mole é fundamental para facilitar a conversão entre unidades de massa e número de partículas em reações químicas.
+<br />
+Para determinar o número de mols basta usar a relação matemática abaixo:
+\[ n = \frac{m}{M} \]
+onde:
+<ul>
+		<li>\(n \): número de mols</li>
+			<li>\(m \): massa da substância (em gramas)</li>
+				<li>\(M \): massa molar da substância (em \( g/mol \))</li>
+			</ul>
+			Ex.: Calcule o número de moles em \(36 g \) de água (\(H_2O\)).
+			<br />
+			Primeiro é necessário saber a massa molar dos elementos constituintes da água (\(H \) e \( O \)).
+			<br />
+			Consultando a tabela periódica é possível verificar que a massa molar do Hidrogênio é igual a \( M_H = 1 g/mol \) e a massa molar do Oxigênio é \( M_O= 16 g/mol \).
+			<br />
+			Desse modo, a massa molar da água será igual a:
+			\[ \begin{align*}
+			M_{H_2O} &= 2 \cdot M_H + 1 \cdot M_O \\
+			&= 2 \cdot 1 g/mol + 1 \cdot 16 g/mol \\
+			&= 2 g/mol + 16 g/mol \\
+			&= 18 g/mol \\
+			\end{align*}
+			\]
+
+			Para determinar a quantidade de <i>mol</i> em \( 36 g \) de água basta fazer:
+			\[
+			\begin{align*}
+			n &= \frac{m}{M} \\
+			&= \frac{36g}{18g/mol} \\
+			&= 2 mol \\
+			\end{align*}
+			\] 
+			
+<h2>Notação Científica</h2>
+<h3>O que é Notação Científica?</h3>
+A notação científica é uma forma de escrever números muito grandes ou muito pequenos de maneira compacta, utilizando potências de 10. O formato geral é:<br />
+\[
+N\times10^e
+\]
+onde \(N\) é um número decimal entre 1 e 10, e \(e\) é um número inteiro que representa a ordem de magnitude.
+<h3>Operações com Notação Científica</h3>
+Existem quatro operações principais na notação científica:
+<ol>
+	<li><b>Multiplicação</b>: Multiplicamos os coeficientes e somamos os expoentes.<br />
+	Exemplo: Multiplicar \( (2,0\times10^3)\times(3,0\times10^4) \).<br />
+	\[
+	(2,0\times10^3)\times(3,0\times10^4)=(2,0\times3,0)\times10^{3+4}=6,0\times10^7
+	\]
+	</li>
+	<li><b>Divisão</b>: Dividimos os coeficientes e subtraímos os expoentes.<br />
+	Exemplo: Dividir \( \frac{8,4\times10^6}{2,1\times10^2} \).<br />
+	\[
+	\frac{8,4\times10^6}{2,1\times10^2}=\left(\frac{8,4}{2,1}\right)\times10^{6-2}=4,0\times10^4
+	\]
+	</li>
+	<li><b>Soma</b>: Para somar, os expoentes devem ser iguais. Caso não sejam, ajustamos um dos números.<br />
+	Exemplo: Somar \( (3,2\times10^4)+(4,8\times10^3) \).<br />
+	\[
+	3,2\times10^4+0,48\times10^4=(3,2+0,48)\times10^4=3,68\times10^4
+	\]
+	</li>
+	<li><b>Subtração</b>: Assim como na soma, os expoentes devem ser iguais.<br />
+	Exemplo: Subtrair \( (5,6\times10^5)-(2,3\times10^5) \).<br />
+	\[
+	(5,6-2,3)\times10^5=3,3\times10^5
+	\]
+	</li>
+</ol>
+
+<h2>Exercício de Química: Massa Molar</h2>
+
+<h3>Exemplo resolvido</h3>
+<p>Calcule a massa molar do <strong>H<sub>2</sub>O</strong>.</p>
+
+<p>Passo 1: Identificar os elementos e suas massas atômicas (inteiras):</p>
+<ul>
+    <li>H = 1</li>
+    <li>O = 16</li>
+</ul>
+
+<p>Passo 2: Multiplicar a quantidade de átomos pela massa atômica:</p>
+<ul>
+    <li>H: \(2 \times 1 = 2\)</li>
+    <li>O: \(1 \times 16 = 16\)</li>
+</ul>
+
+<p>Passo 3: Somar os valores para obter a massa molar:</p>
+<p>\( \text{Massa molar do H}_2\text{O} = 2 + 16 = 18\ \text{g/mol} \)</p>
+
+<h3>Exercício</h3>
+<p>Calcule a massa molar do <strong>CO<sub>2</sub></strong>.</p>
+
+<h3>Resolução passo-a-passo</h3>
+<p>Passo 1: Identificar os elementos e suas massas atômicas:</p>
+<ul>
+    <li>C = 12</li>
+    <li>O = 16</li>
+</ul>
+
+<p>Passo 2: Multiplicar a quantidade de átomos pela massa atômica:</p>
+<ul>
+    <li>C: \(1 \times 12 = 12\)</li>
+    <li>O: \(2 \times 16 = 32\)</li>
+</ul>
+
+<p>Passo 3: Somar os valores para obter a massa molar:</p>
+<p>\( \text{Massa molar do CO}_2 = 12 + 32 = 44\ \text{g/mol} \)</p> 
+
+<h2>Estrutura atômica</h2>
+<h3>Tabela Periódica</h3>
+<p>Um tópico importante para o estudo da química é a <i>Tabela Periódica</i>. Ela contém informações sobre todos os elementos químicos.</p>
+<p>Você pode acessar uma tabela periódica muito boa clicando <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Periodic_table_large-pt_BR.svg/4000px-Periodic_table_large-pt_BR.svg.png" target="new">AQUI</a></p>
+<h3>Diagrama de Linus Pauling</h3>
+<p>Abaixo é possível verificar o diagrama proposto por Linus Pauling. O diagrama ajuda a entender e "montar" a estrutura de cada elemento da tabela periódica (CUIDADO! Alguns elementos não obedecem rigorosamente a distribuição)</p>
+<p><img src="IMG/diagrama_linus_pauling.png" width="50%" /></p> 
+
+<h2>O que é um fóton?</h2>
+<p>Um fóton é a partícula elementar da luz e de outras radiações eletromagnéticas. Cada fóton transporta energia, mas não tem massa de repouso.</p>
+
+
+<h2>Energia de um fóton</h2>
+<p>A energia de um fóton é dada pela equação de Planck:</p>
+<p>\[E = h \cdot f\]</p>
+<p>onde:</p>
+<ul>
+<li>\(E\) é a energia do fóton (Joules, J)</li>
+<li>\(h = 6,626 \times 10^{-34} \ \mathrm{J\cdot s}\) é a constante de Planck</li>
+<li>\(f\) é a frequência da luz (Hertz, Hz)</li>
+</ul>
+
+
+<h2>Usando o comprimento de onda</h2>
+<p>Como a frequência \(f\) e o comprimento de onda \(\lambda\) estão relacionados pela velocidade da luz \(c\):</p>
+<p>\[c = \lambda \cdot f\]</p>
+<p>Podemos escrever:</p>
+<p>\[E = \frac{h \cdot c}{\lambda}\]</p>
+<p>onde:</p>
+<ul>
+<li>\(c = 3,0 \times 10^{8} \ \mathrm{m/s}\)</li>
+<li>\(\lambda\) é o comprimento de onda da radiação (metros, m)</li>
+</ul>
+
+
+<h2>Exemplos de cálculo</h2>
+<p><strong>Exemplo 1:</strong> Luz azul com \(\lambda = 450\, \mathrm{nm} = 450 \times 10^{-9} \mathrm{m}\)</p>
+<p>\[E = \frac{6,626 \times 10^{-34} \cdot 3,0 \times 10^{8}}{450 \times 10^{-9}} \approx 4,42 \times 10^{-19} \ \mathrm{J}\]</p>
+
+
+<p><strong>Exemplo 2:</strong> Luz vermelha com \(\lambda = 700\, \mathrm{nm} = 700 \times 10^{-9} \mathrm{m}\)</p>
+<p>\[E = \frac{6,626 \times 10^{-34} \cdot 3,0 \times 10^{8}}{700 \times 10^{-9}} \approx 2,84 \times 10^{-19} \ \mathrm{J}\]</p>
+
+
+<h2>Energia em elétron-volts (eV)</h2>
+<p>Para converter de Joules para eV:</p>
+<p>\[1 \ \mathrm{eV} = 1,602 \times 10^{-19} \ \mathrm{J}\]</p>
+<p>Exemplo: \(E = 4,42 \times 10^{-19} \mathrm{J} \approx 2,76 \mathrm{eV}\)</p>
+
+
+<h2>Observações</h2>
+<p>Quanto menor o comprimento de onda, maior a energia do fóton. Portanto, luz azul ou violeta possui fótons mais energéticos que a luz vermelha.</p>
+
+
+<h2>Resumo</h2>
+<ul>
+<li>Energia do fóton: \(E = h f = \frac{h c}{\lambda}\)</li>
+<li>Conversão para eV: \(E (\mathrm{eV}) = \frac{E (\mathrm{J})}{1,602 \times 10^{-19}}\)</li>
+<li>Fótons de menor comprimento de onda têm maior energia</li> 
+
+<h2>Átomo de Hidrogênio</h2>
+<h3>Energia</h3>
+<p>A energia em cada nível do átomo de Hidrogênio pode ser calculada através da fórmula abaixo:</p>
+<p>\[ E_n = \frac{-13,6}{n^2} \]</p>
+<p>onde \( E_n \) é a energia (em \(\text{eV} \) - elétron-Volt) no nível \(n\). É possível montar uma tabela com os valores das energias em função do nível, como segue abaixo:</p>
+<table border=1 align="center">
+    <tr>
+        <td align="center">Nível</td>
+        <td align="center">Energia - \( \text{eV} \)</td>
+    </tr>
+    <tr>
+        <td align="center">1</td>
+        <td align="center">-13,6</td>
+    </tr>
+    <tr>
+        <td align="center">2</td>
+        <td align="center">-3,4</td>
+    </tr>
+    <tr>
+        <td align="center">3</td>
+        <td align="center">-1,51</td>
+    </tr>
+    <tr>
+        <td align="center">4</td>
+        <td align="center">-0,85</td>
+    </tr>
+    <tr>
+        <td align="center">5</td>
+        <td align="center">-0,54</td>
+    </tr>
+    <tr>
+        <td align="center">6</td>
+        <td align="center">-0,38</td>
+    </tr>
+    <tr>
+        <td align="center">7</td>
+        <td align="center">-0,28</td>
+    </tr>
+</table>
+<p>EXEMPLO: Calcule a energia quando um elétron salta do nível 4 para o nível 2.</p>
+<p>A energia que queremos calcular pode ser representada como segue:</p>
+<p>\[\begin{align*}
+E &= E_2 - E_4 \\
+&= -3,4 - (-0,85) \\
+&= -3,4 +0,85 \\
+&= -2,55 \,\, \text{eV} \\
+
+\end{align*}
+\]</p>
+ 
+ 
+<h2>Concentração, Densidade e Massa Específica</h2>
+<h3>Concentração</h3>
+É a quantidade de soluto (substância dissolvida) presente em uma determinada quantidade de solução.
+<br />
+É importante ressaltar que há vários modos de calcular/representar concentrações:
+<ol>
+	<li><b>Porcentagem em massa (m/m)</b>: Relação entre a massa do soluto e a massa da solução, expressa em percentagem.
+	<br />
+	Exemplo: Uma solução aquosa de NaCl a 10% m/m contém 10g de NaCl em 100g de solução.</li>
+	<li><b>Molaridade (M)</b>: Número de moles de soluto por litro de solução.
+	<br />
+	Exemplo: Uma solução 1M de glicose contém 1 mol de glicose em 1 litro de solução.</li>
+	<li><b>Molalidade (m)</b>: Número de moles de soluto por quilograma de solvente.
+	<br />
+	EXEMPLO: Qual a concentração em g/L de uma solução aquosa de NaCl que contém 58,5 g de NaCl em 500 mL de solução?</li>
+
+	\[C=\frac{m}{V}=\frac{58,5 [g]}{500 [mL]}=\frac{58,5 [g]}{0,5 [L]}=117 [g/L] \]
+
+</ol>
+
+
+<h3>Densidade e Massa Específica</h3>
+<br />
+<i><b>Densidade</b></i> é a relação entre a massa e o volume de uma substância e matematicamente pode ser escrita como:
+<br />
+\[ d = \frac{m}{V} \]
+<i><b>Massa específica</b></i> é muitas vezes confundida com densidade mas, geralmente, é usado o termo para <i><b>substâncias puras</b></i> e a unidade de medida é \( g/cm^3 \) ou \( kg/m^3 \).
+<br />
+<br />
+Ex.: A água tem densidade de \( 1 g/cm^3 \). Isso significa que \( 1 cm^3 \) de água tem massa de 1 grama.
+<br />
+Ex.: Um objeto com massa de \( 100 g\) ocupa um volume de \(50 cm^3 \). Qual a sua densidade?
+
+\[d=\frac{m}{V}=\frac{100 [g]}{50 [cm^3]}=2 [g/cm^3] \] 
+
+<h2>Definição de logaritmo</h2>
+<p>O logaritmo de um número \(a\), na base \(b\), é o expoente que devemos dar à base \(b\) para obter \(a\). Em outras palavras,
+\(\log_b a = c\) se, e somente se, \(b^c = a\).</p>
+<p>Exemplo: \(\log_2 8 = 3\), pois \(2^3 = 8\).</p>
+<p>Condições de existência: \(a > 0\), \(b > 0\) e \(b \neq 1\).</p>
+
+
+<h2>Propriedade da multiplicação</h2>
+<p>O logaritmo de um produto é a soma dos logaritmos dos fatores:</p>
+<p>\[\log_b(xy) = \log_b x + \log_b y\]</p>
+<p>Exemplo: \(\log_2(8 \times 4) = \log_2 8 + \log_2 4 = 3 + 2 = 5\).</p>
+
+
+<h2>Propriedade da divisão</h2>
+<p>O logaritmo de um quociente é a diferença dos logaritmos do numerador e do denominador:</p>
+<p>\[\log_b\left(\frac{x}{y}\right) = \log_b x - \log_b y\]</p>
+<p>Exemplo: \(\log_2\left(\frac{8}{2}\right) = \log_2 8 - \log_2 2 = 3 - 1 = 2\).</p>
+
+
+<h2>Propriedade do expoente</h2>
+<p>Quando o argumento do logaritmo é uma potência, o expoente pode ser multiplicado pelo logaritmo da base:</p>
+<p>\[\log_b(x^k) = k \cdot \log_b x\]</p>
+<p>Exemplo: \(\log_2(8^2) = 2 \cdot \log_2 8 = 2 \cdot 3 = 6\).</p>
+
+
+<h2>Mudança de base</h2>
+<p>Às vezes, é conveniente mudar a base do logaritmo. A fórmula de mudança de base é:</p>
+<p>\[\log_b a = \frac{\log_c a}{\log_c b}\]</p>
+<p>onde \(c\) é uma nova base qualquer, como \(10\) (logaritmo decimal) ou \(e\) (logaritmo natural).</p>
+<p>Exemplo: \(\log_2 10 = \frac{\log_{10} 10}{\log_{10} 2} = \frac{1}{\log_{10} 2}\).</p>
+
+
+<h2>Resumo</h2>
+<p>As principais propriedades são:</p>
+<p>1) \(\log_b(xy) = \log_b x + \log_b y\)</p>
+<p>2) \(\log_b\left(\frac{x}{y}\right) = \log_b x - \log_b y\)</p>
+<p>3) \(\log_b(x^k) = k \cdot \log_b x\)</p>
+<p>4) \(\log_b a = \frac{\log_c a}{\log_c b}\)</p> 
+
+<h2>O que é pOH?</h2>
+<p>O pOH é definido analogamente para a concentração de íons hidróxido:
+\(\mathrm{pOH} = -\log_{10}[\mathrm{OH}^-]\).
+Em água pura a 25\(^\circ\)C, pH e pOH estão relacionados e ambos valem 7.</p>
+
+
+<h2>Relação entre pH e pOH</h2>
+<p>Em água a 25\(^\circ\)C existe a constante de ionização da água \(K_w\):
+\([\mathrm{H}^+][\mathrm{OH}^-] = K_w = 1{,}0\times 10^{-14}.\)
+Aplicando logaritmo e o sinal negativo obtemos a relação padrão:
+\[\mathrm{pH} + \mathrm{pOH} = 14.\]
+<strong>Portanto, em qualquer solução aquosa a 25°C, a soma entre pH e pOH é sempre 14.</strong>
+Observação: o valor 14 vale aproximadamente a 25\(^\circ\)C; \(K_w\) varia com a temperatura.</p>
+
+
+<h2>Como calcular pH e pOH</h2>
+<p>Dados alguns cenários comuns:
+1) Se você conhece \([\mathrm{H}^+]\): \(\mathrm{pH} = -\log_{10}[\mathrm{H}^+]\).
+2) Se você conhece \([\mathrm{OH}^-]\): calcule \(\mathrm{pOH} = -\log_{10}[\mathrm{OH}^-]\) e depois \(\mathrm{pH} = 14 - \mathrm{pOH}\).
+3) Para ácidos/bases fortes, assume-se dissociação completa (p.ex. HCl \(\to\) H\(^+\) + Cl\(-\)).</p>
+
+
+<h2>Exemplos simples</h2>
+<p><strong>Exemplo 1:</strong> Solução de HCl 0,01 M (ácido forte). \([\mathrm{H}^+] = 0{,}01\,\mathrm{M}\) então \(\mathrm{pH} = -\log_{10}(0{,}01) = 2.\)</p>
+
+
+<h2>Exemplo 2:</h2>
+<p>Solução de NaOH 0,001 M (base forte). Para NaOH, \([\mathrm{OH}^-] = 0{,}001\,\mathrm{M}\). Então \(\mathrm{pOH} = -\log_{10}(0{,}001)=3\) e \(\mathrm{pH} = 14 - 3 = 11.\)</p>
+
+
+<h2>Exemplo 3: converter pH em concentração</h2>
+<p>Se \(\mathrm{pH} = 3\), então \([\mathrm{H}^+] = 10^{-3} = 1{,}0\times 10^{-3}\,\mathrm{M}.\)</p>
+
+
+<h2>Observações sobre ácidos e bases fracos</h2>
+<p>Para ácidos/bases fracos (dissociação incompleta) é necessário usar a constante de acidez \(K_a\) ou de basicidade \(K_b\) e um cálculo do tipo "ICE" (inicial / mudança / equilíbrio). Aqui apenas lembramos que nesses casos \([\mathrm{H}^+]\) não é igual à concentração inicial do ácido.</p> 
+
+<h2>Números de Oxidação (Nox)</h2>
+
+<h3>O que é Número de Oxidação?</h3>
+O número de oxidação (nox) é a carga elétrica <i>real</i> ou <i>aparente</i> que um átomo adquire em uma substância, de acordo com as regras de distribuição de elétrons em ligações químicas.  
+Ele é uma ferramenta importante para entender reações de oxirredução, ajudando a identificar quais átomos sofrem oxidação (perda de elétrons) e quais sofrem redução (ganho de elétrons).  
+
+<h3>Regras Gerais para Determinar o Nox</h3>
+<ol>
+  <li>
+    <b>1ª regra:</b> O Nox de cada átomo em uma substância simples é sempre <b>zero</b>.<br />
+    <b>Exemplos:</b> \( O_2, O_3, P_4, S_8, C_{graf}, C_{diam} \)
+  </li>
+  <li>
+    <b>2ª regra:</b> O Nox de um íon monoatômico é sempre igual à sua própria carga.<br />
+    <b>Exemplos:</b> \( K^+, Ba^{2+}, F^-, N^{3-} \) → Nox: +1, +2, -1, -3
+  </li>
+  <li>
+    <b>3ª regra:</b> Existem elementos que apresentam Nox fixo em seus compostos.<br />
+    <b>Metais Alcalinos (1A):</b> Li, Na, K, Rb, Cs, Fr → Nox = +1; Exemplo: \( K_2SO_4 \)<br />
+    <b>Metais Alcalinos-terrosos (2A):</b> Be, Mg, Ca, Sr, Ba, Ra → Nox = +2; Exemplo: \( CaO \)<br />
+    <b>Zinco (Zn):</b> Nox = +2; Exemplo: \( ZnSO_4 \)<br />
+    <b>Prata (Ag):</b> Nox = +1; Exemplo: \( AgCl \)<br />
+    <b>Alumínio (Al):</b> Nox = +3; Exemplo: \( Al_2O_3 \)
+  </li>
+  <li>
+    <b>4ª regra:</b> O Nox do elemento <b>hidrogênio (H)</b> nas substâncias compostas é geralmente +1; quando ligado a metais em hidretos metálicos, Nox = -1.<br />
+    <b>Exemplos:</b> \( HBr, H_2SO_4, C_6H_{12}O_6 \) → Nox: +1, +1, +1<br />
+    \( NaH, CaH_2 \) → Nox: -1, -1
+  </li>
+  <li>
+    <b>5ª regra:</b> O Nox do <b>oxigênio (O)</b>, na maioria dos compostos, é -2.<br />
+    <b>Exemplos:</b> \( CO, H_2O, H_2SO_4, C_6H_{12}O_6 \) → Nox: -2, -2, -2, -2<br />
+    No \( OF_2 \) → Nox do O = +2<br />
+    Nos peróxidos (\( O_2^{2-} \)) → Nox do O = -1; Ex.: \( H_2O_2, Na_2O_2 \)
+  </li>
+  <li>
+    <b>6ª regra:</b> Os <b>halogênios</b> apresentam Nox = -1 em compostos binários nos quais são mais eletronegativos.<br />
+    <b>Exemplos:</b> \( HCl, MnBr_2, CF_4 \) → Nox: -1, -1, -1
+  </li>
+  <li>
+    <b>7ª regra:</b> A soma dos Nox de todos os átomos de um composto iônico ou molecular é sempre zero.<br />
+    <b>Exemplos:</b> \( NaCl, HCl, CaO, CO \) → Soma dos Nox = 0
+  </li>
+  <li>
+    <b>8ª regra:</b> Num íon composto, o somatório dos Nox é igual à carga do íon.<br />
+    <b>Exemplo 3:</b> \( P_2O_7^{4-} \): P → X, O → -2<br />
+    \[
+    2X + 7(-2) = -4
+    \]
+    \[
+    X = +5 \quad (\text{Nox do P})
+    \]
+  </li>
+</ol>
+
+<h3>Número de Oxidação em Compostos Iônicos</h3>
+No caso dos compostos iônicos, chama-se <b>Número de Oxidação (Nox)</b> a própria carga elétrica do íon.  
+<b>Exemplo:</b> \( MgO \) → \( Mg^{2+} \) Nox = +2, \( O^{2-} \) Nox = -2
+
+<h3>Número de Oxidação em Compostos Covalentes</h3>
+Nos compostos covalentes, não há um átomo que perca e outro que ganhe elétrons, pois os átomos compartilham elétrons.  
+Podemos, entretanto, estender o conceito de Nox: seria a <b>carga elétrica teórica</b> que o átomo iria adquirir se houvesse ruptura da ligação, ficando os elétrons com o átomo mais eletronegativo.
+
+<h3>Exemplo de Nox em Composto Covalente</h3>
+No ácido clorídrico (\( HCl \)):  
+- O cloro é mais eletronegativo e atrai o par eletrônico → Cl = -1, H = +1  
+
+<h3>Oxidação e Redução considerando Nox</h3>
+<ul>
+  <li><b>Oxidação:</b> perda de elétrons ou aumento do número de oxidação de um elemento;</li>
+  <li><b>Redução:</b> ganho de elétrons ou diminuição do número de oxidação de um elemento.</li>
+</ul>
+
+<h3>Oxidação e Redução (Reações Redox)</h3>
+Exemplos cotidianos de reações redox:
+<ul>
+  <li>Um material sofrendo combustão (queima)</li>
+  <li>Enferrujamento do ferro</li>
+  <li>Queima de combustíveis nos veículos</li>
+  <li>Pilhas e baterias (calculadoras, carros, brinquedos, rádios, TVs)</li>
+</ul>
+
+<h3>Exemplos de Reações Redox</h3>
+
+<h4>Magnésio e Oxigênio</h4>
+\[
+\text{Oxidação: } Mg \rightarrow Mg^{2+} + 2e^-
+\]  
+\[
+\text{Redução: } O + 2e^- \rightarrow O^{2-}
+\]
+
+<h4>Zinco e Sulfato de Cobre</h4>
+\[
+Zn(s) + Cu^{2+}(aq) \rightarrow Zn^{2+}(aq) + Cu(s)
+\]  
+<ul>
+  <li>Zn → Oxidação, perde 2 elétrons</li>
+  <li>Cu²⁺ → Redução, ganha 2 elétrons</li>
+</ul>
+
+<h4>Semirreações</h4>
+<ul>
+  <li>Oxidação: \( Zn \rightarrow Zn^{2+} + 2e^- \)</li>
+  <li>Redução: \( Cu^{2+} + 2e^- \rightarrow Cu \)</li>
+</ul>
+
+<h3>Exemplos de Cálculo de Nox</h3>
+
+<b>Exemplo 1:</b> \( H_3PO_4 \)  
+\[
+3(+1) + X + 4(-2) = 0 \Rightarrow X = +5
+\]
+
+<b>Exemplo 2:</b> \( K_2Cr_2O_7 \)  
+\[
+2(+1) + 2X + 7(-2) = 0 \Rightarrow X = +6
+\]
+
+<h3>Variação do Nox nas Reações de Óxido-Redução</h3>
+\[
+Cu \rightarrow Cu^{2+} + 2e^- \quad \text{Oxidação}
+\]  
+\[
+2Ag^+ + 2e^- \rightarrow 2Ag \quad \text{Redução}
+\]
+
+<table>
+<tr>
+<th>Espécie</th><th>Nox</th><th>Perda/Ganho de e⁻</th><th>Tipo de Reação</th><th>Variação do Nox</th>
+</tr>
+<tr>
+<td>Cu</td><td>0 → +2</td><td>Perda de e⁻</td><td>Oxidação</td><td>Aumento do Nox</td>
+</tr>
+<tr>
+<td>Ag</td><td>+1 → 0</td><td>Ganho de e⁻</td><td>Redução</td><td>Diminuição do Nox</td>
+</tr>
+</table>
+
+<h3>Agentes Oxidante e Redutor</h3>
+<ul>
+  <li>Cu → Oxidação → Agente redutor</li>
+  <li>Ag⁺ → Redução → Agente oxidante</li>
+</ul>
+
+<h3>Conclusão</h3>
+Com isso, verificamos a importância das <b>reações redox</b> e aprendemos as regras e mecanismos de como calcular o <b>número de oxidação (Nox)</b> das substâncias iônicas e moleculares. 
+
+<h2>Velocidade de reações</h2>
+
+<p>A velocidade de uma reação química é uma grandeza que indica a rapidez com que os reagentes são transformados em produtos. Esse conceito é fundamental para a Medicina Veterinária, pois permite compreender, por exemplo, a cinética de fármacos e processos bioquímicos em organismos vivos.</p>
+
+<p>Considere a reação genérica:</p>
+
+<p>\[ aA + bB \rightarrow cC + dD \]</p>
+
+<p>A velocidade da reação pode ser expressa como a variação da concentração dos reagentes ou produtos em função do tempo:</p>
+
+<p>\[ v = -\frac{1}{a} \cdot \frac{d[A]}{dt} = -\frac{1}{b} \cdot \frac{d[B]}{dt} = \frac{1}{c} \cdot \frac{d[C]}{dt} = \frac{1}{d} \cdot \frac{d[D]}{dt} \]</p>
+
+<p>A unidade da velocidade é geralmente expressa em mol/L·s (mol por litro por segundo).</p>
+
+<p>A velocidade das reações químicas depende de diversos fatores:</p>
+
+<ul>
+  <li><p>Concentração dos reagentes</p></li>
+  <li><p>Temperatura</p></li>
+  <li><p>Presença de catalisadores</p></li>
+  <li><p>Superfície de contato (no caso de reagentes sólidos)</p></li>
+  <li><p>Natureza química dos reagentes</p></li>
+</ul>
+
+<p>Para uma reação elementar do tipo:</p>
+
+<p>\[ A + B \rightarrow C \]</p>
+
+<p>A lei de velocidade pode ser dada por:</p>
+
+<p>\[ v = k[A]^m[B]^n \]</p>
+
+<p>Onde:</p>
+<ul>
+  <li><p>\( k \) é a constante de velocidade;</p></li>
+  <li><p>\( m \) e \( n \) são ordens da reação em relação a \( A \) e \( B \), determinadas experimentalmente.</p></li>
+</ul>
+
+<h2>Teoria de Arrhenius</h2>
+
+<p>Svante Arrhenius propôs uma equação que relaciona a constante de velocidade \( k \) com a temperatura e a energia de ativação:</p>
+
+<p>\[ k = A \cdot e^{-E_a / RT} \]</p>
+
+<p>Onde:</p>
+<ul>
+  <li><p>\( k \) é a constante de velocidade;</p></li>
+  <li><p>\( A \) é o fator pré-exponencial (frequência de colisões eficazes);</p></li>
+  <li><p>\( E_a \) é a energia de ativação (em J/mol);</p></li>
+  <li><p>\( R \) é a constante universal dos gases \[ R = 8{,}314 \, \text{J/mol·K} \);</p></li>
+  <li><p>\( T \) é a temperatura em Kelvin.</p></li>
+</ul>
+
+<p>Essa equação mostra que, ao aumentar a temperatura, a constante de velocidade \( k \) aumenta exponencialmente, acelerando a reação.</p>
+
+
+<p>EXEMPLO: Dada a reação com:</p>
+<ul>
+  <li><p>\( A = 2{,}5 \times 10^{13} \, \text{s}^{-1} \)</p></li>
+  <li><p>\( E_a = 75{,}000 \, \text{J/mol} \)</p></li>
+  <li><p>\( T = 298 \, \text{K} \)</p></li>
+</ul>
+
+<p>Calcule a constante de velocidade \( k \) usando a equação de Arrhenius.</p>
+
+<p><strong>Passo 1:</strong> Substituir os valores na equação</p>
+
+<p>\[ 
+k = 2{,}5 \times 10^{13} \cdot e^{-75000 / (8{,}314 \cdot 298)} 
+\]</p>
+
+<p><strong>Passo 2:</strong> Calcular o expoente</p>
+
+<p>\[
+\frac{75000}{8{,}314 \cdot 298} \approx \frac{75000}{2477{,}77} \approx 30{,}26
+\]</p>
+
+<p><strong>Passo 3:</strong> Calcular o valor de \( k \)</p>
+
+<p>\[
+k = 2{,}5 \times 10^{13} \cdot e^{-30{,}26} \approx 2{,}5 \times 10^{13} \cdot 7{,}28 \times 10^{-14}
+\]</p>
+
+<p>\[
+k \approx 1{,}82 \, \text{s}^{-1}
+\]</p>
+
+<p>Portanto, a constante de velocidade da reação a 298 K é aproximadamente \( 1{,}82 \, \text{s}^{-1} \).</p>
+
+
+<p>EXEMPLO: Considere a reação elementar:</p>
+
+<p>\[ A + B \rightarrow C \]</p>
+
+<p>Com a lei de velocidade:</p>
+
+<p>\[ v = k [A]^m [B]^n \]</p>
+
+<p>onde \( m = 1 \) e \( n = 2 \).</p>
+
+<p>Dados:</p>
+<ul>
+  <li><p>Fator pré-exponencial: \( A = 1{,}0 \times 10^{12} \, \text{s}^{-1} \)</p></li>
+  <li><p>Energia de ativação: \( E_a = 80000 \, \text{J/mol} \)</p></li>
+  <li><p>Temperatura: \( T = 310 \, \text{K} \)</p></li>
+  <li><p>Concentração de \( A \): \( [A] = 0{,}020 \, \text{mol/L} \)</p></li>
+  <li><p>Concentração de \( B \): \( [B] = 0{,}010 \, \text{mol/L} \)</p></li>
+</ul>
+
+<p><strong>Passo 1:</strong> Calcular a constante de velocidade \( k \) pela equação de Arrhenius:</p>
+
+<p>\[
+k = A \cdot e^{-\frac{E_a}{RT}}
+\]</p>
+
+<p>Com \( R = 8{,}314 \, \text{J/mol·K} \):</p>
+
+<p>\[
+k = 1{,}0 \times 10^{12} \cdot e^{-\frac{80000}{8{,}314 \times 310}}
+\]</p>
+
+<p>Calculando o expoente:</p>
+
+<p>\[
+\frac{80000}{8{,}314 \times 310} = \frac{80000}{2577{,}34} \approx 31{,}04
+\]</p>
+
+<p>Então:</p>
+
+<p>\[
+k = 1{,}0 \times 10^{12} \cdot e^{-31{,}04} \approx 1{,}0 \times 10^{12} \times 3{,}34 \times 10^{-14} = 3{,}34 \times 10^{-2} \, \text{s}^{-1}
+\]</p>
+
+<p><strong>Passo 2:</strong> Calcular a velocidade da reação usando a lei cinética:</p>
+
+<p>\[
+v = k [A]^m [B]^n = (3{,}34 \times 10^{-2}) \times (0{,}020)^1 \times (0{,}010)^2
+\]</p>
+
+<p>Calculando as potências das concentrações:</p>
+
+<p>\[
+v = 3{,}34 \times 10^{-2} \times 0{,}020 \times 0{,}0001 = 3{,}34 \times 10^{-2} \times 2 \times 10^{-6} = 6{,}68 \times 10^{-8} \, \text{mol/(L·s)}
+\]</p>
+
+<p><strong>Resposta:</strong> A velocidade da reação sob essas condições é aproximadamente \( 6{,}68 \times 10^{-8} \, \text{mol/(L·s)} \).</p>
+<p><img src="./IMG/velocidade.png" align="center" width="400px"/></p> 
+
+<h2>Cromatografia e Espectrometria</h2>
+<p>Cromatografia</p>
+
+1. Análise de resíduos de medicamentos veterinários em alimentos de origem animal.
+2. Identificação de substâncias tóxicas em amostras de sangue de animais envenenados.
+3. Separação e identificação de hormônios esteroides em amostras de urina de animais.
+4. Análise de contaminantes químicos em alimentos para animais.
+5. Desenvolvimento de métodos cromatográficos para análise de substâncias bioativas em produtos naturais para animais.
+
+<p>Espectrometria</p>
+
+1. Análise de espectros de absorção UV-Vis para identificação de substâncias químicas em amostras de sangue de animais.
+2. Utilização da espectrometria de massa para identificar resíduos de pesticidas em amostras de tecidos de animais.
+3. Análise de espectros de RMN para caracterização de compostos bioativos em produtos naturais para animais.
+4. Desenvolvimento de métodos espectrométricos para análise de substâncias tóxicas em amostras de água para animais.
+5. Aplicação da espectrometria de emissão atômica para análise de metais pesados em amostras de tecidos de animais.
+
+<p>Cromatografia e Espectrometria em combinação</p>
+
+1. Análise de resíduos de antibióticos em amostras de leite utilizando cromatografia líquida e espectrometria de massa.
+2. Identificação de substâncias tóxicas em amostras de sangue de animais utilizando cromatografia gasosa e espectrometria de massa.
+3. Desenvolvimento de métodos para análise de substâncias bioativas em produtos naturais para animais utilizando cromatografia e espectrometria.
+4. Análise de contaminantes químicos em alimentos para animais utilizando cromatografia e espectrometria.
+5. Aplicação da cromatografia e espectrometria para análise de substâncias tóxicas em amostras de água para animais.
+
+<p><a href="DOCS/resumo_extendido_quimica_geral_e_analitica.odt">Arquivo de exemplo (modelo) para resumo expandido - formato ODT</a></p>
+<p><a href="DOCS/resumo_extendido_quimica_geral_e_analitica.docx">Arquivo de exemplo (modelo) para resumo expandido - formato DOCX</a></p> 
+
+<h2>EXERCÍCIOS</h2>
+<ol>
+	<li>Quantos átomos há em \(2,5\) mols de átomos de carbono? (Use \(N_A = 6,022\times10^{23}\) átomos/mol)</li>
+	<li>Determine a massa de \(3,0\) mols de água \(H_2O\), sabendo que as massas atômicas são: \(H = 1,0\) g/mol e \(O = 16,0\) g/mol.</li>
+	<li>Quantos mols de oxigênio estão contidos em \(4,8\times10^{23}\) moléculas de \(O_2\)?</li>
+	<li>Calcule a quantidade de moléculas presentes em \(0,25\) mol de glicose \(C_6H_{12}O_6\).</li>
+	<li>Determine a massa de \(2,0\) mols de gás oxigênio \(O_2\), sabendo que \(O = 16,0\) g/mol.</li>
+	<li>Quantos átomos de hidrogênio existem em \(0,5\) mols de metano \(CH_4\)?</li>
+	<li>Quantos mols existem em \(180\) g de glicose \(C_6H_{12}O_6\), sabendo que sua massa molar é \(180\) g/mol?</li>
+	<li>Qual a massa de \(1,5\times10^{24}\) moléculas de gás nitrogênio \(N_2\)? (Use \(N = 14,0\) g/mol)</li>
+	<li>Quantos mols de \(CO_2\) correspondem a \(8,8\) g, sabendo que \(C = 12,0\) g/mol e \(O = 16,0\) g/mol?</li>
+	<li>Quantas moléculas há em \(44\) g de gás carbônico \(CO_2\)? (Massa molar do \(CO_2\): \(44\) g/mol)</li>
+	<li>Resolva a soma: \( (3,2\times10^4)+(4,8\times10^3) \)(Resposta: \( 3,68 \cdot 10^4 \))</li>
+	<li>Resolva a subtração: \( (5,6\times10^5)-(2,3\times10^5) \)(Resposta: \( 3,3 \cdot 10^5 \))</li>
+	<li>Multiplique os números em notação científica: \( (2,5\times10^3)\times(4,0\times10^2) \)(Resposta: \( 1 \cdot 10^6 \))</li>
+	<li>Divida os números em notação científica: \( \frac{6,0\times10^6}{3,0\times10^2} \)(Resposta: \( 2 \cdot 10^2 \))</li>
+	<li>Some os valores abaixo: \( (7,1\times10^2)+(5,9\times10^3) \)(Resposta: \( 6,61 \cdot 10^3 \))</li>
+	<li>Subtraia os valores abaixo: \( (9,0\times10^6)-(6,5\times10^5) \)(Resposta: \( 8,35 \cdot 10^6 \))</li>
+	<li>Multiplique os números em notação científica: \( (3,0\times10^4)\times(2,0\times10^3) \)(Resposta: \( 6 \cdot 10^7 \))</li>
+	<li>Divida os números em notação científica: \( \frac{8,4\times10^7}{4,2\times10^3} \)(Resposta: \( 2 \cdot 10^4 \))</li>
+	<li>Resolva a seguinte operação mista: \( (2,0\times10^3)+(4,5\times10^4)-(1,5\times10^3) \)(Resposta: \( 4,55 \cdot 10^4 \))</li>
+	<li>Resolva a operação: \( (6,0\times10^5)\times(2,0\times10^{-2}) \)(Resposta: \( 1,2 \cdot 10^4 \))</li>
+<li>Para os elementos abaixo, identifique o símbolo atômico, número atômico, período, grupo, camada de valência, número de elétrons na camada de valência e faça o esboço do átomo através do diagrama de Pauling:</li>
+<ol type="a">
+    <li>Carbono</li>
+    <li>Hidrogênio</li>
+    <li>Oxigênio</li>
+    <li>Nitrogênio</li>
+    <li>Fósforo</li>
+    <li>Enxofre</li>
+</ol>
+<li>Calcule a massa molar de cada composto abaixo:</li>
+
+<ol type="a">
+    <li>CaCO<sub>3</sub></li>
+    <li>CH<sub>4</sub></li>
+    <li>CO<sub>2</sub></li>
+    <li>CuSO<sub>4</sub>·5H<sub>2</sub>O</li>
+    <li>Fe<sub>2</sub>O<sub>3</sub></li>
+    <li>H<sub>2</sub>O</li>
+    <li>HNO<sub>3</sub></li>
+    <li>KNO<sub>3</sub></li>
+    <li>Mg(OH)<sub>2</sub></li>
+    <li>NaCl</li>
+</ol>
+	<li>Identifique os grupos a que pertencem os seguintes elementos: Cloro (Cl), Bário (Ba), Ferro (Fe).</li>
+	<li>Explique por que os gases nobres são pouco reativos</li>
+	<li>Faça a distribuição eletrônica dos elementos: C, H, O, N, P, S.</li>
+	<li>Faça a distribuição eletrônica dos elementos: Li, Be, Ar, F, He.</li>
+	<li>Calcule a energia de um fóton referente a cor verde.</li>
+	<li>Calcule a energia de um fóton de luz visível com uma frequência de \(5 \cdot 10^{14} \text{Hz} \)</li>
+	<li>Explique o funcionamento do olho humano.</li>
+	<li>Uma clínica veterinária utiliza um aparelho de raios-X para diagnosticar fraturas em pequenos animais, como cães e gatos. O técnico responsável precisa ajustar a tensão aplicada na ampola de raios-X para obter imagens claras e com boa definição. Você, como estudante de Medicina Veterinária, deve entender como os parâmetros físicos influenciam a qualidade da imagem radiográfica. (Tensões entre 40kV e 100kV, corrente de operação 10mA e eficiência do anodo é de 0,5%)</li>
+	<li>Calcule a energia cinética dos elétrons</li>
+	<li>Potência dissipada como calor</li>
+	<li>Calcule a frequência da radiação emitida.</li>
+	<li>O átomo é composto por?</li>
+	<li>O núcleo atômico é composto por?</li>
+	<li>Qual modelo assumia que o átomo era indivisível e indestrutível?</li>
+	<li>Qual modelo atômico é conhecido como “pudim de passas”?</li>
+	<li>Qual modelo pressupõe que o átomo tem um núcleo central pequeno e denso, rodeado por elétrons?</li>
+	<li>Qual modelo atômico pressupõe que os elétrons orbitam o núcleo em níveis de energia definidos?</li>
+	<li>Qual modelo atômico descreve que os elétrons possuem áreas com alta probabilidade de estar ao redor do núcleo?</li>
+	<li>Uma partícula elementar que representa o “quantum” da radiação eletromagnética e é a menor unidade indivisível de energia luminosa pode ser chamada de?</li>
+	<li>Quais os tipos de ligações químicas?</li>
+	<li>A tabela periódica organiza o quê?</li>
+	<li>Qual a quantidade de moléculas em \(1,2 mol \) de \(N_2 \)? Qual a quantidade de átomos?</li>
+	<li>Qual a massa de \( He \) em \( 4,3 mol \) de \(He \)?
+	<li>Qual a massa de Oxigênio presente em 17 mol de água?
+	<li>Um veterinário precisa preparar 500 mL de uma solução de glicose 5% m/v para um animal. Qual a massa de glicose necessária?</li>
+	<li>Um frasco contém 250 mL de álcool etílico com densidade de 0,789 g/mL. Qual a massa do álcool no frasco?</li>
+	<li>A) Um cão de 15kg vai realizar uma cirurgia para remoção de corpo estranho, e necessita receber fluidoterapia a uma taxa de 5mL/kg/h. Calcule a velocidade de infusão do Ringer Lactato em gotas/segundo. Sabe-se que em um equipo de macrogotas, 20 gotas equivalem a 1 mL. B) Esse mesmo animal precisou ser sedado e você escolheu a acepromazina cuja dose é de 0,2 mg/kg e a apresentação é de 0,2%. Calcule o volume a ser administrado.</li>
+	<li>A) Você precisa administrar 5g de glicose em um cão (filhote) de 5kg e a taxa é de 5mL/kg/h, então como na clínica só tem soro glicosado a 10%, qual o volume total a ser infundido e qual a velocidade de infusão em gotas/segundo. Sabe-se que um equipo de microgotas, fornece 60 gotas/ mL. B) Qual será o tempo total de infusão?</li>
+	<li>Um frasco contém 500 mL de óleo com densidade de 0,920 g/mL. Qual a massa do óleo no frasco?</li>
+	  <li>Um recipiente contém 300 mL de gasolina com densidade de 0,740 g/mL. Qual a massa da gasolina no recipiente?</li>
+	    <li>Uma garrafa contém 150 mL de glicerina com densidade de 1,260 g/mL. Qual a massa da glicerina na garrafa?</li>
+	      <li>Um copo contém 400 mL de água com densidade de 1,000 g/mL. Qual a massa da água no copo?</li>
+	        <li>Um frasco contém 200 mL de querosene com densidade de 0,820 g/mL. Qual a massa do querosene no frasco?</li>
+		  <li>Um tanque contém 1000 mL de mercúrio com densidade de 13,534 g/mL. Qual a massa do mercúrio no tanque?</li>
+		    <li>Um recipiente contém 750 mL de acetona com densidade de 0,790 g/mL. Qual a massa da acetona no recipiente?</li>
+		      <li>Uma garrafa contém 600 mL de vinagre com densidade de 1,010 g/mL. Qual a massa do vinagre na garrafa?</li>
+		        <li>Um copo contém 350 mL de leite com densidade de 1,030 g/mL. Qual a massa do leite no copo?</li>
+			  <li>Um frasco contém 800 mL de álcool isopropílico com densidade de 0,785 g/mL. Qual a massa do álcool no frasco?</li>
+			    <li>Efetue as operações abaixo e dê o resultado em notação científica.</li>
+			      <ol type="a">
+				            <li>\( (2,5 \times 10^3) + (3,2 \times 10^2) \).</li>
+					          <li>Multiplique \( 6,4 \times 10^4 \) por \( 2,5 \times 10^3 \).</li>
+						        <li>Divida \( 8,1 \times 10^5 \) por \( 2,7 \times 10^2 \).</li>
+							      <li>\( (5,6 \times 10^6) - (3,4 \times 10^5) \).</li>
+							            <li>\( (9,2 \times 10^7) \times (4,1 \times 10^2) \).</li>
+								          <li>\( (7,5 \times 10^3) \div (1,5 \times 10^1) \)?</li>
+									        <li>\( (3,6 \times 10^5) - (1,2 \times 10^4) \).</li>
+										      <li>Multiplique \( 5,3 \times 10^2 \) por \( 4,2 \times 10^3 \).</li>
+										            <li>Divida \( 9,8 \times 10^6 \) por \( 2,0 \times 10^2 \).</li>
+											          <li>\( (1,4 \times 10^4) + (2,6 \times 10^3) \).</li>
+												      </ol>
+												      <li>Escolha 1 produto e calcule a concentração de cada item apresentado no rótulo por unidade de referência e determine a quantidade total do item na embalagem.</li>
+											     
+
+											      
+											      
+<li>Considere algumas informações nutricionais do ovo de galinha: Porção de 100g: 155 kcal; Gorduras totais: 11g; Gorduras saturadas: 3,3g; Colesterol: 373mg; Sódio: 124 mg; Potássio: 126 mg; Carboidratos: 1,1g; Proteínas: 13g. Determine a quantidade de:
+<ol>
+	<li>Calorias em 230g de ovo</li>
+	<ol type="a">
+		<li>356,5 kcal</li>
+		<li>5,94 g</li>
+		<li>6,5 g</li>
+		<li>2,33 g</li>
+		<li>39,68 mg</li>
+	</ol>
+	<li>Gorduras saturadas em 180g de ovo</li>
+	<ol type="a">
+		<li>356,5 kcal</li>
+		<li>5,94 g</li>
+		<li>6,5 g</li>
+		<li>2,33 g</li>
+		<li>39,68 mg</li>
+	</ol>
+	<li>Proteínas em 50g de ovo</li>
+	<ol type="a">
+		<li>356,5 kcal</li>
+		<li>5,94 g</li>
+		<li>6,5 g</li>
+		<li>2,33 g</li>
+		<li>39,68 mg</li>
+	</ol>
+	<li>Carboidratos em 212g de ovo</li>
+	<ol type="a">
+		<li>356,5 kcal</li>
+		<li>5,94 g</li>
+		<li>6,5 g</li>
+		<li>2,33 g</li>
+		<li>39,68 mg</li>
+	</ol>
+	<li>Sódio em 32g de ovo</li>
+	<ol type="a">
+		<li>356,5 kcal</li>
+		<li>5,94 g</li>
+		<li>6,5 g</li>
+		<li>2,33 g</li>
+		<li>39,68 mg</li>
+	</ol>
+</ol>
+<li>O resultado de \(3,2 \cdot 10^3 \cdot 4,5 \cdot 10^6 \) é:
+<ol type="a">
+	<li>\( 1,44 \cdot 10^8 \)</li>
+	<li>\( 1,44 \cdot 10^9 \)</li>
+	<li>\( 1,44 \cdot 10^{10} \)</li>
+	<li>\( 1,44 \cdot 10^{11} \)</li>
+	<li>\( 1,44 \cdot 10^{12} \)</li>
+</ol>
+<li>Um recipiente contém um material cuja densidade é de \(3,2 g/L \). Se o volume do recipiente é de 4 L e esse material ocupa todo o espaço do recipiente, qual é a massa desse material?</li>
+<ol type="a">
+	<li>12,8 mg</li>
+	<li>12,8 g</li>
+	<li>12,8 kg</li>
+	<li>12,8 cg</li>
+	<li>12,8 dg</li>
+</ol>
+<li>Qual a quantidade de moléculas em 4,6 <i>mols</i> de \(\text{O}_2 \)?</li>
+
+<li>Qual a quantidade de átomos em 3,9 <i>mols</i> de \(\text{H}_2\text{S}\text{O}_4 \)?</li>
+
+<li>Qual a massa de oxigênio em 4 <i>mols</i> de água?</li>
+<li>Calcule o volume ocupado por 250g de alumínio</li>
+<li>Calcule a massa de 500 cm³ de mercúrio</li>
+<li>Calcule a massa específica de um bloco de chumbo com massa de 1140g e volume de 100 cm³</li>
+<li>Calcule o volume ocupado por 80g de ferro</li>
+<li>Calcule o volume ocupado por 150g de zinco</li>
+<li>Calcule a massa de 200 cm³ de ouro</li>
+<li>Calcule a massa específica de um pedaço de prata com 540g e volume de 50 cm³</li>
+<li>Calcule o volume ocupado por 90g de estanho</li>
+<li>Calcule a massa de 350 cm³ de níquel</li>
+<li>Calcule a massa específica de uma amostra de platina com 430g e 20 cm³</li>
+<li>Calcule o volume ocupado por 60g de titânio</li>
+<li>Calcule a massa de 120 cm³ de silício</li>
+<li>Calcule a massa específica de uma barra de tungstênio com 960g e 50 cm³</li>
+<li>Calcule o volume ocupado por 300g de manganês</li>
+<li>Calcule a massa específica de um bloco de cobalto com 885g e 100 cm³</li>
+<li>Calcule o volume ocupado por 210g de magnésio</li>
+<li>Calcule a massa de 400 cm³ de lítio</li>
+<li>Calcule a massa específica de uma amostra de bismuto com 945g e 75 cm³</li>
+<li>Calcule o volume ocupado por 110g de cálcio</li>
+<li>Calcule a massa de 300 cm³ de gálio</li>
+
+
+
+
+
+
+
+</ol>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+<!-- Aqui termina o código específico da página -->
+<p style="margin-top: 20px; font-size: 14px; color: #555; border-top: 1px solid #ddd; padding-top: 15px;">
+  <strong>Como citar essa página:</strong><br>
+  FUMACHI, E. F. <strong id="citacao-titulo"></strong>. Disponível em: <span id="citacao-url"></span>. Acesso em: <span id="citacao-data"></span>.
+</p>
+
+<hr>
+
+<footer>
+<p align="center">Prof. Dr. Fumachi. &copy; <span id="ano"></span></p>
+</footer>
+
+
+<script>
+  document.getElementById('cabecalho-titulo').innerText = document.title;
+  document.getElementById('citacao-titulo').innerText = document.title;
+  document.getElementById('citacao-url').innerText = window.location.href;
+  const hoje = new Date();
+  const dia = String(hoje.getDate()).padStart(2, '0');
+  const meses = ['jan.', 'fev.', 'mar.', 'abr.', 'mai.', 'jun.', 'jul.', 'ago.', 'set.', 'out.', 'nov.', 'dez.'];
+  const mes = meses[hoje.getMonth()];
+  const anoAtual = hoje.getFullYear();
+  document.getElementById('citacao-data').innerText = `${dia} ${mes} ${anoAtual}.`;
+  document.getElementById('ano').textContent = anoAtual;
+</script>
+
+</body>
+</html>
+

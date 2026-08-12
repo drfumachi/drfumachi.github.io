@@ -1,0 +1,284 @@
+ -- ============================================================================
+-- 1. CONFIGURAÇÕES EDITORIAIS (OPTIONS)
+-- ============================================================================
+
+-- Define a codificação interna do Neovim para UTF-8 (suporte a acentos e emojis)
+vim.opt.encoding = "utf-8"
+
+-- Garante que os novos arquivos gravados no disco usem a codificação UTF-8
+vim.opt.fileencoding = "utf-8"
+
+-- Habilita suporte a cores reais de 24 bits (essencial para temas modernos)
+vim.opt.termguicolors = true
+
+-- Força o cursor a ser sempre um bloco sólido (impede que mude para uma linha vertical no modo de inserção)
+vim.opt.guicursor = ""
+
+-- Permite mover o cursor livremente por espaços vazios além do fim da linha em qualquer modo
+vim.opt.virtualedit = "all"
+
+-- Mostra o número da linha atual onde o cursor está posicionado
+vim.wo.number = true
+
+-- Mostra os números das outras linhas de forma relativa à distância do seu cursor (ótimo para saltos numéricos)
+vim.wo.relativenumber = true
+
+-- Desativa a quebra automática de linha visual; o texto longo continuará direto para a direita
+vim.opt.wrap = false
+
+-- Mantém a coluna lateral esquerda sempre aberta (evita trepidação na tela quando alertas ou erros do LSP aparecem)
+vim.opt.signcolumn = "yes"
+
+-- Desenha uma linha vertical sutil na coluna 80 como guia visual de limite de largura do código
+vim.opt.colorcolumn = "80"
+
+-- Mantém sempre no mínimo 8 linhas visíveis acima e abaixo do cursor ao rolar a tela verticalmente
+vim.opt.scrolloff = 16
+
+-- Mantém sempre no mínimo 32 caracteres visíveis à esquerda e à direita do cursor ao rolar a tela horizontalmente
+vim.opt.sidescrolloff = 32
+
+-- Reduz o tempo de resposta (em milissegundos) para atualizar arquivos e disparar eventos internos do Neovim
+vim.opt.updatetime = 50
+
+-- Adiciona o caractere '@' na lista de caracteres válidos para nomes de arquivos reconhecidos pelo editor
+vim.opt.isfname:append("@-@")
+
+-- Desativa a criação de arquivos de troca (.swp), usados para recuperação em caso de travamento do editor
+vim.opt.swapfile = false
+
+-- Desativa a criação de arquivos de backup automáticos antes de salvar as alterações de um arquivo
+vim.opt.backup = false
+
+-- Ignora letras maiúsculas e minúsculas ao realizar uma busca com a barra '/'
+vim.opt.ignorecase = true
+
+-- Se você digitar pelo menos uma letra maiúscula na busca, ele passa a diferenciar maiúsculas/minúsculas
+vim.opt.smartcase = true
+
+-- Ativa o destaque visual amarelo (ou da cor do tema) em todas as palavras encontradas na busca
+vim.opt.hlsearch = true
+
+-- Mostra os resultados da busca na tela instantaneamente enquanto você ainda está digitando a palavra
+vim.opt.incsearch = true
+
+-- Define que um caractere de Tabulação (TAB) equivale visualmente ao espaço de 4 caracteres
+vim.opt.tabstop = 4
+
+-- Transforma a tecla TAB em espaços reais ao digitar, mantendo o arquivo limpo sem caracteres ocultos de tabulação
+vim.opt.expandtab = true
+
+-- Faz a indentação automática herdar o mesmo tamanho definido em 'tabstop' (neste caso, 4 espaços)
+vim.opt.shiftwidth = 0
+
+-- Desativa o recurso secundário de controle de espaços de tabulação para priorizar o comportamento puro do expandtab
+vim.opt.softtabstop = 0
+
+-- Copia automaticamente a indentação da linha anterior ao criar uma nova linha de código
+vim.opt.autoindent = true
+
+-- Ativa uma indentação automática mais inteligente baseada na sintaxe de linguagens de programação comuns (ex: C, Java)
+vim.opt.smartindent = true
+
+-- Sincroniza a área de transferência do Neovim com o sistema operacional (tudo que copiar/recortar vai para o PC)
+vim.opt.clipboard:append("unnamedplus")
+
+
+-- ============================================================================
+-- 2. MAPEAMENTO DA TECLA LEADER
+-- ============================================================================
+
+-- Desativa a função padrão da barra de espaço nos modos Normal e Visual para evitar conflitos de comandos
+vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
+
+-- Define a Barra de Espaço como a tecla modificadora principal (Leader) para os seus atalhos personalizados
+vim.g.mapleader = " "
+
+-- Define a Barra de Espaço também como a tecla modificadora local para atalhos específicos de certos plugins ou arquivos
+vim.g.maplocalleader = " "
+
+
+-- ============================================================================
+-- 3. EVENTOS AUTOMÁTICOS (AUTOCOMMANDS)
+-- ============================================================================
+
+-- Cria um comando automático que roda sempre que você entra em um arquivo de texto (buffer)
+vim.api.nvim_create_autocmd("BufEnter", {
+    callback = function()
+        -- Remove as regras de formatação automática que continuam comentários ou mudam a indentação ao colar textos multilinha
+        vim.opt.formatoptions:remove({ "c", "r", "o" })
+    end,
+})
+
+
+-- ============================================================================
+-- 4. ATALHOS GERAIS DE NAVEGAÇÃO E EDIÇÃO (KEYMAPS)
+-- ============================================================================
+
+-- No Modo Normal e Visual, faz a tecla Home pular para o primeiro caractere útil da linha (ignora espaços iniciais)
+vim.keymap.set({'n', 'v'}, '<Home>', '^', { noremap = true, silent = true, desc = "Ir para o início da linha" })
+
+-- No Modo Normal e Visual, faz a tecla End saltar diretamente para o último caractere do fim da linha
+vim.keymap.set({'n', 'v'}, '<End>', '$', { noremap = true, silent = true, desc = "Ir para o final da linha" })
+
+-- No Modo de Inserção, faz a tecla Home ir para o início útil da linha sem tirar você do modo de escrita
+vim.keymap.set('i', '<Home>', '<C-o>^', { noremap = true, silent = true, desc = "Ir para o início da linha" })
+
+-- No Modo de Inserção, faz a tecla End ir para o final da linha sem tirar você do modo de escrita
+vim.keymap.set('i', '<End>', '<C-o>$', { noremap = true, silent = true, desc = "Ir para o final da linha" })
+
+-- No Modo Visual, faz a tecla TAB empurrar o bloco selecionado para a direita e o mantém selecionado para repetir a ação
+vim.keymap.set('v', '<TAB>', '>gv', { noremap = true, silent = true, desc = "Indentar bloco de texto" })
+
+-- No Modo Visual, faz o Shift+TAB recuar o bloco selecionado para a esquerda e o mantém selecionado para repetir a ação
+vim.keymap.set('v', '<S-TAB>', '<gv', { noremap = true, silent = true, desc = "Recuar bloco de texto" })
+
+-- No Modo Normal, faz a tecla Esc limpar as marcações coloridas da busca anterior na tela
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = "Limpar destaque da busca" })
+
+-- Substitui o texto selecionado visualmente em todo o arquivo
+vim.keymap.set('v', '<leader>r', '"cy:%s/<C-r>c//g<Left><Left>', { 
+    desc = "Substituir texto selecionado no arquivo inteiro" 
+})
+
+-- ============================================================================
+-- 5. SELEÇÃO FLUIDA COM SHIFT + SETAS
+-- ============================================================================
+
+-- Modo Normal: Pressionar Shift + Seta para Cima inicia a seleção visual movendo o cursor para a linha de cima
+vim.keymap.set('n', '<S-Up>', 'v<Up>', { noremap = true, silent = true })
+
+-- Modo Normal: Pressionar Shift + Seta para Baixo inicia a seleção visual movendo o cursor para a linha de baixo
+vim.keymap.set('n', '<S-Down>', 'v<Down>', { noremap = true, silent = true })
+
+-- Modo Normal: Pressionar Shift + Seta para Esquerda inicia a seleção visual marcando o caractere anterior
+vim.keymap.set('n', '<S-Left>', 'v<Left>', { noremap = true, silent = true })
+
+-- Modo Normal: Pressionar Shift + Seta para Direita inicia a seleção visual marcando o caractere seguinte
+vim.keymap.set('n', '<S-Right>', 'v<Right>', { noremap = true, silent = true })
+
+-- Modo Visual: Pressionar Shift + Seta para Cima expande a seleção atual uma linha para cima
+vim.keymap.set('v', '<S-Up>', '<Up>', { noremap = true, silent = true })
+
+-- Modo Visual: Pressionar Shift + Seta para Baixo expande a seleção atual uma linha para baixo
+vim.keymap.set('v', '<S-Down>', '<Down>', { noremap = true, silent = true })
+
+-- Modo Visual: Pressionar Shift + Seta para Esquerda expande a seleção atual um caractere para a esquerda
+vim.keymap.set('v', '<S-Left>', '<Left>', { noremap = true, silent = true })
+
+-- Modo Visual: Pressionar Shift + Seta para Direita expande a seleção atual um caractere para a direita
+vim.keymap.set('v', '<S-Right>', '<Right>', { noremap = true, silent = true })
+
+-- Modo Inserção: Pressionar Shift + Seta para Cima sai temporariamente da escrita e inicia uma seleção para cima
+vim.keymap.set('i', '<S-Up>', '<Esc>v<Up>', { noremap = true, silent = true })
+
+-- Modo Inserção: Pressionar Shift + Seta para Baixo sai temporariamente da escrita e inicia uma seleção para baixo
+vim.keymap.set('i', '<S-Down>', '<Esc>v<Down>', { noremap = true, silent = true })
+
+-- Modo Inserção: Pressionar Shift + Seta para Esquerda sai temporariamente da escrita e inicia uma seleção para a esquerda
+vim.keymap.set('i', '<S-Left>', '<Esc>v<Left>', { noremap = true, silent = true })
+
+-- Modo Inserção: Pressionar Shift + Seta para Direita sai temporariamente da escrita e inicia uma seleção para a direita
+vim.keymap.set('i', '<S-Right>', '<Esc>v<Right>', { noremap = true, silent = true })
+
+
+-- ============================================================================
+-- 6. ATALHOS UNIVERSAIS (CTRL+C, CTRL+V, CTRL+Z, CTRL+Y)
+-- ============================================================================
+
+-- No Modo Visual, Ctrl+c copia o texto selecionado diretamente para o clipboard do sistema operacional
+vim.keymap.set('v', '<C-c>', '"+y', { noremap = true, silent = true })
+
+-- No Modo Normal, Ctrl+v cola o conteúdo da área de transferência do sistema abaixo da linha atual
+vim.keymap.set('n', '<C-v>', '"+p', { noremap = true, silent = true })
+
+-- No Modo Inserção, Ctrl+v cola o texto do sistema de forma literal (impede quebras de tabulação e comentários automáticos)
+vim.keymap.set('i', '<C-v>', '<C-r><C-p>+', { noremap = true, silent = true })
+
+-- No Modo Visual, Ctrl+v substitui o bloco selecionado atual pelo conteúdo que está na sua área de transferência
+vim.keymap.set('v', '<C-v>', '"_dP', { noremap = true, silent = true })
+
+-- No Modo Normal, Ctrl+z aciona o comando 'u' (undo) para desfazer a última alteração realizada
+vim.keymap.set('n', '<C-z>', 'u', { noremap = true, silent = true })
+
+-- No Modo Visual, Ctrl+z remove a seleção visual atual e desfaz a última alteração realizada no arquivo
+vim.keymap.set('v', '<C-z>', '<Esc>u', { noremap = true, silent = true })
+
+-- No Modo Inserção, Ctrl+z suspende a escrita por um instante para desfazer o último bloco de digitação realizado
+vim.keymap.set('i', '<C-z>', '<C-o>u', { noremap = true, silent = true })
+
+-- No Modo Normal, Ctrl+y aciona o comando de refazer (redo) para reaplicar uma alteração desfeita
+vim.keymap.set('n', '<C-y>', '<C-r>', { noremap = true, silent = true })
+
+-- No Modo Inserção, Ctrl+y suspende a escrita por um instante e refaz a alteração sem sair do modo de digitação
+vim.keymap.set('i', '<C-y>', '<C-o><C-r>', { noremap = true, silent = true })
+
+ -- No Modo Visual, Ctrl+x recorta o texto selecionado para a área de transferência do sistema
+vim.keymap.set('v', '<C-x>', '"+d', { noremap = true, silent = true, desc = "Recortar texto selecionado" })
+
+-- ============================================================================
+-- 7. FUNÇÕES PERSONALIZADAS (MÉTRICAS DO STATUSLINE)
+-- ============================================================================
+
+-- Função que lê o modo atual do editor (Normal, Inserção, etc.) e devolve um nome amigável em letras maiúsculas
+function ModeName()
+    local m = vim.api.nvim_get_mode().mode
+    if m == "n" then 
+        return "NORMAL"
+    elseif m == "i" then 
+        return "INSERT"
+    elseif m == "v" then 
+        return "VISUAL"
+    elseif m == "V" then 
+        return "VISUAL-LINHA"
+    elseif m == " " then 
+        return "VISUAL-BLOCO"
+    elseif m == "R" then 
+        return "REPLACE"
+    elseif m == "c" then 
+        return "COMANDO"
+    elseif m == "t" then 
+        return "TERMINAL"
+    else 
+        return "NORMAL"
+    end
+end
+
+-- Função que executa um comando de sistema silencioso para ler o nome da branch atual do Git na pasta do projeto
+function GitBranch()
+    local handle = io.popen("git branch --show-current 2>/dev/null")
+    local result = handle:read("*a"):gsub("\n", "")
+    handle:close()
+    
+    -- Se estiver em um repositório Git válido, devolve o nome da branch acompanhado de um ícone de folha
+    if result ~= "" then
+        return " 🌿 " .. result
+    end
+    
+    -- Se não houver repositório Git ativo, retorna um texto vazio
+    return ""
+end
+
+-- ============================================================================
+-- 8. CONFIGURAÇÕES DO NEOVIM-LUALINE (sudo apt install neovim-lualine)
+-- ============================================================================
+-- temas_legais: codedark, dracula, horizon, material, molokai, onedark,
+-- palenight, powerline, solarized_dark  
+                                      
+vim.opt.termguicolors = true
+
+require('lualine').setup({
+  options = {
+    theme = 'solarized_dark',
+    component_separators = { left = '|', right = '|' },
+    section_separators = { left = '', right = '' },
+  },
+  sections = {
+    lualine_a = { 'mode' },
+    lualine_b = { 'branch' },
+    lualine_c = { 'filename' },
+    lualine_x = { 'filetype' },
+    lualine_y = { 'progress' },
+    lualine_z = { 'location' }
+  }
+})   

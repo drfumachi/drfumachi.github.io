@@ -1,0 +1,120 @@
+ # ============================================================================
+# CATEGORIA 1: TERMINAL & COMPATIBILIDADE DE CORES
+# ============================================================================
+
+set -g default-terminal "tmux-256color"
+set -as terminal-features ",xterm-256color:RGB"
+set -s escape-time 0
+setw -g xterm-keys on
+
+
+# ============================================================================
+# CATEGORIA 2: COMPORTAMENTO GERAL DO SISTEMA
+# ============================================================================
+
+set -g mouse on
+set -g history-limit 1000000
+set -g base-index 1
+setw -g pane-base-index 1
+set -g renumber-windows on
+set -g set-clipboard on
+setw -g monitor-activity off
+set -g visual-activity off
+
+
+# ============================================================================
+# CATEGORIA 3: GERENCIAMENTO DE PAINÉIS (SPLITS)
+# ============================================================================
+
+bind '"' split-window -v -c "#{pane_current_path}"
+bind % split-window -h -c "#{pane_current_path}"
+
+bind -n M-Left select-pane -L
+bind -n M-Right select-pane -R
+bind -n M-Up select-pane -U
+bind -n M-Down select-pane -D
+
+
+# ============================================================================
+# CATEGORIA 4: NAVEGAÇÃO ENTRE JANELAS (ABAS)
+# ============================================================================
+
+bind-key -n M-PageUp previous-window
+bind-key -n M-PageDown next-window
+
+
+# ============================================================================
+# CATEGORIA 5: CUSTOMIZAÇÃO DA BARRA DE STATUS
+# ============================================================================
+
+set -g status on
+set -g status-position top
+set -g status-interval 5
+set -g status-style "bg=black,fg=white"
+set -g display-time 500
+set -g status-left-length 40
+set -g status-right-length 40
+set -g status-left "#[fg=#FF4F00,bg=black,bold] #S "
+set -g status-justify centre
+set -g window-status-separator ""
+set -g window-status-style "fg=colour245,bg=black"
+set -g window-status-current-style "fg=black,bg=colour250,bold"
+set -g window-status-format " #I:#W "
+set -g window-status-current-format " #I:#W "
+set -g status-right "#[fg=#FF4F00,bg=black,bold]%d/%m/%Y %H:%M "
+
+
+# ============================================================================
+# CATEGORIA 6: GERENCIADOR DE PLUGINS (TPM)
+# ============================================================================
+
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+
+
+# ============================================================================
+# CATEGORIA 7: CONFIGURAÇÕES DOS PLUGINS (CONTROLE MANUAL)
+# ============================================================================
+
+# 🔥 IMPORTANTE: Desativa restauração automática
+set -g @continuum-restore 'off'      # NÃO restaura automaticamente
+set -g @continuum-boot 'off'         # NÃO inicia com o sistema
+set -g @continuum-save-interval '0'  # NÃO salva automaticamente (0 = desligado)
+
+# 🔥 Bindings manuais (seu Ctrl-b + Ctrl-s e Ctrl-b + Ctrl-r)
+bind-key C-s run-shell '
+if [ -x "$HOME/.tmux/plugins/tmux-resurrect/scripts/save.sh" ]; then
+    tmux display-message "#[fg=#FF4F00,bold]💾 Salvando sessão..."
+    "$HOME/.tmux/plugins/tmux-resurrect/scripts/save.sh" >/dev/null 2>&1
+    if [ $? -eq 0 ]; then
+        tmux display-message "#[fg=green,bold]✓ Sessão salva com sucesso"
+    else
+        tmux display-message "#[fg=red,bold]✗ Erro ao salvar sessão"
+    fi
+else
+    tmux display-message "#[fg=red,bold]✗ tmux-resurrect não encontrado"
+fi
+'
+
+bind-key C-r run-shell '
+if [ -x "$HOME/.tmux/plugins/tmux-resurrect/scripts/restore.sh" ]; then
+    tmux display-message "#[fg=#FF4F00,bold]↺ Restaurando sessão..."
+    "$HOME/.tmux/plugins/tmux-resurrect/scripts/restore.sh" >/dev/null 2>&1
+    if [ $? -eq 0 ]; then
+        tmux display-message "#[fg=green,bold]✓ Sessão restaurada com sucesso"
+    else
+        tmux display-message "#[fg=red,bold]✗ Erro ao restaurar sessão"
+    fi
+else
+    tmux display-message "#[fg=red,bold]✗ tmux-resurrect não encontrado"
+fi
+'
+
+
+# ============================================================================
+# INICIALIZAÇÃO OBRIGATÓRIA (DEVE FICAR NO FIM DO ARQUIVO)
+# ============================================================================
+
+run '~/.tmux/plugins/tpm/tpm' 

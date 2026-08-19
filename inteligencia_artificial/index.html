@@ -175,6 +175,294 @@ mas na lógica \(p \rightarrow q\) é apenas uma relação formal definida pela 
 
 <p>Praticar a tradução entre os dois mundos ajuda a estruturar o raciocínio lógico e a evitar armadilhas da linguagem comum.</p>
 
+<hr>
+
+ead>
+<body>
+
+    <h1>Silogismo, Falácias e as Variações Lógicas</h1>
+
+    <p>Este texto explora os fundamentos do raciocínio dedutivo, com ênfase no <strong>silogismo</strong>, nas <strong>falácias</strong> comuns e nas transformações lógicas de uma proposição condicional: <strong>positiva</strong> (afirmação), <strong>contrária</strong>, <strong>recíproca</strong> e <strong>contrapositiva</strong>. Utilizamos a notação \( \rightarrow \) para implicação e os quantificadores universais para expressar as relações.</p>
+
+    <h2>1. O Silogismo Clássico</h2>
+    <p>Um silogismo é um argumento dedutivo composto por duas premissas e uma conclusão. A estrutura canônica é:</p>
+    <div class="exemplo">
+        <p><span class="destaque">Premissa maior:</span> Todos os \( M \) são \( P \).</p>
+        <p><span class="destaque">Premissa menor:</span> Todos os \( S \) são \( M \).</p>
+        <p><span class="destaque">Conclusão:</span> Portanto, todos os \( S \) são \( P \).</p>
+    </div>
+    <p>Em notação lógica, com \( \forall \) (para todo) e implicação \( \rightarrow \):</p>
+    \[
+    \forall x \, (M(x) \rightarrow P(x)) \quad \text{e} \quad \forall x \, (S(x) \rightarrow M(x)) \;\; \vdash \;\; \forall x \, (S(x) \rightarrow P(x))
+    \]
+    <p>Este é o silogismo <em>Barbara</em> (modo categórico). A validade decorre da transitividade da implicação.</p>
+
+    <h3>Exemplo concreto</h3>
+    <div class="exemplo">
+        <p><strong>Premissa 1:</strong> Todos os seres humanos são mortais. (\( H \rightarrow M \))</p>
+        <p><strong>Premissa 2:</strong> Sócrates é humano. (\( S \rightarrow H \))</p>
+        <p><strong>Conclusão:</strong> Sócrates é mortal. (\( S \rightarrow M \))</p>
+    </div>
+    <p>Formalmente: \( (H \rightarrow M) \land (S \rightarrow H) \Rightarrow (S \rightarrow M) \).</p>
+
+    <h2>2. Falácias lógicas comuns</h2>
+    <p>Falácias são erros de raciocínio que comprometem a validade do argumento. Algumas das mais frequentes:</p>
+    <div class="falacia">
+        <p><span class="destaque">Afirmação do consequente:</span> Se \( P \) então \( Q \). \( Q \) é verdadeiro. Logo, \( P \) é verdadeiro.</p>
+        <p>Exemplo: "Se chove, a rua fica molhada. A rua está molhada. Logo, choveu." — isso ignora outras causas (caminhão-pipa, por exemplo).</p>
+        <p>Em lógica: \( (P \rightarrow Q) \land Q \not\Rightarrow P \).</p>
+    </div>
+    <div class="falacia">
+        <p><span class="destaque">Negação do antecedente:</span> Se \( P \) então \( Q \). \( P \) é falso. Logo, \( Q \) é falso.</p>
+        <p>Exemplo: "Se estudo, passo no exame. Não estudei. Logo, não passei." — pode ter passado por outros meios.</p>
+        <p>Em lógica: \( (P \rightarrow Q) \land \neg P \not\Rightarrow \neg Q \).</p>
+    </div>
+    <div class="falacia">
+        <p><span class="destaque">Falácia do silogismo disjuntivo:</span> \( P \) ou \( Q \). \( P \) é verdadeiro. Logo, \( Q \) é falso. — isso só é válido se a disjunção for exclusiva.</p>
+    </div>
+    <p>Outras falácias incluem <em>petição de princípio</em>, <em>apelo à autoridade</em> e <em>falsa causa</em>. O estudo das falácias ajuda a depurar argumentos e evitar conclusões inválidas.</p>
+
+    <h2>3. Positiva, Contrária, Recíproca e Contra-positiva</h2>
+    <p>Dada uma proposição condicional fundamental: \( P \rightarrow Q \) (se \( P \), então \( Q \)), definimos quatro variações lógicas. Elas são essenciais para entender equivalências e inferências.</p>
+
+    <h3>3.1 Proposição original (positiva / direta)</h3>
+    <p>É a afirmação original: \( \quad P \rightarrow Q \).</p>
+    <p>Exemplo: "Se está chovendo, então o chão está molhado."</p>
+
+    <h3>3.2 Proposição contrária (ou inversa)</h3>
+    <p>Negamos ambos os termos: \( \quad \neg P \rightarrow \neg Q \).</p>
+    <p>Exemplo: "Se não está chovendo, então o chão não está molhado." — <strong>Não é logicamente equivalente</strong> à original, pois o chão pode estar molhado por outros motivos.</p>
+    <p>Em termos de verdade, a contrária não se segue da original.</p>
+
+    <h3>3.3 Proposição recíproca (ou conversa)</h3>
+    <p>Invertemos a ordem: \( \quad Q \rightarrow P \).</p>
+    <p>Exemplo: "Se o chão está molhado, então está chovendo." — também <strong>não é equivalente</strong> à original (falácia da afirmação do consequente).</p>
+    <p>Observe que a recíproca é a contrapositiva da contrária.</p>
+
+    <h3>3.4 Proposição contra-positiva (ou contraposta)</h3>
+    <p>Invertemos e negamos ambos: \( \quad \neg Q \rightarrow \neg P \).</p>
+    <p>Exemplo: "Se o chão não está molhado, então não está chovendo." — esta <strong>é logicamente equivalente</strong> à proposição original.</p>
+    <p>A contrapositiva sempre possui o mesmo valor de verdade que a condicional original. Isso é um princípio fundamental da lógica clássica.</p>
+
+    <div style="background: #eaf4e8; padding: 0.8rem 1.4rem; border-radius: 8px; margin: 1.5rem 0;">
+        <p><strong>Resumo das variações para \( P \rightarrow Q \):</strong></p>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li><strong>Positiva (original):</strong> \( P \rightarrow Q \)</li>
+            <li><strong>Contrária (inversa):</strong> \( \neg P \rightarrow \neg Q \)</li>
+            <li><strong>Recíproca (conversa):</strong> \( Q \rightarrow P \)</li>
+            <li><strong>Contra-positiva:</strong> \( \neg Q \rightarrow \neg P \)</li>
+        </ul>
+        <p style="margin-top: 0.3rem;">Apenas a contra-positiva é logicamente equivalente à original.</p>
+    </div>
+
+    <h2>4. Relações com silogismo e falácias</h2>
+    <p>Muitas falácias surgem justamente da confusão entre a proposição original e sua recíproca ou contrária. No silogismo, a validade depende da correta aplicação das regras de inferência. Por exemplo, o <em>modus ponens</em> usa a forma:</p>
+    \[
+    (P \rightarrow Q) \land P \Rightarrow Q
+    \]
+    <p>Enquanto o <em>modus tollens</em> utiliza a contrapositiva:</p>
+    \[
+    (P \rightarrow Q) \land \neg Q \Rightarrow \neg P
+    \]
+    <p>A contrapositiva é, portanto, uma ferramenta poderosa para testar a consistência de argumentos. Se a contrapositiva for falsa, a condicional original também será falsa.</p>
+
+    <div class="exemplo">
+        <p><span class="destaque">Exemplo silogístico usando contrapositiva:</span></p>
+        <p>Premissa: Se um animal é um cão, então ele é um mamífero. (\( C \rightarrow M \))</p>
+        <p>Contrapositiva: Se um animal não é mamífero, então ele não é um cão. (\( \neg M \rightarrow \neg C \))</p>
+        <p>Se sabemos que um animal não é mamífero, podemos deduzir que não é um cão — silogismo válido.</p>
+    </div>
+
+    <h2>5. Tabela de verdade comparativa</h2>
+    <p>Para ilustrar a equivalência lógica entre a condicional e sua contrapositiva, e a não equivalência com a recíproca e contrária, consideremos a tabela abaixo (para \( P \) e \( Q \) booleanos).</p>
+    <div style="overflow-x: auto; margin: 1rem 0;">
+        <table style="border-collapse: collapse; width: 100%; background: #f8fafc; border: 1px solid #b0c4d0;">
+            <thead>
+                <tr style="background: #d3e2ed;">
+                    <th style="border: 1px solid #9bb2c0; padding: 0.4rem 0.8rem;">\( P \)</th>
+                    <th style="border: 1px solid #9bb2c0; padding: 0.4rem 0.8rem;">\( Q \)</th>
+                    <th style="border: 1px solid #9bb2c0; padding: 0.4rem 0.8rem;">\( P \rightarrow Q \) <br> (positiva)</th>
+                    <th style="border: 1px solid #9bb2c0; padding: 0.4rem 0.8rem;">\( \neg P \rightarrow \neg Q \) <br> (contrária)</th>
+                    <th style="border: 1px solid #9bb2c0; padding: 0.4rem 0.8rem;">\( Q \rightarrow P \) <br> (recíproca)</th>
+                    <th style="border: 1px solid #9bb2c0; padding: 0.4rem 0.8rem;">\( \neg Q \rightarrow \neg P \) <br> (contra-positiva)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td style="border: 1px solid #bccfd9; padding: 0.3rem 0.6rem;">V</td><td style="border: 1px solid #bccfd9; padding: 0.3rem 0.6rem;">V</td><td style="border: 1px solid #bccfd9; padding: 0.3rem 0.6rem;">V</td><td style="border: 1px solid #bccfd9; padding: 0.3rem 0.6rem;">V</td><td style="border: 1px solid #bccfd9; padding: 0.3rem 0.6rem;">V</td><td style="border: 1px solid #bccfd9; padding: 0.3rem 0.6rem;">V</td></tr>
+                <tr><td style="border: 1px solid #bccfd9; padding: 0.3rem 0.6rem;">V</td><td style="border: 1px solid #bccfd9; padding: 0.3rem 0.6rem;">F</td><td style="border: 1px solid #bccfd9; padding: 0.3rem 0.6rem;">F</td><td style="border: 1px solid #bccfd9; padding: 0.3rem 0.6rem;">V</td><td style="border: 1px solid #bccfd9; padding: 0.3rem 0.6rem;">V</td><td style="border: 1px solid #bccfd9; padding: 0.3rem 0.6rem;">F</td></tr>
+                <tr><td style="border: 1px solid #bccfd9; padding: 0.3rem 0.6rem;">F</td><td style="border: 1px solid #bccfd9; padding: 0.3rem 0.6rem;">V</td><td style="border: 1px solid #bccfd9; padding: 0.3rem 0.6rem;">V</td><td style="border: 1px solid #bccfd9; padding: 0.3rem 0.6rem;">F</td><td style="border: 1px solid #bccfd9; padding: 0.3rem 0.6rem;">F</td><td style="border: 1px solid #bccfd9; padding: 0.3rem 0.6rem;">V</td></tr>
+                <tr><td style="border: 1px solid #bccfd9; padding: 0.3rem 0.6rem;">F</td><td style="border: 1px solid #bccfd9; padding: 0.3rem 0.6rem;">F</td><td style="border: 1px solid #bccfd9; padding: 0.3rem 0.6rem;">V</td><td style="border: 1px solid #bccfd9; padding: 0.3rem 0.6rem;">V</td><td style="border: 1px solid #bccfd9; padding: 0.3rem 0.6rem;">V</td><td style="border: 1px solid #bccfd9; padding: 0.3rem 0.6rem;">V</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p>Observe que a coluna da contra-positiva é idêntica à da proposição original, confirmando a equivalência. Já a contrária e a recíproca diferem em algumas linhas, demonstrando que não são equivalentes.</p>
+
+    <h2>6. Conclusão</h2>
+    <p>Compreender o silogismo, identificar falácias e dominar as variações lógicas (positiva, contrária, recíproca e contrapositiva) é fundamental para o pensamento crítico e a argumentação sólida. A contrapositiva, em especial, é uma ferramenta valiosa para provar teoremas e refutar argumentos inválidos.</p>
+    <p>A lógica nos ensina que nem toda forma aparentemente similar é correta — e a matemática, por meio da notação \( \rightarrow \) e das regras de inferência, nos dá precisão para distinguir o válido do falacioso.</p>
+
+    <hr>
+
+    <footer>
+        <p>Página elaborada com HTML, CSS e MathJax para exibição de notação lógica. <br>
+        Todos os conceitos são apresentados de forma didática, com exemplos e tabela verdade.</p>
+    </footer>
+
+</body>
+</html>
+
+não quero nada de CSS
+
+Esta é uma página HTML sem nenhum CSS, usando apenas as tags <p> e <h1> a <h6>, com suporte MathJax para notação matemática.
+html
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silogismo, Falácias e Variações Lógicas</title>
+    <!-- MathJax com configuração para \( \) e \[ \] -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async>
+    </script>
+</head>
+<body>
+
+    <h1>Silogismo, Falácias e as Variações Lógicas</h1>
+
+    <p>Este texto explora os fundamentos do raciocínio dedutivo, com ênfase no silogismo, nas falácias comuns e nas transformações lógicas de uma proposição condicional: positiva (afirmação), contrária, recíproca e contra-positiva. Utilizamos a notação \( \rightarrow \) para implicação e os quantificadores universais para expressar as relações.</p>
+
+    <h2>1. O Silogismo Clássico</h2>
+
+    <p>Um silogismo é um argumento dedutivo composto por duas premissas e uma conclusão. A estrutura canônica é:</p>
+
+    <p>Premissa maior: Todos os \( M \) são \( P \).</p>
+    <p>Premissa menor: Todos os \( S \) são \( M \).</p>
+    <p>Conclusão: Portanto, todos os \( S \) são \( P \).</p>
+
+    <p>Em notação lógica, com \( \forall \) (para todo) e implicação \( \rightarrow \):</p>
+
+    \[
+    \forall x \, (M(x) \rightarrow P(x)) \quad \text{e} \quad \forall x \, (S(x) \rightarrow M(x)) \;\; \vdash \;\; \forall x \, (S(x) \rightarrow P(x))
+    \]
+
+    <p>Este é o silogismo <em>Barbara</em> (modo categórico). A validade decorre da transitividade da implicação.</p>
+
+    <h3>Exemplo concreto</h3>
+
+    <p>Premissa 1: Todos os seres humanos são mortais. (\( H \rightarrow M \))</p>
+    <p>Premissa 2: Sócrates é humano. (\( S \rightarrow H \))</p>
+    <p>Conclusão: Sócrates é mortal. (\( S \rightarrow M \))</p>
+
+    <p>Formalmente: \( (H \rightarrow M) \land (S \rightarrow H) \Rightarrow (S \rightarrow M) \).</p>
+
+    <h2>2. Falácias lógicas comuns</h2>
+
+    <p>Falácias são erros de raciocínio que comprometem a validade do argumento. Algumas das mais frequentes:</p>
+
+    <h3>Afirmação do consequente</h3>
+    <p>Se \( P \) então \( Q \). \( Q \) é verdadeiro. Logo, \( P \) é verdadeiro.</p>
+    <p>Exemplo: "Se chove, a rua fica molhada. A rua está molhada. Logo, choveu." — isso ignora outras causas (caminhão-pipa, por exemplo).</p>
+    <p>Em lógica: \( (P \rightarrow Q) \land Q \not\Rightarrow P \).</p>
+
+    <h3>Negação do antecedente</h3>
+    <p>Se \( P \) então \( Q \). \( P \) é falso. Logo, \( Q \) é falso.</p>
+    <p>Exemplo: "Se estudo, passo no exame. Não estudei. Logo, não passei." — pode ter passado por outros meios.</p>
+    <p>Em lógica: \( (P \rightarrow Q) \land \neg P \not\Rightarrow \neg Q \).</p>
+
+    <h3>Falácia do silogismo disjuntivo</h3>
+    <p>\( P \) ou \( Q \). \( P \) é verdadeiro. Logo, \( Q \) é falso. — isso só é válido se a disjunção for exclusiva.</p>
+
+    <p>Outras falácias incluem <em>petição de princípio</em>, <em>apelo à autoridade</em> e <em>falsa causa</em>. O estudo das falácias ajuda a depurar argumentos e evitar conclusões inválidas.</p>
+
+    <h2>3. Positiva, Contrária, Recíproca e Contra-positiva</h2>
+
+    <p>Dada uma proposição condicional fundamental: \( P \rightarrow Q \) (se \( P \), então \( Q \)), definimos quatro variações lógicas. Elas são essenciais para entender equivalências e inferências.</p>
+
+    <h3>3.1 Proposição original (positiva / direta)</h3>
+    <p>É a afirmação original: \( \quad P \rightarrow Q \).</p>
+    <p>Exemplo: "Se está chovendo, então o chão está molhado."</p>
+
+    <h3>3.2 Proposição contrária (ou inversa)</h3>
+    <p>Negamos ambos os termos: \( \quad \neg P \rightarrow \neg Q \).</p>
+    <p>Exemplo: "Se não está chovendo, então o chão não está molhado." — <strong>Não é logicamente equivalente</strong> à original, pois o chão pode estar molhado por outros motivos.</p>
+    <p>Em termos de verdade, a contrária não se segue da original.</p>
+
+    <h3>3.3 Proposição recíproca (ou conversa)</h3>
+    <p>Invertemos a ordem: \( \quad Q \rightarrow P \).</p>
+    <p>Exemplo: "Se o chão está molhado, então está chovendo." — também <strong>não é equivalente</strong> à original (falácia da afirmação do consequente).</p>
+    <p>Observe que a recíproca é a contrapositiva da contrária.</p>
+
+    <h3>3.4 Proposição contra-positiva (ou contraposta)</h3>
+    <p>Invertemos e negamos ambos: \( \quad \neg Q \rightarrow \neg P \).</p>
+    <p>Exemplo: "Se o chão não está molhado, então não está chovendo." — esta <strong>é logicamente equivalente</strong> à proposição original.</p>
+    <p>A contra-positiva sempre possui o mesmo valor de verdade que a condicional original. Isso é um princípio fundamental da lógica clássica.</p>
+
+    <h4>Resumo das variações para \( P \rightarrow Q \):</h4>
+    <p>Positiva (original): \( P \rightarrow Q \)</p>
+    <p>Contrária (inversa): \( \neg P \rightarrow \neg Q \)</p>
+    <p>Recíproca (conversa): \( Q \rightarrow P \)</p>
+    <p>Contra-positiva: \( \neg Q \rightarrow \neg P \)</p>
+    <p>Apenas a contra-positiva é logicamente equivalente à original.</p>
+
+    <h2>4. Relações com silogismo e falácias</h2>
+
+    <p>Muitas falácias surgem justamente da confusão entre a proposição original e sua recíproca ou contrária. No silogismo, a validade depende da correta aplicação das regras de inferência. Por exemplo, o <em>modus ponens</em> usa a forma:</p>
+
+    \[
+    (P \rightarrow Q) \land P \Rightarrow Q
+    \]
+
+    <p>Enquanto o <em>modus tollens</em> utiliza a contra-positiva:</p>
+
+    \[
+    (P \rightarrow Q) \land \neg Q \Rightarrow \neg P
+    \]
+
+    <p>A contra-positiva é, portanto, uma ferramenta poderosa para testar a consistência de argumentos. Se a contra-positiva for falsa, a condicional original também será falsa.</p>
+
+    <h4>Exemplo silogístico usando contra-positiva</h4>
+    <p>Premissa: Se um animal é um cão, então ele é um mamífero. (\( C \rightarrow M \))</p>
+    <p>Contra-positiva: Se um animal não é mamífero, então ele não é um cão. (\( \neg M \rightarrow \neg C \))</p>
+    <p>Se sabemos que um animal não é mamífero, podemos deduzir que não é um cão — silogismo válido.</p>
+
+    <h2>5. Tabela de verdade comparativa</h2>
+
+    <p>Para ilustrar a equivalência lógica entre a condicional e sua contra-positiva, e a não equivalência com a recíproca e contrária, consideremos a tabela abaixo (para \( P \) e \( Q \) booleanos).</p>
+
+    <p>\( P \) | \( Q \) | \( P \rightarrow Q \) (positiva) | \( \neg P \rightarrow \neg Q \) (contrária) | \( Q \rightarrow P \) (recíproca) | \( \neg Q \rightarrow \neg P \) (contra-positiva)</p>
+    <p>V | V | V | V | V | V</p>
+    <p>V | F | F | V | V | F</p>
+    <p>F | V | V | F | F | V</p>
+    <p>F | F | V | V | V | V</p>
+
+    <p>Observe que a coluna da contra-positiva é idêntica à da proposição original, confirmando a equivalência. Já a contrária e a recíproca diferem em algumas linhas, demonstrando que não são equivalentes.</p>
+
+    <h2>6. Conclusão</h2>
+
+    <p>Compreender o silogismo, identificar falácias e dominar as variações lógicas (positiva, contrária, recíproca e contra-positiva) é fundamental para o pensamento crítico e a argumentação sólida. A contra-positiva, em especial, é uma ferramenta valiosa para provar teoremas e refutar argumentos inválidos.</p>
+    <p>A lógica nos ensina que nem toda forma aparentemente similar é correta — e a matemática, por meio da notação \( \rightarrow \) e das regras de inferência, nos dá precisão para distinguir o válido do falacioso.</p>
+
+    <hr>
+
+
+
+
+
+
+
+
 <h1>O Perceptron: o neurônio artificial mais simples</h1>
 
 <h2>1. Contexto Histórico e Ideias Iniciais</h2>

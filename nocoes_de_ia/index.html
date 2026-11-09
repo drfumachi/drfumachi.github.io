@@ -72,9 +72,58 @@
       <li>P(A|B) (Probabilidade a posteriori): A sua crença atualizada sobre o evento A depois de incorporar a nova evidência B.</li>
   </ol>
 
+<p><b>EXEMPLO:</b> Imagine que uma doença rara afeta 1% da população. Existe um
+teste para detectá-la, mas ele não é perfeito, ou seja, se a pessoa <b>tem</b> a
+doença, o teste dá positivo em <b>90%</b> dos casos (Verdadeiro Positivo) porém,
+se a pessoa <b>não tem</b> a doença, o teste ainda dá positivo em <b>10%</b> dos
+casos (Falso Positivo).</p>
+<p><b>O problema</b>: Uma pessoa fez o teste e deu <b>POSITIVO</b>, qual é a
+probabilidade real dela estar doente?</p>
+<p><b>Passo 1:</b>Organizar as informações (<i>A priori</i> e Verossimilhança)</p>
+<p>Antes do teste, a única informação é a taxa de doença da população. Essa é a
+<b>Probabilidade <i>a priori</i></b>
+<ul>
+    <li>P(Doente) = 1% = 0,01</li>
+    <li>P(Saudável) = 99% = 0,99</li>
+</ul>
+<p>Agora, as chances de dar Positivo (Verossimilhança):</p>
+<ul>
+    <li>P(Positivo | Doente) = 90% = 0,90 (Chance de dar positivo <i>dado</i>
+        que está doente)</li>
+    <li>P(Positivo | Saudável) = 10% = 0,10 (Chance de dar positivo <i>dado</i>
+        que está saudável)</li>
+</ul>
 
 
+<p><b>Passo 2:</b>Calcular a evidência (A probabilidade total do teste dar
+positivo)</p>
+<p>Para encontrar a probabilidade de qualquer pessoa ter um resultado positivo,
+somamos os dois caminhos possíveis para o teste dar positivo: a pessoa estar
+doente OU a pessoa estar saudável</p>
+<p>
+    \[
+        P(\text{Positivo} = (0,90 \cdot 0,01) + (0,10 \cdot 0,99) = 0,108
+    \]
+</p>
 
+
+<p><b>Passo 3:</b>Aplicar o Teorema de Bayes (<i>a posteriori</i></p>
+<p>Agora queremos descobrir a probabilidade <b><i>A posteriori</i></b>: a chance
+de estar doente, dado que o teste foi positivo P(Doente | Positivo)</p>
+<p>
+    \[
+        P(\text{Doente | Positivo}) = \frac{P(\text{Positivo | Doente}) \cdot
+        P(\text{Doente})}{P(\text{Positivo})}
+    \]
+</p>
+<p>Substituindo os valores, tem-se:</p>
+<p>
+    \[
+        P(\text{Doente | Positivo}) = \frac{0,90 \cdot 0,01}{0,108} \approx
+        0,0833
+    \]
+</p>
+<p><b>RESULTADO:</b>A chance real da pessoa estar doente é de 8,33%</p>
 
 
 

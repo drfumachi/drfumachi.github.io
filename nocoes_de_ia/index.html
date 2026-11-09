@@ -47,7 +47,30 @@
 <hr>
 
   <h2>Estatística Bayesiana</h2>
+  <p>Como Funciona a Inferência Bayesiana</p>
+  <p>O grande diferencial dessa estatística é o processo de atualização
+  contínua:</p>
+  <ol>
+      <li>Você define uma crença inicial (a priori) baseada em estudos passados, opiniões ou dados históricos.</li>
+      <li>Você coleta novas evidências ou realiza um experimento.</li>
+      <li>Você aplica o Teorema de Bayes para combinar a crença inicial com os novos dados, gerando uma crença atualizada (a posteriori).</li>
+      <li>Se novos dados aparecerem amanhã, a sua a posteriori de hoje vira a nova a priori de amanhã</li>
+  </ol>
 
+  <p><b>O teorema de Bayes</b></p>
+  <p>A base matemática da estatística bayesiana é a fórmula que calcula a
+  probabilidade condicional de um evento A dado que o evento B ocorreu:</p>
+  <p>
+      \[
+        P(A|{}B)=\frac{P(B|{}A)\times P(A)}{P(B)}
+      \]
+  </p>
+  <ol>
+      <li>P(A) (Probabilidade a priori): O que você já acreditava ou sabia sobre o evento A antes de ver os novos dados.</li>
+      <li>P(B|A) (Verossimilhança): A chance de observar os novos dados (B) caso a sua hipótese (A) seja verdadeira.</li>
+      <li>P(B) (Evidência): A probabilidade total de observar esses dados em todas as hipóteses possíveis.</li>
+      <li>P(A|B) (Probabilidade a posteriori): A sua crença atualizada sobre o evento A depois de incorporar a nova evidência B.</li>
+  </ol>
 
 
 

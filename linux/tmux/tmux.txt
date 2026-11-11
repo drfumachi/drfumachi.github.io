@@ -1,3 +1,9 @@
+# Configurações do tmux
+# criar o arquivo ~/.tmux.conf com o conteúdo abaixo
+# É necessário fazer o download do tpm e ativar com <leader>B e Shift+I
+# git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# ou
+# sudo apt update && sudo apt install -y tmux-plugin-manager
 # ============================================================================
 # CATEGORIA 1: TERMINAL & COMPATIBILIDADE DE CORES
 # ============================================================================

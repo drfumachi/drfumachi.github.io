@@ -1,3 +1,7 @@
+-- Configurações em ~/.config/nvim/init.lua
+-- Para rodar com as configurações legais é importante instalar
+-- sudo apt install neovim-lualine
+
 vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.wrapmargin = 2 -- Margem antes de quebrar

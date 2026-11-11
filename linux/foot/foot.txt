@@ -1,0 +1,21 @@
+# ~/.config/foot/foot.ini
+
+
+# Forçar Zsh como shell
+shell=/bin/zsh --login
+
+[tweak]
+overflowing-glyphs=yes
+
+[main]
+# Fonte e tamanho
+#font=monospace:size=16
+font=JetBrainsMono Nerd Font:size=16
+
+# Iniciar em tela cheia (Fullscreen)
+initial-window-mode=fullscreen
+
+[csd]
+# Desativa as decorações/bordas da janela (Clipped/Client Side Decorations)
+preferred=none
+

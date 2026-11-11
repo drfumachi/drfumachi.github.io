@@ -1,0 +1,32 @@
+/*
+1. No firefox fazer about:config e alterar
+toolkit.legacyUserProfileCustomizations.stylesheets -> True
+about:support e copiar o endereço de instalação do firefox
+criar a pasta chrome
+criar o arquivo userChrome.css com o conteúdo abaixo:
+*/
+
+/* Oculta a barra de ferramentas de navegação por padrão */
+#nav-bar {
+  margin-top: -40px !important;
+  transition: margin-top 0.2s ease-in-out !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Mostra a barra ao passar o mouse no topo da tela */
+#navigator-toolbox:hover #nav-bar,
+#nav-bar:hover {
+  margin-top: 0 !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* Mostra a barra quando a barra de endereços recebe foco (Ativado por Ctrl+L) */
+#navigator-toolbox:focus-within #nav-bar,
+#nav-bar:focus-within {
+  margin-top: 0 !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+

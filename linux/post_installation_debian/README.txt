@@ -29,3 +29,4 @@ instalados:
 10. sudo apt install -t trixie-backports linux-image-amd64 linux-headers-amd64
 10.1. sudo apt update
 
+11. Pihole

@@ -1,0 +1,24 @@
+Instalação via web -> 
+curl -sSL https://install.pi-hole.net | bash
+
+1. Ajuste na interface web do Pi-hole
+
+Primeiro, garanta que o Pi-hole aceite as requisições internas vindas de 
+qualquer interface do seu laptop:
+• Acesse o painel: Entre em http://127.0.0 (ou na porta configurada, como :8080).
+• Ajuste a escuta: Vá no menu lateral Settings > DNS.
+• Permita todas as origens: Na seção Interface listening behavior, marque a opção
+Permit all origins e clique em Save no final da página.
+
+Configurações no laptop:
+echo -e "[main]\ndns=none" | sudo tee /etc/NetworkManager/conf.d/90-dns-none.conf
+sudo systemctl restart NetworkManager
+sudo rm -f /etc/resolv.conf
+echo "nameserver 127.0.0.1" | sudo tee /etc/resolv.conf
+
+
+trave o arquivo contra edição de qualquer outro programa
+sudo chattr +i /etc/resolv.conf
+
+
+

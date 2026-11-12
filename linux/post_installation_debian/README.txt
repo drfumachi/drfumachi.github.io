@@ -28,5 +28,14 @@ instalados:
 
 10. sudo apt install -t trixie-backports linux-image-amd64 linux-headers-amd64
 10.1. sudo apt update
+10.2. ADICIONAL:
+10.2.1. para instalação em pendrive: sudo apt update && sudo apt install firmware-linux firmware-misc-nonfree xserver-xorg-video-all
+10.2.2. sudo update-initramfs -u -k all (regenerar a imagem de boot -> initramfs
+para pegar todas as placas de vídeo no kernel)
+
 
 11. Pihole
+
+12. sudo apt install bibata-cursor-theme
+
+

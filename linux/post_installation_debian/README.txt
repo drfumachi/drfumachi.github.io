@@ -35,6 +35,11 @@ para pegar todas as placas de vídeo no kernel)
 
 
 11. Pihole
+11.1. sudo contrab -e
+11.1.1. 0 */6 * * * /usr/local/bin/pihole -g > /var/log/pihole-gravity-auto.log 2>&1
+
+
+
 
 12. sudo apt install bibata-cursor-theme
 
